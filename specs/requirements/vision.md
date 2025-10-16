@@ -2,7 +2,7 @@
 
 ## Sistema de simulação tributária (SST)
 
-<small>Versão 1.0</small>
+<small>Versão 1.1</small>
 
 <br />
 
@@ -10,6 +10,7 @@
 | Data       | Versão | Descrição                      | Autor            |
 |------------|--------|--------------------------------|------------------|
 | 15/10/2025 | 1.0    | Versão inicial do documento     | Arthur Araújo |
+| 16/10/2025 | 1.1    | Adicinado novos stakeholders e Descrição de ambiente de uso  | Davi Leite   |
 
 ---
 
@@ -93,10 +94,71 @@ Algumas oportunidades de negócios do SST são as seguintes:
 
 | Stakeholder | Descrição | Papel |
 | ----------- | --------- | ----- |
-| Clientes | Empresas e profissionais da contabilidade que vão utilizar o sistema para prestar serviços relacionados à simulação e cálculo de tributos. | Usuários finais do sistema 
+| Clientes | Empresas e profissionais da contabilidade que vão utilizar o sistema para prestar serviços relacionados à simulação e cálculo de tributos. | Usuários finais do sistema |
+| Especialistas em legislação tributária | Profissionais com profundo conhecimento das leis fiscais e tributárias, responsáveis por garantir que o sistema esteja atualizado e em conformidade com as regulamentações vigentes. | Consultores fiscais, advogados especializados em direito tributário |
+| Equipe de Banco de dados | Profissionais responsáveis por projetar, implementar e manter o banco de dados do sistema, garantindo a integridade, segurança e desempenho dos dados. | Administradores de banco de dados, engenheiros de dados |
 | Gerente de projeto | Profissional responsável por coordenar as equipes de desenvolvimento, infraestrutura e suporte, garantindo que o projeto seja concluído dentro do prazo e orçamento estabelecidos. | Gerenciamento do projeto |
 | Equipe de infraestrutura | Profissionais responsáveis por garantir que o sistema esteja hospedado, seguro e disponível para os usuários. | Administradores de sistemas, especialistas em segurança |
 | Equipe de desenvolvimento | Profissionais responsáveis por desenvolver e fazer a manutenção do sistema | Engenheiros de software, designers |
 | Equipe de suporte | Profissionais responsáveis por oferecer assistência técnica aos usuários do sistema | Suporte técnico |
 | Equipe de marketing e vendas | Profissionais responsáveis por promover e vender o sistema | Marketing, vendas |
+
+# Descrição do ambiente de uso
+
+## Contexto de uso
+
+O SST será utilizado principalmente em ambientes corporativos de escritórios de contabilidade, empresas de consultoria fiscal e departamentos financeiros de organizações. O sistema é projetado para ser acessado através de navegadores web modernos, permitindo flexibilidade de uso tanto em escritórios quanto remotamente.
+
+## Características do ambiente
+
+### Ambiente físico
+- **Escritórios de contabilidade**: Estações de trabalho com computadores desktop ou notebooks
+- **Trabalho remoto**: Acesso através de dispositivos pessoais (computadores, tablets) conectados à internet
+- **Reuniões com clientes**: Demonstrações e simulações realizadas em tempo real durante consultorias
+
+### Ambiente técnico
+- **Plataforma**: Sistema web responsivo acessível via navegadores modernos (Chrome, Firefox, Edge, Safari)
+- **Conectividade**: Conexão estável com a internet (mínimo recomendado: 5 Mbps)
+- **Dispositivos**: 
+  - Computadores desktop e notebooks (recomendado)
+  - Tablets (suporte parcial para consultas)
+  - Resolução mínima(recomendada) de tela: 1366x768 pixels
+- **Sistema operacional**: Compatível com Windows, macOS e Linux
+
+### Ambiente organizacional
+- **Escritórios de contabilidade**: Pequenos, médios e grandes portes
+- **Empresas**: Departamentos financeiros e contábeis
+- **Consultorias**: Empresas especializadas em planejamento tributário
+- **Profissionais autônomos**: Contadores e consultores fiscais independentes
+
+## Perfil dos usuários
+
+### Usuário principal: Contador
+- **Experiência técnica**: Intermediária a avançada em sistemas contábeis
+- **Conhecimento tributário**: Avançado em legislação fiscal brasileira
+- **Frequência de uso**: A definir...
+- **Atividades principais**: Cálculo de impostos, geração de relatórios, simulações tributárias
+
+## Condições de uso
+
+### Período de uso
+- **Horário comercial**: Predominantemente das 8h às 18h (horário local)
+- **Picos de uso**: 
+  - Final de mês (apuração mensal)
+  - Período de fechamento trimestral
+  - Época de entrega de declarações fiscais(Janeiro)
+- **Uso fora do horário**: Trabalho remoto e atendimento de demandas urgentes
+
+### Volume de operações
+- **Simulações por usuário**: A definir...
+- **Relatórios gerados**: A definir...
+- **Usuários simultâneos**: Estimativa de 10 a 100 usuários por cliente corporativo
+
+## Restrições do ambiente
+
+- **Segurança**: Dados sensíveis exigem criptografia e conformidade com LGPD
+- **Disponibilidade**: Sistema deve estar disponível 99% do tempo durante horário comercial
+- **Backup**: Dados devem ser salvos automaticamente para evitar perda de informações
+- **Auditoria**: Todas as operações devem ser registradas para fins de compliance
+- **Acessibilidade**: Interface deve seguir padrões de acessibilidade web (WCAG 2.1)
 
