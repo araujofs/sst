@@ -10,7 +10,7 @@
 | Data       | Versão | Descrição                      | Autor            |
 |------------|--------|--------------------------------|------------------|
 | 15/10/2025 | 0.1    | Versão inicial do documento     | Arthur Araújo |
-| 16/10/2025 | 0.2   | Adicinado novos stakeholders e Descrição de ambiente de uso  | Davi Leite   |
+| 16/10/2025 | 0.2   | Adicionado novos stakeholders e Descrição de ambiente de uso  | Davi Leite   |
 
 ---
 
