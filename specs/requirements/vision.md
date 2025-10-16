@@ -9,8 +9,8 @@
 ## Histórico de revisões
 | Data       | Versão | Descrição                      | Autor            |
 |------------|--------|--------------------------------|------------------|
-| 15/10/2025 | 1.0    | Versão inicial do documento     | Arthur Araújo |
-| 16/10/2025 | 1.1    | Adicinado novos stakeholders e Descrição de ambiente de uso  | Davi Leite   |
+| 15/10/2025 | 0.1    | Versão inicial do documento     | Arthur Araújo |
+| 16/10/2025 | 0.2   | Adicinado novos stakeholders e Descrição de ambiente de uso  | Davi Leite   |
 
 ---
 
@@ -33,7 +33,7 @@
 
 # Introdução
 
-Esse documento visa (DVP - Documento de Visão do Produto) apresentar a visão geral do sistema de simulação tributária, detalhando o propósito, escopo, stakeholders, ambiente de uso e características principais do produto.o
+Esse documento visa (DVP - Documento de Visão do Produto) apresentar a visão geral do sistema de simulação tributária, detalhando o propósito, escopo, stakeholders, ambiente de uso e características principais do produto.
 
 ## Propósito
 
