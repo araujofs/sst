@@ -181,7 +181,7 @@ A estrutura operacional do sistema é apresentada na Figura 1.
 
 # Características e funcionalidades de alto nível
 
-Esta seção define e descreve as características do SCGP. Trata-se dos requisitos de alto nível do sistema que são necessários para propiciar benefícios aos usuários.
+Esta seção define e descreve as características do SST. Trata-se dos requisitos de alto nível do sistema que são necessários para propiciar benefícios aos usuários.
 
 1. O sistema deve permitir o cálculo automático de impostos, considerando diferentes tributos e parâmetros definidos pelo usuário
 1. O sistema deve possibilitar a simulação de diversos tipos de cenários tributários, permitindo ao usuário comparar resultados e tomar decisões estratégicas com base em dados reais
