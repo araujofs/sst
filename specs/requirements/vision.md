@@ -161,15 +161,15 @@ O SST será utilizado principalmente em ambientes corporativos de escritórios d
 ## Visão geral do produto
 # Visão geral
 
-O Sistema de Simulação Tributária SST é uma aplicação web voltada para o cálculo e simulação de impostos, permitindo que profissionais da área da contabilidade e financeira realizem análises fiscais com maior precisão e agilidade. O sistema possibilita a simulação de diferentes cenários tributários, geração de relatórios detalhados e atualização manual das regras fiscais, garantindo conformidade com as normas legais vigentes.
+O Sistema de Simulação Tributária SST é uma aplicação web voltada para facilitar cálculo e a simulação de impostos, permitindo que profissionais da área da contabilidade e financeira realizem análises fiscais com maior precisão agilidade e confiabilidade. O sistema irá possibilitar a simulação de diferentes  tipos de cenários tributários, geração de relatórios detalhados e atualização manual das regras fiscais conforme as legislações, o qual vai garantir a conformidade com as normas legais vigentes.
 
-Por se tratar de um sistema web, sua estrutura operacional é baseada em infraestrutura de TI, incluindo servidores, banco de dados e mecanismos de segurança. O SST não depende de hardware específico, sendo acessível por meio de navegadores modernos e conexão à internet.
+Por ser um sistema web, o SST funciona totalmente online, utilizando uma infraestrutura de TI composta por servidores, banco de dados e mecanismos de segurança. Ele não exige nenhum hardware específico, sendo acessível em navegadores modernos, tanto em computadores quanto em tablets e smartphones.
 
-Os usuários — contadores, consultores fiscais e gestores financeiros — podem acessar o sistema através de computadores, tablets e smartphones, o que permite o uso tanto em escritórios quanto remotamente.
+Dessa forma, os usuários que são os contadores, consultores fiscais e gestores financeiros, eles poderão acessar o sistema através de computadores, tablets e smartphones, o que permite o uso tanto em escritórios quanto remotamente.
 
-A comunicação entre os dispositivos e o servidor ocorre por meio de solicitações HTTP/HTTPS, garantindo troca segura de dados e resposta rápida das funcionalidades, como cálculos e simulações.
+A comunicação entre os dispositivos que os usuários irão utilizar e o servidor ocorre por meio de protocolos de comunicação HTTP e HTTPS, o qual vai garantir troca segura de informações, especialmente durante a realização de cálculos e simulações.
 
-Além disso, o SST pode se integrar a serviços externos, como APIs de legislação e bancos de dados fiscais, para atualização automática de alíquotas e normas tributárias.
+Além disso, o  nosso sistema SST pode se integrar a serviços externos, como APIs de legislação e bancos de dados fiscais, possibilitando a atualização automática de alíquotas e normas tributárias.
 
 A estrutura operacional do sistema é apresentada na Figura 1.
 
@@ -177,6 +177,23 @@ A estrutura operacional do sistema é apresentada na Figura 1.
 ![Arquitetura geral do Sistema sst](../../assets/image/image.png)
 
 **Figura 1** - Arquitetura geral do sistema SST
+
+
+# Características e funcionalidades de alto nível
+
+Esta seção define e descreve as características do SCGP. Trata-se dos requisitos de alto nível do sistema que são necessários para propiciar benefícios aos usuários.
+
+1. O sistema deve permitir o cálculo automático de impostos, considerando diferentes tributos e parâmetros definidos pelo usuário
+1. O sistema deve possibilitar a simulação de diversos tipos de cenários tributários, permitindo ao usuário comparar resultados e tomar decisões estratégicas com base em dados reais
+1. O sistema deve gerar relatórios detalhados com informações sobre tributos, valores calculados, simulações feitas e resultados de comparação
+1. O sistema deve emitir notificações sobre mudanças na legislação, alertando o usuário sobre atualizações que possam impactar seus cálculos ou planejamentos fiscais
+1. O sistema deve permitir a atualização manual de alíquotas e regras fiscais, para que o usuário possa ajustar o sistema conforme novas normas legais
+1. O sistema deve garantir conformidade com a Lei Geral de Proteção de Dados (LGPD), criptografia com dados sensíveis, assegurando a privacidade e a proteção das informações inseridas pelos usuários
+1. O sistema deve apresentar uma interface simples e intuitiva, facilitando o uso por contadores, consultores e gestores, mesmo sem conhecimentos técnicos avançados
+1. O sistema deve ter desempenho estável e responsivo, assegurando rapidez nos cálculos e simulações, sem falhas ou interrupções
+1. O sistema deve ser escalável, permitindo integração com serviços externos, como APIs fiscais, e expansão de suas funcionalidades conforme as necessidades do usuário
+
+
 
 ## Restrições do ambiente
 
