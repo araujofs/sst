@@ -11,7 +11,7 @@
 |------------|--------|--------------------------------|------------------|
 | 15/10/2025 | 0.1    | Versão inicial do documento     | Arthur Araújo |
 | 16/10/2025 | 0.2   | Adicionado novos stakeholders e Descrição de ambiente de uso  | Davi Leite   |
-
+| 17/10/2025 | 0.3    | Inclusão do diagrama do sistema e características principais | Gabriel Carvalho |
 ---
 
 ## Sumário
@@ -105,6 +105,9 @@ Algumas oportunidades de negócios do SST são as seguintes:
 
 # Descrição do ambiente de uso
 
+
+
+
 ## Contexto de uso
 
 O SST será utilizado principalmente em ambientes corporativos de escritórios de contabilidade, empresas de consultoria fiscal e departamentos financeiros de organizações. O sistema é projetado para ser acessado através de navegadores web modernos, permitindo flexibilidade de uso tanto em escritórios quanto remotamente.
@@ -153,6 +156,27 @@ O SST será utilizado principalmente em ambientes corporativos de escritórios d
 - **Simulações por usuário**: A definir...
 - **Relatórios gerados**: A definir...
 - **Usuários simultâneos**: Estimativa de 10 a 100 usuários por cliente corporativo
+
+
+## Visão geral do produto
+# Visão geral
+
+O Sistema de Simulação Tributária SST é uma aplicação web voltada para o cálculo e simulação de impostos, permitindo que profissionais da área da contabilidade e financeira realizem análises fiscais com maior precisão e agilidade. O sistema possibilita a simulação de diferentes cenários tributários, geração de relatórios detalhados e atualização manual das regras fiscais, garantindo conformidade com as normas legais vigentes.
+
+Por se tratar de um sistema web, sua estrutura operacional é baseada em infraestrutura de TI, incluindo servidores, banco de dados e mecanismos de segurança. O SST não depende de hardware específico, sendo acessível por meio de navegadores modernos e conexão à internet.
+
+Os usuários — contadores, consultores fiscais e gestores financeiros — podem acessar o sistema através de computadores, tablets e smartphones, o que permite o uso tanto em escritórios quanto remotamente.
+
+A comunicação entre os dispositivos e o servidor ocorre por meio de solicitações HTTP/HTTPS, garantindo troca segura de dados e resposta rápida das funcionalidades, como cálculos e simulações.
+
+Além disso, o SST pode se integrar a serviços externos, como APIs de legislação e bancos de dados fiscais, para atualização automática de alíquotas e normas tributárias.
+
+A estrutura operacional do sistema é apresentada na Figura 1.
+
+
+![Arquitetura geral do Sistema sst](../../assets/image/image.png)
+
+**Figura 1** - Arquitetura geral do sistema SST
 
 ## Restrições do ambiente
 
