@@ -4,7 +4,7 @@
 
 <small>Versão 1.1</small>
 
-<br />
+---
 
 ## Histórico de revisões
 | Data       | Versão | Descrição                      | Autor            |
@@ -31,14 +31,16 @@
   - [Descrição dos benefícios para os clientes e os problemas resolvidos](#descrição-dos-benefícios-para-os-clientes-e-os-problemas-resolvidos)
 - [Descrição dos stakeholders e dos usuários](#descrição-dos-stakeholders-e-dos-usuários)
   - [Stakeholders](#stakeholders)
+ 
+---
 
 # Introdução
 
-Esse documento visa (DVP - Documento de Visão do Produto) apresentar a visão geral do sistema de simulação tributária, detalhando o propósito, escopo, stakeholders, ambiente de uso e características principais do produto.
+Esse documento de visão do produto (DVP) visa apresentar a visão geral do sistema de simulação tributária, detalhando o propósito, escopo, stakeholders, ambiente de uso e características principais do produto.
 
 ## Propósito
 
-O propósito deste documento é fornecer uma visão clara e concisa do sistema de simulação tributária, que auxiliará empresas e profissionais a calcular e simular impostos de maneira eficiente e precisa. 
+O propósito do DVP é fornecer uma visão clara e concisa do sistema de simulação tributária, que auxiliará empresas e profissionais a calcular e simular impostos de maneira eficiente e precisa. 
 
 O documento destina-se a desenvolvedores, gerentes de projeto, stakeholders e qualquer pessoa envolvida no desenvolvimento e implementação do sistema, garantindo que todos tenham uma compreensão comum dos objetivos e funcionalidades do produto e sejam alinhados quanto às expectativas.
 
