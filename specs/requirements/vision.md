@@ -9,9 +9,10 @@
 ## Histórico de revisões
 | Data       | Versão | Descrição                      | Autor            |
 |------------|--------|--------------------------------|------------------|
-| 15/10/2025 | 0.1    | Versão inicial do documento     | Arthur Araújo |
-| 16/10/2025 | 0.2   | Adicionado novos stakeholders e Descrição de ambiente de uso  | Davi Leite   |
-| 17/10/2025 | 0.3    | Inclusão do diagrama do sistema e características principais | Gabriel Carvalho |
+| 15/10/2025 | 0.1    | Versão inicial do documento                                                      | Arthur Araújo |
+| 16/10/2025 | 0.2    | Adicionado novos stakeholders e Descrição de ambiente de uso                     | Davi Leite   |
+| 17/10/2025 | 0.3    | Inclusão do diagrama do sistema e características principais                     | Gabriel Carvalho |
+| 18/10/2025 | 0.4    | Adicionado tabela de principais necessidades do sistema e de usuários e atores.  | Davi Leite   |
 ---
 
 ## Sumário
@@ -106,8 +107,6 @@ Algumas oportunidades de negócios do SST são as seguintes:
 # Descrição do ambiente de uso
 
 
-
-
 ## Contexto de uso
 
 O SST será utilizado principalmente em ambientes corporativos de escritórios de contabilidade, empresas de consultoria fiscal e departamentos financeiros de organizações. O sistema é projetado para ser acessado através de navegadores web modernos, permitindo flexibilidade de uso tanto em escritórios quanto remotamente.
@@ -134,13 +133,28 @@ O SST será utilizado principalmente em ambientes corporativos de escritórios d
 - **Consultorias**: Empresas especializadas em planejamento tributário
 - **Profissionais autônomos**: Contadores e consultores fiscais independentes
 
+
+### Ncessidades principais do ambiente
+
+| Necessidade    | Prioridade | Interesse dos Clientes | Solução Atual | Soluções Propostas |
+|----------------|------------|-----------------------|---------------|--------------------|
+| Qualidade      | Alta       | Garantia de cálculos precisos e confiáveis | Processos manuais ou sistemas genéricos | Implementação de validação automática e auditoria de dados |
+| Desempenho     | Alta       | Rapidez nas simulações e geração de relatórios | Sistemas lentos ou sobrecarregados | Otimização do backend e uso de servidores escaláveis |
+| Segurança      | Alta       | Proteção de dados fiscais e pessoais | Armazenamento local sem criptografia | Criptografia de dados, autenticação forte e conformidade LGPD |
+| Usabilidade    | Média      | Facilidade de uso para profissionais não técnicos | Interfaces complexas ou pouco intuitivas | Interface web responsiva e intuitiva, treinamento e suporte |
+| Confidencialidade | Alta    | Garantia de privacidade das informações | Compartilhamento informal de dados | Controle de acesso, registro de operações e políticas de privacidade |
+
 ## Perfil dos usuários
 
-### Usuário principal: Contador
-- **Experiência técnica**: Intermediária a avançada em sistemas contábeis
-- **Conhecimento tributário**: Avançado em legislação fiscal brasileira
-- **Frequência de uso**: A definir...
-- **Atividades principais**: Cálculo de impostos, geração de relatórios, simulações tributárias
+### Usuários e atores
+
+| Usuário/Atores         | Descrição                                                                 | Responsabilidades                                              | Stakeholders Relacionados                  |
+|------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------|--------------------------------------------|
+| Contadores             | Profissionais de contabilidade que utilizam o sistema para cálculos e simulações tributárias | Realizar simulações, calcular impostos, gerar relatórios      | Clientes                                   |
+| Consultores fiscais    | Especialistas em legislação tributária que apoiam empresas e clientes      | Analisar cenários fiscais, propor estratégias tributárias      | Especialistas em legislação tributária      |
+| Gestores financeiros   | Responsáveis pelo planejamento financeiro das empresas                     | Avaliar impactos fiscais, tomar decisões estratégicas          | Clientes                                   |
+| Administradores do sistema | Usuários com permissões para gerenciar configurações e usuários         | Gerenciar acessos, configurar regras e parâmetros do sistema   | Equipe de desenvolvimento, suporte         |
+| Suporte técnico        | Profissionais que auxiliam usuários em dúvidas e problemas técnicos        | Prestar suporte, solucionar problemas e registrar feedback     | Equipe de suporte                          |
 
 ## Condições de uso
 
