@@ -2,7 +2,7 @@
 
 ## Sistema de simulação tributária (SST)
 
-<small>Versão 1.1</small>
+<small>Versão 0.4</small>
 
 ---
 
@@ -16,10 +16,6 @@
 ---
 
 ## Sumário
-- [Visão do produto](#visão-do-produto)
-  - [Sistema de simulação tributária (SST)](#sistema-de-simulação-tributária-sst)
-  - [Histórico de revisões](#histórico-de-revisões)
-  - [Sumário](#sumário)
 - [Introdução](#introdução)
   - [Propósito](#propósito)
   - [Definições e abreviações](#definições-e-abreviações)
@@ -28,10 +24,20 @@
   - [Escopo do produto](#escopo-do-produto)
 - [Posicionamento](#posicionamento)
   - [Oportunidade de negócios](#oportunidade-de-negócios)
-  - [Descrição dos benefícios para os clientes e os problemas resolvidos](#descrição-dos-benefícios-para-os-clientes-e-os-problemas-resolvidos)
+  - [Descrição dos benefícios para os clientes e dos problemas resolvidos](#descrição-dos-benefícios-para-os-clientes-e-dos-problemas-resolvidos)
 - [Descrição dos stakeholders e dos usuários](#descrição-dos-stakeholders-e-dos-usuários)
   - [Stakeholders](#stakeholders)
- 
+  - [Usuários e atores](#usuários-e-atores)
+- [Descrição do ambiente de uso](#descrição-do-ambiente-de-uso)
+  - [Ambiente de uso](#ambiente-de-uso)
+  - [Necessidades principais quanto ao ambiente](#necessidades-principais-do-ambiente)
+- [Visão geral do produto](#visão-geral)
+  - [Visão geral](#visão-geral)
+  - [Custo e venda](#custo-e-venda)
+  - [Licenciamento e instalação](#licenciamento-e-instalação)
+  - [Características e funcionalidades de alto nível](#características-e-funcionalidades-de-alto-nível)
+  - [Restrições](#restrições) 
+
 ---
 
 # Introdução
@@ -83,7 +89,7 @@ Algumas oportunidades de negócios do SST são as seguintes:
 - **Venda da licença do sistema junto com serviços de suporte e manutenção**: Oferece o sistema para empresas da área de contabilidade com pagamento único pela licença para o uso, mas pagamento contínuo por serviços relacionados a suporte e manutenção do mesmo (sem entrega do código-fonte).
 - **Criação de ecossistema auxiliar**: Disponibilizar aos clientes um ecossistema de serviços e produtos relacionados ao sistema, como outras ferramentas de gestão, consultoria, etc. de maneira que o usuário do sistema não precise recorrer a ferramentas completamente diferentes da que está habituado a usar.
 
-## Descrição dos benefícios para os clientes e os problemas resolvidos
+## Descrição dos benefícios para os clientes e dos problemas resolvidos
 | Benefícios                                                        | Problemas resolvidos                           | Afetados                                              |
 | ----------------------------------------------------------------- | ---------------------------------------------- | ----------------------------------------------------- |
 | Cálculo automático de impostos                                    | Erros manuais no cálculo de impostos           | Contadores, consultores fiscais, gestores financeiros |
@@ -106,49 +112,7 @@ Algumas oportunidades de negócios do SST são as seguintes:
 | Equipe de suporte | Profissionais responsáveis por oferecer assistência técnica aos usuários do sistema | Suporte técnico |
 | Equipe de marketing e vendas | Profissionais responsáveis por promover e vender o sistema | Marketing, vendas |
 
-# Descrição do ambiente de uso
-
-
-## Contexto de uso
-
-O SST será utilizado principalmente em ambientes corporativos de escritórios de contabilidade, empresas de consultoria fiscal e departamentos financeiros de organizações. O sistema é projetado para ser acessado através de navegadores web modernos, permitindo flexibilidade de uso tanto em escritórios quanto remotamente.
-
-## Características do ambiente
-
-### Ambiente físico
-- **Escritórios de contabilidade**: Estações de trabalho com computadores desktop ou notebooks
-- **Trabalho remoto**: Acesso através de dispositivos pessoais (computadores, tablets) conectados à internet
-- **Reuniões com clientes**: Demonstrações e simulações realizadas em tempo real durante consultorias
-
-### Ambiente técnico
-- **Plataforma**: Sistema web responsivo acessível via navegadores modernos (Chrome, Firefox, Edge, Safari)
-- **Conectividade**: Conexão estável com a internet (mínimo recomendado: 5 Mbps)
-- **Dispositivos**: 
-  - Computadores desktop e notebooks (recomendado)
-  - Tablets (suporte parcial para consultas)
-  - Resolução mínima(recomendada) de tela: 1366x768 pixels
-- **Sistema operacional**: Compatível com Windows, macOS e Linux
-
-### Ambiente organizacional
-- **Escritórios de contabilidade**: Pequenos, médios e grandes portes
-- **Empresas**: Departamentos financeiros e contábeis
-- **Consultorias**: Empresas especializadas em planejamento tributário
-- **Profissionais autônomos**: Contadores e consultores fiscais independentes
-
-
-### Ncessidades principais do ambiente
-
-| Necessidade    | Prioridade | Interesse dos Clientes | Solução Atual | Soluções Propostas |
-|----------------|------------|-----------------------|---------------|--------------------|
-| Qualidade      | Alta       | Garantia de cálculos precisos e confiáveis | Processos manuais ou sistemas genéricos | Implementação de validação automática e auditoria de dados |
-| Desempenho     | Alta       | Rapidez nas simulações e geração de relatórios | Sistemas lentos ou sobrecarregados | Otimização do backend e uso de servidores escaláveis |
-| Segurança      | Alta       | Proteção de dados fiscais e pessoais | Armazenamento local sem criptografia | Criptografia de dados, autenticação forte e conformidade LGPD |
-| Usabilidade    | Média      | Facilidade de uso para profissionais não técnicos | Interfaces complexas ou pouco intuitivas | Interface web responsiva e intuitiva, treinamento e suporte |
-| Confidencialidade | Alta    | Garantia de privacidade das informações | Compartilhamento informal de dados | Controle de acesso, registro de operações e políticas de privacidade |
-
-## Perfil dos usuários
-
-### Usuários e atores
+## Usuários e atores
 
 | Usuário/Atores         | Descrição                                                                 | Responsabilidades                                              | Stakeholders Relacionados                  |
 |------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------|--------------------------------------------|
@@ -158,24 +122,26 @@ O SST será utilizado principalmente em ambientes corporativos de escritórios d
 | Administradores do sistema | Usuários com permissões para gerenciar configurações e usuários         | Gerenciar acessos, configurar regras e parâmetros do sistema   | Equipe de desenvolvimento, suporte         |
 | Suporte técnico        | Profissionais que auxiliam usuários em dúvidas e problemas técnicos        | Prestar suporte, solucionar problemas e registrar feedback     | Equipe de suporte                          |
 
-## Condições de uso
+# Descrição do ambiente de uso
 
-### Período de uso
-- **Horário comercial**: Predominantemente das 8h às 18h (horário local)
-- **Picos de uso**: 
-  - Final de mês (apuração mensal)
-  - Período de fechamento trimestral
-  - Época de entrega de declarações fiscais(Janeiro)
-- **Uso fora do horário**: Trabalho remoto e atendimento de demandas urgentes
+## Ambiente de uso
 
-### Volume de operações
-- **Simulações por usuário**: A definir...
-- **Relatórios gerados**: A definir...
-- **Usuários simultâneos**: Estimativa de 10 a 100 usuários por cliente corporativo
+### TO-DO
 
 
-## Visão geral do produto
-# Visão geral
+
+### Necessidades principais do ambiente
+
+| Necessidade    | Prioridade | Interesse dos Clientes | Solução Atual | Soluções Propostas |
+|----------------|------------|-----------------------|---------------|--------------------|
+| Qualidade      | Alta       | Garantia de cálculos precisos e confiáveis | Processos manuais ou sistemas genéricos | Implementação de validação automática e auditoria de dados |
+| Desempenho     | Alta       | Rapidez nas simulações e geração de relatórios | Sistemas lentos ou sobrecarregados | Otimização do backend e uso de servidores escaláveis |
+| Segurança      | Alta       | Proteção de dados fiscais e pessoais | Armazenamento local sem criptografia | Criptografia de dados, autenticação forte e conformidade LGPD |
+| Usabilidade    | Média      | Facilidade de uso para profissionais não técnicos | Interfaces complexas ou pouco intuitivas | Interface web responsiva e intuitiva, treinamento e suporte |
+| Confidencialidade | Alta    | Garantia de privacidade das informações | Compartilhamento informal de dados | Controle de acesso, registro de operações e políticas de privacidade |
+
+# Visão geral do produto
+## Visão geral
 
 O Sistema de Simulação Tributária SST é uma aplicação web voltada para facilitar cálculo e a simulação de impostos, permitindo que profissionais da área da contabilidade e financeira realizem análises fiscais com maior precisão agilidade e confiabilidade. O sistema irá possibilitar a simulação de diferentes  tipos de cenários tributários, geração de relatórios detalhados e atualização manual das regras fiscais conforme as legislações, o qual vai garantir a conformidade com as normas legais vigentes.
 
@@ -195,6 +161,7 @@ A estrutura operacional do sistema é apresentada na Figura 1.
 **Figura 1** - Arquitetura geral do sistema SST
 
 
+
 # Características e funcionalidades de alto nível
 
 Esta seção define e descreve as características do SST. Trata-se dos requisitos de alto nível do sistema que são necessários para propiciar benefícios aos usuários.
@@ -209,7 +176,11 @@ Esta seção define e descreve as características do SST. Trata-se dos requisit
 1. O sistema deve ter desempenho estável e responsivo, assegurando rapidez nos cálculos e simulações, sem falhas ou interrupções
 1. O sistema deve ser escalável, permitindo integração com serviços externos, como APIs fiscais, e expansão de suas funcionalidades conforme as necessidades do usuário
 
+## Custo e venda
+### TO-DO
 
+## Licenciamento e instalação
+### TO-DO
 
 ## Restrições do ambiente
 
@@ -219,3 +190,20 @@ Esta seção define e descreve as características do SST. Trata-se dos requisit
 - **Auditoria**: Todas as operações devem ser registradas para fins de compliance
 - **Acessibilidade**: Interface deve seguir padrões de acessibilidade web (WCAG 2.1)
 
+---
+
+Data: 18 de outubro de 2025
+
+**Validado por:**
+
+<address>
+<a href="mailto:davi@dag.com">Davi Leite</a> | Engenheiro de Software<br>
+davi@dag.com<br>
+dag.com<br>
+Box 762, João Pessoa<br>
+BRA
+</address>
+
+--- 
+
+Criado em outubro de 2025 por __Arthur Araújo__
