@@ -207,7 +207,7 @@ Portando, o nosso sistema SST pode se sincronizar a recursos externos, como APIs
 
 ## Licenciamento e instalação
 
-o software SST será disponibilizado para os usuários sob o modelo de sistema por assinatura, seja ela mensal ou anual, dependendo do pacote que o cliente deseja assinar, o qual vai garantir acesso remoto e contínuo ao sistema via navegador web. Os usuários não terão direito de adquirir o software via instalação local, mas sim o direito de uso temporário de dispositivo via web, confome o plano contratado. 
+O produto SST será disponibilizado para os usuários no modelo de assinatura, podeno ela ser mensal ou anual, dependendo do pacote que o cliente deseja assinar, o qual vai garantir acesso remoto e contínuo ao sistema via navegador web. Os usuários não terão direito de adquirir o software via instalação local, mas sim o direito de uso temporário de dispositivo via web, confome o plano contratado. 
 
 
 Alternativamente, o sistema poderá ser oferecido sob modelo de licença mediante a pagamento único. A sua instalação e manutenção do sistema serão realizadas de forma regular e integralmente pela equipe provedora, conforme pela demanda que o usuário solicitar, incluindo hospedagem em servidores, atualizações automáticas do sistema em geral e suporte técnico remoto sem disponibilização do código-fonte.
