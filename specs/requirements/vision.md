@@ -14,6 +14,9 @@
 | 17/10/2025 | 0.3    | Inclusão do diagrama do sistema e características principais                     | Gabriel Carvalho |
 | 18/10/2025 | 0.4    | Adicionado tabela de principais necessidades do sistema e de usuários e atores.  | Davi Leite   |
 | 18/10/2025 | 0.4.1  | Correções gerais de organização e semântica                                      | Davi Leite   |
+| 18/10/2025 | 0.5    | Adicionando Licenciamento e instalação, e correções semânticas gerais          | Gabriel Carvalho |
+
+
 ---
 
 ## Sumário
@@ -162,38 +165,42 @@ A seguir, é apresentada uma tabela que descreve as necessidades dos clientes co
 # Visão geral do produto
 ## Visão geral
 
-O Sistema de Simulação Tributária SST é uma aplicação web voltada para facilitar cálculo e a simulação de impostos, permitindo que profissionais da área da contabilidade e financeira realizem análises fiscais com maior precisão agilidade e confiabilidade. O sistema irá possibilitar a simulação de diferentes  tipos de cenários tributários, geração de relatórios detalhados e atualização manual das regras fiscais conforme as legislações, o qual vai garantir a conformidade com as normas legais vigentes.
+## Visão geral do produto
+# Visão geral
 
-Por ser um sistema web, o SST funciona totalmente online, utilizando uma infraestrutura de TI composta por servidores, banco de dados e mecanismos de segurança. Ele não exige nenhum hardware específico, sendo acessível em navegadores modernos, tanto em computadores quanto em tablets e smartphones.
+O Sistema de Simulação Tributária (SST) é uma aplicação web robusta com o intuito vindo para facilitar os cálculos e as simulações de impostos, permitindo que profissionais da área da contabilidade e financeira realizem análises fiscais com maior precisão, agilidade para demonstrações de resultado para os stakeholders. 
 
-Dessa forma, os usuários que são os contadores, consultores fiscais e gestores financeiros, eles poderão acessar o sistema através de computadores, tablets e smartphones, o que permite o uso tanto em escritórios quanto remotamente.
+O sistema irá proporcionar a simulação de diferentes maneiras os cenários tributários, geração de relatórios detalhados e atualização manual das regras fiscais conforme as legislações, em que vai garantir a conformidade com as normas legais vigentes.
 
-A comunicação entre os dispositivos que os usuários irão utilizar e o servidor ocorre por meio de protocolos de comunicação HTTP e HTTPS, o qual vai garantir troca segura de informações, especialmente durante a realização de cálculos e simulações.
+Por ser totalmente web, o SST funciona totalmente online mediante assinatura digital. Ele não exige nenhum hardware específico, sendo acessível em navegadores modernos, como Chrome e Edge, tanto em computadores quanto em dispositivos móveis para os usuários.
 
-Além disso, o  nosso sistema SST pode se integrar a serviços externos, como APIs de legislação e bancos de dados fiscais, possibilitando a atualização automática de alíquotas e normas tributárias.
-
-A estrutura operacional do sistema é apresentada na Figura 1.
+Portando, o nosso sistema SST pode se sincronizar a recursos externos, como APIs de legislação e bancos de dados com informações fiscais, viabilizando a atualização automática de alíquotas e normas tributárias, alertando para os usuários.
 
 
 ![Arquitetura geral do Sistema sst](../../assets/image/image.png)
 
-**Figura 1** - Arquitetura geral do sistema SST
+**Figura 1** - Visão geral do sistema SST
 
 
 
 # Características e funcionalidades de alto nível
 
-Esta seção define e descreve as características do SST. Trata-se dos requisitos de alto nível do sistema que são necessários para propiciar benefícios aos usuários.
+1. Cálculo automático de impostos: A primeira caracteristica e funcionalidade que o sistema deve permitir é o cáculo automático de impostos, que considerará diferentes tipos de tributos e parâmetros definido pelo usuario (contadores, consultores fiscais e gestores..)
 
-1. O sistema deve permitir o cálculo automático de impostos, considerando diferentes tributos e parâmetros definidos pelo usuário
-1. O sistema deve possibilitar a simulação de diversos tipos de cenários tributários, permitindo ao usuário comparar resultados e tomar decisões estratégicas com base em dados reais
-1. O sistema deve gerar relatórios detalhados com informações sobre tributos, valores calculados, simulações feitas e resultados de comparação
-1. O sistema deve emitir notificações sobre mudanças na legislação, alertando o usuário sobre atualizações que possam impactar seus cálculos ou planejamentos fiscais
-1. O sistema deve permitir a atualização manual de alíquotas e regras fiscais, para que o usuário possa ajustar o sistema conforme novas normas legais
-1. O sistema deve garantir conformidade com a Lei Geral de Proteção de Dados (LGPD), criptografia com dados sensíveis, assegurando a privacidade e a proteção das informações inseridas pelos usuários
-1. O sistema deve apresentar uma interface simples e intuitiva, facilitando o uso por contadores, consultores e gestores, mesmo sem conhecimentos técnicos avançados
-1. O sistema deve ter desempenho estável e responsivo, assegurando rapidez nos cálculos e simulações, sem falhas ou interrupções
-1. O sistema deve ser escalável, permitindo integração com serviços externos, como APIs fiscais, e expansão de suas funcionalidades conforme as necessidades do usuário
+1. Simulação de cenários tributários: ele deve possibilitar a simulação de diversos tipos de cenários tributários definidos pelo usuário, o qual irá comparar os resultados e tomar decisões estratégicas inteligente com base nos dados reais salvos
+
+1. Geração de relatórios detalhados: terá responsabilidade de gerar relatórios detalhados com informações sobre os tributos, valores calculado, simulações feitas e resultados de comparação dentro do dashboard, além de uma linguagem simplificada para os stakeholders.
+
+1. Notificações sobre mudanças na legislação: o Sistema irá alertar sobre as mudanças na legislação escolhida pro cenário tributário para os usuários, que possam impactar nos seus cálculos de alíquotas e regras fiscais, para que o usuário possa ajustar no sistema conforme as novas normas.
+
+1. Segurança e privacidade de dados: O sistema deve garantir conformidade com a Lei Geral de Proteção de Dados (LGPD), criptografia com dados sensíveis, assegurando a privacidade e a proteção das informações inseridas pelos usuários
+
+1. Interface intuitiva: O SST tem que apresentar uma interface simples e funcional, com o objetivo de facilitar a visualização e a usabilidade por contadores, consultores fiscais e gestores, mesmo sem conhecimentos técnicos avançados
+
+1. Desempenho estável e responsivo: O sistema deve ter desempenho estável e responsivo com os dados e outras funcionalidades, assegurando rapidez nos cálculos e simulações, sem falhas ou interrupções
+
+1. Escalabilidade e integração: O sistema tem e deve ser escalável, para permitir a integração com serviços externos, como APIs fiscais, e expansão de suas funcionalidades conforme as necessidades do usuário
+
 
 ## Custo e venda
 ### TO-DO
