@@ -224,4 +224,4 @@ BRA
 
 --- 
 
-Criado em outubro de 2025 por __Arthur Araújo__
+Criado em outubro de 2025 por **Arthur Araújo**
