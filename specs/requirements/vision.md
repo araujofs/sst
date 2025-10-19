@@ -55,6 +55,7 @@ O documento destina-se a desenvolvedores, gerentes de projeto, stakeholders e qu
 ### Abreviações
 | Abreviação | Descrição                                                                  |
 | ---------- | -------------------------------------------------------------------------- |
+| SAAS       | Software as a Service (Software como Serviço)                              |
 | DVP        | Documento de Visão do Produto                                              |
 | API        | Application Programming Interface (Interface de Programação de Aplicações) |
 | UI         | User Interface (Interface do Usuário)                                      |
@@ -200,13 +201,16 @@ Esta seção define e descreve as características do SST. Trata-se dos requisit
 ## Licenciamento e instalação
 ### TO-DO
 
-## Restrições do ambiente
+## Restrições 
 
 - **Segurança**: Dados sensíveis exigem criptografia e conformidade com LGPD
 - **Disponibilidade**: Sistema deve estar disponível 99% do tempo durante horário comercial
 - **Backup**: Dados devem ser salvos automaticamente para evitar perda de informações
 - **Auditoria**: Todas as operações devem ser registradas para fins de compliance
 - **Acessibilidade**: Interface deve seguir padrões de acessibilidade web (WCAG 2.1)
+- **Tempo**: O sistema deve ser desenvolvido e entregue, quer seja para uso como SAAS ou licença completa, no prazo estipulado no projeto, de maneira que o(s) cliente(s) tenham previsibilidade quanto ao uso do sistema
+- **Orçamento**: O desenvolvimento do sistema deve respeitar o orçamento aprovado, evitando custos adicionais que possam comprometer a viabilidade financeira do projeto
+- **Recursos computacionais**: O sistema deve ser otimizado para o poder computacional disponível atualmente no ambiente de implantação, mas deve também ser escalável para suportar aumentos futuros na demanda de processamento e armazenamento 
 
 ---
 
