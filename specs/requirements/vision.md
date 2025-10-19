@@ -15,6 +15,7 @@
 | 18/10/2025 | 0.4    | Adicionado tabela de principais necessidades do sistema e de usuários e atores.  | Davi Leite   |
 | 18/10/2025 | 0.4.1  | Correções gerais de organização e semântica                                      | Davi Leite   |
 | 18/10/2025 | 0.5    | Adicionando Licenciamento e instalação, e correções semânticas gerais          | Gabriel Carvalho |
+| 19/10/2025 | 0.6    | Adicionado seção de custo e venda               | Davi Leite   |
 
 
 ---
@@ -203,7 +204,84 @@ Portando, o nosso sistema SST pode se sincronizar a recursos externos, como APIs
 
 
 ## Custo e venda
-### TO-DO
+
+### Estimativa de custos de desenvolvimento
+
+A seguir, apresenta-se uma estimativa detalhada dos custos envolvidos no desenvolvimento do Sistema de Simulação Tributária (SST):
+
+#### Recursos Humanos (6 meses de desenvolvimento)
+
+| Função | Profissionais | Salário Mensal (R$) | Total 6 meses (R$) |
+|--------|--------------|---------------------|-------------------|
+| Gerente de Projeto | 1 | 12.000,00 | 72.000,00 |
+| Engenheiro de Software Sênior | 1 | 10.000,00 | 60.000,00 |
+| Engenheiros de Software Pleno | 3 | 5.000,00 | 90.000,00 |
+| Designer UI/UX | 1 | 6.000,00 | 36.000,00 |
+| Especialista em Legislação Tributária | 1 | 8.000,00 | 48.000,00 |
+| Analista de Qualidade/Testes | 1 | 5.500,00 | 33.000,00 |
+| Administrador de Banco de Dados | 1 | 7.500,00 | 45.000,00 |
+| DevOps/Infraestrutura | 1 | 8.000,00 | 48.000,00 |
+| **Subtotal Recursos Humanos** | **10** | | **R$ 432.000,00** |
+
+#### Infraestrutura e Ferramentas (6 meses)
+
+| Item | Custo Mensal (R$) | Total 6 meses (R$) |
+|------|-------------------|-------------------|
+| Servidores em nuvem (desenvolvimento e teste) | 2.000,00 | 12.000,00 |
+| Ferramentas de gestão de projeto (Jira, Confluence) | 800,00 | 4.800,00 |
+| Serviços de segurança e monitoramento | 1.500,00 | 9.000,00 |
+| Certificados SSL e segurança | 500,00 | 3.000,00 |
+| **Subtotal Infraestrutura** | | **R$ 28.800,00** |
+
+#### Custos Adicionais
+
+| Item | Custo Total (R$) |
+|------|------------------|
+| Consultoria especializada em tributação | 25.000,00 |
+| Pesquisa de mercado e validação | 15.000,00 |
+| Treinamento da equipe | 10.000,00 |
+| Testes de usabilidade com usuários | 8.000,00 |
+| Documentação técnica e manuais | 12.000,00 |
+| Reserva para contingências (10% do total) | 50.580,00 |
+| **Subtotal Custos Adicionais** | **R$ 120.580,00** |
+
+#### **CUSTO TOTAL DE DESENVOLVIMENTO: R$ 581.380,00**
+
+### Estratégia de comercialização
+
+O SST será comercializado através de dois modelos principais:
+
+**Modelo SaaS (Software as a Service):**
+- Assinatura mensal ou anual
+- Pagamento recorrente com acesso contínuo ao sistema
+- Inclui atualizações automáticas, suporte técnico e manutenção
+- Planos diferenciados por funcionalidades e número de usuários
+
+**Modelo de Licenciamento Corporativo:**
+- Licença perpétua com pagamento único inicial
+- Cobrança anual para suporte técnico, atualizações e manutenção
+- Indicado para grandes escritórios de contabilidade e empresas
+- Possibilidade de customizações específicas mediante negociação
+
+
+### Planos e precificação
+
+**Plano Básico (SaaS)** - R$ 149,00/mês
+- Até 3 usuários simultâneos
+- Cálculo de impostos para regimes: Simples Nacional, Lucro Presumido e Lucro Real
+- Simulação de até 200 cenários tributários por mês
+- Geração de relatórios
+- Suporte via email
+
+
+**Licença Corporativa Perpétua** - A partir de R$ 50.000,00
+- Pagamento único para uso vitalício
+- Instalação em servidores próprios ou nuvem privada
+- Manutenção e suporte: R$ 10.000,00/ano (20% do valor da licença)
+- Atualizações de legislação incluídas no plano de manutenção
+- Customizações mediante orçamento adicional
+- Treinamento inicial incluído (até 20 horas)
+
 
 ## Licenciamento e instalação
 
@@ -211,7 +289,6 @@ O produto SST será disponibilizado para os usuários no modelo de assinatura, p
 
 
 Alternativamente, o sistema poderá ser oferecido sob modelo de licença mediante a pagamento único. A sua instalação e manutenção do sistema serão realizadas de forma regular e integralmente pela equipe provedora, conforme pela demanda que o usuário solicitar, incluindo hospedagem em servidores, atualizações automáticas do sistema em geral e suporte técnico remoto sem disponibilização do código-fonte.
-
 
 
 ## Restrições 
