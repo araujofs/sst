@@ -185,21 +185,21 @@ Portando, o nosso sistema SST pode se sincronizar a recursos externos, como APIs
 
 # Características e funcionalidades de alto nível
 
-1. Cálculo automático de impostos: A primeira caracteristica e funcionalidade que o sistema deve permitir é o cáculo automático de impostos, que considerará diferentes tipos de tributos e parâmetros definido pelo usuario (contadores, consultores fiscais e gestores..)
+1. Cálculo automático de impostos: sistema deve realizará é o cáculo automático de impostos, que considerará diferentes tipos de tributos e parâmetros definido pelo usuario (contadores, consultores fiscais e gestores..)
 
-1. Simulação de cenários tributários: ele deve possibilitar a simulação de diversos tipos de cenários tributários definidos pelo usuário, o qual irá comparar os resultados e tomar decisões estratégicas inteligente com base nos dados reais salvos
+1. Simulação de cenários tributários: deve possibilitar a simulação de diversos tipos de cenários tributários definidos pelo usuário, o qual irá comparar os resultados e tomar decisões estratégicas inteligente com base nos dados reais salvos
 
 1. Geração de relatórios detalhados: terá responsabilidade de gerar relatórios detalhados com informações sobre os tributos, valores calculado, simulações feitas e resultados de comparação dentro do dashboard, além de uma linguagem simplificada para os stakeholders.
 
 1. Notificações sobre mudanças na legislação: o Sistema irá alertar sobre as mudanças na legislação escolhida pro cenário tributário para os usuários, que possam impactar nos seus cálculos de alíquotas e regras fiscais, para que o usuário possa ajustar no sistema conforme as novas normas.
 
-1. Segurança e privacidade de dados: O sistema deve garantir conformidade com a Lei Geral de Proteção de Dados (LGPD), criptografia com dados sensíveis, assegurando a privacidade e a proteção das informações inseridas pelos usuários
+1. Segurança e privacidade de dados: o sistema garantirá conformidade com a Lei Geral de Proteção de Dados (LGPD), criptografia com dados sensíveis, preservando a privacidade e a proteção das informações inseridas pelos usuários
 
-1. Interface intuitiva: O SST tem que apresentar uma interface simples e funcional, com o objetivo de facilitar a visualização e a usabilidade por contadores, consultores fiscais e gestores, mesmo sem conhecimentos técnicos avançados
+1. Interface intuitiva: O SST precisa apresentar uma interface simples e funcional, com o objetivo de facilitar a visualização e a usabilidade por contadores, consultores fiscais e gestores, mesmo sem conhecimentos técnicos avançados
 
-1. Desempenho estável e responsivo: O sistema deve ter desempenho estável e responsivo com os dados e outras funcionalidades, assegurando rapidez nos cálculos e simulações, sem falhas ou interrupções
+1. Desempenho estável e responsivo: O sistema deve ter desempenho estável e responsivo com os dados e outras funcionalidades, mantendo rapidez nos cálculos e simulações, sem falhas ou interrupções
 
-1. Escalabilidade e integração: O sistema tem e deve ser escalável, para permitir a integração com serviços externos, como APIs fiscais, e expansão de suas funcionalidades conforme as necessidades do usuário
+1. Escalabilidade e integração: O sistema precisa ser escalável, para permitir a integração com serviços externos, como APIs fiscais, e expansão de suas funcionalidades conforme as necessidades do usuário
 
 
 ## Custo e venda
