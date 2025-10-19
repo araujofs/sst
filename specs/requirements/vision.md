@@ -13,6 +13,7 @@
 | 16/10/2025 | 0.2    | Adicionado novos stakeholders e Descrição de ambiente de uso                     | Davi Leite   |
 | 17/10/2025 | 0.3    | Inclusão do diagrama do sistema e características principais                     | Gabriel Carvalho |
 | 18/10/2025 | 0.4    | Adicionado tabela de principais necessidades do sistema e de usuários e atores.  | Davi Leite   |
+| 18/10/2025 | 0.4.1  | Correções gerais de organização e semântica                                      | Davi Leite   |
 ---
 
 ## Sumário
@@ -30,12 +31,12 @@
   - [Usuários e atores](#usuários-e-atores)
 - [Descrição do ambiente de uso](#descrição-do-ambiente-de-uso)
   - [Ambiente de uso](#ambiente-de-uso)
-  - [Necessidades principais quanto ao ambiente](#necessidades-principais-do-ambiente)
-- [Visão geral do produto](#visão-geral)
+  - [Necessidades principais quanto ao ambiente](#necessidades-principais-quanto-ao-ambiente)
+- [Visão geral do produto](#visão-geral-do-produto)
   - [Visão geral](#visão-geral)
+  - [Características e funcionalidades de alto nível](#características-e-funcionalidades-de-alto-nível)
   - [Custo e venda](#custo-e-venda)
   - [Licenciamento e instalação](#licenciamento-e-instalação)
-  - [Características e funcionalidades de alto nível](#características-e-funcionalidades-de-alto-nível)
   - [Restrições](#restrições) 
 
 ---
@@ -122,23 +123,40 @@ Algumas oportunidades de negócios do SST são as seguintes:
 | Administradores do sistema | Usuários com permissões para gerenciar configurações e usuários         | Gerenciar acessos, configurar regras e parâmetros do sistema   | Equipe de desenvolvimento, suporte         |
 | Suporte técnico        | Profissionais que auxiliam usuários em dúvidas e problemas técnicos        | Prestar suporte, solucionar problemas e registrar feedback     | Equipe de suporte                          |
 
+
 # Descrição do ambiente de uso
 
 ## Ambiente de uso
 
-### TO-DO
+O Sistema de Simulação Tributária (SST) opera em diferentes contextos profissionais, adaptando-se às necessidades específicas de cada cenário:
+
+**Ambiente do Cliente**: Utilizado por contadores, consultores fiscais e gestores financeiros em escritórios de contabilidade, departamentos financeiros de empresas e consultorias. Os profissionais acessam o sistema através de navegadores web modernos (Chrome, Firefox, Edge ou Safari) em desktops, notebooks ou tablets. O acesso ocorre tanto em ambiente de escritório conectado à rede local quanto remotamente via internet, permitindo trabalho em home office ou durante atendimento a clientes. Neste ambiente, são realizadas as principais operações do sistema: cálculos tributários, simulações de cenários, comparação entre regimes fiscais, geração de relatórios e análises estratégicas. A autenticação é obrigatória e cada usuário possui permissões específicas de acordo com seu perfil profissional.
+
+**Ambiente de Desenvolvimento**: Espaço técnico onde a equipe de desenvolvimento trabalha na criação, manutenção e evolução do sistema. Inclui servidores de desenvolvimento, repositórios de código-fonte, ferramentas de versionamento e ambientes de integração contínua. Neste contexto, desenvolvedores implementam novas funcionalidades, corrigem bugs, otimizam performance e adaptam o sistema às mudanças na legislação tributária. O ambiente possui banco de dados de desenvolvimento com dados sintéticos para testes de integração e validação de código antes da promoção para outros ambientes.
+
+**Ambiente de Teste**: Ambiente isolado e controlado que replica as condições de produção para validação de atualizações e novas funcionalidades. Utilizado por testadores, analistas de qualidade e usuários-piloto selecionados para homologação de mudanças. Aqui são realizados testes de regressão, validação de cálculos após atualizações legislativas, testes de performance e simulações de carga. O ambiente de teste possui dados anonimizados baseados em cenários reais, permitindo validação precisa sem comprometer informações sensíveis. Acesso restrito mediante credenciais específicas e todas as atividades são registradas para rastreabilidade.
+
+**Ambiente Administrativo**: Camada de gestão e configuração do sistema, acessada exclusivamente por administradores autorizados. Permite gerenciamento completo de usuários e permissões, configuração de parâmetros fiscais e alíquotas, atualização de tabelas tributárias, monitoramento de uso e performance do sistema, realização de backups e recuperação de dados, gestão de licenças e configuração de integrações com sistemas externos. O acesso é protegido por autenticação multifator e todas as operações são registradas em logs de auditoria detalhados. Este ambiente é fundamental para manutenção da conformidade legal e garantia da segurança e disponibilidade do sistema.
 
 
 
-### Necessidades principais do ambiente
+## Necessidades principais quanto ao ambiente
 
-| Necessidade    | Prioridade | Interesse dos Clientes | Solução Atual | Soluções Propostas |
-|----------------|------------|-----------------------|---------------|--------------------|
-| Qualidade      | Alta       | Garantia de cálculos precisos e confiáveis | Processos manuais ou sistemas genéricos | Implementação de validação automática e auditoria de dados |
-| Desempenho     | Alta       | Rapidez nas simulações e geração de relatórios | Sistemas lentos ou sobrecarregados | Otimização do backend e uso de servidores escaláveis |
-| Segurança      | Alta       | Proteção de dados fiscais e pessoais | Armazenamento local sem criptografia | Criptografia de dados, autenticação forte e conformidade LGPD |
-| Usabilidade    | Média      | Facilidade de uso para profissionais não técnicos | Interfaces complexas ou pouco intuitivas | Interface web responsiva e intuitiva, treinamento e suporte |
-| Confidencialidade | Alta    | Garantia de privacidade das informações | Compartilhamento informal de dados | Controle de acesso, registro de operações e políticas de privacidade |
+A seguir, é apresentada uma tabela que descreve as necessidades dos clientes com relação à qualidade, desempenho, segurança, usabilidade e confidencialidade do sistema SST, juntamente com sua prioridade, interesse, solução atual e soluções propostas:
+
+| Necessidade                                                                                                                                              | Prioridade | Interesse                                                                                                                                                | Solução Atual                                                                                                                 | Soluções Propostas                                                                                                                                                                                                                                                       |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Qualidade:** O sistema deve ser confiável e livre de erros nos cálculos tributários.                                                                             | Alta       | Os profissionais contábeis precisam de precisão absoluta nos cálculos para evitar problemas fiscais com seus clientes.                    | Planilhas manuais e sistemas genéricos que não são especializados em tributação brasileira.                                                                     | Implementar testes automatizados rigorosos, validação de dados em múltiplas camadas e processos de garantia de qualidade específicos para legislação tributária.                                                                                                                                                          |
+| **Desempenho:** O sistema deve processar cálculos e simulações rapidamente, mesmo com grandes volumes de dados.                                         | Alta       | Contadores frequentemente trabalham com prazos apertados e precisam de resultados rápidos para múltiplos clientes.                                                     | Sistemas lentos que exigem longos tempos de processamento para simulações complexas.                                         | Otimizar arquitetura do sistema com cache inteligente, processamento paralelo e consultas de banco de dados eficientes. Implementar infraestrutura em nuvem escalável.                                                                                                          |
+| **Escalabilidade:** O sistema deve suportar crescimento do número de usuários, clientes e simulações simultâneas.                                         | Alta       | Escritórios de contabilidade em expansão precisam de um sistema que cresça junto com o negócio. | Sistemas desktop limitados a poucos usuários ou que apresentam degradação de performance com aumento de carga.                                                | Implementar arquitetura em nuvem com auto-scaling, balanceamento de carga e distribuição geográfica de servidores.                                                                                                                                                     |
+| **Segurança:** O sistema deve proteger dados sensíveis de clientes e informações fiscais contra acesso não autorizado.                                             | Alta       | Dados tributários são extremamente sensíveis e seu vazamento pode resultar em graves consequências legais e de imagem.                                           | Sistemas com segurança básica ou armazenamento local sem criptografia adequada. | Implementar autenticação multifator, criptografia de dados em repouso e em trânsito (SSL/TLS), controle de acesso baseado em funções (RBAC), logs de auditoria completos e conformidade total com LGPD.                                                                                                                                                |
+| **Usabilidade:** O sistema deve ter interface intuitiva, mesmo para usuários com conhecimento técnico limitado.                                         | Moderada   | Profissionais contábeis precisam focar em sua expertise fiscal, não em aprender sistemas complexos.                                         | Sistemas com interfaces desatualizadas, pouco intuitivas ou que exigem treinamento extensivo.                                                                                     | Desenvolver interface responsiva e moderna, com fluxos de trabalho otimizados, tutoriais interativos e documentação clara. Realizar testes de usabilidade com profissionais da área.                                                                                                                                    |
+| **Tempo de resposta:** O sistema deve fornecer feedback imediato para operações comuns e alertas claros durante processamentos longos. | Alta   | Profissionais precisam saber o status de suas operações para gerenciar eficientemente seu tempo.            | Sistemas que travam sem feedback ou não informam o progresso de operações demoradas.                                                                      | Implementar indicadores de progresso, processamento assíncrono com notificações, e otimização de consultas para garantir resposta rápida nas operações mais frequentes.                                                                                                                      |
+| **Confidencialidade:** O sistema deve garantir total privacidade das informações dos clientes e seus dados fiscais.                                           | Alta       | Escritórios de contabilidade lidam com informações estratégicas de negócios de seus clientes que devem permanecer confidenciais.                                             | Sistemas sem controles adequados de privacidade ou políticas de uso de dados não transparentes. | Implementar política de privacidade clara conforme LGPD, segregação de dados por cliente, controle granular de permissões, anonimização de dados para análises internas, e processos claros de consentimento e exclusão de dados. |
+| **Disponibilidade:** O sistema deve estar disponível durante todo o horário comercial e períodos críticos de fechamento fiscal. | Alta | Contadores trabalham com prazos rígidos e não podem ter o trabalho interrompido por indisponibilidade do sistema. | Sistemas com downtimes frequentes ou manutenções não programadas em horários críticos. | Garantir SLA de 99% de disponibilidade, implementar redundância de servidores, backups automáticos, planos de disaster recovery e janelas de manutenção previamente agendadas fora de horários críticos. |
+| **Atualização:** O sistema deve ser facilmente atualizado com mudanças na legislação tributária brasileira. | Alta | A legislação fiscal brasileira muda frequentemente e o sistema precisa refletir essas mudanças rapidamente. | Sistemas que exigem meses para incorporar mudanças legislativas ou dependem de atualizações manuais complexas. | Implementar arquitetura modular que permita atualizações rápidas de regras fiscais, notificações automáticas de mudanças legislativas, e mecanismo de atualização de alíquotas sem necessidade de reinstalação do sistema. |
+
+
 
 # Visão geral do produto
 ## Visão geral
