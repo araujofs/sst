@@ -2,7 +2,7 @@
 
 ## Sistema de simulação tributária (SST)
 
-<small>Versão 0.4</small>
+<small>Versão 0.6</small>
 
 ---
 
