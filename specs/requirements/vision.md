@@ -168,13 +168,13 @@ A seguir, é apresentada uma tabela que descreve as necessidades dos clientes co
 ## Visão geral do produto
 # Visão geral
 
-O Sistema de Simulação Tributária (SST) é uma aplicação web robusta com o intuito vindo para facilitar os cálculos e as simulações de impostos, permitindo que profissionais da área da contabilidade e financeira realizem análises fiscais com maior precisão, agilidade para demonstrações de resultado para os stakeholders. 
+O Sistema de Simulação Tributária (SST) é uma plataforma web especializada com o intuito vindo para facilitar os cálculos e as simulações de impostos, permitindo que profissionais da área da contabilidade e financeira realizem análises fiscais com maior precisão, agilidade para demonstrações de resultado para os stakeholders. 
 
-O sistema irá proporcionar a simulação de diferentes maneiras os cenários tributários, geração de relatórios detalhados e atualização manual das regras fiscais conforme as legislações, em que vai garantir a conformidade com as normas legais vigentes.
+O ambiente irá oferecer simulações de diferentes cenários tributários, geração de relatórios detalhados e atualização manual das regras fiscais conforme as legislações, em que vai garantir a conformidade com as normas legais vigentes.
 
-Por ser totalmente web, o SST funciona totalmente online mediante assinatura digital. Ele não exige nenhum hardware específico, sendo acessível em navegadores modernos, como Chrome e Edge, tanto em computadores quanto em dispositivos móveis para os usuários.
+Por ser totalmente web, o SST funciona é acessível online mediante assinatura digital. Ele não exige nenhum hardware específico, e pode ser usado em navegadores modernos, como Chrome e Edge, tanto em computadores quanto em dispositivos móveis para os usuários.
 
-Portando, o nosso sistema SST pode se sincronizar a recursos externos, como APIs de legislação e bancos de dados com informações fiscais, viabilizando a atualização automática de alíquotas e normas tributárias, alertando para os usuários.
+Portando, o nosso sistema SST pode se sincronizar a recursos externos, como APIs de legislação e bancos de dados com informações fiscais, tornando possível a atualização automática de alíquotas e normas tributárias, alertando para os usuários.
 
 
 ![Arquitetura geral do Sistema sst](../../assets/image/image.png)
@@ -206,7 +206,13 @@ Portando, o nosso sistema SST pode se sincronizar a recursos externos, como APIs
 ### TO-DO
 
 ## Licenciamento e instalação
-### TO-DO
+
+o software SST será disponibilizado para os usuários sob o modelo de sistema por assinatura, seja ela mensal ou anual, dependendo do pacote que o cliente deseja assinar, o qual vai garantir acesso remoto e contínuo ao sistema via navegador web. Os usuários não terão direito de adquirir o software via instalação local, mas sim o direito de uso temporário de dispositivo via web, confome o plano contratado. 
+
+
+Alternativamente, o sistema poderá ser oferecido sob modelo de licença mediante a pagamento único. A sua instalação e manutenção do sistema serão realizadas de forma regular e integralmente pela equipe provedora, conforme pela demanda que o usuário solicitar, incluindo hospedagem em servidores, atualizações automáticas do sistema em geral e suporte técnico remoto sem disponibilização do código-fonte.
+
+
 
 ## Restrições 
 
