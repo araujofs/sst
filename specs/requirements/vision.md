@@ -2,20 +2,20 @@
 
 ## Sistema de simulação tributária (SST)
 
-<small>Versão 0.6</small>
+<small>Versão 1.0</small>
 
 ---
 
 ## Histórico de revisões
 | Data       | Versão | Descrição                      | Autor            |
 |------------|--------|--------------------------------|------------------|
-| 15/10/2025 | 0.1    | Versão inicial do documento                                                      | Arthur Araújo |
-| 16/10/2025 | 0.2    | Adicionado novos stakeholders e Descrição de ambiente de uso                     | Davi Leite   |
+| 15/10/2025 | 0.1    | Versão inicial do documento                                                      | Arthur Araújo    |
+| 16/10/2025 | 0.2    | Adicionado novos stakeholders e Descrição de ambiente de uso                     | Davi Leite       |
 | 17/10/2025 | 0.3    | Inclusão do diagrama do sistema e características principais                     | Gabriel Carvalho |
-| 18/10/2025 | 0.4    | Adicionado tabela de principais necessidades do sistema e de usuários e atores.  | Davi Leite   |
-| 18/10/2025 | 0.4.1  | Correções gerais de organização e semântica                                      | Davi Leite   |
-| 18/10/2025 | 0.5    | Adicionando Licenciamento e instalação, e correções semânticas gerais          | Gabriel Carvalho |
-| 19/10/2025 | 0.6    | Adicionado seção de custo e venda               | Davi Leite   |
+| 18/10/2025 | 0.4    | Adicionado tabela de principais necessidades do sistema e de usuários e atores.  | Davi Leite       |
+| 18/10/2025 | 0.4.1  | Correções gerais de organização e semântica                                      | Davi Leite       |
+| 18/10/2025 | 0.5    | Adicionando Licenciamento e instalação, e correções semânticas gerais            | Gabriel Carvalho |
+| 19/10/2025 | 1.0    | Adicionado seção de custo e venda                                                | Davi Leite       |
 
 
 ---
