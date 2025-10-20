@@ -342,6 +342,22 @@ Box 762, João Pessoa<br>
 BRA
 </address>
 
+<address>
+<a href="mailto:arthur@dag.com">Arthur Araújo</a> | Engenheiro de Software<br>
+arthur@dag.com<br>
+dag.com<br>
+Box 762, João Pessoa<br>
+BRA
+</address>
+
+<address>
+<a href="mailto:gabriel@dag.com">Gabriel Pereira</a> | Engenheiro de Software<br>
+gabriel@dag.com<br>
+dag.com<br>
+Box 762, João Pessoa<br>
+BRA
+</address>
+
 --- 
 
 Criado em outubro de 2025 por **Arthur Araújo**
