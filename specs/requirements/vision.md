@@ -1,4 +1,4 @@
-# Visão do produto
+0# Visão do produto
 
 ## Sistema de simulação tributária (SST)
 
@@ -53,13 +53,13 @@
 
 # Introdução
 
-Esse documento de visão do produto (DVP) visa apresentar a visão geral do sistema de simulação tributária, detalhando o propósito, escopo, stakeholders, ambiente de uso e características principais do produto.
+Esse documento de visão do produto (DVP) visa apresentar a visão geral do sistema de simulação tributária, detalhando o propósito, escopo, stakeholders, ambiente de uso e características principais do produto. Tornando claro os objetivos e funcionalidades do sistema, o DVP servirá como um guia para o desenvolvimento e implementação do produto, além de ser um "ambiente" comum entre clientes e desenvolvedores.
 
 ## Propósito
 
 O propósito do DVP é fornecer uma visão clara e concisa do sistema de simulação tributária, que auxiliará empresas e profissionais a calcular e simular impostos de maneira eficiente e precisa. 
 
-O documento destina-se a desenvolvedores, gerentes de projeto, stakeholders e qualquer pessoa envolvida no desenvolvimento e implementação do sistema, garantindo que todos tenham uma compreensão comum dos objetivos e funcionalidades do produto e sejam alinhados quanto às expectativas.
+O documento destina-se a desenvolvedores, gerentes de projeto, stakeholders e qualquer pessoa envolvida no desenvolvimento e implementação do sistema, garantindo que todos tenham uma compreensão comum dos objetivos e funcionalidades do produto e estejam alinhados quanto às expectativas.
 
 ## Definições e abreviações
 ### Abreviações
@@ -121,7 +121,6 @@ Algumas oportunidades de negócios do SST são as seguintes:
 | Gerente de projeto | Profissional responsável por coordenar as equipes de desenvolvimento, infraestrutura e suporte, garantindo que o projeto seja concluído dentro do prazo e orçamento estabelecidos. | Gerenciamento do projeto |
 | Equipe de infraestrutura | Profissionais responsáveis por garantir que o sistema esteja hospedado, seguro e disponível para os usuários. | Administradores de sistemas, especialistas em segurança |
 | Equipe de desenvolvimento | Profissionais responsáveis por desenvolver e fazer a manutenção do sistema | Engenheiros de software, designers |
-| Equipe de suporte | Profissionais responsáveis por oferecer assistência técnica aos usuários do sistema | Suporte técnico |
 | Equipe de marketing e vendas | Profissionais responsáveis por promover e vender o sistema | Marketing, vendas |
 
 ## Usuários e atores
@@ -149,8 +148,6 @@ O Sistema de Simulação Tributária (SST) opera em diferentes contextos profiss
 
 **Ambiente Administrativo**: Camada de gestão e configuração do sistema, acessada exclusivamente por administradores autorizados. Permite gerenciamento completo de usuários e permissões, configuração de parâmetros fiscais e alíquotas, atualização de tabelas tributárias, monitoramento de uso e performance do sistema, realização de backups e recuperação de dados, gestão de licenças e configuração de integrações com sistemas externos. O acesso é protegido por autenticação multifator e todas as operações são registradas em logs de auditoria detalhados. Este ambiente é fundamental para manutenção da conformidade legal e garantia da segurança e disponibilidade do sistema.
 
-
-
 ## Necessidades principais quanto ao ambiente
 
 A seguir, é apresentada uma tabela que descreve as necessidades dos clientes com relação à qualidade, desempenho, segurança, usabilidade e confidencialidade do sistema SST, juntamente com sua prioridade, interesse, solução atual e soluções propostas:
@@ -167,8 +164,6 @@ A seguir, é apresentada uma tabela que descreve as necessidades dos clientes co
 | **Disponibilidade:** O sistema deve estar disponível durante todo o horário comercial e períodos críticos de fechamento fiscal. | Alta | Contadores trabalham com prazos rígidos e não podem ter o trabalho interrompido por indisponibilidade do sistema. | Sistemas com downtimes frequentes ou manutenções não programadas em horários críticos. | Garantir SLA de 99% de disponibilidade, implementar redundância de servidores, backups automáticos, planos de disaster recovery e janelas de manutenção previamente agendadas fora de horários críticos. |
 | **Atualização:** O sistema deve ser facilmente atualizado com mudanças na legislação tributária brasileira. | Alta | A legislação fiscal brasileira muda frequentemente e o sistema precisa refletir essas mudanças rapidamente. | Sistemas que exigem meses para incorporar mudanças legislativas ou dependem de atualizações manuais complexas. | Implementar arquitetura modular que permita atualizações rápidas de regras fiscais, notificações automáticas de mudanças legislativas, e mecanismo de atualização de alíquotas sem necessidade de reinstalação do sistema. |
 
-
-
 # Visão geral do produto
 ## Visão geral
 
@@ -184,8 +179,6 @@ Portando, o nosso sistema SST pode se sincronizar a recursos externos, como APIs
 ![Arquitetura geral do Sistema sst](../../assets/image/image.png)
 
 **Figura 1** - Visão geral do sistema SST
-
-
 
 ## Características e funcionalidades de alto nível
 
@@ -205,9 +198,7 @@ Portando, o nosso sistema SST pode se sincronizar a recursos externos, como APIs
 
 1. Escalabilidade e integração: O sistema precisa ser escalável, para permitir a integração com serviços externos, como APIs fiscais, e expansão de suas funcionalidades conforme as necessidades do usuário
 
-
 ## Custo e venda
-
 ### Estimativa de custos de desenvolvimento
 
 A seguir, apresenta-se uma estimativa detalhada dos custos envolvidos no desenvolvimento do Sistema de Simulação Tributária (SST):
@@ -342,6 +333,8 @@ Box 762, João Pessoa<br>
 BRA
 </address>
 
+<br>
+
 <address>
 <a href="mailto:arthur@dag.com">Arthur Araújo</a> | Engenheiro de Software<br>
 arthur@dag.com<br>
@@ -349,6 +342,8 @@ dag.com<br>
 Box 762, João Pessoa<br>
 BRA
 </address>
+
+<br>
 
 <address>
 <a href="mailto:gabriel@dag.com">Gabriel Pereira</a> | Engenheiro de Software<br>
