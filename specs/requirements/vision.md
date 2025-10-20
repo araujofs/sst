@@ -40,8 +40,14 @@
   - [Visão geral](#visão-geral)
   - [Características e funcionalidades de alto nível](#características-e-funcionalidades-de-alto-nível)
   - [Custo e venda](#custo-e-venda)
+    - [Estimativa de custos de desenvolvimento](#estimativa-de-custos-de-desenvolvimento)
+      - [Recursos Humanos (6 meses de desenvolvimento)](#recursos-humanos-6-meses-de-desenvolvimento)
+      - [Infraestrutura e Ferramentas (6 meses)](#infraestrutura-e-ferramentas-6-meses)
+      - [Custos Adicionais](#custos-adicionais)
+    - [Estratégia de comercialização](#estratégia-de-comercialização)
+    - [Planos e precificação](#planos-e-precificação)
   - [Licenciamento e instalação](#licenciamento-e-instalação)
-  - [Restrições](#restrições) 
+  - [Restrições](#restrições)
 
 ---
 
@@ -166,9 +172,6 @@ A seguir, é apresentada uma tabela que descreve as necessidades dos clientes co
 # Visão geral do produto
 ## Visão geral
 
-## Visão geral do produto
-# Visão geral
-
 O Sistema de Simulação Tributária (SST) é uma plataforma web especializada com o intuito vindo para facilitar os cálculos e as simulações de impostos, permitindo que profissionais da área da contabilidade e financeira realizem análises fiscais com maior precisão, agilidade para demonstrações de resultado para os stakeholders. 
 
 O ambiente irá oferecer simulações de diferentes cenários tributários, geração de relatórios detalhados e atualização manual das regras fiscais conforme as legislações, em que vai garantir a conformidade com as normas legais vigentes.
@@ -184,7 +187,7 @@ Portando, o nosso sistema SST pode se sincronizar a recursos externos, como APIs
 
 
 
-# Características e funcionalidades de alto nível
+## Características e funcionalidades de alto nível
 
 1. Cálculo automático de impostos: sistema deve realizará é o cáculo automático de impostos, que considerará diferentes tipos de tributos e parâmetros definido pelo usuario (contadores, consultores fiscais e gestores..)
 
@@ -245,7 +248,9 @@ A seguir, apresenta-se uma estimativa detalhada dos custos envolvidos no desenvo
 | Reserva para contingências (10% do total) | 50.580,00 |
 | **Subtotal Custos Adicionais** | **R$ 120.580,00** |
 
-#### **CUSTO TOTAL DE DESENVOLVIMENTO: R$ 581.380,00**
+**CUSTO TOTAL DE DESENVOLVIMENTO: R$ 581.380,00**
+
+---
 
 ### Estratégia de comercialização
 
