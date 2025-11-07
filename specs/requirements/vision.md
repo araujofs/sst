@@ -1,4 +1,4 @@
-0# Visão do produto
+# Visão do produto
 
 ## Sistema de simulação tributária (SST)
 
