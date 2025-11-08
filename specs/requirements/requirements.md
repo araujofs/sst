@@ -11,6 +11,7 @@
 | Data | Versão | Descrição | Autor |
 | ---- | ------ | --------- | ----- |
 | 07/11/2025 | 1.0 | Criação do documento | Arthur Araújo |
+| 08/11/2025 | 1.1 | Adição dos requisitos funcionais de Calculo e Simulação | Davi Leite |
 
 ---
 
@@ -88,6 +89,21 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RF-GES-012]**: Como técnico de suporte, quero visualizar temporariamente informações de **Associado** e **Gerente** com autorização de **Gestor** para diagnostica eventuais problemas.
 
 ## Cálculo e Simulação Tributária
+- **[RF-CAL-001]**: Como Contador ou Gerente, quero selecionar o setor econômico da empresa (comércio, indústria, serviços, etc.) antes de iniciar uma simulação para que os cálculos tributários sejam realizados de acordo com as regras específicas do setor.
+- **[RF-CAL-002]**: Como Contador ou Gerente, quero inserir os dados financeiros da empresa (receitas brutas, despesas operacionais, custos de mercadorias, folha de pagamento, investimentos, etc.) de forma estruturada para que o sistema tenha as informações necessárias para realizar cálculos precisos.
+- **[RF-CAL-003]**: Como Contador ou Gerente, quero selecionar o regime tributário aplicável (Simples Nacional, Lucro Presumido, Lucro Real) para que o sistema aplique as regras fiscais corretas na simulação.
+- **[RF-CAL-004]**: Como Contador ou Gerente, quero que o sistema calcule automaticamente todos os tributos devidos (IRPJ, CSLL, PIS, COFINS, IPI, ICMS, ISS, etc.) com base nos dados financeiros e no regime tributário selecionado para obter uma simulação precisa e completa.
+- **[RF-CAL-005]**: Como Contador ou Gerente, quero visualizar o detalhamento de cada tributo calculado (base de cálculo, alíquota aplicada, deduções, valor final) para compreender como os valores foram obtidos e validar os cálculos.
+- **[RF-CAL-006]**: Como Contador ou Gerente, quero criar e salvar múltiplos cenários de simulação com diferentes premissas (variação de receita, diferentes regimes tributários, etc.) para comparar e identificar a melhor estratégia fiscal.
+- **[RF-CAL-007]**: Como Contador ou Gerente, quero comparar lado a lado os resultados de diferentes cenários tributários (carga tributária total, tributos por tipo, impacto no resultado líquido) para auxiliar na tomada de decisão estratégica.
+- **[RF-CAL-008]**: Como Contador ou Gerente, quero que o sistema indique qual regime tributário é mais vantajoso com base nos dados financeiros inseridos para otimizar o planejamento fiscal do cliente.
+- **[RF-CAL-009]**: Como Contador ou Gerente, quero simular o impacto de mudanças em variáveis específicas (aumento de receita, redução de custos, novos investimentos) sobre a carga tributária para realizar análises de sensibilidade.
+- **[RF-CAL-010]**: Como Contador ou Gerente, quero que o sistema valide os dados inseridos, identificando inconsistências ou valores atípicos, para evitar erros nos cálculos e garantir a qualidade das simulações.
+- **[RF-CAL-011]**: Como Contador ou Gerente, quero salvar simulações realizadas com histórico de alterações para poder recuperar e revisar análises anteriores quando necessário.
+- **[RF-CAL-012]**: Como Contador ou Gerente, quero exportar os resultados das simulações em diferentes formatos (PDF, Excel, CSV) para compartilhar com clientes e stakeholders.
+- **[RF-CAL-013]**: Como Contador, quero que o sistema calcule automaticamente as obrigações acessórias relacionadas aos tributos (DCTF, EFD-Contribuições, SPED Fiscal) para garantir o compliance completo.
+- **[RF-CAL-014]**: Como Gerente, quero visualizar um resumo executivo da simulação tributária com indicadores-chave (carga tributária total, economia potencial, regime recomendado) para apresentar rapidamente aos stakeholders.
+- **[RF-CAL-015]**: Como Contador ou Gerente, quero que o sistema permita ajustes manuais em alíquotas e parâmetros específicos (com justificativa obrigatória) para simular situações especiais ou incentivos fiscais regionais.
 
 
 ## Atualização de Legislação e Alíquotas
