@@ -29,7 +29,7 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 
 - Identificação dos requisitos: a referência a requisitos de software é feita através do identificador de requisitos seguindo a convenção:
 
-  `[IDENTIFICADOR DO TIPO DE REQUISITOidentificador do requisito]`
+  `[IDENTIFICADOR DO TIPO E DO MÓDULO DO REQUISITOidentificador do requisito]`
 
   O identificador de tipo segue o padrão abaixo;
   - RF -> Requisito funcional
@@ -38,7 +38,7 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 
   O identificador do requisito será uma sequência de números. Esse número deve ser único para todo o conjunto de tipos.
 
-  **Exemplo**: [RF0001], [RF1234], [RNF1234], [NR1212]
+  **Exemplo**: [RFAUT001], [RF1234], [RNF1234], [NR1212]
 
 - Atributos dos requisitos:
   - **Requisitos vinculados**: fornece uma lista dos requisitos que mantém rastreabilidade
@@ -48,10 +48,14 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 
 # Usuários identificados
 
-- Usuário do sistema
-  - Usuário comum
-  - Usuário privilegiado
-  - Administrador do sistema
+- **Usuário do sistema**
+  - **Gestor**
+    - **Gerente** (*Pode fazer tudo que **Contador** faz*) 
+    - **Administrador**
+  - **Usuário comum**
+    - **Cliente**
+    - **Contador**
+    - **Técnico de suporte**
 
 # Requisitos funcionais (por módulo)
 ## Autenticação e Controle de Acesso
