@@ -54,10 +54,29 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
   - Administrador do sistema
 
 # Requisitos funcionais (por módulo)
-## Autenticação e controle de acesso (AUT)
+## Autenticação e Controle de Acesso
 
 
-- **[RF-AUT-001]**: 
+## Gestão de Usuários e Organizações
+
+
+## Cálculo e Simulação Tributária
+
+
+## Atualização de Legislação e Alíquotas
+
+
+## Relatórios e Dashboards
+
+
+## Notificações e Alertas Legislativos
+
+
+## Administração, Segurança e Infraestrutura do Sistema
+
+
+## Integração com Sistemas Externos (APIs)
+
 
 # Requisitos não-funcionais
 ## Disponibilidade
