@@ -29,18 +29,17 @@ Este documento tem como objetivo apresentar os requisitos de software do produto
 
 Visando o melhor entendimento do documento faz-se necessário definir alguns termos, abreviações e acrônimos, o que será feito abaixo.
 
-- Identificação dos requisitos: a referência a requisitos de software é feita através do identificador de requisitos seguindo a convenção:
+- Identificação dos requisitos: a referência a requisitos de software presentes nesse documento é feita através do identificador de requisitos seguindo o padrão abaixo:
 
-  `[IDENTIFICADOR DO TIPO E DO MÓDULO DO REQUISITOidentificador do requisito]`
+  `[IDENTIFICADOR DO TIPO REQUISITO-IDENTIFICADOR DO MÓDULO-identificador do requisito]`
 
   O identificador de tipo segue o padrão abaixo;
   - RF -> Requisito funcional
-  - RNF -> Requisito não-funcional
-  - NR -> Não requisito
+  - RNF -> Requisito não-funcional (nos requisitos não-funcionais não há identificador de módulo)
 
-  O identificador do requisito será uma sequência de números. Esse número deve ser único para todo o conjunto de tipos.
+  O identificador do requisito será uma sequência de números. Esse número deve ser único para cada módulo.
 
-  **Exemplo**: [RFAUT001], [RF1234], [RNF1234], [NR1212]
+  **Exemplo**: [RF-AUT-001], [RNF-023] 
 
 - Atributos dos requisitos:
   - **Requisitos vinculados**: fornece uma lista dos requisitos que mantém rastreabilidade
@@ -62,7 +61,6 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 
 # Requisitos funcionais (por módulo)
 ## Autenticação e Controle de Acesso
-
 - **[RF-AUT-001]**: Como usuário do sistema, quero me autenticar com credenciais pré-definidas para ter acesso aos outros módulos do sistema.
 - **[RF-AUT-002]**: Como usuário do sistema, quero definir quanto tempo durará minha sessão (intervalo de opções configurado por **Gestor**, ver [**RF-GES-006**]) para ter mais segurança e evitar ficar logado indefinidamente.
 - **[RF-AUT-003]**: Como usuário do sistema, quero ser notificado caso haja uma tentativa falha de entrar na minha conta para conseguir tomar as providências cabíveis.
@@ -158,15 +156,23 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 
 # Requisitos não-funcionais
 ## Disponibilidade
-...
+- **[RNF-001]**: O sistema deve estar disponível 24h por dia, 7 dias por semana, 365 dias por ano.
+- **[RNF-002]**: O sistema deve utilizar menos recursos em dias de menor fluxo (finais de semana, feriados).
+- **[RNF-003]**: O sistema deve estar disponível através da web, não havendo instalação local para o uso.
+- **[RNF-004]**: O sistema deve ser implantado utilizando containeres e deve estar disponível remotamente.
 
 ## Privacidade e segurança
-...
+- **[RNF-005]**: O sistema deve cumprir o que a LGPD (Lei Geral de Proteção de Dados) determina quanto a privacidade dos dados.
+- **[RNF-006]**: O sistema deve criptografar (utilizando algoritmos de *salt*, como bcrypt) dados sensíveis gerados durante seu uso, como senhas, relatórios e dados fiscais e garantir sua integridade (utilizando algoritmos de hash).
+- **[RNF-007]**: O sistema deve garantir que os dados sejam acessados apenas por usuários autorizados e autenticados.
+
 
 ## Usabilidade
-...
+- **[RNF-008]**: O sistema deve ser fácil de utilizar e entender e deve usar símbolos e nomenclaturas conhecidas pelo usuário alvo.
+- **[RNF-009]**: O sistema deve oferecer meios (assistente de voz, código da página facilmente identificável por leitores) para que usuários com deficiência visual possam utilizá-lo.
 
 ## Suportabilidade
+- **[RNF-010]**: O sistema deve funcionar nos seguintes navegadores: Chrome, Firefox, Opera e Edge através de um computador com Windows, Linux e MacOS.
 ...
 
 ## Interoperabilidade
