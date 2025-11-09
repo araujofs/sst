@@ -205,7 +205,7 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RNF-012]**: O sistema deve oferecer opções de personalização da interface, como temas claros e escuros, para atender às preferências individuais dos usuários.
 
 ## Suportabilidade
-- **[RNF-013]**: O sistema deve funcionar nos seguintes navegadores: Chrome, Firefox, Opera e Edge através de um computador com Windows, Linux e MacOS.
+- **[RNF-013]**: O sistema deve funcionar nos seguintes navegadores: Chrome, Firefox, Safari e Edge através de computador com Windows, Linux e MacOS ou tablet e celular com Android e IOS.
 
 ## Interoperabilidade
 ... Não pensei nisso ainda...
