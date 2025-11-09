@@ -2,7 +2,7 @@
 
 ## Sistema de simulação tributária (SST)
 
-<small>Versão 1.0</small>
+<small>Versão 1.4.1</small>
 
 ---
 
@@ -13,11 +13,35 @@
 | 07/11/2025 | 1.0 | Criação do documento | Arthur Araújo |
 | 08/11/2025 | 1.1 | Adição dos requisitos funcionais de Calculo e Simulação | Davi Leite |
 | 09/11/2025 | 1.2 | Adição dos requisitos funcionais de Relatorio e Notificações | Gabriel Pereira |
-
+| 09/11/2025 | 1.3 | Adição dos requisitos funcionais de Atualização de Legislação e Aliquotas | Davi Leite |
+| 10/11/2025 | 1.4 | Adição dos requisitos não-funcionais de Usabilidade e Suportabilidade | Davi Leite |
+| 10/11/2025 | 1.4.1 | Correççao da marcação da versao atual do Sistema e adição do sumário | Davi Leite |
 ---
 
 ## Sumário
 
+- [Introdução](#introdução)
+  - [Definições, acrônimos e abreviações](#definições-acrônimos-e-abreviações)
+- [Usuários identificados](#usuários-identificados)
+- [Requisitos funcionais (por módulo)](#requisitos-funcionais-por-módulo)
+  - [Autenticação e Controle de Acesso](#autenticação-e-controle-de-acesso)
+  - [Gestão de Usuários e Organizações](#gestão-de-usuários-e-organizações)
+  - [Cálculo e Simulação Tributária](#cálculo-e-simulação-tributária)
+  - [Atualização de Legislação e Alíquotas](#atualização-de-legislação-e-alíquotas)
+  - [Relatórios e Dashboards](#relatórios-e-dashboards)
+  - [Notificações e Alertas Legislativos](#notificações-e-alertas-legislativos)
+  - [Administração, Segurança e Infraestrutura do Sistema](#administração-segurança-e-infraestrutura-do-sistema)
+  - [Integração com Sistemas Externos (APIs)](#integração-com-sistemas-externos-apis)
+- [Requisitos não-funcionais](#requisitos-não-funcionais)
+  - [Disponibilidade](#disponibilidade)
+  - [Privacidade e segurança](#privacidade-e-segurança)
+  - [Usabilidade](#usabilidade)
+  - [Suportabilidade](#suportabilidade)
+  - [Interoperabilidade](#interoperabilidade)
+  - [Manutenibilidade](#manutenibilidade)
+  - [Desempenho](#desempenho)
+  - [Implementação](#implementação)
+  - [Implantação](#implantação)
 
 ---
 
@@ -104,6 +128,11 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RF-CAL-015]**: Como Contador ou Gerente, quero que o sistema permita ajustes manuais em alíquotas e parâmetros específicos (com justificativa obrigatória) para simular situações especiais ou incentivos fiscais regionais.
 
 ## Atualização de Legislação e Alíquotas
+- **[RF-LEG-001]**: Como administrador, quero que o sistema atualize automaticamente as alíquotas e regras tributárias com base em fontes oficiais (Receita Federal, Secretarias da Fazenda) para garantir que as simulações estejam sempre alinhadas com a legislação vigente.
+- **[RF-LEG-002]**: Como contador ou gerente, quero ser notificado sobre atualizações na legislação tributária que possam impactar as simulações realizadas para garantir que estou sempre informado sobre mudanças relevantes.
+- **[RF-LEG-003]**: Como administrador, quero manter um histórico de todas as atualizações legislativas aplicadas no sistema para referência futura e auditoria.
+- **[RF-LEG-004]**: Como administrador, quero validar as atualizações legislativas antes de aplicá-las no sistema para garantir a precisão e confiabilidade das informações.
+
 
 
 ## Relatórios e Dashboards
@@ -154,6 +183,7 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 ## Integração com Sistemas Externos (APIs)
 
 
+
 # Requisitos não-funcionais
 ## Disponibilidade
 - **[RNF-001]**: O sistema deve estar disponível 24h por dia, 7 dias por semana, 365 dias por ano.
@@ -170,16 +200,18 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 ## Usabilidade
 - **[RNF-008]**: O sistema deve ser fácil de utilizar e entender e deve usar símbolos e nomenclaturas conhecidas pelo usuário alvo.
 - **[RNF-009]**: O sistema deve oferecer meios (assistente de voz, código da página facilmente identificável por leitores) para que usuários com deficiência visual possam utilizá-lo.
+- **[RNF-010]**: O sistema deve ser acessível e utilizável por usuários com diferentes níveis de habilidade técnica, garantindo uma experiência intuitiva e amigável.
+- **[RNF-011]**: O sistema deve fornecer feedback claro e imediato para as ações do usuário, incluindo confirmações de sucesso e mensagens de erro compreensíveis.
+- **[RNF-012]**: O sistema deve oferecer opções de personalização da interface, como temas claros e escuros, para atender às preferências individuais dos usuários.
 
 ## Suportabilidade
-- **[RNF-010]**: O sistema deve funcionar nos seguintes navegadores: Chrome, Firefox, Opera e Edge através de um computador com Windows, Linux e MacOS.
-...
+- **[RNF-013]**: O sistema deve funcionar nos seguintes navegadores: Chrome, Firefox, Opera e Edge através de um computador com Windows, Linux e MacOS.
 
 ## Interoperabilidade
-...
+... Não pensei nisso ainda...
 
 ## Manutenibilidade
-...
+
 
 ## Desempenho
 ...
