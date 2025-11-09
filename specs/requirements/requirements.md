@@ -14,6 +14,7 @@
 | 08/11/2025 | 1.1 | Adição dos requisitos funcionais de Calculo e Simulação | Davi Leite |
 | 09/11/2025 | 1.2 | Adição dos requisitos funcionais de Relatorio e Notificações | Gabriel Pereira |
 | 09/11/2025 | 1.3 | Adição dos requisitos funcionais de Atualização de Legislação e Aliquotas | Davi Leite |
+| 10/11/2025 | 1.4 | Adição dos requisitos não-funcionais de Usabilidade e Suportabilidade | Davi Leite | 
 ---
 
 ## Sumário
@@ -170,16 +171,21 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 ...
 
 ## Usabilidade
+- **[RNF-USA-001]**: O sistema deve ser acessível e utilizável por usuários com diferentes níveis de habilidade técnica, garantindo uma experiência intuitiva e amigável.
+- **[RNF-USA-002]**: O sistema deve fornecer feedback claro e imediato para as ações do usuário, incluindo confirmações de sucesso e mensagens de erro compreensíveis.
+- **[RNF-USA-003]**: O sistema deve ser compatível com dispositivos móveis, permitindo que os usuários acessem suas funcionalidades em smartphones e tablets.
+- **[RNF-USA-004]**: O sistema deve oferecer opções de personalização da interface, como temas claros e escuros, para atender às preferências individuais dos usuários.
 
 
 ## Suportabilidade
-...
+- **[RNF-SUP-001]**: O sistema deve funcionar nos principais navegadores web (Google Chrome, Mozilla Firefox, Microsoft Edge, Safari) para garantir ampla acessibilidade.
+- **[RNF-SUP-002]**: O sistema deve ser compatível com os sistemas operacionais Windows, macOS e Linux para atender a diferentes ambientes de trabalho.
 
 ## Interoperabilidade
-...
+... Não pensei nisso ainda...
 
 ## Manutenibilidade
-...
+
 
 ## Desempenho
 ...
