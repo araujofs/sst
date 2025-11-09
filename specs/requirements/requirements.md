@@ -2,7 +2,7 @@
 
 ## Sistema de simulação tributária (SST)
 
-<small>Versão 1.0</small>
+<small>Versão 1.4</small>
 
 ---
 
@@ -14,11 +14,34 @@
 | 08/11/2025 | 1.1 | Adição dos requisitos funcionais de Calculo e Simulação | Davi Leite |
 | 09/11/2025 | 1.2 | Adição dos requisitos funcionais de Relatorio e Notificações | Gabriel Pereira |
 | 09/11/2025 | 1.3 | Adição dos requisitos funcionais de Atualização de Legislação e Aliquotas | Davi Leite |
-| 10/11/2025 | 1.4 | Adição dos requisitos não-funcionais de Usabilidade e Suportabilidade | Davi Leite | 
+| 10/11/2025 | 1.4 | Adição dos requisitos não-funcionais de Usabilidade e Suportabilidade | Davi Leite |
+| 10/11/2025 | 1.4.1 | Correççao da marcação da versao atual do Sistema e adição do sumário | Davi Leite |
 ---
 
 ## Sumário
 
+- [Introdução](#introdução)
+  - [Definições, acrônimos e abreviações](#definições-acrônimos-e-abreviações)
+- [Usuários identificados](#usuários-identificados)
+- [Requisitos funcionais (por módulo)](#requisitos-funcionais-por-módulo)
+  - [Autenticação e Controle de Acesso](#autenticação-e-controle-de-acesso)
+  - [Gestão de Usuários e Organizações](#gestão-de-usuários-e-organizações)
+  - [Cálculo e Simulação Tributária](#cálculo-e-simulação-tributária)
+  - [Atualização de Legislação e Alíquotas](#atualização-de-legislação-e-alíquotas)
+  - [Relatórios e Dashboards](#relatórios-e-dashboards)
+  - [Notificações e Alertas Legislativos](#notificações-e-alertas-legislativos)
+  - [Administração, Segurança e Infraestrutura do Sistema](#administração-segurança-e-infraestrutura-do-sistema)
+  - [Integração com Sistemas Externos (APIs)](#integração-com-sistemas-externos-apis)
+- [Requisitos não-funcionais](#requisitos-não-funcionais)
+  - [Disponibilidade](#disponibilidade)
+  - [Privacidade e segurança](#privacidade-e-segurança)
+  - [Usabilidade](#usabilidade)
+  - [Suportabilidade](#suportabilidade)
+  - [Interoperabilidade](#interoperabilidade)
+  - [Manutenibilidade](#manutenibilidade)
+  - [Desempenho](#desempenho)
+  - [Implementação](#implementação)
+  - [Implantação](#implantação)
 
 ---
 
