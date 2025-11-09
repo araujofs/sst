@@ -86,7 +86,6 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RF-GES-008]**: Como gestor, quero definir o intervalo da duração máxima da sessão de **Associado** para evitar possíveis acessos maliciosos em máquinas desprotegidas.
 - **[RF-GES-009]**: Como gerente, quero visualizar **Associados** ativos no momento para monitorar possíveis comportamentos suspeitos.
 - **[RF-GES-011]**: Como gestor, quero trocar minha senha para garantir meu acesso ao sistema e a segurança da minha conta.
-- **[RF-GES-012]**: Como técnico de suporte, quero visualizar temporariamente informações de **Associado** e **Gerente** com autorização de **Gestor** para diagnosticar eventuais problemas.
 - **[RF-GES-013]**: Como administrador, quero visualizar **Usuários** ativos no momento para monitorar possíveis comportamentos suspeitos.
 
 ## Cálculo e Simulação Tributária
@@ -105,7 +104,6 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RF-CAL-013]**: Como Contador, quero que o sistema calcule automaticamente as obrigações acessórias relacionadas aos tributos (DCTF, EFD-Contribuições, SPED Fiscal) para garantir o compliance completo.
 - **[RF-CAL-014]**: Como Gerente, quero visualizar um resumo executivo da simulação tributária com indicadores-chave (carga tributária total, economia potencial, regime recomendado) para apresentar rapidamente aos stakeholders.
 - **[RF-CAL-015]**: Como Contador ou Gerente, quero que o sistema permita ajustes manuais em alíquotas e parâmetros específicos (com justificativa obrigatória) para simular situações especiais ou incentivos fiscais regionais.
-
 
 ## Atualização de Legislação e Alíquotas
 
@@ -137,12 +135,23 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RF-NOT-007]**: Como gestor, quero poder enviar notificações em massa para todos os **usuários** quando houver alguma atualização importante no sistema ou mudança fiscal urgente.
 - **[RF-NOT-008]**: Como contador ou gestor, quero ter acesso a um histórico de todas as notificações que recebi, para poder consultar depois quando precisar ou em caso de auditoria.
 - **[RF-NOT-009]**: Como gestor, quero receber alertas quando surgirem novas oportunidades de economia tributária, baseadas em atualizações legais ou interpretações recentes.
-- **[RF-NOT-010]**: Como administrador, quero que o sistema avise automaticamente aos **contadores** e **gerentes** sobre o vencimento de certidões negativas e documentos fiscais, para evitar atrasos ou irregularidades.
+- **[RF-NOT-010]**: Como administrador, quero que o sistema notifique automaticamente os **contadores** e **gerentes** sobre o vencimento de certidões negativas e documentos fiscais, para evitar atrasos ou irregularidades.
 - **[RF-NOT-011]**: Como técnico de suporte, quero ser notificado quando o sistema de alertas apresentar falhas, para resolver o problema rapidamente e garantir que as notificações continuem funcionando.
 - **[RF-NOT-012]**: Como contador ou gerente, quero poder criar minhas próprias regras de notificação por **cliente**, regime tributário ou valor de faturamento para receber só o que for realmente relevante para mim.
 
 ## Administração, Segurança e Infraestrutura do Sistema
-
+- **[RF-ADM-001]**: Como administrador, quero visualizar logs de acesso e ações críticas feitas por **Usuário** para monitorar comportamentos suspeitos.
+- **[RF-ADM-002]**: Como administrador, quero visualizar logs de erro categorizados (crítico, aviso. informação) e com mensagens claras para corrigir as falhas.
+- **[RF-ADM-003]**: Como administrador, quero configurar as políticas de armazenamento e detalhamento de logs (tempo máximo para armazenar, quais dados mostrar, nível de especificade) para garantir uso correto dos dados e sua disponibilidade.
+- **[RF-ADM-004]**: Como administrador, quero visualizar e exportar relatórios de auditoria englobando ações de **Usuário** para garantir transparência.
+- **[RF-ADM-005]**: Como administrador, quero configurar (agendar e executar manualmente) rotinas automáticas de backup dos dados do sistema para garantir disponibilidade dos dados.
+- **[RF-ADM-006]**: Como administrador, quero visualizar métricas de uso e desempenho do sistema (consumo de recursos, taxa de erro) para identificar pontos de melhoria e otimizar o uso de recursos.
+- **[RF-ADM-007]**: Como técnico de suporte, quero visualizar temporariamente informações de **Associado** e **Gerente** com autorização de **Gestor** para diagnosticar eventuais problemas.
+- **[RF-ADM-008]**: Como gestor, quero autorizar temporariamente o acesso de **Técnico de suporte** a informações de **Associado** e **Gerente** para garantir que ele possa diagnosticar eventuais problemas.
+- **[RF-ADM-009]**: Como administrador, quero que o sistema guarde os logs de erros que acontecerem duranto o seu funcionamento com mensagens claras e explicativas para que possam ser visualizados e resolvidos posteriormente.
+- **[RF-ADM-010]**: Como gestor, quero visualizar a saúde do sistema no momento (módulos funcionando, tempo médio de resposta, disponibilidade) para acompanhar a situação atual do sistema.
+- **[RF-ADM-011]**: Como usuário, quero enviar informações sobre erros encontrados para **Administrador** durante o uso do sistema para garantir que eventuais problemas possam ser resolvidos mais rapidamente.
+- **[RF-ADM-012]**: Como administrador, quero ser notificado quando ocorrer um erro crítico para resolver rapidamente o incidente e garantir a "saúde" do sistema.
 
 ## Integração com Sistemas Externos (APIs)
 
