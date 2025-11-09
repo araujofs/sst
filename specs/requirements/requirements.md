@@ -13,7 +13,7 @@
 | 07/11/2025 | 1.0 | Criação do documento | Arthur Araújo |
 | 08/11/2025 | 1.1 | Adição dos requisitos funcionais de Calculo e Simulação | Davi Leite |
 | 09/11/2025 | 1.2 | Adição dos requisitos funcionais de Relatorio e Notificações | Gabriel Pereira |
-
+| 09/11/2025 | 1.3 | Adição dos requisitos funcionais de Atualização de Legislação e Aliquotas | Davi Leite |
 ---
 
 ## Sumário
@@ -106,6 +106,11 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RF-CAL-015]**: Como Contador ou Gerente, quero que o sistema permita ajustes manuais em alíquotas e parâmetros específicos (com justificativa obrigatória) para simular situações especiais ou incentivos fiscais regionais.
 
 ## Atualização de Legislação e Alíquotas
+- **[RF-LEG-001]**: Como administrador, quero que o sistema atualize automaticamente as alíquotas e regras tributárias com base em fontes oficiais (Receita Federal, Secretarias da Fazenda) para garantir que as simulações estejam sempre alinhadas com a legislação vigente.
+- **[RF-LEG-002]**: Como contador ou gerente, quero ser notificado sobre atualizações na legislação tributária que possam impactar as simulações realizadas para garantir que estou sempre informado sobre mudanças relevantes.
+- **[RF-LEG-003]**: Como administrador, quero manter um histórico de todas as atualizações legislativas aplicadas no sistema para referência futura e auditoria.
+- **[RF-LEG-004]**: Como administrador, quero validar as atualizações legislativas antes de aplicá-las no sistema para garantir a precisão e confiabilidade das informações.
+
 
 
 ## Relatórios e Dashboards
@@ -156,6 +161,7 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 ## Integração com Sistemas Externos (APIs)
 
 
+
 # Requisitos não-funcionais
 ## Disponibilidade
 ...
@@ -164,7 +170,7 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 ...
 
 ## Usabilidade
-...
+
 
 ## Suportabilidade
 ...
