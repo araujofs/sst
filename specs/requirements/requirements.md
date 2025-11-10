@@ -15,7 +15,7 @@
 | 09/11/2025 | 1.2 | Adição dos requisitos funcionais de Relatorio e Notificações | Gabriel Pereira |
 | 09/11/2025 | 1.3 | Adição dos requisitos funcionais de Atualização de Legislação e Aliquotas | Davi Leite |
 | 10/11/2025 | 1.4 | Adição dos requisitos não-funcionais de Usabilidade e Suportabilidade | Davi Leite |
-| 10/11/2025 | 1.4.1 | Correççao da marcação da versao atual do Sistema e adição do sumário | Davi Leite |
+| 10/11/2025 | 1.4.1 | Correção da marcação da versao atual do Sistema e adição do sumário | Davi Leite |
 | 10/11/2025 | 1.5 | Adição dos requisitos não-funcionais de Manutenibilidade | Davi Leite |
 | 10/11/2025 | 1.6 | Adição dos wireframes e protótipos iniciais | Davi Leite |
 ---
@@ -42,7 +42,6 @@
   - [Interoperabilidade](#interoperabilidade)
   - [Manutenibilidade](#manutenibilidade)
   - [Desempenho](#desempenho)
-  - [Implementação](#implementação)
   - [Implantação](#implantação)
 - [Wireframes e Protótipos](#wireframes-e-protótipos)
   - [Formulário de Simulação Tributária](#formulário-de-simulação-tributária)
@@ -195,11 +194,10 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RNF-001]**: O sistema deve estar disponível 24h por dia, 7 dias por semana, 365 dias por ano.
 - **[RNF-002]**: O sistema deve utilizar menos recursos em dias de menor fluxo (finais de semana, feriados).
 - **[RNF-003]**: O sistema deve estar disponível através da web, não havendo instalação local para o uso.
-- **[RNF-004]**: O sistema deve ser implantado utilizando containeres e deve estar disponível remotamente.
 
 ## Privacidade e segurança
 - **[RNF-005]**: O sistema deve cumprir o que a LGPD (Lei Geral de Proteção de Dados) determina quanto a privacidade dos dados.
-- **[RNF-006]**: O sistema deve criptografar (utilizando algoritmos de *salt*, como bcrypt) dados sensíveis gerados durante seu uso, como senhas, relatórios e dados fiscais e garantir sua integridade (utilizando algoritmos de hash).
+- **[RNF-006]**: O sistema deve criptografar utilizando algoritmos de *salt*, como bcrypt dados sensíveis gerados durante seu uso, como senhas, e garantir integridade de documentos gerados como relatórios e dados fiscais utilizando algoritmos de hash.
 - **[RNF-007]**: O sistema deve garantir que os dados sejam acessados apenas por usuários autorizados e autenticados.
 
 
@@ -209,6 +207,7 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RNF-010]**: O sistema deve ser acessível e utilizável por usuários com diferentes níveis de habilidade técnica, garantindo uma experiência intuitiva e amigável.
 - **[RNF-011]**: O sistema deve fornecer feedback claro e imediato para as ações do usuário, incluindo confirmações de sucesso e mensagens de erro compreensíveis.
 - **[RNF-012]**: O sistema deve oferecer opções de personalização da interface, como temas claros e escuros, para atender às preferências individuais dos usuários.
+- **[RNF-014]**: O sistema deve oferecer uma documentação do usuário separada explicando seu uso.
 
 ## Suportabilidade
 - **[RNF-013]**: O sistema deve funcionar nos seguintes navegadores: Chrome, Firefox, Safari e Edge através de computador com Windows, Linux e MacOS ou tablet e celular com Android e IOS.
@@ -217,23 +216,20 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 ... Não pensei nisso ainda...
 
 ## Manutenibilidade
-- **[RNF-014]**: O código-fonte do sistema deve seguir padrões de codificação bem definidos e documentados para facilitar a leitura, compreensão e manutenção por diferentes desenvolvedores.
-- **[RNF-015]**: Todas as funções, classes e módulos críticos devem conter documentação inline explicando seu propósito, parâmetros, retorno e exemplos de uso.
-- **[RNF-016]**: O sistema deve manter documentação técnica atualizada incluindo diagramas de arquitetura, fluxos de dados, APIs e guias de desenvolvimento.
-- **[RNF-017]**: O tempo médio para correção de bugs críticos não deve exceder 24 horas após a identificação, e bugs de severidade média devem ser corrigidos em até 72 horas.
-- **[RNF-018]**: O sistema deve utilizar controle de versionamento (Git) com estratégia de branching bem definida para facilitar o desenvolvimento colaborativo e rastreabilidade de mudanças.
-- **[RNF-019]**: O sistema deve permitir atualizações de regras tributárias e alíquotas sem necessidade de redeployment completo da aplicação, através de configurações externalizadas.
-- **[RNF-020]**: Deve existir um ambiente de desenvolvimento e staging que replique fielmente o ambiente de produção para testes seguros de mudanças antes da implantação.
+- **[RNF-015]**: O sistema deve ser desenvolvido seguindo padrões de codificação bem definidos e documentados para facilitar a leitura, compreensão e manutenção por diferentes desenvolvedores.
+- **[RNF-016]**: O sistema deve ser desenvolvido utilizando testes (unitários, E2E, integração) garantindo que funcione como esperado.
+- **[RNF-019]**: O sistema deve ser desenvolvido de maneira que todas as funções, classes e módulos críticos possuam documentação inline explicando seu propósito, parâmetros, retorno e exemplos de uso.
+- **[RNF-020]**: O sistema deve possuir documentação técnica atualizada incluindo diagramas de arquitetura, fluxos de dados, APIs e guias de desenvolvimento.
+- **[RNF-021]**: O sistema deve ser desenvolvido utilizando controle de versionamento (Git) com estratégia de branching bem definida para facilitar o desenvolvimento colaborativo e rastreabilidade de mudanças.
+- **[RNF-022]**: O sistema deve ser desenvolvido utilizando ambientes de desenvolvimento e staging que repliquem fielmente o ambiente de produção para testes seguros de mudanças antes da implantação.
 
 
 ## Desempenho
-...
-
-## Implementação
-...
+- **[RNF-017]**: O sistema deve possuir alto grau de precisão em seus cálculos (utilizando tipos decimais exatos no banco e no código).
 
 ## Implantação
-...
+- **[RNF-004]**: O sistema deve ser implantado utilizando containeres Docker em servidores Linux.
+- **[RNF-018]**: O sistema deve ser implantado em múltiplas instâncias para garantir redundância em caso de falha de um servidor.
 
 ---
 
