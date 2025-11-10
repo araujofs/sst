@@ -2,7 +2,7 @@
 
 ## Sistema de simulação tributária (SST)
 
-<small>Versão 1.4.1</small>
+<small>Versão 1.6</small>
 
 ---
 
@@ -17,6 +17,7 @@
 | 10/11/2025 | 1.4 | Adição dos requisitos não-funcionais de Usabilidade e Suportabilidade | Davi Leite |
 | 10/11/2025 | 1.4.1 | Correççao da marcação da versao atual do Sistema e adição do sumário | Davi Leite |
 | 10/11/2025 | 1.5 | Adição dos requisitos não-funcionais de Manutenibilidade | Davi Leite |
+| 10/11/2025 | 1.6 | Adição dos wireframes e protótipos iniciais | Davi Leite |
 ---
 
 ## Sumário
@@ -43,6 +44,9 @@
   - [Desempenho](#desempenho)
   - [Implementação](#implementação)
   - [Implantação](#implantação)
+- [Wireframes e Protótipos](#wireframes-e-protótipos)
+  - [Formulário de Simulação Tributária](#formulário-de-simulação-tributária)
+  - [Resultados - Simples Nacional](#resultados---simples-nacional)
 
 ---
 
@@ -230,3 +234,45 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 
 ## Implantação
 ...
+
+---
+
+# Wireframes e Protótipos
+
+Esta seção apresenta os wireframes desenvolvidos para as principais interfaces do Sistema de Simulação Tributária (SST), demonstrando a estrutura visual e o fluxo de interação das funcionalidades de cálculo e simulação tributária.
+
+> **Nota importante:** Os wireframes apresentados são **protótipos iniciais** para validação conceitual. Os formulários e interfaces finais serão **adaptados dinamicamente** de acordo com os regimes tributários selecionados e as necessidades específicas identificadas durante o desenvolvimento. O conteúdo exato dos campos, validações e fluxos de navegação ainda será definido nas próximas iterações do projeto.
+
+## Formulário de Simulação Tributária
+
+O formulário de simulação tributária é dividido em etapas para facilitar a entrada de dados pelo usuário (Contador ou Gerente). A interface foi projetada considerando os requisitos funcionais **RF-CAL-001**, **RF-CAL-002** e **RF-CAL-003**.
+
+![Formulário de Simulação Tributária](../../assets/image/simulacao/form-simulacao.png)
+
+**Figura 1** - Wireframe do formulário de entrada de dados para simulação tributária
+
+**Elementos principais:**
+- **Informações básicas da empresa**: Setor econômico, subsetor, número de funcionários, faturamento anual e localização
+- **Navegação progressiva**: Interface dividida em etapas para não sobrecarregar o usuário
+- **Validação em tempo real**: Campos com indicação de erros e sugestões de preenchimento
+- **Botões de ação**: Salvar rascunho, limpar formulário e Proceder para simulação
+
+## Resultados - Simples Nacional (Exemplo)
+
+Após o preenchimento do formulário e execução dos cálculos, o sistema apresenta os resultados detalhados da simulação. O wireframe abaixo exemplifica a tela de resultados para o regime do **Simples Nacional**, conforme requisitos **RF-CAL-004**, **RF-CAL-005** e **RF-CAL-014**.
+
+> **Observação:** Este wireframe representa **apenas um exemplo** de visualização de resultados. As telas de resultados serão **moldadas e adaptadas** para cada regime tributário (Simples Nacional, Lucro Presumido, Lucro Real), com campos e cálculos específicos que ainda serão detalhados nas próximas fases do projeto.
+
+![Resultados da Simulação - Simples Nacional](../../assets/image/simulacao/simples-nacional.png)
+
+**Figura 2** - Wireframe da tela de resultados da simulação tributária para o regime Simples Nacional (exemplo ilustrativo)
+
+**Elementos principais (sujeitos a alterações):**
+- **Resumo executivo**: Carga tributária total, regime aplicável (anexo do Simples Nacional) e economia potencial
+- **Detalhamento dos tributos**: Base de cálculo, alíquota aplicada, deduções e valor final de cada tributo
+- **Comparação com outros regimes**: Gráfico comparativo mostrando Simples Nacional vs. Lucro Presumido vs. Lucro Real
+- **Indicadores visuais**: Uso de cores e ícones para facilitar a interpretação dos resultados
+- **Ações disponíveis**: Exportar relatório (PDF/Excel), salvar cenário, criar nova simulação e compartilhar
+- **Histórico de simulações**: Acesso rápido a simulações anteriores para comparação
+
+Estes wireframes servem como **referência visual inicial** para o desenvolvimento das interfaces, garantindo alinhamento com os requisitos funcionais e não-funcionais de usabilidade (**RNF-001** a **RNF-004**). As interfaces finais serão refinadas com base em feedback dos stakeholders e requisitos técnicos detalhados.
