@@ -16,6 +16,7 @@
 | 09/11/2025 | 1.3 | Adição dos requisitos funcionais de Atualização de Legislação e Aliquotas | Davi Leite |
 | 10/11/2025 | 1.4 | Adição dos requisitos não-funcionais de Usabilidade e Suportabilidade | Davi Leite |
 | 10/11/2025 | 1.4.1 | Correççao da marcação da versao atual do Sistema e adição do sumário | Davi Leite |
+| 10/11/2025 | 1.5 | Adição dos requisitos não-funcionais de Manutenibilidade | Davi Leite |
 ---
 
 ## Sumário
@@ -181,6 +182,7 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RF-ADM-012]**: Como administrador, quero ser notificado quando ocorrer um erro crítico para resolver rapidamente o incidente e garantir a "saúde" do sistema.
 
 ## Integração com Sistemas Externos (APIs)
+- ** ASSIM COMO OS RFN DE INTEROPERABILIDADE, PRECISO CONSULTAR MELHOR O ESPECIALISTA PARA DEFINIR,
 
 
 
@@ -211,6 +213,13 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 ... Não pensei nisso ainda...
 
 ## Manutenibilidade
+- **[RNF-014]**: O código-fonte do sistema deve seguir padrões de codificação bem definidos e documentados para facilitar a leitura, compreensão e manutenção por diferentes desenvolvedores.
+- **[RNF-015]**: Todas as funções, classes e módulos críticos devem conter documentação inline explicando seu propósito, parâmetros, retorno e exemplos de uso.
+- **[RNF-016]**: O sistema deve manter documentação técnica atualizada incluindo diagramas de arquitetura, fluxos de dados, APIs e guias de desenvolvimento.
+- **[RNF-017]**: O tempo médio para correção de bugs críticos não deve exceder 24 horas após a identificação, e bugs de severidade média devem ser corrigidos em até 72 horas.
+- **[RNF-018]**: O sistema deve utilizar controle de versionamento (Git) com estratégia de branching bem definida para facilitar o desenvolvimento colaborativo e rastreabilidade de mudanças.
+- **[RNF-019]**: O sistema deve permitir atualizações de regras tributárias e alíquotas sem necessidade de redeployment completo da aplicação, através de configurações externalizadas.
+- **[RNF-020]**: Deve existir um ambiente de desenvolvimento e staging que replique fielmente o ambiente de produção para testes seguros de mudanças antes da implantação.
 
 
 ## Desempenho
