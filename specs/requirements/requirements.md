@@ -2,7 +2,7 @@
 
 ## Sistema de simulação tributária (SST)
 
-<small>Versão 1.6</small>
+<small>Versão 1.7</small>
 
 ---
 
@@ -18,6 +18,7 @@
 | 09/11/2025 | 1.4.1 | Correção da marcação da versao atual do Sistema e adição do sumário | Davi Leite |
 | 09/11/2025 | 1.5 | Adição dos requisitos não-funcionais de Manutenibilidade | Davi Leite |
 | 09/11/2025 | 1.6 | Adição dos wireframes e protótipos iniciais | Davi Leite |
+| 17/11/2025 | 1.7 | Adição da Especificação Técnica dos Cálculos Tributários | Davi Leite |
 ---
 
 ## Sumário
@@ -115,21 +116,100 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RF-GES-013]**: Como administrador, quero visualizar **Usuários** ativos no momento para monitorar possíveis comportamentos suspeitos.
 
 ## Cálculo e Simulação Tributária
-- **[RF-CAL-001]**: Como Contador ou Gerente, quero selecionar o setor econômico da empresa (comércio, indústria, serviços, etc.) antes de iniciar uma simulação para que os cálculos tributários sejam realizados de acordo com as regras específicas do setor.
-- **[RF-CAL-002]**: Como Contador ou Gerente, quero inserir os dados financeiros da empresa (receitas brutas, despesas operacionais, custos de mercadorias, folha de pagamento, investimentos, etc.) de forma estruturada para que o sistema tenha as informações necessárias para realizar cálculos precisos.
-- **[RF-CAL-003]**: Como Contador ou Gerente, quero selecionar o regime tributário aplicável (Simples Nacional, Lucro Presumido, Lucro Real) para que o sistema aplique as regras fiscais corretas na simulação.
-- **[RF-CAL-004]**: Como Contador ou Gerente, quero que o sistema calcule automaticamente todos os tributos devidos (IRPJ, CSLL, PIS, COFINS, IPI, ICMS, ISS, etc.) com base nos dados financeiros e no regime tributário selecionado para obter uma simulação precisa e completa.
-- **[RF-CAL-005]**: Como Contador ou Gerente, quero visualizar o detalhamento de cada tributo calculado (base de cálculo, alíquota aplicada, deduções, valor final) para compreender como os valores foram obtidos e validar os cálculos.
-- **[RF-CAL-006]**: Como Contador ou Gerente, quero criar e salvar múltiplos cenários de simulação com diferentes premissas (variação de receita, diferentes regimes tributários, etc.) para comparar e identificar a melhor estratégia fiscal.
-- **[RF-CAL-007]**: Como Contador ou Gerente, quero comparar lado a lado os resultados de diferentes cenários tributários (carga tributária total, tributos por tipo, impacto no resultado líquido) para auxiliar na tomada de decisão estratégica.
-- **[RF-CAL-008]**: Como Contador ou Gerente, quero que o sistema indique qual regime tributário é mais vantajoso com base nos dados financeiros inseridos para otimizar o planejamento fiscal do cliente.
-- **[RF-CAL-009]**: Como Contador ou Gerente, quero simular o impacto de mudanças em variáveis específicas (aumento de receita, redução de custos, novos investimentos) sobre a carga tributária para realizar análises de sensibilidade.
-- **[RF-CAL-010]**: Como Contador ou Gerente, quero que o sistema valide os dados inseridos, identificando inconsistências ou valores atípicos, para evitar erros nos cálculos e garantir a qualidade das simulações.
-- **[RF-CAL-011]**: Como Contador ou Gerente, quero salvar simulações realizadas com histórico de alterações para poder recuperar e revisar análises anteriores quando necessário.
-- **[RF-CAL-012]**: Como Contador ou Gerente, quero exportar os resultados das simulações em diferentes formatos (PDF, Excel, CSV) para compartilhar com clientes e stakeholders.
-- **[RF-CAL-013]**: Como Contador, quero que o sistema calcule automaticamente as obrigações acessórias relacionadas aos tributos (DCTF, EFD-Contribuições, SPED Fiscal) para garantir o compliance completo.
-- **[RF-CAL-014]**: Como Gerente, quero visualizar um resumo executivo da simulação tributária com indicadores-chave (carga tributária total, economia potencial, regime recomendado) para apresentar rapidamente aos stakeholders.
-- **[RF-CAL-015]**: Como Contador ou Gerente, quero que o sistema permita ajustes manuais em alíquotas e parâmetros específicos (com justificativa obrigatória) para simular situações especiais ou incentivos fiscais regionais.
+
+### Requisitos Gerais de Cálculo
+
+- **[RF-CAL-001]**: Como Contador ou Gerente, quero selecionar o setor econômico da empresa (comércio, indústria, serviços) e informar o CNAE principal antes de iniciar uma simulação para que o sistema identifique automaticamente qual anexo do Simples Nacional é aplicável e quais regras tributárias devem ser seguidas.
+
+- **[RF-CAL-002]**: Como Contador ou Gerente, quero selecionar o regime tributário aplicável (Simples Nacional, Lucro Presumido ou Lucro Real) para que o sistema solicite apenas os dados financeiros necessários para aquele regime específico e aplique as regras fiscais corretas na simulação.
+
+- **[RF-CAL-003]**: Como Contador ou Gerente, quero visualizar o detalhamento completo de cada tributo calculado, incluindo: nome do tributo, base de cálculo utilizada, alíquota ou percentual aplicado, deduções permitidas, valor parcial e valor final, para compreender exatamente como os valores foram obtidos e poder validar os cálculos.
+
+- **[RF-CAL-004]**: Como Contador ou Gerente, quero criar e salvar múltiplos cenários de simulação com diferentes premissas (variação de receita, diferentes regimes tributários, mudanças em despesas) para comparar lado a lado e identificar a melhor estratégia fiscal para o cliente.
+
+- **[RF-CAL-005]**: Como Contador ou Gerente, quero comparar lado a lado até 3 cenários tributários simultaneamente, visualizando: carga tributária total de cada regime, valor de cada tributo individual, impacto percentual no resultado líquido, e diferença absoluta e relativa entre os cenários, para auxiliar na tomada de decisão estratégica.
+
+- **[RF-CAL-006]**: Como Contador ou Gerente, quero que o sistema indique automaticamente qual regime tributário resulta na menor carga tributária com base nos dados financeiros inseridos, destacando a economia potencial em reais e percentual em relação aos outros regimes, para otimizar o planejamento fiscal do cliente.
+
+- **[RF-CAL-007]**: Como Contador ou Gerente, quero simular o impacto de mudanças em variáveis específicas (aumento percentual de receita, redução de custos, inclusão de novos investimentos) sobre a carga tributária de cada regime, para realizar análises de sensibilidade e projeções futuras.
+
+- **[RF-CAL-008]**: Como Contador ou Gerente, quero que o sistema valide automaticamente os dados inseridos antes do cálculo, identificando: valores negativos inválidos, inconsistências entre receitas e despesas, faturamento acima do limite do regime selecionado, e alertando sobre valores atípicos que possam indicar erro de digitação, para evitar erros nos cálculos e garantir a qualidade das simulações.
+
+- **[RF-CAL-009]**: Como Contador ou Gerente, quero salvar simulações realizadas com histórico de alterações, incluindo: data e hora da simulação, usuário que realizou, dados de entrada utilizados, regime tributário simulado, e resultados obtidos, para poder recuperar e revisar análises anteriores quando necessário.
+
+- **[RF-CAL-010]**: Como Contador ou Gerente, quero exportar os resultados das simulações em diferentes formatos (PDF com formatação profissional e logo da empresa, Excel com todas as planilhas de cálculo detalhadas, CSV com dados brutos para análise), para compartilhar com clientes e stakeholders.
+
+- **[RF-CAL-011]**: Como Gerente, quero visualizar um resumo executivo da simulação tributária contendo: regime tributário recomendado, carga tributária total anual, economia potencial em relação aos outros regimes, principais tributos (top 3 por valor), e gráfico comparativo visual, para apresentar rapidamente aos stakeholders de forma clara e objetiva.
+
+- **[RF-CAL-012]**: Como Contador ou Gerente, quero que o sistema permita ajustes manuais em alíquotas e parâmetros específicos (com campo obrigatório para justificativa textual de no mínimo 20 caracteres e registro de quem fez o ajuste), para simular situações especiais como incentivos fiscais regionais, benefícios setoriais, ou interpretações específicas da legislação.
+
+### Cálculos do Simples Nacional
+
+- **[RF-CAL-SN-001]**: Como Contador ou Gerente, ao selecionar Simples Nacional, quero informar obrigatoriamente: CNAE principal da empresa, receita bruta acumulada dos últimos 12 meses (mês a mês), receita bruta do mês atual que está sendo simulado, e se a empresa for de serviços (Anexos III, IV ou V), a folha de salários dos últimos 12 meses, para que o sistema tenha os dados necessários para determinar o anexo aplicável e calcular a alíquota efetiva.
+
+- **[RF-CAL-SN-002]**: Como Contador ou Gerente, quero que o sistema identifique automaticamente qual Anexo do Simples Nacional (I - Comércio, II - Indústria, III - Serviços com folha ≥28%, IV - Serviços com folha <28%, ou V - Serviços específicos) se aplica ao CNAE informado, consultando a tabela oficial de mapeamento CNAE→Anexo atualizada pela Receita Federal, e exiba claramente o anexo selecionado antes de prosseguir com o cálculo.
+
+- **[RF-CAL-SN-003]**: Como Contador ou Gerente, quando o CNAE indicar atividade de serviços que pode se enquadrar nos Anexos III ou IV, quero que o sistema calcule automaticamente o percentual da folha de salários em relação à receita bruta dos últimos 12 meses e determine: se ≥28%, aplicar Anexo III; se <28%, aplicar Anexo IV, mostrando o percentual calculado e o anexo resultante para validação.
+
+- **[RF-CAL-SN-004]**: Como Contador ou Gerente, quero que o sistema determine automaticamente em qual faixa de receita a empresa se enquadra (1ª a 6ª faixa) com base na receita bruta acumulada dos últimos 12 meses, consultando a tabela oficial do anexo aplicável com os limites: até R$ 180.000, de R$ 180.000,01 a R$ 360.000, de R$ 360.000,01 a R$ 720.000, de R$ 720.000,01 a R$ 1.800.000, de R$ 1.800.000,01 a R$ 3.600.000, e de R$ 3.600.000,01 a R$ 4.800.000, e exiba claramente a faixa identificada.
+
+- **[RF-CAL-SN-005]**: Como Contador ou Gerente, quero que o sistema calcule a alíquota efetiva do Simples Nacional aplicando a fórmula oficial: Alíquota Efetiva = ((RB12 × Alíquota Nominal da Faixa) - Valor a Deduzir da Faixa) / RB12, onde RB12 é a receita bruta dos últimos 12 meses, utilizando a alíquota nominal e o valor a deduzir da tabela oficial do anexo e faixa identificados, garantindo que o resultado não seja negativo, e exibindo: alíquota nominal da faixa (%), valor a deduzir (R$), e alíquota efetiva calculada (%) com 4 casas decimais.
+
+- **[RF-CAL-SN-006]**: Como Contador ou Gerente, quero que o sistema calcule o valor total do tributo unificado devido no mês multiplicando a receita bruta do mês atual pela alíquota efetiva calculada: Valor Devido = Receita Bruta Mensal × Alíquota Efetiva, e exiba o resultado em reais com 2 casas decimais.
+
+- **[RF-CAL-SN-007]**: Como Contador ou Gerente, quero que o sistema detalhe a distribuição do valor total devido entre os tributos componentes (IRPJ, CSLL, COFINS, PIS, CPP, ICMS ou ISS conforme aplicável), aplicando os percentuais de repartição oficiais da tabela de distribuição de tributos para o anexo e faixa específicos, e exiba para cada tributo: nome, percentual de repartição (%), e valor individual calculado (R$), permitindo validar que a soma dos valores individuais corresponde ao valor total devido.
+
+- **[RF-CAL-SN-008]**: Como Contador ou Gerente, quero que o sistema apresente um resumo da apuração do Simples Nacional contendo: anexo aplicado (I a V), faixa de receita (1ª a 6ª), receita bruta acumulada 12 meses (R$), receita bruta do mês atual (R$), alíquota nominal da faixa (%), valor a deduzir (R$), alíquota efetiva calculada (%), valor total devido no mês (R$), e lista detalhada de todos os tributos componentes com seus valores individuais, para facilitar a compreensão e validação dos cálculos.
+
+- **[RF-CAL-SN-009]**: Como Contador ou Gerente, quero que o sistema valide se a receita bruta acumulada dos últimos 12 meses não excede R$ 4.800.000,00 (limite do Simples Nacional) antes de realizar o cálculo, e caso exceda, exiba mensagem clara informando que a empresa está fora do limite do Simples Nacional e não pode optar por este regime, impedindo o prosseguimento do cálculo.
+
+### Cálculos do Lucro Presumido
+
+- **[RF-CAL-LP-001]**: Como Contador ou Gerente, ao selecionar Lucro Presumido, quero informar obrigatoriamente: tipo de atividade principal da empresa (para determinar percentuais de presunção), receita bruta do trimestre para cálculo de IRPJ e CSLL, receita bruta mensal para cálculo de PIS, COFINS e ISS/ICMS, outras receitas financeiras do trimestre (opcional), estado (UF) para ICMS se for comércio/indústria, e município para ISS se for serviços, para que o sistema calcule todos os tributos devidos corretamente.
+
+- **[RF-CAL-LP-002]**: Como Contador ou Gerente, quero que o sistema consulte automaticamente a tabela de percentuais de presunção com base no tipo de atividade informado, obtendo: percentual de presunção para IRPJ (variando de 1,6% para revenda de combustíveis até 32% para serviços em geral), e percentual de presunção para CSLL (variando de 12% para atividades comerciais até 32% para serviços), e exiba claramente os percentuais que serão aplicados antes de prosseguir com o cálculo.
+
+- **[RF-CAL-LP-003]**: Como Contador ou Gerente, quero que o sistema calcule o IRPJ trimestral seguindo estas etapas: (1) Base de Cálculo = (Receita Bruta Trimestral × Percentual de Presunção IRPJ) + Outras Receitas Financeiras, (2) IRPJ Básico = Base de Cálculo × 15%, (3) identificar se Base de Cálculo > R$ 60.000 no trimestre, (4) se sim, Adicional de IRPJ = (Base de Cálculo - R$ 60.000) × 10%, (5) IRPJ Total = IRPJ Básico + Adicional de IRPJ, e exiba detalhadamente: receita bruta trimestral (R$), percentual de presunção aplicado (%), outras receitas financeiras (R$), base de cálculo (R$), IRPJ básico 15% (R$), adicional de IRPJ 10% se aplicável (R$), e valor total devido (R$).
+
+- **[RF-CAL-LP-004]**: Como Contador ou Gerente, quero que o sistema calcule a CSLL trimestral seguindo estas etapas: (1) Base de Cálculo = (Receita Bruta Trimestral × Percentual de Presunção CSLL) + Outras Receitas Financeiras, (2) CSLL = Base de Cálculo × 9%, e exiba detalhadamente: receita bruta trimestral (R$), percentual de presunção aplicado (%), outras receitas financeiras (R$), base de cálculo (R$), alíquota 9%, e valor total devido (R$).
+
+- **[RF-CAL-LP-005]**: Como Contador ou Gerente, quero que o sistema calcule o PIS mensal no regime cumulativo aplicando: PIS = Receita Bruta Mensal × 0,65%, e exiba: receita bruta mensal (R$), alíquota 0,65%, e valor devido (R$), esclarecendo que no regime cumulativo não há aproveitamento de créditos.
+
+- **[RF-CAL-LP-006]**: Como Contador ou Gerente, quero que o sistema calcule a COFINS mensal no regime cumulativo aplicando: COFINS = Receita Bruta Mensal × 3%, e exiba: receita bruta mensal (R$), alíquota 3%, e valor devido (R$), esclarecendo que no regime cumulativo não há aproveitamento de créditos.
+
+- **[RF-CAL-LP-007]**: Como Contador ou Gerente, quando o tipo de atividade for Comércio ou Indústria, quero que o sistema calcule o ICMS mensal consultando a alíquota do estado (UF) informado na tabela de alíquotas de ICMS atualizada, aplicando: ICMS = Receita Bruta Mensal × Alíquota do Estado, e exiba: receita bruta mensal (R$), estado (UF), alíquota do ICMS (%), e valor devido (R$).
+
+- **[RF-CAL-LP-008]**: Como Contador ou Gerente, quando o tipo de atividade for Serviços, quero que o sistema calcule o ISS mensal consultando a alíquota do município informado na tabela de alíquotas de ISS atualizada (variando de 2% a 5%), aplicando: ISS = Receita Bruta Mensal × Alíquota do Município, e exiba: receita bruta mensal (R$), município, alíquota do ISS (%), e valor devido (R$).
+
+- **[RF-CAL-LP-009]**: Como Contador ou Gerente, quero que o sistema apresente um resumo consolidado do Lucro Presumido separando: (1) Tributos Trimestrais - IRPJ (com detalhamento completo incluindo base de cálculo, percentual de presunção, IRPJ básico, adicional e total) e CSLL (com base de cálculo, percentual de presunção e total), e subtotal trimestral; (2) Tributos Mensais - PIS, COFINS, ICMS ou ISS (cada um com base de cálculo, alíquota e valor), e subtotal mensal; (3) Carga Tributária Total Anualizada - somando tributos trimestrais × 4 + tributos mensais × 12, para facilitar a compreensão completa da tributação no regime de Lucro Presumido.
+
+- **[RF-CAL-LP-010]**: Como Contador ou Gerente, quero que o sistema valide que quando o tipo de atividade for Comércio ou Indústria, o campo município não seja obrigatório (pois não há ISS), e quando for Serviços, o campo estado (UF) não seja obrigatório (pois não há ICMS), garantindo que apenas os dados necessários sejam solicitados.
+
+### Cálculos do Lucro Real (somente Prestação de Serviços)
+
+- **[RF-CAL-LR-001]**: Como Contador ou Gerente, ao selecionar Lucro Real, quero que o sistema exiba um aviso destacado informando que "o cálculo do Lucro Real está disponível apenas para empresas de Prestação de Serviços" e solicite confirmação do tipo de atividade antes de prosseguir, impedindo o cálculo caso o tipo de atividade não seja serviços.
+
+- **[RF-CAL-LR-002]**: Como Contador ou Gerente, ao selecionar Lucro Real para Prestação de Serviços, quero informar obrigatoriamente: lucro líquido contábil antes do IRPJ do trimestre (R$), adições fiscais do trimestre (despesas não dedutíveis como multas fiscais, brindes excessivos, provisões não aceitas - R$), exclusões fiscais do trimestre (receitas não tributáveis, incentivos fiscais, dividendos recebidos - R$), prejuízos fiscais acumulados de períodos anteriores disponíveis para compensação (R$), receita bruta mensal de serviços (R$), custos e despesas operacionais dedutíveis do mês (aluguéis, energia, serviços de PJ - R$), e município para cálculo do ISS, para que o sistema calcule o Lucro Real e todos os tributos devidos.
+
+- **[RF-CAL-LR-003]**: Como Contador ou Gerente, quero que o sistema calcule o Lucro Real (base de cálculo do IRPJ e CSLL) seguindo estas etapas: (1) Lucro Real Antes da Compensação = Lucro Líquido Contábil + Adições Fiscais - Exclusões Fiscais, (2) verificar se resultado é negativo (prejuízo fiscal), (3) se for prejuízo, não há IRPJ/CSLL a pagar e o prejuízo deve ser registrado para compensação futura, (4) se for lucro positivo, calcular Limite de Compensação = Lucro Real × 30%, (5) Compensação Aplicada = menor valor entre (Prejuízos Acumulados Disponíveis) e (Limite de Compensação), (6) Lucro Real Final = Lucro Real Antes da Compensação - Compensação Aplicada, e exibir detalhadamente todos os valores intermediários: lucro líquido contábil (R$), adições fiscais (R$), exclusões fiscais (R$), lucro real antes da compensação (R$), limite de compensação 30% (R$), compensação de prejuízos aplicada (R$), e lucro real final (R$).
+
+- **[RF-CAL-LR-004]**: Como Contador ou Gerente, quero que o sistema calcule o IRPJ trimestral sobre o Lucro Real seguindo estas etapas: (1) IRPJ Básico = Lucro Real Final × 15%, (2) calcular Lucro Real Mensal = Lucro Real Final / 3, (3) verificar se Lucro Real Mensal > R$ 20.000, (4) se sim, Parcela Excedente Total = (Lucro Real Mensal - R$ 20.000) × 3, e Adicional de IRPJ = Parcela Excedente Total × 10%, (5) IRPJ Total = IRPJ Básico + Adicional de IRPJ, e exibir: lucro real final (R$), IRPJ básico 15% (R$), lucro real mensal médio (R$), parcela que excede R$ 20.000/mês (R$), adicional de IRPJ 10% se aplicável (R$), e IRPJ total devido (R$).
+
+- **[RF-CAL-LR-005]**: Como Contador ou Gerente, quero que o sistema calcule a CSLL trimestral aplicando: CSLL = Lucro Real Final × 9% (alíquota para prestadores de serviços), e exiba: lucro real final (R$), alíquota 9%, e valor devido (R$).
+
+- **[RF-CAL-LR-006]**: Como Contador ou Gerente, quero que o sistema calcule o PIS mensal no regime não-cumulativo seguindo estas etapas: (1) Débitos de PIS = Receita Bruta Mensal de Serviços × 1,65%, (2) Créditos de PIS = Custos e Despesas Operacionais Dedutíveis × 1,65%, (3) PIS a Pagar = Débitos - Créditos, (4) se resultado for negativo (créditos > débitos), registrar saldo credor para acumulação em períodos futuros e PIS a Pagar = R$ 0, e exibir: receita bruta mensal (R$), débitos 1,65% (R$), custos/despesas dedutíveis (R$), créditos 1,65% (R$), e valor líquido a pagar (R$) ou saldo credor acumulado (R$).
+
+- **[RF-CAL-LR-007]**: Como Contador ou Gerente, quero que o sistema calcule a COFINS mensal no regime não-cumulativo seguindo estas etapas: (1) Débitos de COFINS = Receita Bruta Mensal de Serviços × 7,6%, (2) Créditos de COFINS = Custos e Despesas Operacionais Dedutíveis × 7,6%, (3) COFINS a Pagar = Débitos - Créditos, (4) se resultado for negativo (créditos > débitos), registrar saldo credor para acumulação em períodos futuros e COFINS a Pagar = R$ 0, e exibir: receita bruta mensal (R$), débitos 7,6% (R$), custos/despesas dedutíveis (R$), créditos 7,6% (R$), e valor líquido a pagar (R$) ou saldo credor acumulado (R$).
+
+- **[RF-CAL-LR-008]**: Como Contador ou Gerente, quero que o sistema calcule o ISS mensal consultando a alíquota do município informado na tabela de alíquotas de ISS atualizada (variando de 2% a 5%), aplicando: ISS = Receita Bruta Mensal de Serviços × Alíquota do Município, e exiba: receita bruta mensal (R$), município, alíquota do ISS (%), e valor devido (R$).
+
+- **[RF-CAL-LR-009]**: Como Contador ou Gerente, quero que o sistema apresente um resumo consolidado do Lucro Real separando: (1) Apuração Contábil - lucro líquido contábil, adições fiscais, exclusões fiscais, lucro real antes da compensação, compensação de prejuízos aplicada, lucro real final; (2) Tributos Trimestrais - IRPJ (com base de cálculo, IRPJ básico, adicional e total) e CSLL (com base de cálculo, alíquota e total), e subtotal trimestral; (3) Tributos Mensais - PIS (com débitos, créditos e líquido), COFINS (com débitos, créditos e líquido), e ISS (com base, alíquota e valor), e subtotal mensal; (4) Carga Tributária Total Anualizada - somando tributos trimestrais × 4 + tributos mensais × 12, destacando a vantagem do regime não-cumulativo com aproveitamento de créditos de PIS e COFINS.
+
+- **[RF-CAL-LR-010]**: Como Contador ou Gerente, quero que o sistema valide que empresas de Prestação de Serviços no Lucro Real não recolhem ICMS nem IPI, garantindo que estes tributos não sejam calculados nem exibidos nos resultados, evitando confusão.
+
+### Obrigações Acessórias e Funcionalidades Complementares
+
+- **[RF-CAL-OA-001]**: Como Contador, quero que o sistema identifique e liste automaticamente as obrigações acessórias aplicáveis ao regime tributário e tipo de atividade selecionados (DCTF - Declaração de Débitos e Créditos Tributários Federais, EFD-Contribuições - Escrituração Fiscal Digital das Contribuições, SPED Fiscal - Sistema Público de Escrituração Digital), informando: nome da obrigação, periodicidade de entrega, prazo de vencimento, e descrição resumida do conteúdo, para garantir o compliance completo e evitar multas por não entrega.
 
 ## Atualização de Legislação e Alíquotas
 - **[RF-LEG-001]**: Como administrador, quero que o sistema atualize automaticamente as alíquotas e regras tributárias com base em fontes oficiais (Receita Federal, Secretarias da Fazenda) para garantir que as simulações estejam sempre alinhadas com a legislação vigente.
