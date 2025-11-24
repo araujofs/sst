@@ -2,7 +2,7 @@
 
 ## Sistema de simulação tributária (SST)
 
-<small>Versão 1.8</small>
+<small>Versão 1.9</small>
 
 ---
 
@@ -20,6 +20,7 @@
 | 09/11/2025 | 1.6 | Adição dos wireframes e protótipos iniciais | Davi Leite |
 | 17/11/2025 | 1.7 | Adição da Especificação Técnica dos Cálculos Tributários | Davi Leite |
 | 17/11/2025 | 1.8 | Adição dos requisitos funcionais de Integração com APIS externas | Davi Leite
+| 24/11/2025 | 1.9 | Adição dos requisitos não-funcionais de Interoperabilidade | Davi Leite
 ---
 
 ## Sumário
@@ -344,7 +345,10 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RNF-013]**: O sistema deve funcionar nos seguintes navegadores: Chrome, Firefox, Safari e Edge através de computador com Windows, Linux e MacOS ou tablet e celular com Android e IOS.
 
 ## Interoperabilidade
-... Não pensei nisso ainda...
+- **[RNF-IOP-001]**: O sistema deve expor seus principais serviços de cálculo e consulta através de uma API RESTful documentada (padrão OpenAPI/Swagger), permitindo integração com outros softwares contábeis e ERPs.
+- **[RNF-IOP-002]**: O sistema deve utilizar JSON como formato padrão para troca de dados nas APIs, mas deve ser capaz de processar arquivos XML para integrações governamentais (SPED, NFe) quando necessário.
+- **[RNF-IOP-003]**: O sistema deve garantir a portabilidade dos dados, permitindo a exportação completa das informações de clientes e simulações em formatos abertos (CSV, JSON) para evitar lock-in (aprisionamento tecnológico).
+
 
 ## Manutenibilidade
 - **[RNF-015]**: O sistema deve ser desenvolvido seguindo padrões de codificação bem definidos e documentados para facilitar a leitura, compreensão e manutenção por diferentes desenvolvedores.
