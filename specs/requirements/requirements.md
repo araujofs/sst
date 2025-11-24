@@ -91,21 +91,31 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 
 # Requisitos funcionais (por módulo)
 ## Autenticação e Controle de Acesso
-- **[RF-AUT-001]**: Como usuário do sistema, quero me autenticar com credenciais pré-definidas para ter acesso aos outros módulos do sistema.
-- **[RF-AUT-002]**: Como usuário do sistema, quero definir quanto tempo durará minha sessão (intervalo de opções configurado por **Gestor**, ver [**RF-GES-006**]) para ter mais segurança e evitar ficar logado indefinidamente.
-- **[RF-AUT-003]**: Como usuário do sistema, quero ser notificado caso haja uma tentativa falha de entrar na minha conta para conseguir tomar as providências cabíveis.
+- **[RF-AUT-001]**: Como usuário, quero me autenticar com credenciais pré-definidas (email e senha) para ter acesso aos outros módulos do sistema.
+- **[RF-AUT-002]**: Como usuário, quero definir quanto tempo durará minha sessão (intervalo de opções configurado por **Gestor**, ver [**RF-GES-006**]) para ter mais segurança e evitar ficar logado indefinidamente.
+- **[RF-AUT-003]**: Como usuário, quero ser notificado caso haja uma tentativa falha de entrar na minha conta para conseguir tomar as providências cabíveis.
 - **[RF-AUT-004]**: Como gestor, quero ser notificado caso haja uma tentativa falha de entrar em qualquer conta para conseguir tomar as providências cabíveis.
 - **[RF-AUT-005]**: Como administrador, quero definir políticas de expiração e renovação de senhas para **Usuário** para garantir maior segurança com os acessos.
 - **[RF-AUT-006]**: Como administrador, quero encerrar a sessão de um **Usuário** para evitar acessos indesejados.
 - **[RF-AUT-007]**: Como gerente, quero encerrar a sessão de um **Associado** para evitar acessos indesejados.
-- **[RF-AUT-008]**: Como usuário do sistema, quero encerrar manualmente minha sessão atual para garantir que não hajam acessos indevidos na minha ausência.
+- **[RF-AUT-008]**: Como usuário, quero encerrar manualmente minha sessão atual para garantir que não hajam acessos indevidos na minha ausência.
 - **[RF-AUT-009]**: Como administrador, quero que o sistema bloqueie o acesso de um usuário caso haja mais de 2 tentativas falhas de acesso a sua conta para garantir a segurança do sistema.
 - **[RF-AUT-010]**: Como administrador, quero que o sistema permita o acesso às funcionalidades a **Usuário** de acordo com seu perfil e permissões para impedir acesso indevido à funcionalidades protegidas.
 - **[RF-AUT-011]**: Como administrador, quero que o sistema impeça o acesso de um usuário em mais de um dispositivo ao mesmo tempo para garantir a segurança e evitar compartilhamento de credenciais. 
+- **[RF-AUT-012]**: Como usuário, quero visualizar meu histórico de sessões e tentativas de acesso, falhas ou não, para monitorar comportamentos suspeitos no meu acesso.
 
 ## Gestão de Usuários e Organizações
-- **[RF-GES-001]**: Como administrador, quero gerenciar (criar, atualizar, desativar, excluir, mudar permissões) **Usuário** para garantir acesso apenas a pessoas autorizadas.
-- **[RF-GES-002]**: Como gerente, quero gerenciar (criar, atualizar, desativar, mudar permissões) **Associado** da minha empresa para garantir acesso apenas de pessoas autorizadas e a funcionalidades específicas.
+- **[RF-GES-001]**: Como administrador, quero gerenciar (criar, atualizar, desativar, excluir, mudar permissões) **Usuário** para garantir acesso apenas a pessoas autorizadas. Os usuários devem ser cadastrados com os seguintes dados:
+  - Gerente: nome, email, senha, CPNJ do seu escritório, duração máxima da sessão, foto de perfil
+  - Administrador: nome, email, senha, duração máxima da sessão, foto de perfil
+  - Contador: nome, email e senha, duração máxima da sessão, foto de perfil
+  - Cliente: razão social (caso seja empresa), nome (caso seja pessoa física), email, senha, CNPJ da sua empresa (caso seja empresa), CPF (caso seja pessoa física), CNPJ do escritório de contabilidade associado, duração máxima da sessão, foto de perfil
+  - Técnico de suporte: nome, email, senha, duração máxima da sessão, foto de perfil
+
+- **[RF-GES-002]**: Como gerente, quero gerenciar (criar, atualizar, desativar, mudar permissões) **Associado** da minha empresa para garantir acesso apenas de pessoas autorizadas e a funcionalidades específicas. Os usuários devem ser cadastrados com os seguintes dados:
+  - Contador: nome, email e senha
+  - Cliente: razão social (caso seja empresa), nome (caso seja pessoa física), email, senha, CNPJ da sua empresa (caso seja empresa), CPF (caso seja pessoa física), CNPJ do escritório de contabilidade associado
+
 - **[RF-GES-003]**: Como gerente, quero solicitar a **Administrador** que crie mais gerente(s) na minha empresa para dividir as tarefas de gestão.
 - **[RF-GES-004]**: Como gerente, quero autorizar ou negar atualizações no perfil de **Associado** para garantir que não hajam mudanças indesejadas.
 - **[RF-GES-005]**: Como associado, quero gerenciar meu perfil (foto, nome, e-mail associado, senha) no sistema com autorização do **Gerente** para manter as informações atualizadas e minhas credenciais seguras.
@@ -115,6 +125,7 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RF-GES-009]**: Como gerente, quero visualizar **Associados** ativos no momento para monitorar possíveis comportamentos suspeitos.
 - **[RF-GES-011]**: Como gestor, quero trocar minha senha para garantir meu acesso ao sistema e a segurança da minha conta.
 - **[RF-GES-013]**: Como administrador, quero visualizar **Usuários** ativos no momento para monitorar possíveis comportamentos suspeitos.
+- **[RF-GES-014]**: Como gestor, quero gerenciar meu próprio perfil para garantir segurança no meu acesso e manter as informações atualizadas.
 
 ## Cálculo e Simulação Tributária
 
@@ -390,5 +401,11 @@ Após o preenchimento do formulário e execução dos cálculos, o sistema apres
 - **Indicadores visuais**: Uso de cores e ícones para facilitar a interpretação dos resultados
 - **Ações disponíveis**: Exportar relatório (PDF/Excel), salvar cenário, criar nova simulação e compartilhar
 - **Histórico de simulações**: Acesso rápido a simulações anteriores para comparação
+
+## Wireframes dos módulos AUT, GES e ADM
+
+Os wireframes a seguir são referentes aos módulos de *Autenticaçõa e Controle de Acesso*, *Gestão de Usuários e Organizações* e *Administração, Segurança e Infraestrutura do sistema* 
+
+![Wireframes AUT, GES e ADM](../../assets/image/wireframes-arthur.png)
 
 Estes wireframes servem como **referência visual inicial** para o desenvolvimento das interfaces, garantindo alinhamento com os requisitos funcionais e não-funcionais de usabilidade (**RNF-001** a **RNF-004**). As interfaces finais serão refinadas com base em feedback dos stakeholders e requisitos técnicos detalhados.
