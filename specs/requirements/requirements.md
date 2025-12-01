@@ -21,6 +21,8 @@
 | 17/11/2025 | 1.7 | Adição da Especificação Técnica dos Cálculos Tributários | Davi Leite |
 | 17/11/2025 | 1.8 | Adição dos requisitos funcionais de Integração com APIS externas | Davi Leite
 | 24/11/2025 | 1.9 | Adição dos requisitos não-funcionais de Interoperabilidade | Davi Leite
+| 01/12/2025 | 2.0 | Adição dos wireframes | Gabriel Pereira de Carvalho
+---
 ---
 
 ## Sumário
@@ -413,3 +415,11 @@ Os wireframes a seguir são referentes aos módulos de *Autenticaçõa e Control
 ![Wireframes AUT, GES e ADM](../../assets/image/wireframes-arthur.png)
 
 Estes wireframes servem como **referência visual inicial** para o desenvolvimento das interfaces, garantindo alinhamento com os requisitos funcionais e não-funcionais de usabilidade (**RNF-001** a **RNF-004**). As interfaces finais serão refinadas com base em feedback dos stakeholders e requisitos técnicos detalhados.
+
+## Wireframes dos módulos REL e NOT
+
+![WireFrames NOT e REL](../../assets/image/notificacoes-relatorios/wire-frames.png)
+
+
+
+Exemplos iniciais do wireframes dos modulos de relatórios e notificações dos usuários, o qual está implementado as primeiras funcionalidades de cada um, atendendo os requisitos funcionais do REL E NOT
