@@ -2,7 +2,7 @@
 
 ## Sistema de simulação tributária (SST)
 
-<small>Versão 1.9</small>
+<small>Versão 2.1</small>
 
 ---
 
@@ -20,9 +20,10 @@
 | 09/11/2025 | 1.6 | Adição dos wireframes e protótipos iniciais | Davi Leite |
 | 17/11/2025 | 1.7 | Adição da Especificação Técnica dos Cálculos Tributários | Davi Leite |
 | 17/11/2025 | 1.8 | Adição dos requisitos funcionais de Integração com APIS externas | Davi Leite
-| 24/11/2025 | 1.9 | Adição dos requisitos não-funcionais de Interoperabilidade | Davi Leite
-| 01/12/2025 | 2.0 | Adição dos wireframes | Gabriel Pereira de Carvalho
----
+| 24/11/2025 | 1.9 | Adição dos requisitos não-funcionais de Interoperabilidade | Davi Leite |
+| 01/12/2025 | 2.0 | Adição dos wireframes | Gabriel Pereira de Carvalho | 
+| 04/12/2025 | 2.1 | Correções solicitidas após apresentação | Arthur Araújo |
+
 ---
 
 ## Sumário
@@ -63,22 +64,21 @@ Este documento tem como objetivo apresentar os requisitos de software do produto
 Visando o melhor entendimento do documento faz-se necessário definir alguns termos, abreviações e acrônimos, o que será feito abaixo.
 
 - Identificação dos requisitos: a referência a requisitos de software presentes nesse documento é feita através do identificador de requisitos seguindo o padrão abaixo:
-
-  `[IDENTIFICADOR DO TIPO REQUISITO-IDENTIFICADOR DO MÓDULO-identificador do requisito]`
+  - Funcionais:
+    `[IDENTIFICADOR DO TIPO REQUISITO-IDENTIFICADOR DO MÓDULO-identificador do requisito]`
+  - Não funcionais:
+    `[IDENTIFICADOR DO TIPO REQUISITO-identificador do requisito]`
 
   O identificador de tipo segue o padrão abaixo;
   - RF -> Requisito funcional
-  - RNF -> Requisito não-funcional (nos requisitos não-funcionais não há identificador de módulo)
+  - RNF -> Requisito não-funcional 
 
-  O identificador do requisito será uma sequência de números. Esse número deve ser único para cada módulo.
+  O identificador do requisito será uma sequência de números. ***Esse número deve ser único para cada módulo.***
 
   **Exemplo**: [RF-AUT-001], [RNF-023] 
 
 - Atributos dos requisitos:
   - **Requisitos vinculados**: fornece uma lista dos requisitos que mantém rastreabilidade
-  - **Prioridade**: Essencial, Importante, Desejável
-  - **Complexidade**: Complexa, Alta, Média ou Baixa
-  - **Risco**: Alto, Médio ou Baixo
 
 # Usuários identificados
 
@@ -88,40 +88,38 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
     - **Administrador** (*Gere de maneira mais geral, pois podem haver várias empresas utilizando o sistema isoladamente*)
   - **Usuário comum**
     - **Associado**
-      - **Cliente** (*Cliente da empresa contratante do sistema*)
+      - **Cliente** 
       - **Contador**
     - **Técnico de suporte**
 
-# Requisitos funcionais (por módulo)
+# Requisitos funcionais 
 ## Autenticação e Controle de Acesso
 - **[RF-AUT-001]**: Como usuário, quero me autenticar com credenciais pré-definidas (email e senha) para ter acesso aos outros módulos do sistema.
-- **[RF-AUT-002]**: Como usuário, quero definir quanto tempo durará minha sessão (intervalo de opções configurado por **Gestor**, ver [**RF-GES-006**]) para ter mais segurança e evitar ficar logado indefinidamente.
 - **[RF-AUT-003]**: Como usuário, quero ser notificado caso haja uma tentativa falha de entrar na minha conta para conseguir tomar as providências cabíveis.
-- **[RF-AUT-004]**: Como gestor, quero ser notificado caso haja uma tentativa falha de entrar em qualquer conta para conseguir tomar as providências cabíveis.
+- **[RF-AUT-004]**: Como gestor, quero ser notificado caso haja uma tentativa falha de entrar em qualquer conta relacionada ao meu escritório para conseguir tomar as providências cabíveis.
 - **[RF-AUT-005]**: Como administrador, quero definir políticas de expiração e renovação de senhas para **Usuário** para garantir maior segurança com os acessos.
-- **[RF-AUT-006]**: Como administrador, quero encerrar a sessão de um **Usuário** para evitar acessos indesejados.
-- **[RF-AUT-007]**: Como gerente, quero encerrar a sessão de um **Associado** para evitar acessos indesejados.
+- **[RF-AUT-006]**: Como administrador, quero encerrar a sessão de **Usuário** para evitar acessos indesejados.
+- **[RF-AUT-007]**: Como gerente, quero encerrar a sessão de **Associado** para evitar acessos indesejados.
 - **[RF-AUT-008]**: Como usuário, quero encerrar manualmente minha sessão atual para garantir que não hajam acessos indevidos na minha ausência.
-- **[RF-AUT-009]**: Como administrador, quero que o sistema bloqueie o acesso de um usuário caso haja mais de 2 tentativas falhas de acesso a sua conta para garantir a segurança do sistema.
-- **[RF-AUT-010]**: Como administrador, quero que o sistema permita o acesso às funcionalidades a **Usuário** de acordo com seu perfil e permissões para impedir acesso indevido à funcionalidades protegidas.
+- **[RF-AUT-009]**: Como administrador, quero que o sistema bloqueie o acesso de um usuário caso haja mais de 2 tentativas falhas de acesso à sua conta para garantir a segurança do sistema.
 - **[RF-AUT-011]**: Como administrador, quero que o sistema impeça o acesso de um usuário em mais de um dispositivo ao mesmo tempo para garantir a segurança e evitar compartilhamento de credenciais. 
 - **[RF-AUT-012]**: Como usuário, quero visualizar meu histórico de sessões e tentativas de acesso, falhas ou não, para monitorar comportamentos suspeitos no meu acesso.
 
 ## Gestão de Usuários e Organizações
-- **[RF-GES-001]**: Como administrador, quero gerenciar (criar, atualizar, desativar, excluir, mudar permissões) **Usuário** para garantir acesso apenas a pessoas autorizadas. Os usuários devem ser cadastrados com os seguintes dados:
+- **[RF-GES-001]**: Como administrador, quero manter **Usuário** para garantir acesso apenas às pessoas autorizadas e modificar permissões caso seja necessário. Os usuários devem ser cadastrados com os seguintes dados:
   - Gerente: nome, email, senha, CPNJ do seu escritório, duração máxima da sessão, foto de perfil
   - Administrador: nome, email, senha, duração máxima da sessão, foto de perfil
   - Contador: nome, email e senha, duração máxima da sessão, foto de perfil
   - Cliente: razão social (caso seja empresa), nome (caso seja pessoa física), email, senha, CNPJ da sua empresa (caso seja empresa), CPF (caso seja pessoa física), CNPJ do escritório de contabilidade associado, duração máxima da sessão, foto de perfil
   - Técnico de suporte: nome, email, senha, duração máxima da sessão, foto de perfil
 
-- **[RF-GES-002]**: Como gerente, quero gerenciar (criar, atualizar, desativar, mudar permissões) **Associado** da minha empresa para garantir acesso apenas de pessoas autorizadas e a funcionalidades específicas. Os usuários devem ser cadastrados com os seguintes dados:
+- **[RF-GES-002]**: Como gerente, quero manter **Associado** da minha empresa para garantir acesso apenas às pessoas autorizadas e a funcionalidades específicas. Os usuários devem ser cadastrados com os seguintes dados:
   - Contador: nome, email e senha
   - Cliente: razão social (caso seja empresa), nome (caso seja pessoa física), email, senha, CNPJ da sua empresa (caso seja empresa), CPF (caso seja pessoa física), CNPJ do escritório de contabilidade associado
 
-- **[RF-GES-003]**: Como gerente, quero solicitar a **Administrador** que crie mais gerente(s) na minha empresa para dividir as tarefas de gestão.
+- **[RF-GES-003]**: Como gerente, quero solicitar a **Administrador** que crie mais gerentes no meu escritório para dividir as tarefas de gestão.
 - **[RF-GES-004]**: Como gerente, quero autorizar ou negar atualizações no perfil de **Associado** para garantir que não hajam mudanças indesejadas.
-- **[RF-GES-005]**: Como associado, quero gerenciar meu perfil (foto, nome, e-mail associado, senha) no sistema com autorização do **Gerente** para manter as informações atualizadas e minhas credenciais seguras.
+- **[RF-GES-005]**: Como associado, quero gerenciar meu perfil (foto, nome, e-mail, senha) no sistema com autorização do **Gerente** para manter as informações atualizadas e minhas credenciais seguras.
 - **[RF-GES-006]**: Como administrador, quero autorizar ou negar atualizações no perfil de **Técnico de suporte** para garantir que não hajam mudanças indesejadas.
 - **[RF-GES-007]**: Como técnico de suporte, quero gerenciar meu perfil (foto, nome, e-mail associado, senha) no sistema com autorização do **Administrador** para manter as informações atualizadas e minhas credenciais seguras.
 - **[RF-GES-008]**: Como gestor, quero definir o intervalo da duração máxima da sessão de **Associado** para evitar possíveis acessos maliciosos em máquinas desprotegidas.
@@ -266,16 +264,14 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RF-NOT-012]**: Como contador ou gerente, quero poder criar minhas próprias regras de notificação por **cliente**, regime tributário ou valor de faturamento para receber só o que for realmente relevante para mim.
 
 ## Administração, Segurança e Infraestrutura do Sistema
-- **[RF-ADM-001]**: Como administrador, quero visualizar logs de acesso e ações críticas feitas por **Usuário** para monitorar comportamentos suspeitos.
-- **[RF-ADM-002]**: Como administrador, quero visualizar logs de erro categorizados (crítico, aviso. informação) e com mensagens claras para corrigir as falhas.
-- **[RF-ADM-003]**: Como administrador, quero configurar as políticas de armazenamento e detalhamento de logs (tempo máximo para armazenar, quais dados mostrar, nível de especificade) para garantir uso correto dos dados e sua disponibilidade.
+- **[RF-ADM-001]**: Como administrador, quero visualizar logs de acesso e ações críticas de **Usuário** para monitorar comportamentos suspeitos.
+- **[RF-ADM-002]**: Como administrador, quero visualizar logs de erro categorizados (crítico, aviso, informação) e com mensagens claras para corrigir as falhas.
+- **[RF-ADM-003]**: Como administrador, quero configurar as políticas de armazenamento e detalhamento de logs (tempo máximo para armazenar, quais dados mostrar, nível de especificade, categoria) para garantir uso correto dos dados e sua disponibilidade.
 - **[RF-ADM-004]**: Como administrador, quero visualizar e exportar relatórios de auditoria englobando ações de **Usuário** para garantir transparência.
-- **[RF-ADM-005]**: Como administrador, quero configurar (agendar e executar manualmente) rotinas automáticas de backup dos dados do sistema para garantir disponibilidade dos dados.
-- **[RF-ADM-006]**: Como administrador, quero visualizar métricas de uso e desempenho do sistema (consumo de recursos, taxa de erro) para identificar pontos de melhoria e otimizar o uso de recursos.
+- **[RF-ADM-005]**: Como administrador, quero configurar rotinas automáticas (ou manuais) de backup dos dados do sistema para garantir disponibilidade dos dados.
 - **[RF-ADM-007]**: Como técnico de suporte, quero visualizar temporariamente informações de **Associado** e **Gerente** com autorização de **Gestor** para diagnosticar eventuais problemas.
 - **[RF-ADM-008]**: Como gestor, quero autorizar temporariamente o acesso de **Técnico de suporte** a informações de **Associado** e **Gerente** para garantir que ele possa diagnosticar eventuais problemas.
-- **[RF-ADM-009]**: Como administrador, quero que o sistema guarde os logs de erros que acontecerem duranto o seu funcionamento com mensagens claras e explicativas para que possam ser visualizados e resolvidos posteriormente.
-- **[RF-ADM-010]**: Como gestor, quero visualizar a saúde do sistema no momento (módulos funcionando, tempo médio de resposta, disponibilidade) para acompanhar a situação atual do sistema.
+- **[RF-ADM-010]**: Como gestor, quero visualizar a saúde do sistema no momento (recursos utilizados, módulos funcionando, tempo médio de resposta, disponibilidade) para acompanhar a situação atual do sistema.
 - **[RF-ADM-011]**: Como usuário, quero enviar informações sobre erros encontrados para **Administrador** durante o uso do sistema para garantir que eventuais problemas possam ser resolvidos mais rapidamente.
 - **[RF-ADM-012]**: Como administrador, quero ser notificado quando ocorrer um erro crítico para resolver rapidamente o incidente e garantir a "saúde" do sistema.
 
@@ -333,7 +329,7 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RNF-005]**: O sistema deve cumprir o que a LGPD (Lei Geral de Proteção de Dados) determina quanto a privacidade dos dados.
 - **[RNF-006]**: O sistema deve criptografar utilizando algoritmos de *salt*, como bcrypt dados sensíveis gerados durante seu uso, como senhas, e garantir integridade de documentos gerados como relatórios e dados fiscais utilizando algoritmos de hash.
 - **[RNF-007]**: O sistema deve garantir que os dados sejam acessados apenas por usuários autorizados e autenticados.
-
+- **[RNF-023]**: O sistema deve manter logs de erro e acesso.
 
 ## Usabilidade
 - **[RNF-008]**: O sistema deve ser fácil de utilizar e entender e deve usar símbolos e nomenclaturas conhecidas pelo usuário alvo.
@@ -362,11 +358,11 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 
 
 ## Desempenho
-- **[RNF-017]**: O sistema deve possuir alto grau de precisão em seus cálculos (utilizando tipos decimais exatos no banco e no código).
+- **[RNF-017]**: O sistema deve possuir alto grau de precisão em seus cálculos (utilizando tipos decimais exatos no banco e no código com 4 casas decimais).
 
 ## Implantação
 - **[RNF-004]**: O sistema deve ser implantado utilizando containeres Docker em servidores Linux.
-- **[RNF-018]**: O sistema deve ser implantado em múltiplas instâncias para garantir redundância em caso de falha de um servidor.
+- **[RNF-018]**: O sistema deve ser implantado em múltiplas instâncias para garantir redundância em caso de falha de um dos servidores.
 
 ---
 
