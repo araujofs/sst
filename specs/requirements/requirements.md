@@ -128,6 +128,7 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RF-GES-013]**: Como administrador, quero visualizar **Usuários** ativos no momento para monitorar possíveis comportamentos suspeitos.
 - **[RF-GES-014]**: Como gestor, quero gerenciar meu próprio perfil para garantir segurança no meu acesso e manter as informações atualizadas.
 
+
 ## Cálculo e Simulação Tributária
 
 ### Requisitos Gerais de Cálculo
@@ -139,8 +140,6 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RF-CAL-003]**: Como Contador ou Gerente, quero visualizar o detalhamento completo de cada tributo calculado, incluindo: nome do tributo, base de cálculo utilizada, alíquota ou percentual aplicado, deduções permitidas, valor parcial e valor final, para compreender exatamente como os valores foram obtidos e poder validar os cálculos.
 
 - **[RF-CAL-004]**: Como Contador ou Gerente, quero criar e salvar múltiplos cenários de simulação com diferentes premissas (variação de receita, diferentes regimes tributários, mudanças em despesas) para comparar lado a lado e identificar a melhor estratégia fiscal para o cliente.
-
-- **[RF-CAL-005]**: Como Contador ou Gerente, quero comparar lado a lado até 3 cenários tributários simultaneamente, visualizando: carga tributária total de cada regime, valor de cada tributo individual, impacto percentual no resultado líquido, e diferença absoluta e relativa entre os cenários, para auxiliar na tomada de decisão estratégica.
 
 - **[RF-CAL-006]**: Como Contador ou Gerente, quero que o sistema indique automaticamente qual regime tributário resulta na menor carga tributária com base nos dados financeiros inseridos, destacando a economia potencial em reais e percentual em relação aos outros regimes, para otimizar o planejamento fiscal do cliente.
 
@@ -154,7 +153,7 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 
 - **[RF-CAL-011]**: Como Gerente, quero visualizar um resumo executivo da simulação tributária contendo: regime tributário recomendado, carga tributária total anual, economia potencial em relação aos outros regimes, principais tributos (top 3 por valor), e gráfico comparativo visual, para apresentar rapidamente aos stakeholders de forma clara e objetiva.
 
-- **[RF-CAL-012]**: Como Contador ou Gerente, quero que o sistema permita ajustes manuais em alíquotas e parâmetros específicos (com campo obrigatório para justificativa textual de no mínimo 20 caracteres e registro de quem fez o ajuste), para simular situações especiais como incentivos fiscais regionais, benefícios setoriais, ou interpretações específicas da legislação.
+- **[RF-CAL-012]**: Como Contador ou Gerente, quero que o sistema permita ajustes manuais em alíquotas e parâmetros específicos (com campo obrigatório para justificativa textual e registro de quem fez o ajuste), para simular situações especiais como incentivos fiscais regionais, benefícios setoriais, ou interpretações específicas da legislação.
 
 ### Cálculos do Simples Nacional
 
@@ -182,9 +181,11 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 
 - **[RF-CAL-LR-003]**: Como Contador ou Gerente, quero que o sistema controle os saldos de prejuízos fiscais e bases negativas de CSLL para compensação futura, respeitando a trava de 30% do lucro real do período.
 
-### Obrigações Acessórias e Funcionalidades Complementares
 
-- **[RF-CAL-OA-001]**: Como Contador, quero que o sistema identifique e liste automaticamente as obrigações acessórias aplicáveis ao regime tributário e tipo de atividade selecionados (DCTF - Declaração de Débitos e Créditos Tributários Federais, EFD-Contribuições - Escrituração Fiscal Digital das Contribuições, SPED Fiscal - Sistema Público de Escrituração Digital), informando: nome da obrigação, periodicidade de entrega, prazo de vencimento, e descrição resumida do conteúdo, para garantir o compliance completo e evitar multas por não entrega.
+<!-- 
+### Obrigações Acessórias e Funcionalidades Complementares
+- **[RF-CAL-OA-001]**: Como Contador, quero que o sistema identifique e liste automaticamente as obrigações acessórias aplicáveis ao regime tributário e tipo de atividade selecionados (DCTF - Declaração de Débitos e Créditos Tributários Federais, EFD-Contribuições - Escrituração Fiscal Digital das Contribuições, SPED Fiscal - Sistema Público de Escrituração Digital), informando: nome da obrigação, periodicidade de entrega, prazo de vencimento, e descrição resumida do conteúdo, para garantir o compliance completo e evitar multas por não entrega. -->
+
 
 ## Atualização de Legislação e Alíquotas
 - **[RF-LEG-001]**: Como administrador, quero que o sistema atualize automaticamente as alíquotas e regras tributárias com base em fontes oficiais (Receita Federal, Secretarias da Fazenda) para garantir que as simulações estejam sempre alinhadas com a legislação vigente.
@@ -235,6 +236,7 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RF-ADM-010]**: Como gestor, quero visualizar a saúde do sistema no momento (recursos utilizados, módulos funcionando, tempo médio de resposta, disponibilidade) para acompanhar a situação atual do sistema.
 - **[RF-ADM-011]**: Como usuário, quero enviar informações sobre erros encontrados para **Administrador** durante o uso do sistema para garantir que eventuais problemas possam ser resolvidos mais rapidamente.
 - **[RF-ADM-012]**: Como administrador, quero ser notificado quando ocorrer um erro crítico para resolver rapidamente o incidente e garantir a "saúde" do sistema.
+
 
 ## Integração com Sistemas Externos (APIs)
 
