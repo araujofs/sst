@@ -23,6 +23,7 @@
 | 24/11/2025 | 1.9 | Adição dos requisitos não-funcionais de Interoperabilidade | Davi Leite |
 | 01/12/2025 | 2.0 | Adição dos wireframes | Gabriel Pereira de Carvalho | 
 | 04/12/2025 | 2.1 | Correções solicitidas após apresentação | Arthur Araújo |
+| 05/12/2025 | 2.2 | Correções solicitidas dos requisitos funcionais após apresentação | Gabriel Pereira |
 
 ---
 
@@ -195,35 +196,47 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 
 
 ## Relatórios e Dashboards
-- **[RF-REL-001]**: Como contador, quero conseguir ver um painel com métricas ficais em atualizadas em tempo (carga tributária total, economia potencial, regime recomendado) para compartilhar insights específicos com meu **gerente** para análise conjunta da situação tributária dos clientes.
-- **[RF-REL-002]**: Como gerente, quero acessar um painel executivo consolidado com os indicadores de toda minha equipe de **contadores** para tomar decisões estratégicas baseadas no desempenho coletivo da equipe.
-- **[RF-REL-003]**: Como administrador, quero disponibilizar templates de dashboards padrão para os **gerentes** e receber feedback deles sobre melhorias necessárias.
-- **[RF-REL-004]**: Como contador, gestor, quero poder baixar meus relatórios em PDF com o logo da empresa, para enviar aos clientes com uma aparência mais profissional e personalizada.
-- **[RF-REL-005]**: Como contador, gestor, quero escolher o período dos relatórios (mensal, trimestral ou anual), para entender melhor como o desempenho fiscal muda ao longo do tempo.
-- **[RF-REL-006]**: Como contador, gestor, quero ver gráficos que comparem a carga tributária entre os diferentes regimes (Simples Nacional, Lucro Presumido e Lucro Real), para visualizar rapidamente qual é mais vantajoso.
-- **[RF-REL-007]**: Como contador, gestor, quero ter acesso ao histórico de todas as simulações que já fiz, para poder acompanhar como as estratégias tributárias evoluíram.
-- **[RF-REL-008]**: Como gestor, quero gerar relatórios consolidados por setor econômico ou porte de empresa para identificar padrões e oportunidades.
-- **[RF-REL-009]**: Como gestor, quero gerar relatórios que mostrem dados por setor ou tamanho da empresa, para identificar tendências e oportunidades de melhoria.
-- **[RF-REL-010]**: Como administrador, quero ver relatórios sobre o uso do sistema, como quem acessa, quantas simulações são feitas e quando o sistema tem mais movimento, pois assim ficará melhor para entender o funcionamento da plataforma
-- **[RF-REL-011]**: Como contador ou gerente, quero programar o envio automático dos relatórios por e-mail, para que meus clientes recebam as atualizações sem eu precisar enviar manualmente.
-- **[RF-REL-012]**: Como contador ou gerente, quero gerar relatórios de compliance fiscal que mostrem o que já foi feito e o que ainda falta cumprir, para manter tudo em dia com segurança.
-- **[RF-REL-013]**: Como gestor, quero ver no relatório de alertas de possíveis economias tributárias, baseados nas análises do sistema, para aproveitar oportunidades antes que passem.
-- **[RF-REL-014]**: Como contador ou gerente, quero poder montar meu próprio relatorio, arrastando e organizando os widgets como eu quiser, para deixar tudo do meu jeito.
-- **[RF-REL-015]**: Como contador, quero solicitar ao **gerente** a criação de relatórios personalizados para **clientes** específicos.
+
+### Relatórios de Simulações e Análises
+- **[RF-REL-001]**: Como contador, quero acessar meu histórico completo de simulações, podendo filtrar por cliente, data e regime tributário, para reabrir análises anteriores, comparar múltiplas simulações lado a lado e ter uma base para análise temporal da evolução fiscal.
+- **[RF-REL-002]**: Como contador, quero visualizar comparações entre os regimes tributários através de gráficos, incluindo gráficos de barras para comparação pontual entre Simples Nacional, Lucro Presumido e Lucro Real, e gráficos de linha para analisar a evolução da carga tributária de um ou mais regimes ao longo do tempo selecionado (mensal, trimestral ou anual), a fim de identificar a opção mais vantajosa e entender tendências.
+- **[RF-REL-003]**: Como contador, quero gerar relatórios personalizados para clientes específicos, com a possibilidade de incluir logo da empresa, observações personalizadas e selecionar quais métricas e gráficos serão apresentados, para fornecer análises sob medida que atendam às necessidades particulares de cada cliente.
+- **[RF-REL-004]**: Como contador ou gerente, quero exportar os resultados das simulações em diferentes formatos (PDF com formatação profissional, Excel com todas as planilhas de cálculo detalhadas, CSV com dados brutos), para compartilhar com clientes, integrar a outros sistemas ou arquivar.
+
+### Dashboards e Painéis de Controle
+- **[RF-REL-005]**: Como gerente, quero acessar um dashboard executivo consolidado com indicadores de toda minha equipe de contadores (número de simulações realizadas, economias identificadas, clientes atendidos), para monitorar a produtividade da equipe e identificar oportunidades de melhoria.
+
+### Relatórios Administrativos e de Uso
+- **[RF-REL-006]**: Como administrador, quero visualizar relatórios de uso do sistema (usuários ativos, simulações realizadas, horários de pico, funcionalidades mais utilizadas), para entender os padrões de uso, planejar capacitações e identificar necessidades de ajustes na infraestrutura.
+
+### Relatórios de Compliance e Oportunidades
+- **[RF-REL-007]**: Como contador ou gerente, quero gerar relatórios de compliance fiscal que listem as obrigações acessórias cumpridas, pendências, prazos de vencimento e status de regularidade, para garantir que todos os requisitos legais estejam sendo atendidos e evitar multas.
+
+
+### Customização e Configuração
+- **[RF-REL-008]**: Como administrador, quero disponibilizar templates de relatórios e dashboards pré-configurados para diferentes perfis de usuário (contador iniciante, gerente experiente, cliente), que possam ser personalizados conforme as necessidades específicas de cada escritório ou profissional. 
+
+
+
 
 ## Notificações e Alertas Legislativos
-- **[RF-NOT-001]**: Como contador, quero receber notificações em tempo real sobre mudanças na legislação tributária e compartilhar alertas relevantes com meu **gerente** para discutir impactos futuros nos nossos clientes.
-- **[RF-NOT-002]**: Como contador ou gerente, quero ser avisado sempre que mudarem as alíquotas ou regras dos regimes tributários que uso com frequência (Simples Nacional, Lucro Presumido, Lucro Real), para poder ajustar rapidamente minhas simulações.
-- **[RF-NOT-003]**: Como gerente ou contador, quero receber lembretes sobre parazos de obrigações acessórias (como DCTF, EFD e SPED), para evitar multas e garantir que tudo esteja em dia com o fisco.
-- **[RF-NOT-004]**: Como administrador, quero configurar o sistema para enviar alertas automáticos sobre novas leis, portarias e instruções da Receita Federal, garantindo que todos os **usuários** fiquem informados.
-- **[RF-NOT-005]**: Como contador ou gestor, quero escolher como quero receber os avisos (por e-mail, dentro do sistema ou por SMS), para ser notificado da forma mais prática para mim.
-- **[RF-NOT-006]**: Como contador ou gestor, quero ser avisado quando uma simulação salva for impactada por alguma mudança na lei, para poder revisar e atualizar os cálculos a tempo.
-- **[RF-NOT-007]**: Como gestor, quero poder enviar notificações em massa para todos os **usuários** quando houver alguma atualização importante no sistema ou mudança fiscal urgente.
-- **[RF-NOT-008]**: Como contador ou gestor, quero ter acesso a um histórico de todas as notificações que recebi, para poder consultar depois quando precisar ou em caso de auditoria.
-- **[RF-NOT-009]**: Como gestor, quero receber alertas quando surgirem novas oportunidades de economia tributária, baseadas em atualizações legais ou interpretações recentes.
-- **[RF-NOT-010]**: Como administrador, quero que o sistema notifique automaticamente os **contadores** e **gerentes** sobre o vencimento de certidões negativas e documentos fiscais, para evitar atrasos ou irregularidades.
-- **[RF-NOT-011]**: Como técnico de suporte, quero ser notificado quando o sistema de alertas apresentar falhas, para resolver o problema rapidamente e garantir que as notificações continuem funcionando.
-- **[RF-NOT-012]**: Como contador ou gerente, quero poder criar minhas próprias regras de notificação por **cliente**, regime tributário ou valor de faturamento para receber só o que for realmente relevante para mim.
+- **[RF-NOT-001]**: Como contador ou gerente, quero receber notificações sobre mudanças na legislação tributária, 
+com detecção automática de impacto em minhas simulações salvas, para ajustar cálculos e discutir estratégias com a equipe.
+<!-- - **[RF-NOT-001]**: Como contador, quero receber notificações em tempo real sobre mudanças na legislação tributária e compartilhar alertas relevantes com meu **gerente** para discutir impactos futuros nos nossos clientes.
+- **[RF-NOT-002]**: Como contador ou gerente, quero ser avisado sempre que mudarem as alíquotas ou regras dos regimes tributários na legisção que uso com frequência (Simples Nacional, Lucro Presumido, Lucro Real), para poder ajustar rapidamente minhas simulações. -->
+- **[RF-NOT-002]**: Como contador ou gerente, quero receber lembretes sobre prazos de obrigações acessórias 
+(DCTF, EFD, SPED) e vencimento de documentos fiscais, para evitar multas e manter a regularidade.
+- **[RF-NOT-003]**: Como administrador, quero configurar regras globais de notificação (quais leis geram alertas, 
+para quais perfis, com que urgência), garantindo padrão consistente para todos os usuários.
+- **[RF-NOT-004]**: Como contador ou gerente, quero personalizar minhas preferências de notificação, 
+incluindo: tipos a receber, filtros por cliente/regime, e canais preferidos (sistema, e-mail, SMS).
+- **[RF-NOT-005]**: Como gestor, quero enviar notificações em massa para a equipe, com opção de sobrepor 
+preferências pessoais em casos urgentes ou críticos.
+- **[RF-NOT-006]**: Como contador ou gestor, quero acessar histórico completo de todas as notificações recebidas, 
+com filtros e busca, para auditoria e consulta.
+- **[RF-NOT-007]**: Como técnico, quero ser alertado sobre falhas no sistema de notificação, para garantir 
+sua disponibilidade e confiabilidade.
+
 
 ## Administração, Segurança e Infraestrutura do Sistema
 - **[RF-ADM-001]**: Como administrador, quero visualizar logs de acesso e ações críticas de **Usuário** para monitorar comportamentos suspeitos.
