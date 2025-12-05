@@ -304,9 +304,9 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RNF-013]**: O sistema deve funcionar nos seguintes navegadores: Chrome, Firefox, Safari e Edge através de computador com Windows, Linux e MacOS ou tablet e celular com Android e IOS.
 
 ## Interoperabilidade
-- **[RNF-IOP-001]**: O sistema deve expor seus principais serviços de cálculo e consulta através de uma API RESTful documentada (padrão OpenAPI/Swagger), permitindo integração com outros softwares contábeis e ERPs.
-- **[RNF-IOP-002]**: O sistema deve utilizar JSON como formato padrão para troca de dados nas APIs, mas deve ser capaz de processar arquivos XML para integrações governamentais (SPED, NFe) quando necessário.
-- **[RNF-IOP-003]**: O sistema deve garantir a portabilidade dos dados, permitindo a exportação completa das informações de clientes e simulações em formatos abertos (CSV, JSON) para evitar lock-in (aprisionamento tecnológico).
+- **[RNF-024]**: O sistema deve expor seus principais serviços de cálculo e consulta através de uma API RESTful documentada (padrão OpenAPI/Swagger), permitindo integração com outros softwares contábeis e ERPs.
+- **[RNF-025]**: O sistema deve utilizar JSON como formato padrão para troca de dados nas APIs, mas deve ser capaz de processar arquivos XML para integrações governamentais (SPED, NFe) quando necessário.
+- **[RNF-026]**: O sistema deve garantir a portabilidade dos dados, permitindo a exportação completa das informações de clientes e simulações em formatos abertos (CSV, JSON) para evitar lock-in (aprisionamento tecnológico).
 
 
 ## Manutenibilidade
@@ -376,7 +376,5 @@ Estes wireframes servem como **referência visual inicial** para o desenvolvimen
 ## Wireframes dos módulos REL e NOT
 
 ![WireFrames NOT e REL](../../assets/image/notificacoes-relatorios/wire-frames.png)
-
-
 
 Exemplos iniciais do wireframes dos modulos de relatórios e notificações dos usuários, o qual está implementado as primeiras funcionalidades de cada um, atendendo os requisitos funcionais do REL E NOT
