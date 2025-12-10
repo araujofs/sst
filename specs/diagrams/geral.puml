@@ -1,0 +1,89 @@
+@startuml geral
+left to right direction
+
+:Usuário: as us
+:Gestor: as ges
+:Usuário Comum: as usc
+:Gerente: as ger
+:Administrador: as adm
+:Associado: as ass
+:Técnico de\nsuporte: as tec
+:Cliente: as cl
+:Contador: as co
+
+us <|-- ges
+ges <|-- adm
+ges <|-- ger
+us <|-- usc
+usc <|-- ass
+ass <|-- co
+ass <|-- cl
+usc <|-- tec
+
+rectangle SST {
+  package "Controle de acesso" {
+    (Fazer login) as login
+    (Notificar\ntentativas de\nentrada falhas) as notifCda
+    (Manter políticas\nde expiração/renovação\nde senhas) as polSen
+    (Encerrar sessão) as logout
+    (Bloquear acesso\ncom mais de 2\ntentativas falhas) as bloq
+    (Encerrar sessão\nde outro Usuário) as endSes
+
+    (logout) <|-- (endSes)
+  
+    us -- (login)
+  
+    us -- (notifCda)
+  
+    adm -- (polSen)
+  
+    us -- (logout)
+    adm -- (endSes)
+  
+    us -- (bloq)
+  }
+
+
+
+  package "Gestão de usuários" {
+    (Manter usuário) as mantUs
+    (Manter associado) as mantAss
+    (Gerenciar perfil) as gerenPf
+    (Visualizar\n informações de\nAssociados\ntemporariamente) as visInfo
+
+    (mantUs) <|-- (mantAss)
+
+    adm -- (mantUs)
+    ger -- (mantAss) 
+
+    us -- (gerenPf)
+
+    tec -- visInfo
+  }
+
+
+  package "Administração e infraestrutura" {
+    (Manter logs) as mantLog
+    (Manter políticas de logs) as mantPolLog
+    (Configurar rotinas de backup) as confBack
+    (Visualizar saúde\ndo sistema) as visSau
+    (Reportar erro) as repErr
+    (Notificar erro crítico) as notifErr
+
+    (mantLog) <.. (mantPolLog) : <<extend>>
+
+    adm -- mantLog
+    adm -- mantPolLog
+  
+    adm -- confBack
+  
+    ges -- visSau
+  
+    us -- repErr
+    
+    adm -- notifErr
+  }
+
+}
+
+@enduml

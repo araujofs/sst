@@ -29,18 +29,38 @@
 
 ## Sumário
 
+- [Requisitos de Software](#requisitos-de-software)
+  - [Sistema de simulação tributária (SST)](#sistema-de-simulação-tributária-sst)
+  - [Histórico de revisões](#histórico-de-revisões)
+  - [Sumário](#sumário)
 - [Introdução](#introdução)
   - [Definições, acrônimos e abreviações](#definições-acrônimos-e-abreviações)
 - [Usuários identificados](#usuários-identificados)
-- [Requisitos funcionais (por módulo)](#requisitos-funcionais-por-módulo)
-  - [Autenticação e Controle de Acesso](#autenticação-e-controle-de-acesso)
-  - [Gestão de Usuários e Organizações](#gestão-de-usuários-e-organizações)
+- [Requisitos funcionais](#requisitos-funcionais)
+  - [Controle de Acesso](#controle-de-acesso)
+  - [Gestão de Usuários](#gestão-de-usuários)
   - [Cálculo e Simulação Tributária](#cálculo-e-simulação-tributária)
+    - [Requisitos Gerais de Cálculo](#requisitos-gerais-de-cálculo)
+    - [Cálculos do Simples Nacional](#cálculos-do-simples-nacional)
+    - [Cálculos do Lucro Presumido](#cálculos-do-lucro-presumido)
+    - [Cálculos do Lucro Real (somente Prestação de Serviços)](#cálculos-do-lucro-real-somente-prestação-de-serviços)
   - [Atualização de Legislação e Alíquotas](#atualização-de-legislação-e-alíquotas)
   - [Relatórios e Dashboards](#relatórios-e-dashboards)
+    - [Relatórios de Simulações e Análises](#relatórios-de-simulações-e-análises)
+    - [Dashboards e Painéis de Controle](#dashboards-e-painéis-de-controle)
+    - [Relatórios Administrativos e de Uso](#relatórios-administrativos-e-de-uso)
+    - [Relatórios de Compliance e Oportunidades](#relatórios-de-compliance-e-oportunidades)
+    - [Customização e Configuração](#customização-e-configuração)
   - [Notificações e Alertas Legislativos](#notificações-e-alertas-legislativos)
   - [Administração, Segurança e Infraestrutura do Sistema](#administração-segurança-e-infraestrutura-do-sistema)
   - [Integração com Sistemas Externos (APIs)](#integração-com-sistemas-externos-apis)
+    - [Validação e Consulta de Dados Cadastrais](#validação-e-consulta-de-dados-cadastrais)
+    - [Consulta de Alíquotas Tributárias Municipais e Estaduais](#consulta-de-alíquotas-tributárias-municipais-e-estaduais)
+    - [Atualização de Tabelas e Legislação Tributária](#atualização-de-tabelas-e-legislação-tributária)
+    - [Importação de Dados Contábeis](#importação-de-dados-contábeis)
+    - [Comunicação e Notificações](#comunicação-e-notificações)
+    - [Monitoramento de Atualizações Legislativas](#monitoramento-de-atualizações-legislativas)
+    - [Resiliência e Tratamento de Falhas](#resiliência-e-tratamento-de-falhas)
 - [Requisitos não-funcionais](#requisitos-não-funcionais)
   - [Disponibilidade](#disponibilidade)
   - [Privacidade e segurança](#privacidade-e-segurança)
@@ -52,7 +72,9 @@
   - [Implantação](#implantação)
 - [Wireframes e Protótipos](#wireframes-e-protótipos)
   - [Formulário de Simulação Tributária](#formulário-de-simulação-tributária)
-  - [Resultados - Simples Nacional](#resultados---simples-nacional)
+  - [Resultados - Simples Nacional (Exemplo)](#resultados---simples-nacional-exemplo)
+  - [Wireframes dos módulos AUT, GES e ADM](#wireframes-dos-módulos-aut-ges-e-adm)
+  - [Wireframes dos módulos REL e NOT](#wireframes-dos-módulos-rel-e-not)
 
 ---
 
@@ -94,19 +116,15 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
     - **Técnico de suporte**
 
 # Requisitos funcionais 
-## Autenticação e Controle de Acesso
+## Controle de Acesso
 - **[RF-AUT-001]**: Como usuário, quero me autenticar com credenciais pré-definidas (email e senha) para ter acesso aos outros módulos do sistema.
 - **[RF-AUT-003]**: Como usuário, quero ser notificado caso haja uma tentativa falha de entrar na minha conta para conseguir tomar as providências cabíveis.
-- **[RF-AUT-004]**: Como gestor, quero ser notificado caso haja uma tentativa falha de entrar em qualquer conta relacionada ao meu escritório para conseguir tomar as providências cabíveis.
-- **[RF-AUT-005]**: Como administrador, quero definir políticas de expiração e renovação de senhas para **Usuário** para garantir maior segurança com os acessos.
+- **[RF-AUT-005]**: Como administrador, quero definir políticas de expiração e renovação de senhas para garantir maior segurança com os acessos.
 - **[RF-AUT-006]**: Como administrador, quero encerrar a sessão de **Usuário** para evitar acessos indesejados.
-- **[RF-AUT-007]**: Como gerente, quero encerrar a sessão de **Associado** para evitar acessos indesejados.
-- **[RF-AUT-008]**: Como usuário, quero encerrar manualmente minha sessão atual para garantir que não hajam acessos indevidos na minha ausência.
-- **[RF-AUT-009]**: Como administrador, quero que o sistema bloqueie o acesso de um usuário caso haja mais de 2 tentativas falhas de acesso à sua conta para garantir a segurança do sistema.
-- **[RF-AUT-011]**: Como administrador, quero que o sistema impeça o acesso de um usuário em mais de um dispositivo ao mesmo tempo para garantir a segurança e evitar compartilhamento de credenciais. 
-- **[RF-AUT-012]**: Como usuário, quero visualizar meu histórico de sessões e tentativas de acesso, falhas ou não, para monitorar comportamentos suspeitos no meu acesso.
+- **[RF-AUT-008]**: Como usuário, quero encerrar minha sessão para garantir que não hajam acessos indevidos na minha ausência.
+- **[RF-AUT-009]**: Como usuário, quero que o sistema bloqueie meu acesso caso haja mais de 2 tentativas falhas de acesso para garantir a segurança do sistema.
 
-## Gestão de Usuários e Organizações
+## Gestão de Usuários 
 - **[RF-GES-001]**: Como administrador, quero manter **Usuário** para garantir acesso apenas às pessoas autorizadas e modificar permissões caso seja necessário. Os usuários devem ser cadastrados com os seguintes dados:
   - Gerente: nome, email, senha, CPNJ do seu escritório, duração máxima da sessão, foto de perfil
   - Administrador: nome, email, senha, duração máxima da sessão, foto de perfil
@@ -118,17 +136,8 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
   - Contador: nome, email e senha
   - Cliente: razão social (caso seja empresa), nome (caso seja pessoa física), email, senha, CNPJ da sua empresa (caso seja empresa), CPF (caso seja pessoa física), CNPJ do escritório de contabilidade associado
 
-- **[RF-GES-003]**: Como gerente, quero solicitar a **Administrador** que crie mais gerentes no meu escritório para dividir as tarefas de gestão.
-- **[RF-GES-004]**: Como gerente, quero autorizar ou negar atualizações no perfil de **Associado** para garantir que não hajam mudanças indesejadas.
-- **[RF-GES-005]**: Como associado, quero gerenciar meu perfil (foto, nome, e-mail, senha) no sistema com autorização do **Gerente** para manter as informações atualizadas e minhas credenciais seguras.
-- **[RF-GES-006]**: Como administrador, quero autorizar ou negar atualizações no perfil de **Técnico de suporte** para garantir que não hajam mudanças indesejadas.
-- **[RF-GES-007]**: Como técnico de suporte, quero gerenciar meu perfil (foto, nome, e-mail associado, senha) no sistema com autorização do **Administrador** para manter as informações atualizadas e minhas credenciais seguras.
-- **[RF-GES-008]**: Como gestor, quero definir o intervalo da duração máxima da sessão de **Associado** para evitar possíveis acessos maliciosos em máquinas desprotegidas.
-- **[RF-GES-009]**: Como gerente, quero visualizar **Associados** ativos no momento para monitorar possíveis comportamentos suspeitos.
-- **[RF-GES-011]**: Como gestor, quero trocar minha senha para garantir meu acesso ao sistema e a segurança da minha conta.
-- **[RF-GES-013]**: Como administrador, quero visualizar **Usuários** ativos no momento para monitorar possíveis comportamentos suspeitos.
-- **[RF-GES-014]**: Como gestor, quero gerenciar meu próprio perfil para garantir segurança no meu acesso e manter as informações atualizadas.
-
+- **[RF-GES-005]**: Como usuário, quero gerenciar meu perfil (foto, nome, e-mail, senha) no sistema para manter as informações atualizadas e minhas credenciais seguras.
+- **[RF-GES-014]**: Como técnico de suporte, quero visualizar temporariamente informações não confidencias de **Associado** e **Gerente** para diagnosticar eventuais problemas.
 
 ## Cálculo e Simulação Tributária
 
@@ -239,17 +248,12 @@ sua disponibilidade e confiabilidade.
 
 
 ## Administração, Segurança e Infraestrutura do Sistema
-- **[RF-ADM-001]**: Como administrador, quero visualizar logs de acesso e ações críticas de **Usuário** para monitorar comportamentos suspeitos.
-- **[RF-ADM-002]**: Como administrador, quero visualizar logs de erro categorizados (crítico, aviso, informação) e com mensagens claras para corrigir as falhas.
-- **[RF-ADM-003]**: Como administrador, quero configurar as políticas de armazenamento e detalhamento de logs (tempo máximo para armazenar, quais dados mostrar, nível de especificade, categoria) para garantir uso correto dos dados e sua disponibilidade.
-- **[RF-ADM-004]**: Como administrador, quero visualizar e exportar relatórios de auditoria englobando ações de **Usuário** para garantir transparência.
+- **[RF-ADM-001]**: Como administrador, quero visualizar logs categorizados e com mensagens claras de ações do sistema (erro, warnings, etc) e de ações de **Usuário** (acessos, mudanças no perfil, etc) para monitorar comportamentos suspeitos e resolver possíveis problemas.
+- **[RF-ADM-003]**: Como administrador, quero configurar as políticas de armazenamento e detalhamento de logs (tempo máximo para armazenar, nível de especificade, categorias) para garantir uso correto dos dados e sua disponibilidade.
 - **[RF-ADM-005]**: Como administrador, quero configurar rotinas automáticas (ou manuais) de backup dos dados do sistema para garantir disponibilidade dos dados.
-- **[RF-ADM-007]**: Como técnico de suporte, quero visualizar temporariamente informações de **Associado** e **Gerente** com autorização de **Gestor** para diagnosticar eventuais problemas.
-- **[RF-ADM-008]**: Como gestor, quero autorizar temporariamente o acesso de **Técnico de suporte** a informações de **Associado** e **Gerente** para garantir que ele possa diagnosticar eventuais problemas.
-- **[RF-ADM-010]**: Como gestor, quero visualizar a saúde do sistema no momento (recursos utilizados, módulos funcionando, tempo médio de resposta, disponibilidade) para acompanhar a situação atual do sistema.
-- **[RF-ADM-011]**: Como usuário, quero enviar informações sobre erros encontrados para **Administrador** durante o uso do sistema para garantir que eventuais problemas possam ser resolvidos mais rapidamente.
-- **[RF-ADM-012]**: Como administrador, quero ser notificado quando ocorrer um erro crítico para resolver rapidamente o incidente e garantir a "saúde" do sistema.
-
+- **[RF-ADM-010]**: Como gestor, quero visualizar a saúde do sistema no momento (recursos utilizados, módulos funcionando, tempo médio de resposta, disponibilidade, usuários ativos) para acompanhar a situação atual do sistema.
+- **[RF-ADM-011]**: Como usuário, quero reportar erros encontrados durante o uso do sistema para garantir que o problema possa ser resolvido.
+- **[RF-ADM-012]**: Como administrador, quero ser notificado quando ocorrer um erro crítico no sistema para resolver rapidamente o problema.
 
 ## Integração com Sistemas Externos (APIs)
 
