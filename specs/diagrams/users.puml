@@ -1,0 +1,22 @@
+@startuml users
+
+:Usuário: as us
+:Gestor: as ges
+:Usuário Comum: as usc
+:Gerente: as ger
+:Administrador: as adm
+:Associado: as ass
+:Técnico de\nsuporte: as tec
+:Cliente: as cl
+:Contador: as co
+
+us <|-- ges
+ges <|-- adm
+ges <|-- ger
+us <|-- usc
+usc <|-- ass
+ass <|-- co
+ass <|-- cl
+usc <|-- tec
+
+@enduml

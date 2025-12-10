@@ -1,0 +1,27 @@
+@startuml gestão
+left to right direction
+
+!include users.puml
+
+package "Gestão de usuários" {
+  (Manter logs) as mantLog
+  (Manter políticas de logs) as mantPolLog
+  (Configurar rotinas de backup) as confBack
+  (Visualizar saúde\ndo sistema) as visSau
+  (Reportar erro) as repErr
+  (Notificar erro crítico) as notifErr
+
+  (mantLog) <.. (mantPolLog) : <<extend>>
+
+  adm -- mantLog
+  adm -- mantPolLog
+
+  adm -- confBack
+
+  ges -- visSau
+
+  us -- repErr
+  
+  adm -- notifErr
+}
+@enduml

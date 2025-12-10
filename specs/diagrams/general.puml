@@ -1,0 +1,8 @@
+@startuml geral
+left to right direction
+
+rectangle SST {
+  
+}
+
+@enduml
