@@ -1,8 +1,15 @@
 @startuml geral
-left to right direction
+' left to right direction
 
 rectangle SST {
-  
+  package "Administração e Infraestrutura" as ai
+
+  package "Controle de Acesso" as ca
+
+  package "Gestão de Usuário" as gu
+
+  ca <.. gu
+  ca <.. ai
 }
 
 @enduml

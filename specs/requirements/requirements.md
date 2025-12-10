@@ -52,7 +52,7 @@
     - [Relatórios de Compliance e Oportunidades](#relatórios-de-compliance-e-oportunidades)
     - [Customização e Configuração](#customização-e-configuração)
   - [Notificações e Alertas Legislativos](#notificações-e-alertas-legislativos)
-  - [Administração, Segurança e Infraestrutura do Sistema](#administração-segurança-e-infraestrutura-do-sistema)
+  - [Administração e Infraestrutura](#administração-e-infraestrutura)
   - [Integração com Sistemas Externos (APIs)](#integração-com-sistemas-externos-apis)
     - [Validação e Consulta de Dados Cadastrais](#validação-e-consulta-de-dados-cadastrais)
     - [Consulta de Alíquotas Tributárias Municipais e Estaduais](#consulta-de-alíquotas-tributárias-municipais-e-estaduais)
@@ -247,7 +247,7 @@ com filtros e busca, para auditoria e consulta.
 sua disponibilidade e confiabilidade.
 
 
-## Administração, Segurança e Infraestrutura do Sistema
+## Administração e Infraestrutura
 - **[RF-ADM-001]**: Como administrador, quero visualizar logs categorizados e com mensagens claras de ações do sistema (erro, warnings, etc) e de ações de **Usuário** (acessos, mudanças no perfil, etc) para monitorar comportamentos suspeitos e resolver possíveis problemas.
 - **[RF-ADM-003]**: Como administrador, quero configurar as políticas de armazenamento e detalhamento de logs (tempo máximo para armazenar, nível de especificade, categorias) para garantir uso correto dos dados e sua disponibilidade.
 - **[RF-ADM-005]**: Como administrador, quero configurar rotinas automáticas (ou manuais) de backup dos dados do sistema para garantir disponibilidade dos dados.
