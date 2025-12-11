@@ -16,7 +16,8 @@ package "Controle de acesso" {
   (Encerrar sessão\nde outro Usuário) as endSes
 
   ' relacionamentos
-  (logout) <|-- (endSes)
+  ' não faz sentido porque são dois casos de uso completamente diferentes, mesmo que pareçam iguais
+  ' (logout) <|-- (endSes)
 
   us -- (login)
 

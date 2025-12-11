@@ -4,7 +4,6 @@
       <td><strong>Caso de uso</strong></td>
       <td>
         <strong><span><a>UC4 - Encerrar sessão de outro usuário</a></span></strong>
-        <strong><p>(Herda de <a href="especificacao_encerrar_sessao.md">UC3</a>)</p></strong>
       </td>
     </tr>
     <tr>
