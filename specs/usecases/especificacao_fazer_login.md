@@ -15,7 +15,7 @@
     </tr>
     <tr>
       <td><strong>Requisitos</strong></td>
-      <td>RF-AUT-001</td>
+      <td>RF-AUT-001, RF-AUT-004</td>
     </tr>
     <tr>
       <td><strong>Atores</strong></td>
@@ -64,6 +64,9 @@
           <li>
             O sistema exibe uma mensagem de erro informando que as credenciais
             estão incorretas e solicita que o ator tente novamente.
+          </li>
+          <li>
+            O sistema deve notificar o ator em cuja conta houve a tentativa de acesso através de email e deve registrar a tentativa.
           </li>
         </ol>
         <a id="a2">[A2] - Inserir credenciais erradas pela segunda vez</a>

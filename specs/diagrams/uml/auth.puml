@@ -2,18 +2,25 @@
 !include users.puml
 
 package "Controle de acesso" {
+  ' 001, 004
   (Fazer login) as login
-  (Notificar\ntentativas de\nentrada falhas) as notifCda
+  ' 003
+  (Visualizar\ntentativas de\nentrada falhas) as visCda
+  ' 005
   (Manter políticas\nde expiração/renovação\nde senhas) as polSen
+  ' 008
   (Encerrar sessão) as logout
+  ' 009
   (Bloquear acesso) as bloq
+  ' 006
   (Encerrar sessão\nde outro Usuário) as endSes
 
+  ' relacionamentos
   (logout) <|-- (endSes)
 
   us -- (login)
 
-  us -- (notifCda)
+  us -- (visCda)
 
   adm -- (polSen)
 

@@ -22,16 +22,16 @@
     </tr>
     <tr>
       <td><strong>Condições de entrada</strong></td>
-      <td>O ator foi credenciado.</td>
+      <td>O ator seleciona 'Sair' no menu do seu avatar.</td>
     </tr>
     <tr>
       <td><strong>Fluxo principal</strong></td>
       <td>
         <ol>
           <li>
-            O ator se encontra em qualquer página do sistema.
+            O ator verifica, em qualquer página do sistema, que há uma barra lateral com alguns links de navegação. No fim da barra lateral há um avatar com sua foto de perfil e seu nome.
           </li>
-          <li>O ator clica no botão que contém a sua foto de perfil e um menu abre com suas informações e algumas opções.</li>
+          <li>O ator clica no avatar que contém a sua foto de perfil e um menu abre com suas informações e algumas opções.</li>
           <li>O ator clica na opção 'Sair' encontrada no menu.</li>
           <li>
             O sistema encerra a sessão do usuário.

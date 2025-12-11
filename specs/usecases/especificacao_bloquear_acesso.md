@@ -24,8 +24,7 @@
     <tr>
       <td><strong>Condições de entrada</strong></td>
       <td>
-        O ator não está credenciado e falha duas vezes ao tentar acessar o
-        sistema.
+        O ator falha duas vezes ao tentar se credenciar no sistema.
       </td>
     </tr>
     <tr>

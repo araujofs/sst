@@ -4,24 +4,24 @@ left to right direction
 !include users.puml
 
 package "Gestão de usuários" {
-  (Manter logs) as mantLog
-  (Manter políticas de logs) as mantPolLog
-  (Configurar rotinas de backup) as confBack
-  (Visualizar saúde\ndo sistema) as visSau
-  (Reportar erro) as repErr
-  (Notificar erro crítico) as notifErr
+  ' 001
+  (Manter usuário) as mantUs
+  ' 002
+  (Manter associado) as mantAss
+  ' 005
+  (Gerenciar perfil) as gerenPf
+  ' 014
+  (Visualizar\n informações de\nAssociados\ntemporariamente) as visInfo
 
-  (mantLog) <.. (mantPolLog) : <<extend>>
+  ' relacionamentos
+  (mantUs) <|-- (mantAss)
 
-  adm -- mantLog
-  adm -- mantPolLog
+  adm -- (mantUs)
 
-  adm -- confBack
+  ger -- (mantAss) 
 
-  ges -- visSau
+  us -- (gerenPf)
 
-  us -- repErr
-  
-  adm -- notifErr
+  tec -- (visInfo)
 }
 @enduml
