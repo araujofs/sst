@@ -122,7 +122,7 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RF-AUT-005]**: Como administrador, quero definir políticas de expiração e renovação de senhas para garantir maior segurança com os acessos.
 - **[RF-AUT-006]**: Como administrador, quero encerrar a sessão de **Usuário** para evitar acessos indesejados.
 - **[RF-AUT-008]**: Como usuário, quero encerrar minha sessão para garantir que não hajam acessos indevidos na minha ausência.
-- **[RF-AUT-009]**: Como usuário, quero que o sistema bloqueie meu acesso caso haja mais de 2 tentativas falhas de acesso para garantir a segurança do sistema.
+- **[RF-AUT-009]**: Como usuário, quero que o sistema bloqueie meu acesso caso haja mais de 1 tentativa falha de acesso para garantir a segurança do sistema.
 
 ## Gestão de Usuários 
 - **[RF-GES-001]**: Como administrador, quero manter **Usuário** para garantir acesso apenas às pessoas autorizadas e modificar permissões caso seja necessário. Os usuários devem ser cadastrados com os seguintes dados:

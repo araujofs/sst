@@ -20,8 +20,8 @@ package "Controle de acesso" {
   us -- (logout)
   adm -- (endSes)
 
-  note "Se mais de uma tentativa falha" as n1
-  (login) <.. n1
-  n1 .. (bloq) : <<extends>>
+  note "{Se mais de uma tentativa falha}" as n1
+  (login) <.. n1 : <<extend>>
+  n1 .. (bloq) 
 }
 @enduml
