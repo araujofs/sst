@@ -66,7 +66,7 @@
             estão incorretas e solicita que o ator tente novamente.
           </li>
           <li>
-            O sistema deve notificar o ator em cuja conta houve a tentativa de acesso através de email e deve registrar a tentativa.
+            O sistema deve notificar o ator em cuja conta houve a tentativa de acesso através de email <strong>[RF-AUT-004]</strong> e deve registrar a tentativa.
           </li>
         </ol>
         <a id="a2">[A2] - Inserir credenciais erradas pela segunda vez</a>
