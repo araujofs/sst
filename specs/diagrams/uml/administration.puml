@@ -4,7 +4,7 @@
 package "Administração e Infraestrutura" {
   (Fazer login) as login
   (Notificar\ntentativas de\nentrada falhas) as notifCda
-  (Manter políticas\nde expiração/renovação\nde senhas) as polSen
+  (Manter políticas\nde configuração\nde logs) as polSen
   (Encerrar sessão) as logout
   (Bloquear acesso\ncom mais de 2\ntentativas falhas) as bloq
   (Encerrar sessão\nde outro Usuário) as endSes
