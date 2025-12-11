@@ -3,7 +3,7 @@
     <tr>
       <td><strong>Caso de uso</strong></td>
       <td>
-        <strong><em>UC2 - Bloquear acesso</em></strong>
+        <strong><span><a>UC2 - Bloquear acesso</a></span></strong>
       </td>
     </tr>
     <tr>
@@ -33,7 +33,7 @@
       <td>
         <ol>
           <li>
-            O ator segue o fluxo alternativo <a href="especificacao_fazer_login.md#a2">[A2]</a> do caso de uso    <a href="especificacao_fazer_login.md">[UC1 - Fazer login]</a>.
+            O ator segue o fluxo alternativo <a href="especificacao_fazer_login.md#a2">[A2]</a> do caso de uso <a href="especificacao_fazer_login.md">[UC1]</a>.
           </li>
           <li>
             O sistema bloqueia o acesso do usuário, impedindo novas tentativas

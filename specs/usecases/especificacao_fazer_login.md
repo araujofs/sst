@@ -3,7 +3,7 @@
     <tr>
       <td><strong>Caso de uso</strong></td>
       <td>
-        <strong><em>UC1 - Fazer login</em></strong>
+        <strong><span><a>UC1 - Fazer login</a></span></strong>
       </td>
     </tr>
     <tr>
@@ -70,7 +70,7 @@
         <ol>
           <li>O ator executa <a href="#a1">[A1]</a> pela segunda vez.</li>
           <li>
-            O sistema informa que seu acesso foi bloqueado <a href="especificacao_bloquear_acesso.md">[UC2 - Bloquear acesso]</a> e
+            O sistema informa que seu acesso foi bloqueado <a href="especificacao_bloquear_acesso.md">[UC2]</a> e
             solicita que o ator entre em contato com o suporte.
           </li>
         </ol>
