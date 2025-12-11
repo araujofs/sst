@@ -33,9 +33,7 @@
       <td>
         <ol>
           <li>
-            O ator segue o fluxo principal de
-            <a href="especificacao_fazer_login.html">UC1 - Fazer login</a> e
-            falha pela segunda vez ao tentar se credenciar no sistema.
+            O ator segue o fluxo alternativo <a href="especificacao_fazer_login.md#a2">[A2]</a> do caso de uso    <a href="especificacao_fazer_login.md">[UC1 - Fazer login]</a>.
           </li>
           <li>
             O sistema bloqueia o acesso do usuário, impedindo novas tentativas
@@ -47,6 +45,13 @@
     <tr>
       <td><strong>Fluxos alternativos</strong></td>
       <td>Nenhum</td>
+    </tr>
+    <tr>
+      <td><strong>Fluxos de exceção</strong></td>
+      <td>
+        <a>[RN1] - Credenciamento de usuário</a><br>
+        O usuário deve ser cadastrado previamente no sistema por um gestor e usar as credenciais informadas para ter acesso aos outros módulos.
+      </td>
     </tr>
   </tbody>
 </table>
