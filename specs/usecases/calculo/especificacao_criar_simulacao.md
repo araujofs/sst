@@ -116,7 +116,6 @@
           <li>Valores negativos não são permitidos em campos financeiros</li>
           <li>Faturamento não pode exceder R$ 4.8 milhões para Simples Nacional</li>
           <li>Campos obrigatórios devem estar preenchidos</li>
-          <li>Valores muito altos ou muito baixos devem gerar alertas</li>
         </ul>
       </td>
     </tr>
