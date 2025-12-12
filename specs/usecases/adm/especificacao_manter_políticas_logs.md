@@ -3,97 +3,74 @@
     <tr>
       <td><strong>Caso de uso</strong></td>
       <td>
-        <strong
-          ><span><a>UCxx - Reportar erro</a></span></strong
-        >
+        <strong><span><a>UCxx - Manter políticas de logs</a></span></strong>
       </td>
     </tr>
     <tr>
       <td><strong>Objetivo</strong></td>
       <td>
-        Ajudar na resolução rápida e eficiente de erros que possam existir no sistema.
+        Permiter que o administrador tenha controle sobre as configurações relacionadas aos logs do sistema.
       </td>
     </tr>
     <tr>
       <td><strong>Requisitos</strong></td>
-      <td>RF-ADM-011</td>
+      <td>RF-ADM-003</td>
     </tr>
     <tr>
       <td><strong>Atores</strong></td>
-      <td>Usuário</td>
+      <td>Administrador</td>
     </tr>
     <tr>
       <td><strong>Condições de entrada</strong></td>
-      <td>
-        O ator encontrou um erro no sistema e deseja reportá-lo para a equipe de
-        desenvolvimento.
-      </td>
+      <td>O ator seleciona 'Gerenciar políticas de logs' no menu de configurações do sistema.</td>
     </tr>
     <tr>
       <td><strong>Fluxo principal</strong></td>
       <td>
         <ol>
           <li>
-            O ator se encontra em qualquer tela do sistema. Ele detecta um erro
-            durante o uso. Ele observa que existe um botão com o ícone de um
-            "bug" ou "inseto" no canto superior direito da tela. Ele seleciona
-            esse botão para iniciar o processo de reporte de erro.
-          </li>
-          <li>
-            O sistema exibe um formulário de reporte de erro. O ator preenche os
-            campos obrigatórios, que incluem:
-            <ul>
+            O ator acessa a página de gerenciamento de políticas de logs. Ele observa que há alguns campos:
+            <ol>
+              <li>Tempo de armazenamento</li>
+              <li>Nível de detalhamento</li>
+              <li>Categorias</li>
               <li>
-                Descrição do erro: Uma breve descrição do problema encontrado.
-              </li>
-              <li>
-                Passos para reproduzir: Instruções detalhadas sobre como
-                reproduzir o erro.
-              </li>
-              <li>
-                Anexar arquivos (opcional): O ator pode anexar capturas de tela
-                ou arquivos relevantes que ajudem a ilustrar o problema.
-              </li>
-              <li>
-                Opções:
+                Opções: 
                 <ul>
-                  <li>
-                    Enviar
-                  </li>
-                  <li>
-                    Cancelar
-                  </li>
+                  <li>Salvar</li>
+                  <li>Cancelar</li>
                 </ul>
               </li>
-            </ul>
+            </ol>
           </li>
           <li>
-            Após preencher o formulário, o ator clica no botão "Enviar Reporte".
-            O sistema valida as informações fornecidas e confirma o envio do
-            reporte de erro.
+            O ator decide modificar a política. Ele modifica o campo desejado.
           </li>
+          <li>
+            O ator seleciona a opção 'Salvar'.
+          </li>
+          <li>O sistema verifica se os dados informados são válidos <a href="#rn3">[RN3]</a> para a modificação da política.</li>
         </ol>
       </td>
     </tr>
     <tr>
       <td><strong>Fluxos alternativos</strong></td>
       <td>
-        <a id="a1">A1 - Cancelar envio do reporte</a>
+        <a id="a1">A1 - Cancelar modificação</a>
         <ol>
-          <li>
-            O ator executa o fluxo principal até o passo 2, onde ele decide não enviar o reporte de
-            erro e clica no botão "Cancelar".
-          </li>
-          <li>
-            O sistema descarta as informações inseridas no formulário e retorna
-            o ator para a tela anterior sem salvar nenhum dado.
-          </li>
+          <li>O ator segue o fluxo principal até o passo <a>2</a>.</li>
+          <li>O ator decide cancelar a modificação e seleciona a opção 'Cancelar'.</li>
+          <li>A política volta ao estado anterior.</li>
         </ol>
       </td>
     </tr>
     <tr>
       <td><strong>Fluxos de exceção</strong></td>
-      <td>Nenhum</td>
+      <td>
+        <a id="rn3">[RN3] - Validação de política de logs</a><br>
+        O sistema deve garantir que a especificação mínima de logs seja atendida.
+      </td>
     </tr>
   </tbody>
 </table>
+  

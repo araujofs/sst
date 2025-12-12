@@ -53,14 +53,7 @@
     - [Customização e Configuração](#customização-e-configuração)
   - [Notificações e Alertas Legislativos](#notificações-e-alertas-legislativos)
   - [Administração e Infraestrutura](#administração-e-infraestrutura)
-  - [Integração com Sistemas Externos (APIs)](#integração-com-sistemas-externos-apis)
-    - [Validação e Consulta de Dados Cadastrais](#validação-e-consulta-de-dados-cadastrais)
-    - [Consulta de Alíquotas Tributárias Municipais e Estaduais](#consulta-de-alíquotas-tributárias-municipais-e-estaduais)
-    - [Atualização de Tabelas e Legislação Tributária](#atualização-de-tabelas-e-legislação-tributária)
-    - [Importação de Dados Contábeis](#importação-de-dados-contábeis)
-    - [Comunicação e Notificações](#comunicação-e-notificações)
-    - [Monitoramento de Atualizações Legislativas](#monitoramento-de-atualizações-legislativas)
-    - [Resiliência e Tratamento de Falhas](#resiliência-e-tratamento-de-falhas)
+  - [Importação de Dados e Validações](#importação-de-dados-e-validações)
 - [Requisitos não-funcionais](#requisitos-não-funcionais)
   - [Disponibilidade](#disponibilidade)
   - [Privacidade e segurança](#privacidade-e-segurança)
@@ -246,7 +239,7 @@ sua disponibilidade e confiabilidade.
 
 ## Administração e Infraestrutura
 - **[RF-ADM-001]**: Como administrador, quero visualizar logs categorizados e com mensagens claras de ações do sistema (erro, warnings, etc) e de ações de **Usuário** (acessos, mudanças no perfil, etc) para monitorar comportamentos suspeitos e resolver possíveis problemas.
-- **[RF-ADM-003]**: Como administrador, quero configurar as políticas de armazenamento e detalhamento de logs (tempo máximo para armazenar, nível de especificade, categorias) para garantir uso correto dos dados e sua disponibilidade.
+- **[RF-ADM-003]**: Como administrador, quero configurar as política de armazenamento e detalhamento de logs (tempo máximo para armazenar, nível de especificade, categorias) para garantir uso correto dos dados e sua disponibilidade.
 - **[RF-ADM-005]**: Como administrador, quero configurar rotinas automáticas (ou manuais) de backup dos dados do sistema para garantir disponibilidade dos dados.
 - **[RF-ADM-010]**: Como gestor, quero visualizar a saúde do sistema no momento (recursos utilizados, módulos funcionando, tempo médio de resposta, disponibilidade, usuários ativos) para acompanhar a situação atual do sistema.
 - **[RF-ADM-011]**: Como usuário, quero reportar erros encontrados durante o uso do sistema para garantir que o problema possa ser resolvido.
