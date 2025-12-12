@@ -227,8 +227,6 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RF-REL-008]**: Como administrador, quero disponibilizar templates de relatórios e dashboards pré-configurados para diferentes perfis de usuário (contador iniciante, gerente experiente, cliente), que possam ser personalizados conforme as necessidades específicas de cada escritório ou profissional. 
 
 
-
-
 ## Notificações e Alertas Legislativos
 - **[RF-NOT-001]**: Como contador ou gerente, quero receber notificações sobre mudanças na legislação tributária, 
 com detecção automática de impacto em minhas simulações salvas, para ajustar cálculos e discutir estratégias com a equipe.
@@ -281,18 +279,6 @@ sua disponibilidade e confiabilidade.
 ### Importação de Dados Contábeis
 
 - **[RF-INT-008]**: Como Contador ou Gerente, quero que o sistema permita importar dados financeiros (receitas, despesas, folha de pagamento) de arquivos nos formatos Excel (.xlsx), CSV, ou XML do SPED (ECD, ECF, EFD-Contribuições), mapeando automaticamente os campos relevantes e validando a consistência dos dados antes da importação, para agilizar o processo de simulação e reduzir erros de digitação manual.
-
-- **[RF-INT-009]**: Como Contador ou Gerente, quero que o sistema permita conectar via API REST com sistemas ERP populares (TOTVS, SAP, Omie, Conta Azul), mediante configuração de credenciais e autorização, para importar automaticamente balancetes, DREs, e dados de faturamento do período selecionado, sincronizando dados sem necessidade de exportação/importação manual.
-
-### Comunicação e Notificações
-
-- **[RF-INT-010]**: Como Contador ou Gerente, quero que o sistema envie relatórios e notificações por e-mail através de serviço SMTP configurável ou API de envio de e-mails (SendGrid, AWS SES, Mailgun), com templates profissionais personalizáveis contendo logo da empresa, permitindo anexar PDFs de simulações e incluir gráficos comparativos no corpo do e-mail.
-
-- **[RF-INT-011]**: Como Administrador, quero que o sistema possa enviar notificações urgentes via SMS através de APIs de mensageria (Twilio, AWS SNS) para alertar Contadores e Gerentes sobre mudanças críticas na legislação tributária, vencimento de prazos de obrigações acessórias, ou quando houver simulações impactadas por atualizações de alíquotas.
-
-### Monitoramento de Atualizações Legislativas
-
-- **[RF-INT-012]**: Como Administrador, quero que o sistema monitore automaticamente fontes oficiais (Diário Oficial da União, sites da Receita Federal, CONFAZ) através de web scraping ou APIs quando disponíveis, identificando publicações de novas leis, portarias, instruções normativas e convênios que possam impactar cálculos tributários, e gerando alertas para revisão manual antes de aplicar mudanças no sistema.
 
 ### Resiliência e Tratamento de Falhas
 
