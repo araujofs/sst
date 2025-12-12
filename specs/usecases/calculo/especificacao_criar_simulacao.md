@@ -32,14 +32,20 @@
           <li>O ator acessa o módulo de simulação e clica em "Nova Simulação".</li>
           <li>O sistema exibe o formulário inicial (Etapa 1) com os campos:
             <ul>
+              <li>CNPJ (opcional, com checkbox "Simulação sem CNPJ")</li>
+              <li>Razão Social (preenchida automaticamente se CNPJ válido, senão manual)</li>
               <li>CNAE Principal (campo de busca com autocompletar)</li>
               <li>Setor Econômico (preenchido automaticamente após seleção do CNAE)</li>
+              <li>Município/UF (preenchido automaticamente se CNPJ válido, senão manual)</li>
               <li>Regime(s) a simular (checkboxes: Simples Nacional, Lucro Presumido, Lucro Real)</li>
               <li>Botão "Avançar"</li>
             </ul>
           </li>
+          <li>O ator pode informar o CNPJ para autopreenchimento ou marcar "Simulação sem CNPJ". <a href="#a0">[A0]</a></li>
+          <li>O ator preenche ou confirma a Razão Social.</li>
           <li>O ator preenche o CNAE principal.</li>
           <li>O sistema identifica automaticamente o setor econômico e exibe na tela.</li>
+          <li>O ator preenche ou confirma Município/UF.</li>
           <li>O ator seleciona o(s) regime(s) tributário(s) que deseja simular.</li>
           <li>O ator clica em "Avançar".</li>
           <li>O sistema valida se pelo menos um regime foi selecionado. <a href="#e1">[E1]</a></li>
@@ -58,6 +64,14 @@
     <tr>
       <td><strong>Fluxos alternativos</strong></td>
       <td>
+        <a id="a0">[A0] - Consultar CNPJ para autopreenchimento</a>
+        <ol>
+          <li>No passo 3, o ator informa um CNPJ válido.</li>
+          <li>O sistema consulta a API da Receita Federal. <a href="../importacao/especificacao_validar_cnpj.md">[UC15]</a></li>
+          <li>O sistema preenche automaticamente: Razão Social, CNAE, Município/UF.</li>
+          <li>O ator pode editar qualquer campo preenchido automaticamente.</li>
+          <li>Retorna ao passo 5.</li>
+        </ol>
         <a id="a1">[A1] - Etapa 2: Campos e informações específicas por regime</a>
         <ol>
           <li>Na Etapa 2, o sistema exibe os campos conforme o(s) regime(s) selecionado(s):</li>

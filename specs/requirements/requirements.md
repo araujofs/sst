@@ -254,7 +254,7 @@ sua disponibilidade e confiabilidade.
 
 ## Importação de Dados e Validações
 
-- **[RF-IMP-001]**: Como Contador ou Gerente, quero que o sistema valide o CNPJ informado consultando a API da Receita Federal (ReceitaWS ou BrasilAPI) para verificar situação cadastral (ativa, inapta, suspensa), razão social, CNAE principal e natureza jurídica, com timeout de 10 segundos. Caso a API esteja indisponível, o sistema deve exibir mensagem de erro clara e permitir que eu prossiga com inserção manual dos dados, garantindo que eu tenha ciência de que a validação automática não foi realizada.
+- **[RF-IMP-001]**: Como Contador ou Gerente, quero que o sistema permita validar o CNPJ informado consultando a API da Receita Federal (ReceitaWS ou BrasilAPI) para preencher automaticamente dados cadastrais (razão social, CNAE principal), com timeout de 10 segundos. Caso a API esteja indisponível, o CNPJ seja inválido ou eu opte por não informar CNPJ (simulação hipotética/empresa futura), o sistema deve permitir que eu prossiga com preenchimento manual dos dados, sem bloquear a simulação.
 
 - **[RF-IMP-002]**: Como Contador ou Gerente, quero que o sistema permita importar dados financeiros (receitas, despesas, folha de pagamento) de arquivos nos formatos Excel (.xlsx) ou CSV, com mapeamento manual ou assistido dos campos (coluna do arquivo → campo do sistema) e validação básica dos dados (tipos numéricos, datas válidas, valores não negativos) antes da importação, para agilizar o processo de simulação e reduzir erros de digitação.
 
