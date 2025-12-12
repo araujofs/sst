@@ -199,10 +199,8 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 
 
 ## Atualização de Legislação e Alíquotas
-- **[RF-LEG-001]**: Como administrador, quero que o sistema atualize automaticamente as alíquotas e regras tributárias com base em fontes oficiais (Receita Federal, Secretarias da Fazenda) para garantir que as simulações estejam sempre alinhadas com a legislação vigente.
-- **[RF-LEG-002]**: Como contador ou gerente, quero ser notificado sobre atualizações na legislação tributária que possam impactar as simulações realizadas para garantir que estou sempre informado sobre mudanças relevantes.
-- **[RF-LEG-003]**: Como administrador, quero manter um histórico de todas as atualizações legislativas aplicadas no sistema para referência futura e auditoria.
-- **[RF-LEG-004]**: Como administrador, quero validar as atualizações legislativas antes de aplicá-las no sistema para garantir a precisão e confiabilidade das informações.
+- **[RF-LEG-001]**: Como administrador, quero atualizar manualmente as alíquotas e regras tributárias através de interface administrativa que permita importar arquivos (CSV ou Excel) com as novas tabelas do Simples Nacional, validando o formato dos dados antes de aplicar, para garantir que as simulações estejam sempre alinhadas com a legislação vigente publicada pela Receita Federal.
+- **[RF-LEG-002]**: Como administrador, quero que o sistema mantenha um histórico completo de todas as atualizações legislativas aplicadas, registrando: data da atualização, usuário responsável, versão anterior das tabelas, versão nova, e descrição resumida das mudanças, para permitir auditoria e reversão quando necessário.
 
 
 ## Relatórios e Dashboards
@@ -254,37 +252,13 @@ sua disponibilidade e confiabilidade.
 - **[RF-ADM-011]**: Como usuário, quero reportar erros encontrados durante o uso do sistema para garantir que o problema possa ser resolvido.
 - **[RF-ADM-012]**: Como administrador, quero ser notificado quando ocorrer um erro crítico no sistema para resolver rapidamente o problema.
 
-## Integração com Sistemas Externos (APIs)
+## Importação de Dados e Validações
 
-### Validação e Consulta de Dados Cadastrais
+- **[RF-IMP-001]**: Como Contador ou Gerente, quero que o sistema valide o CNPJ informado consultando a API da Receita Federal (ReceitaWS ou BrasilAPI) para verificar situação cadastral (ativa, inapta, suspensa), razão social, CNAE principal e natureza jurídica, com timeout de 10 segundos. Caso a API esteja indisponível, o sistema deve exibir mensagem de erro clara e permitir que eu prossiga com inserção manual dos dados, garantindo que eu tenha ciência de que a validação automática não foi realizada.
 
-- **[RF-INT-001]**: Como Contador ou Gerente, quero que o sistema valide automaticamente o CNPJ informado consultando a API da Receita Federal (Serpro ou ReceitaWS) para verificar: situação cadastral (ativa, inapta, suspensa), razão social, CNAE principal, natureza jurídica, e data de abertura, garantindo que os dados da empresa sejam legítimos e atualizados antes de iniciar qualquer simulação.
+- **[RF-IMP-002]**: Como Contador ou Gerente, quero que o sistema permita importar dados financeiros (receitas, despesas, folha de pagamento) de arquivos nos formatos Excel (.xlsx) ou CSV, com mapeamento manual ou assistido dos campos (coluna do arquivo → campo do sistema) e validação básica dos dados (tipos numéricos, datas válidas, valores não negativos) antes da importação, para agilizar o processo de simulação e reduzir erros de digitação.
 
-- **[RF-INT-002]**: Como Contador ou Gerente, quero que o sistema identifique automaticamente o CNAE principal e CNAEs secundários da empresa através da consulta de CNPJ, preenchendo automaticamente o setor econômico e exibindo a descrição completa das atividades, para agilizar o processo de entrada de dados e evitar erros de digitação.
-
-### Consulta de Alíquotas Tributárias Municipais e Estaduais
-
-- **[RF-INT-003]**: Como Contador ou Gerente, quero que o sistema consulte automaticamente a alíquota de ISS aplicável através de API ou base de dados oficial atualizada, informando o município e o código de serviço conforme Lei Complementar 116/2003, exibindo: alíquota vigente (2% a 5%), base legal, e data da última atualização, para garantir cálculos precisos do ISS sem necessidade de consulta manual.
-
-- **[RF-INT-004]**: Como Contador ou Gerente, quero que o sistema consulte automaticamente a alíquota de ICMS aplicável através de API ou base de dados oficial da SEFAZ estadual, informando o estado (UF) e o tipo de produto/operação, exibindo: alíquota interna vigente, alíquota interestadual quando aplicável, base legal, e data da última atualização, para garantir cálculos precisos do ICMS.
-
-- **[RF-INT-005]**: Como Administrador, quero que o sistema mantenha uma base de dados local (cache) das alíquotas de ISS e ICMS consultadas, com validade máxima de 7 dias, e tente renovar automaticamente via API ao atingir 80% da validade, para garantir disponibilidade do sistema mesmo quando as APIs externas estiverem indisponíveis, exibindo alerta visual ao usuário quando estiver utilizando dados em cache próximos ao vencimento.
-
-### Atualização de Tabelas e Legislação Tributária
-
-- **[RF-INT-006]**: Como Administrador, quero que o sistema consulte automaticamente APIs oficiais da Receita Federal para atualizar as tabelas do Simples Nacional (Anexos I a V com faixas, alíquotas nominais e valores a deduzir) mensalmente ou sempre que houver publicação de nova legislação, registrando em log: data da atualização, versão anterior, versão nova, e notificando todos os usuários sobre mudanças relevantes.
-
-- **[RF-INT-007]**: Como Administrador, quero que o sistema armazene localmente as tabelas oficiais do Simples Nacional como fallback, permitindo que o sistema continue funcionando mesmo sem conexão com APIs externas, e exiba alerta destacado informando aos usuários que as tabelas podem estar desatualizadas e recomendem validação manual antes de tomar decisões críticas.
-
-### Importação de Dados Contábeis
-
-- **[RF-INT-008]**: Como Contador ou Gerente, quero que o sistema permita importar dados financeiros (receitas, despesas, folha de pagamento) de arquivos nos formatos Excel (.xlsx), CSV, ou XML do SPED (ECD, ECF, EFD-Contribuições), mapeando automaticamente os campos relevantes e validando a consistência dos dados antes da importação, para agilizar o processo de simulação e reduzir erros de digitação manual.
-
-### Resiliência e Tratamento de Falhas
-
-- **[RF-INT-013]**: Como Contador ou Gerente, quero que o sistema exiba mensagens claras quando APIs externas estiverem indisponíveis, informando: qual serviço está fora do ar, impacto nas funcionalidades (ex: "validação de CNPJ indisponível - dados devem ser inseridos manualmente"), se há dados em cache disponíveis, e previsão de retorno quando conhecida, permitindo que eu decida se desejo prosseguir com dados manuais ou aguardar.
-
-- **[RF-INT-014]**: Como Administrador, quero que o sistema registre em log todas as tentativas de comunicação com APIs externas incluindo: timestamp, endpoint acessado, parâmetros enviados, resposta recebida, tempo de resposta, e erros encontrados, e gere relatórios semanais de disponibilidade e desempenho das integrações para identificar problemas recorrentes e negociar SLAs com fornecedores de APIs.
+- **[RF-IMP-003]**: Como Administrador, quero gerenciar manualmente as alíquotas de ISS e ICMS através de interface administrativa, podendo cadastrar e atualizar as alíquotas por município/UF, incluindo: código do município/UF, alíquota vigente, data de início de vigência, e base legal (número da lei/decreto), permitindo que o sistema consulte essas alíquotas localmente durante as simulações sem depender de APIs externas.
 
 # Requisitos não-funcionais
 ## Disponibilidade
