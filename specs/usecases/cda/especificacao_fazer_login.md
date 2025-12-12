@@ -23,7 +23,7 @@
     </tr>
     <tr>
       <td><strong>Condições de entrada</strong></td>
-      <td>O ator não está credenciado e tenta acessar o sistema.</td>
+      <td>O ator tenta acessar o sistema sem estar credenciado.</td>
     </tr>
     <tr>
       <td><strong>Fluxo principal</strong></td>
