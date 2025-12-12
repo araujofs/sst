@@ -4,29 +4,28 @@
       <td><strong>Caso de uso</strong></td>
       <td>
         <strong
-          ><span><a>UCxx - Reportar erro</a></span></strong
+          ><span><a>UCxx - Configurar rotinas de backup</a></span></strong
         >
       </td>
     </tr>
     <tr>
       <td><strong>Objetivo</strong></td>
       <td>
-        Ajudar na resolução rápida e eficiente de erros que possam existir no sistema.
+        Permitir que o administrador configure rotinas de backup em intervalos de tempo, ou dispare manualmente, garantindo disponibilidade dos dados caso haja algum problema.
       </td>
     </tr>
     <tr>
       <td><strong>Requisitos</strong></td>
-      <td>RF-ADM-011</td>
+      <td>RF-ADM-007</td>
     </tr>
     <tr>
       <td><strong>Atores</strong></td>
-      <td>Usuário</td>
+      <td>Administrador</td>
     </tr>
     <tr>
       <td><strong>Condições de entrada</strong></td>
       <td>
-        O ator encontrou um erro no sistema e deseja reportá-lo para a equipe de
-        desenvolvimento.
+        O ator se encontra no menu de configuração do sistema.
       </td>
     </tr>
     <tr>
@@ -34,43 +33,43 @@
       <td>
         <ol>
           <li>
-            O ator se encontra em qualquer tela do sistema. Ele detecta um erro
-            durante o uso. Ele observa que existe um botão com o ícone de um
-            "bug" ou "inseto" no canto superior direito da tela. Ele seleciona
-            esse botão para iniciar o processo de reporte de erro.
+            O ator verifica no menu de configuração do sistema que há um menu relacionado a rotinas de backup. Ele seleciona esse menu.
           </li>
           <li>
-            O sistema exibe um formulário de reporte de erro. O ator preenche os
-            campos obrigatórios, que incluem:
+            O ator observa na nova tela que se abriu uma lista de rotinas de backup configuradas. Ele vê que há a opção de 'Criar rotina'. Ele também verifica que em cada rotina lisada há algumas informações:
             <ul>
-              <li>
-                Descrição do erro: Uma breve descrição do problema encontrado.
-              </li>
-              <li>
-                Passos para reproduzir: Instruções detalhadas sobre como
-                reproduzir o erro.
-              </li>
-              <li>
-                Anexar arquivos (opcional): O ator pode anexar capturas de tela
-                ou arquivos relevantes que ajudem a ilustrar o problema.
-              </li>
-              <li>
-                Opções:
-                <ul>
-                  <li>
-                    Enviar
-                  </li>
-                  <li>
-                    Cancelar
-                  </li>
-                </ul>
-              </li>
+              <li>Nome da rotina</li>
+              <li>Data da próxima execução</li>
+              <li>Intervalo configurado</li>
+              <li>Opções:</li>
+              <ul>
+                <li>Editar</li>
+                <li>Apagar</li>
+              </ul>
             </ul>
           </li>
           <li>
-            Após preencher o formulário, o ator clica no botão "Enviar Reporte".
-            O sistema valida as informações fornecidas e confirma o envio do
-            reporte de erro.
+            O ator seleciona a opção de 'Criar rotina', onde vê campos para definir as informações que aparecem na listagem e mais algumas:
+            <ul>
+              <li>Nome da rotina</li>
+              <li>Data da próxima execução</li>
+              <li>Intervalo configurado</li>
+              <li>Dados selecionados para backup</li>
+              <li>Destino do backup</li>
+              <li>Tipo de criptografia</li>
+              <li>Tipo de compactação</li>
+              <li>Opções:</li>
+              <ul>
+                <li>Limpar</li>
+                <li>Criar</li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            O ator define as informações que deseja e escolhe a opção 'Criar'.
+          </li>
+          <li>
+            O sistema salva a nova rotina de backup configurada. <a href="#rn4">[RN4]</a>
           </li>
         </ol>
       </td>
@@ -78,22 +77,41 @@
     <tr>
       <td><strong>Fluxos alternativos</strong></td>
       <td>
-        <a id="a1">A1 - Cancelar envio do reporte</a>
+        <a id="a1">A1 - Buscar rotinas</a>
         <ol>
-          <li>
-            O ator executa o fluxo principal até o passo 2, onde ele decide não enviar o reporte de
-            erro e clica no botão "Cancelar".
-          </li>
-          <li>
-            O sistema descarta as informações inseridas no formulário e retorna
-            o ator para a tela anterior sem salvar nenhum dado.
-          </li>
+          <li>O ator quer buscar por uma rotina específica. Ele observa que há um campo de busca na página de configuração das rotinas.</li>
+          <li>O ator digita o nome da rotina pela qual quer procurar e seleciona 'Buscar'.</li>
+          <li>O sistema exibe as rotinas com nomes similares à busca do usuário.</li>
+        </ol>
+        <a id="a2">A2 - Editar rotina</a>
+        <ol>
+          <li>O ator segue o fluxo de <a href="#a1">[A1]</a> e acha a rotina que quer editar.</li>
+          <li>O ator seleciona a opção 'Editar' na rotina escolhida.</li>
+          <li>O ator vê os mesmos campos do fluxo principal, mas já preenchidos, e observa também um histórico de edições.</li>
+          <li>O ator altera as informações desejadas e seleciona a opção 'Salvar'. O sistema verifica a validade das alterações <a href="#rn4">[RN4]</a>.</li>
+          <li>O ator é redirecionado para a tela de busca anterior onde vê a rotina que acabou de alterar.</li>
+        </ol>
+        <a id="a3">A3 - Apagar rotina</a>
+        <ol>
+          <li>O ator segue o fluxo de <a href="#a1">[A1]</a> e acha a rotina que quer apagar.</li>
+          <li>O ator seleciona o botão 'Apagar' na rotina escolhida.</li>
+          <li>O ator confirma sua escolha em um modal.</li>
+          <li>O ator é redirecionado para a tela de busca anterior onde verifica que a política escolhida foi apagada.</li>
+        </ol>
+        <a id="a3">A4 - Limpar formulário de criação de política</a>
+        <ol>
+          <li>O ator segue o fluxo principal até o passo <a>3</a> e define as informações.</li>
+          <li>O ator seleciona o botão 'Limpar' no formulário de criação de rotina.</li>
+          <li>Os campos do formulário são resetados.</li>
         </ol>
       </td>
     </tr>
     <tr>
       <td><strong>Fluxos de exceção</strong></td>
-      <td>Nenhum</td>
+      <td>
+        <a id="rn4">[RN4] - Backup mínimo</a><br>
+        O sistema deve garantir que um tipo de dado está incluso em pelo menos uma rotina de backup.
+      </td>
     </tr>
   </tbody>
 </table>

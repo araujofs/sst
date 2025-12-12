@@ -60,7 +60,7 @@
           <li>O ator digita o nome pelo qual quer procurar e seleciona 'Buscar'.</li>
           <li>O sistema exibe as políticas com nomes similares à busca do usuário.</li>
         </ol>
-        <a id="a1">A2 - Editar política</a>
+        <a id="a2">A2 - Editar política</a>
         <ol>
           <li>O ator segue o fluxo de <a href="#a1">[A1]</a> e acha a polítca que quer editar.</li>
           <li>O ator seleciona a opção 'Editar' na política escolhida.</li>
@@ -68,9 +68,9 @@
           <li>O ator altera as informações desejadas e seleciona a opção 'Salvar'. O sistema verifica a validade das alterações <a href="#rn2">[RN2]</a>.</li>
           <li>O ator é redirecionado para a tela de busca anterior onde pode ver a política de senha que acabou de alterar.</li>
         </ol>
-        <a id="a1">A3 - Apagar política</a>
+        <a id="a3">A3 - Apagar política</a>
         <ol>
-          <li>O ator segue o fluxo de <a href="#a1">[A1]</a> e acha a polítca que quer apagar.</li>
+          <li>O ator segue o fluxo de <a href="#a1">[A1]</a> e acha a política que quer apagar.</li>
           <li>O ator seleciona o botão 'Apagar' na política escolhida.</li>
           <li>O ator confirma sua escolha em um modal.</li>
           <li>O ator é redirecionado para a tela de busca anterior onde pode ver que a política escolhida foi apagada.</li>
