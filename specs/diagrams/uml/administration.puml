@@ -16,8 +16,6 @@ package "Administração e Infraestrutura" {
   (Notificar erro crítico) as notifErr
 
   ' relacionamentos
-  (mantLog) <.. (mantPolLog) : <<extend>>
-
   adm -- (visLog)
   adm -- (mantPolLog)
 
