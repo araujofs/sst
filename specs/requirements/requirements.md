@@ -24,6 +24,7 @@
 | 01/12/2025 | 2.0 | Adição dos wireframes | Gabriel Pereira de Carvalho | 
 | 04/12/2025 | 2.1 | Correções solicitidas após apresentação | Arthur Araújo |
 | 05/12/2025 | 2.2 | Correções solicitidas dos requisitos funcionais após apresentação | Gabriel Pereira |
+| 12/12/2025 | 2.3 | Correções solicitidas dos requisitos funcionais após apresentação | Gabriel Pereira |
 
 ---
 
@@ -131,6 +132,9 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
   - Cliente: razão social (caso seja empresa), nome (caso seja pessoa física), email, senha, CNPJ da sua empresa (caso seja empresa), CPF (caso seja pessoa física), CNPJ do escritório de contabilidade associado
 
 - **[RF-GES-005]**: Como usuário, quero gerenciar meu perfil (foto, nome, e-mail, senha) no sistema para manter as informações atualizadas e minhas credenciais seguras.
+
+- **[RF-GES-006]**: O sistema deve notificar por e-mail quando um novo usuário for cadastrado ou suas permissões forem alteradas.
+
 - **[RF-GES-014]**: Como técnico de suporte, quero visualizar temporariamente informações não confidencias de **Associado** e **Gerente** para diagnosticar eventuais problemas.
 
 ## Cálculo e Simulação Tributária
@@ -158,6 +162,8 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RF-CAL-011]**: Como Gerente, quero visualizar um resumo executivo da simulação tributária contendo: regime tributário recomendado, carga tributária total anual, economia potencial em relação aos outros regimes, principais tributos (top 3 por valor), e gráfico comparativo visual, para apresentar rapidamente aos stakeholders de forma clara e objetiva.
 
 - **[RF-CAL-012]**: Como Contador ou Gerente, quero que o sistema permita ajustes manuais em alíquotas e parâmetros específicos (com campo obrigatório para justificativa textual e registro de quem fez o ajuste), para simular situações especiais como incentivos fiscais regionais, benefícios setoriais, ou interpretações específicas da legislação.
+
+-**[RF-CAL-013]**: O sistema deve alertar o usuário quando uma simulação salva for impactada por mudanças na legislação tributária.
 
 ### Cálculos do Simples Nacional
 
@@ -204,37 +210,18 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RF-REL-003]**: Como contador, quero gerar relatórios personalizados para clientes específicos, com a possibilidade de incluir logo da empresa, observações personalizadas e selecionar quais métricas e gráficos serão apresentados, para fornecer análises sob medida que atendam às necessidades particulares de cada cliente.
 - **[RF-REL-004]**: Como contador ou gerente, quero exportar os resultados das simulações em diferentes formatos (PDF com formatação profissional, Excel com todas as planilhas de cálculo detalhadas, CSV com dados brutos), para compartilhar com clientes, integrar a outros sistemas ou arquivar.
 
-### Dashboards e Painéis de Controle
-- **[RF-REL-005]**: Como gerente, quero acessar um dashboard executivo consolidado com indicadores de toda minha equipe de contadores (número de simulações realizadas, economias identificadas, clientes atendidos), para monitorar a produtividade da equipe e identificar oportunidades de melhoria.
+<!-- ### Dashboards e Painéis de Controle
+- **[RF-REL-005]**: Como gerente, quero acessar um dashboard executivo consolidado com indicadores de toda minha equipe de contadores (número de simulações realizadas, economias identificadas, clientes atendidos), para monitorar a produtividade da equipe e identificar oportunidades de melhoria. -->
 
-### Relatórios Administrativos e de Uso
-- **[RF-REL-006]**: Como administrador, quero visualizar relatórios de uso do sistema (usuários ativos, simulações realizadas, horários de pico, funcionalidades mais utilizadas), para entender os padrões de uso, planejar capacitações e identificar necessidades de ajustes na infraestrutura.
+<!-- ### Relatórios Administrativos e de Uso
+- **[RF-REL-006]**: Como administrador, quero visualizar relatórios de uso do sistema (usuários ativos, simulações realizadas, horários de pico, funcionalidades mais utilizadas), para entender os padrões de uso, planejar capacitações e identificar necessidades de ajustes na infraestrutura. -->
 
-### Relatórios de Compliance e Oportunidades
-- **[RF-REL-007]**: Como contador ou gerente, quero gerar relatórios de compliance fiscal que listem as obrigações acessórias cumpridas, pendências, prazos de vencimento e status de regularidade, para garantir que todos os requisitos legais estejam sendo atendidos e evitar multas.
-
-
-### Customização e Configuração
-- **[RF-REL-008]**: Como administrador, quero disponibilizar templates de relatórios e dashboards pré-configurados para diferentes perfis de usuário (contador iniciante, gerente experiente, cliente), que possam ser personalizados conforme as necessidades específicas de cada escritório ou profissional. 
+<!-- ### Relatórios de Compliance e Oportunidades
+- **[RF-REL-007]**: Como contador ou gerente, quero gerar relatórios de compliance fiscal que listem as obrigações acessórias cumpridas, pendências, prazos de vencimento e status de regularidade, para garantir que todos os requisitos legais estejam sendo atendidos e evitar multas. -->
 
 
-## Notificações e Alertas Legislativos
-- **[RF-NOT-001]**: Como contador ou gerente, quero receber notificações sobre mudanças na legislação tributária, 
-com detecção automática de impacto em minhas simulações salvas, para ajustar cálculos e discutir estratégias com a equipe.
-<!-- - **[RF-NOT-001]**: Como contador, quero receber notificações em tempo real sobre mudanças na legislação tributária e compartilhar alertas relevantes com meu **gerente** para discutir impactos futuros nos nossos clientes.
-- **[RF-NOT-002]**: Como contador ou gerente, quero ser avisado sempre que mudarem as alíquotas ou regras dos regimes tributários na legisção que uso com frequência (Simples Nacional, Lucro Presumido, Lucro Real), para poder ajustar rapidamente minhas simulações. -->
-- **[RF-NOT-002]**: Como contador ou gerente, quero receber lembretes sobre prazos de obrigações acessórias 
-(DCTF, EFD, SPED) e vencimento de documentos fiscais, para evitar multas e manter a regularidade.
-- **[RF-NOT-003]**: Como administrador, quero configurar regras globais de notificação (quais leis geram alertas, 
-para quais perfis, com que urgência), garantindo padrão consistente para todos os usuários.
-- **[RF-NOT-004]**: Como contador ou gerente, quero personalizar minhas preferências de notificação, 
-incluindo: tipos a receber, filtros por cliente/regime, e canais preferidos (sistema, e-mail, SMS).
-- **[RF-NOT-005]**: Como gestor, quero enviar notificações em massa para a equipe, com opção de sobrepor 
-preferências pessoais em casos urgentes ou críticos.
-- **[RF-NOT-006]**: Como contador ou gestor, quero acessar histórico completo de todas as notificações recebidas, 
-com filtros e busca, para auditoria e consulta.
-- **[RF-NOT-007]**: Como técnico, quero ser alertado sobre falhas no sistema de notificação, para garantir 
-sua disponibilidade e confiabilidade.
+<!-- ### Customização e Configuração
+- **[RF-REL-008]**: Como administrador, quero disponibilizar templates de relatórios e dashboards pré-configurados para diferentes perfis de usuário (contador iniciante, gerente experiente, cliente), que possam ser personalizados conforme as necessidades específicas de cada escritório ou profissional.  -->
 
 
 ## Administração e Infraestrutura
@@ -243,7 +230,10 @@ sua disponibilidade e confiabilidade.
 - **[RF-ADM-005]**: Como administrador, quero configurar rotinas automáticas (ou manuais) de backup dos dados do sistema para garantir disponibilidade dos dados.
 - **[RF-ADM-010]**: Como gestor, quero visualizar a saúde do sistema no momento (recursos utilizados, módulos funcionando, tempo médio de resposta, disponibilidade, usuários ativos) para acompanhar a situação atual do sistema.
 - **[RF-ADM-011]**: Como usuário, quero reportar erros encontrados durante o uso do sistema para garantir que o problema possa ser resolvido.
+
 - **[RF-ADM-012]**: Como administrador, quero ser notificado quando ocorrer um erro crítico no sistema para resolver rapidamente o problema.
+
+
 
 ## Importação de Dados e Validações
 
