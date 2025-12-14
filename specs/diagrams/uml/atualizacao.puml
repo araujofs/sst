@@ -1,0 +1,23 @@
+@startuml atualizacao
+left to right direction
+
+!include users.puml
+
+package "Atualização de Legislação e Alíquotas" {
+  ' UC12 - RF-LEG-001, RF-LEG-002
+  (Atualizar\nTabelas Tributárias) as atuTab
+  
+  ' UC13 - RF-IMP-003
+  (Gerenciar\nAlíquotas de ISS e ICMS) as gerAliq
+
+  ' relacionamentos
+  adm -- (atuTab)
+  adm -- (gerAliq)
+
+  note "Mantém tabelas do\nSimples Nacional,\nPresunção, IRPJ, CSLL,\nPIS, COFINS\ne mapeamento CNAE" as n1
+  (atuTab) .. n1
+
+  note "Cadastra e atualiza\nalíquotas por\nmunicípio/UF" as n2
+  (gerAliq) .. n2
+}
+@enduml
