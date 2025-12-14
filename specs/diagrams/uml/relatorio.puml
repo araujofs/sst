@@ -1,0 +1,49 @@
+@startuml
+left to right direction
+
+actor Usuario
+actor Contador
+actor Gerente
+
+Usuario <|-- Contador
+Usuario <|-- Gerente
+
+package "Relatórios e Simulações Tributárias" {
+
+  ' UC01 – RF-REL-001
+  (Consultar Histórico\nde Simulações) as hist
+
+  ' UC02 – RF-REL-002, RF-REL-003
+  (Gerar Relatório\nComparativo) as comp
+
+  ' UC03 – RF-REL-004
+  (Exportar Resultados) as exp
+
+  ' associações
+  Contador -- hist
+  Gerente  -- hist
+
+  Contador -- comp
+
+  Contador -- exp
+  Gerente  -- exp
+
+  ' relacionamentos entre casos
+  hist ..> comp : <<include>>
+  hist ..> exp  : <<extend>>
+
+  ' notas de requisitos
+  note "RF-REL-001\nAcesso ao histórico completo,\nfiltros por cliente, data\ne regime tributário" as n1
+  hist .. n1
+
+  note "RF-REL-002\nComparação entre regimes\ncom gráficos de barras\ne linha ao longo do tempo" as n2
+  comp .. n2
+
+  note "RF-REL-003\nGeração de relatórios\npersonalizados com logo,\nobservações e métricas" as n3
+  comp .. n3
+
+  note "RF-REL-004\nExportação em PDF,\nExcel detalhado e CSV\npara compartilhamento\nou integração" as n4
+  exp .. n4
+}
+
+@enduml
