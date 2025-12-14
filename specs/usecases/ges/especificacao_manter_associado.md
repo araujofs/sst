@@ -6,6 +6,7 @@
         <strong
           ><span><a>UC07 - Manter associado</a></span></strong
         >
+        <p>(Herda de UC06 - Manter usuário)</p>
       </td>
     </tr>
     <tr>
