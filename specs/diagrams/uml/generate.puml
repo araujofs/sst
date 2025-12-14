@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+
+actor Usuario
+actor Contador
+
+Usuario <|-- Contador
+
+rectangle "Modulo de Relatório" {
+  Contador -- (Gerar Relatório Comparativo)
+
+  (Gerar Relatório Comparativo) ..> (Selecionar Simulações) : <<include>>
+  (Gerar Relatório Comparativo) ..> (Exibir Comparação) : <<include>>
+  (Gerar Relatório Comparativo) ..> (Gerar Relatório PDF) : <<include>>
+
+  (Gerar Relatório Comparativo) ..> (Personalizar Relatório) : <<extend>>
+  (Gerar Relatório Comparativo) ..> (Enviar Relatório por E-mail) : <<extend>>
+}
+
+@enduml

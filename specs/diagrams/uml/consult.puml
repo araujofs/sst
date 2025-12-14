@@ -1,0 +1,26 @@
+@startuml
+left to right direction
+
+actor Usuario
+actor Contador
+actor Gestor
+
+Usuario <|-- Contador
+Usuario <|-- Gestor
+
+rectangle "Modulo de Relatório" {
+  Contador -- (Exportar Resultados)
+  Gestor   -- (Exportar Resultados)
+
+  (Exportar Resultados) ..> (Selecionar Formato) : <<include>>
+  (Exportar Resultados) ..> (Gerar Arquivo) : <<include>>
+  (Exportar Resultados) ..> (Download do Arquivo) : <<include>>
+
+  (Selecionar Formato) <|-- (Exportar Excel)
+  (Selecionar Formato) <|-- (Exportar CSV)
+
+  (Exportar Resultados) ..> (Exportar Múltiplas Simulações) : <<extend>>
+  (Exportar Resultados) ..> (Agendar Exportação) : <<extend>>
+}
+
+@enduml

@@ -2,7 +2,7 @@
   <tbody>
     <tr>
       <td><strong>Caso de uso</strong></td>
-      <td><strong>UC23 - Exportar Resultados</strong></td>
+      <td><strong>UCxxx- Exportar Resultados</strong></td>
     </tr>
     <tr>
       <td><strong>Objetivo</strong></td>
@@ -10,7 +10,7 @@
     </tr>
     <tr>
       <td><strong>Requisitos</strong></td>
-      <td>RF-CAL-007</td>
+      <td>RF-REL-004</td>
     </tr>
     <tr>
       <td><strong>Atores</strong></td>
