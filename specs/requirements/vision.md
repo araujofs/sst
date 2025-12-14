@@ -2,7 +2,7 @@
 
 ## Sistema de simulação tributária (SST)
 
-<small>Versão 1.0</small>
+<small>Versão 1.1</small>
 
 ---
 
@@ -22,6 +22,10 @@
 
 ## Sumário
 
+- [Visão do produto](#visão-do-produto)
+  - [Sistema de simulação tributária (SST)](#sistema-de-simulação-tributária-sst)
+  - [Histórico de revisões](#histórico-de-revisões)
+  - [Sumário](#sumário)
 - [Introdução](#introdução)
   - [Propósito](#propósito)
   - [Definições e abreviações](#definições-e-abreviações)
@@ -47,6 +51,8 @@
       - [Custos Adicionais](#custos-adicionais)
     - [Estratégia de comercialização](#estratégia-de-comercialização)
     - [Planos e precificação](#planos-e-precificação)
+      - [Planos SaaS](#planos-saas)
+      - [Licença](#licença)
   - [Licenciamento e instalação](#licenciamento-e-instalação)
   - [Restrições](#restrições)
 
@@ -94,7 +100,7 @@ O documento destina-se a desenvolvedores, gerentes de projeto, stakeholders e qu
 
 ## Escopo do produto
 
-O **SST** é um sistema web que tem por objetivo principal facilitar os processos de simulação e cálculos de tributação para profissionais da contabilidade. Será utilizado por contadores, consultores fiscais e gestores financeiros que necessitam de uma ferramenta eficiente para calcular impostos, gerar relatórios e garantir conformidade com as regulamentações fiscais vigentes.
+O **SST** é um sistema web que cobre todo o ciclo de cálculo e gestão tributária: autenticação e controle de acesso (AUT), gestão de usuários e associados (GES), simulações e cálculos tributários (CAL), atualização de legislação e alíquotas (LEG), relatórios e exportação (REL), importação e validação de dados (IMP/VAL) e administração/infraestrutura (ADM: logs, saúde do sistema, backups, notificações). Será utilizado por contadores, gerentes, administradores, clientes e técnicos de suporte que precisam calcular impostos, manter cadastros, gerar relatórios e garantir conformidade com regulamentações fiscais vigentes.
 
 # Posicionamento
 
@@ -131,11 +137,13 @@ Algumas oportunidades de negócios do SST são as seguintes:
 
 ## Usuários e atores
 
-| Usuário/Atores             | Descrição                                                                                  | Responsabilidades                                            | Stakeholders Relacionados          |
-| -------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------ | ---------------------------------- |
-| Contadores                 | Profissionais de contabilidade que usarão o sistema para cálculos e simulações tributárias | Realizar simulações, calcular impostos, gerar relatórios     | Clientes                           |
-| Administradores do sistema | Usuários com permissões para gerenciar configurações e usuários                            | Gerenciar acessos, configurar regras e parâmetros do sistema | Equipe de desenvolvimento, suporte |
-| Suporte técnico            | Profissionais que auxiliam usuários em dúvidas e problemas técnicos                        | Prestar suporte, solucionar problemas e registrar feedback   | Equipe de suporte                  |
+| Usuário/Atores             | Descrição                                                                                | Responsabilidades                                            | Stakeholders Relacionados          |
+| -------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------ | ---------------------------------- |
+| Contadores                 | Profissionais de contabilidade que usam o sistema para cálculos e simulações tributárias | Realizar simulações, calcular impostos, gerar relatórios     | Clientes                           |
+| Gerentes                   | Gestores que controlam empresas e equipes próprias                                       | Gerenciar associados, aprovar dados e resultados             | Clientes                           |
+| Administradores do sistema | Usuários com permissões plenas para gerenciar configurações e usuários                   | Gerenciar acessos, configurar regras e parâmetros do sistema | Equipe de desenvolvimento, suporte |
+| Clientes                   | Empresas ou pessoas físicas atendidas pelos escritórios                                  | Consultar resultados e relatórios disponibilizados           | Clientes                           |
+| Técnicos de suporte        | Profissionais que auxiliam usuários em dúvidas e problemas técnicos                      | Prestar suporte, solucionar problemas e registrar feedback   | Equipe de suporte                  |
 
 # Descrição do ambiente de uso
 
@@ -187,21 +195,19 @@ Portanto, o sistema SST pode se sincronizar a recursos externos, como APIs de le
 
 ## Características e funcionalidades de alto nível
 
-1. Cálculo automático de impostos: sistema deve realizará é o cáculo automático de impostos, que considerará diferentes tipos de tributos e parâmetros definido pelo usuario (contadores, consultores fiscais e gestores..)
+1. Autenticação e controle de acesso (AUT): login, bloqueio, políticas de senha e encerramento de sessões.
+2. Gestão de usuários e associados (GES): cadastro e manutenção de usuários, associados e perfis, incluindo permissões e dados cadastrais.
+3. Simulações e cálculos tributários (CAL): criação de simulações, execução por regime (Simples, Lucro Presumido, Lucro Real), detalhamento e comparação de resultados.
+4. Atualização de legislação e alíquotas (LEG): atualização e histórico de tabelas tributárias, ISS/ICMS e regras fiscais.
+5. Relatórios e exportações (REL): histórico de simulações, exportação de resultados e relatórios comparativos.
+6. Importação e validação de dados (IMP/VAL): importação de planilhas/CSV, consulta de CNPJ e validação de dados financeiros antes do cálculo.
+7. Administração e infraestrutura (ADM): logs, políticas de logs, rotinas de backup, saúde do sistema e notificações de erros críticos.
+8. Segurança e privacidade: conformidade com LGPD, criptografia, auditoria, disponibilidade e monitoramento.
+9. Usabilidade e experiência: interface responsiva, feedback claro, acessibilidade e suporte a múltiplos perfis de usuário.
 
-2. Simulação de cenários tributários: deve possibilitar a simulação de diversos tipos de cenários tributários definidos pelo usuário, o qual irá comparar os resultados e tomar decisões estratégicas inteligente com base nos dados reais salvos
+10. Desempenho estável e responsivo: O sistema deve ter desempenho estável e responsivo com os dados e outras funcionalidades, mantendo rapidez nos cálculos e simulações, sem falhas ou interrupções
 
-3. Geração de relatórios detalhados: terá responsabilidade de gerar relatórios detalhados com informações sobre os tributos, valores calculado, simulações feitas e resultados de comparação dentro do dashboard, além de uma linguagem simplificada para os stakeholders.
-
-4. Notificações sobre mudanças na legislação: o Sistema irá alertar sobre as mudanças na legislação escolhida pro cenário tributário para os usuários, que possam impactar nos seus cálculos de alíquotas e regras fiscais, para que o usuário possa ajustar no sistema conforme as novas normas.
-
-5. Segurança e privacidade de dados: o sistema garantirá conformidade com a Lei Geral de Proteção de Dados (LGPD), criptografia com dados sensíveis, preservando a privacidade e a proteção das informações inseridas pelos usuários
-
-6. Interface intuitiva: O SST precisa apresentar uma interface simples e funcional, com o objetivo de facilitar a visualização e a usabilidade por contadores, consultores fiscais e gestores, mesmo sem conhecimentos técnicos avançados
-
-7. Desempenho estável e responsivo: O sistema deve ter desempenho estável e responsivo com os dados e outras funcionalidades, mantendo rapidez nos cálculos e simulações, sem falhas ou interrupções
-
-8. Escalabilidade e integração: O sistema precisa ser escalável, para permitir a integração com serviços externos, como APIs fiscais, e expansão de suas funcionalidades conforme as necessidades do usuário
+11. Escalabilidade e integração: O sistema precisa ser escalável, para permitir a integração com serviços externos, como APIs fiscais, e expansão de suas funcionalidades conforme as necessidades do usuário
 
 ## Custo e venda
 
