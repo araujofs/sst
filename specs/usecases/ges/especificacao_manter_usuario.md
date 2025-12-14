@@ -4,7 +4,7 @@
       <td><strong>Caso de uso</strong></td>
       <td>
         <strong
-          ><span><a>UCxx - Manter usuário</a></span></strong
+          ><span><a>UC06 - Manter usuário</a></span></strong
         >
       </td>
     </tr>

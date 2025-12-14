@@ -3,7 +3,7 @@
     <tr>
       <td><strong>Caso de uso</strong></td>
       <td>
-        <strong><span><a>UC10 - Manter políticas de expiração/renovação de senhas</a></span></strong>
+        <strong><span><a>UC05 - Manter políticas de expiração/renovação de senhas</a></span></strong>
       </td>
     </tr>
     <tr>

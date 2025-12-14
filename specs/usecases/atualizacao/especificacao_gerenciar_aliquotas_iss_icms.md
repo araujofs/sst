@@ -3,7 +3,7 @@
     <tr>
       <td><strong>Caso de uso</strong></td>
       <td>
-        <strong><span><a>UC13 - Gerenciar Alíquotas de ISS e ICMS</a></span></strong>
+        <strong><span><a>UC21 - Gerenciar Alíquotas de ISS e ICMS</a></span></strong>
       </td>
     </tr>
     <tr>

@@ -4,7 +4,7 @@
       <td><strong>Caso de uso</strong></td>
       <td>
         <strong
-          ><span><a>UCxx - Configurar rotinas de backup</a></span></strong
+          ><span><a>UC27 - Configurar rotinas de backup</a></span></strong
         >
       </td>
     </tr>

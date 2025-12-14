@@ -3,7 +3,7 @@
     <tr>
       <td><strong>Caso de uso</strong></td>
       <td>
-        <strong><span><a>UC15 - Consultar CNPJ para Autopreenchimento</a></span></strong>
+        <strong><span><a>UC17 - Consultar CNPJ para Autopreenchimento</a></span></strong>
       </td>
     </tr>
     <tr>

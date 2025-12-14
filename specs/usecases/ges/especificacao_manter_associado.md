@@ -4,7 +4,7 @@
       <td><strong>Caso de uso</strong></td>
       <td>
         <strong
-          ><span><a>UCxx - Manter associado</a></span></strong
+          ><span><a>UC07 - Manter associado</a></span></strong
         >
       </td>
     </tr>

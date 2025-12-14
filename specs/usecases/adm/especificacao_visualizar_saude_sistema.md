@@ -4,7 +4,7 @@
       <td><strong>Caso de uso</strong></td>
       <td>
         <strong
-          ><span><a>UCxx - Visualizar saúde do sistema</a></span></strong
+          ><span><a>UC28 - Visualizar saúde do sistema</a></span></strong
         >
       </td>
     </tr>

@@ -4,7 +4,7 @@
       <td><strong>Caso de uso</strong></td>
       <td>
         <strong
-          ><span><a>UCxx - Reportar erro</a></span></strong
+          ><span><a>UC30 - Notificar erro crítico</a></span></strong
         >
       </td>
     </tr>
@@ -39,7 +39,7 @@
             O ator observa que apareceu uma lista com notificações de erros críticos com mensagens curtas do sistema. Ele seleciona uma delas.
           </li>
           <li>
-            O ator é levado à página de saúde do sistema <a href="especificacao_visualizar_saude_sistema.md">[UCxx]</a> onde pode ver várias informações. Dentre elas há uma lista com os erros do sistema onde ele consegue ver o erro crítico do qual foi notificado com algumas informações:
+            O ator é levado à página de saúde do sistema <a href="especificacao_visualizar_saude_sistema.md">[UC28]</a> onde pode ver várias informações. Dentre elas há uma lista com os erros do sistema onde ele consegue ver o erro crítico do qual foi notificado com algumas informações:
             <ul>
               <li>Data e hora</li>
               <li>Tipo</li>

@@ -4,7 +4,7 @@
       <td><strong>Caso de uso</strong></td>
       <td>
         <strong
-          ><span><a>UCxx - Gerenciar perfil</a></span></strong
+          ><span><a>UC08 - Gerenciar perfil</a></span></strong
         >
       </td>
     </tr>

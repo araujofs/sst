@@ -2,7 +2,7 @@
   <tbody>
     <tr>
       <td><strong>Caso de uso</strong></td>
-      <td><strong>UCxxxx - Consultar Histórico de Simulações</strong></td>
+      <td><strong>UC22 - Consultar Histórico de Simulações</strong></td>
     </tr>
     <tr>
       <td><strong>Objetivo</strong></td>

@@ -3,7 +3,7 @@
     <tr>
       <td><strong>Caso de uso</strong></td>
       <td>
-        <strong><span><a>UCxx - Visualizar informações de associados temporariamente</a></span></strong>
+        <strong><span><a>UC09 - Visualizar informações de associados temporariamente</a></span></strong>
       </td>
     </tr>
     <tr>

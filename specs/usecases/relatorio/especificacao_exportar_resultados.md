@@ -2,7 +2,7 @@
   <tbody>
     <tr>
       <td><strong>Caso de uso</strong></td>
-      <td><strong>UCxxx- Exportar Resultados</strong></td>
+      <td><strong>UC23 - Exportar Resultados</strong></td>
     </tr>
     <tr>
       <td><strong>Objetivo</strong></td>
