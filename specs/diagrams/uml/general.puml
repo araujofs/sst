@@ -3,13 +3,23 @@
 
 rectangle SST {
   package "Administração e Infraestrutura" as ai
-
   package "Controle de Acesso" as ca
-
   package "Gestão de Usuário" as gu
+  package "Atualização de Legislação e Alíquotas" as ala
+  package "Relatórios e Dashboards" as rd
+  package "Importação de Dados e Validações" as idv
+  package "Cálculo e Simulação Tributária" as cst
 
   ca <.. gu
   ca <.. ai
+  ca <.. cst
+  ca <.. ala
+  ca <.. rd
+  ca <.. idv
+
+  cst <.. rd
+  idv <.. cst
+  ala <.. cst
 }
 
 @enduml
