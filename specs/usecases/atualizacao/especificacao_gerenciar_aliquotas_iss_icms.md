@@ -14,7 +14,7 @@
     </tr>
     <tr>
       <td><strong>Requisitos</strong></td>
-      <td>RF-IMP-003</td>
+      <td>RF-LEG-003</td>
     </tr>
     <tr>
       <td><strong>Atores</strong></td>

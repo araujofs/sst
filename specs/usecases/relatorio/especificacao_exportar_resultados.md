@@ -10,7 +10,7 @@
     </tr>
     <tr>
       <td><strong>Requisitos</strong></td>
-      <td>RF-REL-004</td>
+      <td>RF-CAL-007</td>
     </tr>
     <tr>
       <td><strong>Atores</strong></td>
