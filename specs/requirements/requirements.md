@@ -141,29 +141,21 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 
 ### Requisitos Gerais de Cálculo
 
-- **[RF-CAL-001]**: Como Contador ou Gerente, quero selecionar o setor econômico da empresa (comércio, indústria, serviços) e informar o CNAE principal antes de iniciar uma simulação para que o sistema identifique automaticamente qual anexo do Simples Nacional é aplicável e quais regras tributárias devem ser seguidas.
+- **[RF-CAL-001]**: Como Contador ou Gerente, quero criar uma simulação selecionando um regime tributário (Simples Nacional, Lucro Presumido ou Lucro Real) e informando o setor econômico/CNAE principal para que o sistema solicite apenas os dados financeiros necessários para aquele regime específico e aplique as regras fiscais corretas.
 
-- **[RF-CAL-002]**: Como Contador ou Gerente, quero selecionar o regime tributário aplicável (Simples Nacional, Lucro Presumido ou Lucro Real) para que o sistema solicite apenas os dados financeiros necessários para aquele regime específico e aplique as regras fiscais corretas na simulação.
+- **[RF-CAL-002]**: Como Contador ou Gerente, quero visualizar o detalhamento completo de cada tributo calculado, incluindo: nome do tributo, base de cálculo utilizada, alíquota ou percentual aplicado, deduções permitidas, valor parcial e valor final, para compreender exatamente como os valores foram obtidos e poder validar os cálculos.
 
-- **[RF-CAL-003]**: Como Contador ou Gerente, quero visualizar o detalhamento completo de cada tributo calculado, incluindo: nome do tributo, base de cálculo utilizada, alíquota ou percentual aplicado, deduções permitidas, valor parcial e valor final, para compreender exatamente como os valores foram obtidos e poder validar os cálculos.
+- **[RF-CAL-003]**: Como Contador ou Gerente, quero salvar simulações realizadas com histórico completo, incluindo: data e hora da simulação, usuário que realizou, dados de entrada utilizados, regime tributário simulado, e resultados obtidos, para poder recuperar e revisar análises anteriores quando necessário.
 
-- **[RF-CAL-004]**: Como Contador ou Gerente, quero criar e salvar múltiplos cenários de simulação com diferentes premissas (variação de receita, diferentes regimes tributários, mudanças em despesas) para comparar lado a lado e identificar a melhor estratégia fiscal para o cliente.
+- **[RF-CAL-004]**: Como Contador ou Gerente, quero alterar valores de uma simulação existente e salvá-la como nova versão no histórico para realizar análises de sensibilidade e projeções futuras sem perder os dados originais.
 
-- **[RF-CAL-006]**: Como Contador ou Gerente, quero que o sistema indique automaticamente qual regime tributário resulta na menor carga tributária com base nos dados financeiros inseridos, destacando a economia potencial em reais e percentual em relação aos outros regimes, para otimizar o planejamento fiscal do cliente.
+- **[RF-CAL-005]**: Como Contador ou Gerente, quero comparar os três regimes tributários (Simples Nacional, Lucro Presumido e Lucro Real) lado a lado, onde o sistema reutiliza dados de simulações já realizadas e solicita apenas as informações faltantes, exibindo automaticamente qual regime resulta na menor carga tributária com destaque da economia potencial em reais e percentual.
 
-- **[RF-CAL-007]**: Como Contador ou Gerente, quero simular o impacto de mudanças em variáveis específicas (aumento percentual de receita, redução de custos, inclusão de novos investimentos) sobre a carga tributária de cada regime, para realizar análises de sensibilidade e projeções futuras.
+- **[RF-CAL-006]**: Como Contador ou Gerente, quero que o sistema valide automaticamente os dados inseridos antes do cálculo, identificando: valores negativos inválidos, inconsistências entre receitas e despesas, faturamento acima do limite do regime selecionado, e alertando sobre valores atípicos que possam indicar erro de digitação, para evitar erros nos cálculos e garantir a qualidade das simulações.
 
-- **[RF-CAL-008]**: Como Contador ou Gerente, quero que o sistema valide automaticamente os dados inseridos antes do cálculo, identificando: valores negativos inválidos, inconsistências entre receitas e despesas, faturamento acima do limite do regime selecionado, e alertando sobre valores atípicos que possam indicar erro de digitação, para evitar erros nos cálculos e garantir a qualidade das simulações.
+- **[RF-CAL-007]**: Como Contador ou Gerente, quero exportar os resultados das simulações em diferentes formatos (PDF com formatação profissional e logo da empresa, Excel com todas as planilhas de cálculo detalhadas, CSV com dados brutos para análise), para compartilhar com clientes e stakeholders.
 
-- **[RF-CAL-009]**: Como Contador ou Gerente, quero salvar simulações realizadas com histórico de alterações, incluindo: data e hora da simulação, usuário que realizou, dados de entrada utilizados, regime tributário simulado, e resultados obtidos, para poder recuperar e revisar análises anteriores quando necessário.
-
-- **[RF-CAL-010]**: Como Contador ou Gerente, quero exportar os resultados das simulações em diferentes formatos (PDF com formatação profissional e logo da empresa, Excel com todas as planilhas de cálculo detalhadas, CSV com dados brutos para análise), para compartilhar com clientes e stakeholders.
-
-- **[RF-CAL-011]**: Como Gerente, quero visualizar um resumo executivo da simulação tributária contendo: regime tributário recomendado, carga tributária total anual, economia potencial em relação aos outros regimes, principais tributos (top 3 por valor), e gráfico comparativo visual, para apresentar rapidamente aos stakeholders de forma clara e objetiva.
-
-- **[RF-CAL-012]**: Como Contador ou Gerente, quero que o sistema permita ajustes manuais em alíquotas e parâmetros específicos (com campo obrigatório para justificativa textual e registro de quem fez o ajuste), para simular situações especiais como incentivos fiscais regionais, benefícios setoriais, ou interpretações específicas da legislação.
-
--**[RF-CAL-013]**: O sistema deve alertar o usuário quando uma simulação salva for impactada por mudanças na legislação tributária.
+- **[RF-CAL-008]**: O sistema deve alertar o usuário quando uma simulação salva for impactada por mudanças na legislação tributária.
 
 ### Cálculos do Simples Nacional
 
@@ -200,6 +192,7 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 ## Atualização de Legislação e Alíquotas
 - **[RF-LEG-001]**: Como administrador, quero atualizar manualmente as alíquotas e regras tributárias através de interface administrativa que permita importar arquivos (CSV ou Excel) com as novas tabelas do Simples Nacional, validando o formato dos dados antes de aplicar, para garantir que as simulações estejam sempre alinhadas com a legislação vigente publicada pela Receita Federal.
 - **[RF-LEG-002]**: Como administrador, quero que o sistema mantenha um histórico completo de todas as atualizações legislativas aplicadas, registrando: data da atualização, usuário responsável, versão anterior das tabelas, versão nova, e descrição resumida das mudanças, para permitir auditoria e reversão quando necessário.
+- **[RF-LEG-003]**: Como Administrador, quero gerenciar manualmente as alíquotas de ISS e ICMS através de interface administrativa, podendo cadastrar e atualizar as alíquotas por município/UF, incluindo: código do município/UF, alíquota vigente, data de início de vigência, e base legal (número da lei/decreto), permitindo que o sistema consulte essas alíquotas localmente durante as simulações sem depender de APIs externas.
 
 
 ## Relatórios e Dashboards
@@ -240,8 +233,6 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RF-IMP-001]**: Como Contador ou Gerente, quero que o sistema permita validar o CNPJ informado consultando a API da Receita Federal (ReceitaWS ou BrasilAPI) para preencher automaticamente dados cadastrais (razão social, CNAE principal), com timeout de 10 segundos. Caso a API esteja indisponível, o CNPJ seja inválido ou eu opte por não informar CNPJ (simulação hipotética/empresa futura), o sistema deve permitir que eu prossiga com preenchimento manual dos dados, sem bloquear a simulação.
 
 - **[RF-IMP-002]**: Como Contador ou Gerente, quero que o sistema permita importar dados financeiros (receitas, despesas, folha de pagamento) de arquivos nos formatos Excel (.xlsx) ou CSV, com mapeamento manual ou assistido dos campos (coluna do arquivo → campo do sistema) e validação básica dos dados (tipos numéricos, datas válidas, valores não negativos) antes da importação, para agilizar o processo de simulação e reduzir erros de digitação.
-
-- **[RF-IMP-003]**: Como Administrador, quero gerenciar manualmente as alíquotas de ISS e ICMS através de interface administrativa, podendo cadastrar e atualizar as alíquotas por município/UF, incluindo: código do município/UF, alíquota vigente, data de início de vigência, e base legal (número da lei/decreto), permitindo que o sistema consulte essas alíquotas localmente durante as simulações sem depender de APIs externas.
 
 # Requisitos não-funcionais
 ## Disponibilidade
