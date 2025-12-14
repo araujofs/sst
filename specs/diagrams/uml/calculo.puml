@@ -1,0 +1,54 @@
+@startuml calculo
+left to right direction
+
+!include users.puml
+
+package "Cálculo e Simulação Tributária" {
+  ' UC5 - RF-CAL-001, RF-CAL-006
+  (Criar Nova\nSimulação Tributária) as criarSim
+  
+  ' UC6 - RF-CAL-SN-001, RF-CAL-SN-002, RF-CAL-SN-003, RF-CAL-SN-004
+  (Simular\nSimples Nacional) as simSN
+  
+  ' UC7 - RF-CAL-LP-001, RF-CAL-LP-002, RF-CAL-LP-003
+  (Simular\nLucro Presumido) as simLP
+  
+  ' UC9 - RF-CAL-LR-001, RF-CAL-LR-002, RF-CAL-LR-003
+  (Simular\nLucro Real) as simLR
+  
+  ' UC8 - RF-CAL-002
+  (Visualizar\nDetalhamento de Tributos) as visDet
+  
+  ' UC10 - RF-CAL-003, RF-CAL-004
+  (Salvar Simulação) as salvarSim
+  
+  ' UC11 - RF-CAL-005
+  (Comparar\nRegimes Tributários) as compReg
+
+  ' relacionamentos
+  co -- (criarSim)
+  ger -- (criarSim)
+
+  (criarSim) .> (simSN) : <<include>>
+  (criarSim) .> (simLP) : <<include>>
+  (criarSim) .> (simLR) : <<include>>
+
+  note "Calcula com base\nno regime selecionado\npelo usuário" as n1
+  (criarSim) .. n1
+
+  (simSN) <.. (visDet) : <<extend>>
+  (simLP) <.. (visDet) : <<extend>>
+  (simLR) <.. (visDet) : <<extend>>
+
+  co -- (salvarSim)
+  ger -- (salvarSim)
+
+  (salvarSim) <.. (criarSim) : <<extend>>
+
+  co -- (compReg)
+  ger -- (compReg)
+
+  note "Reutiliza dados de\nsimulaçoes existentes\ne solicita apenas\no que falta" as n2
+  n2 .. (compReg)
+}
+@enduml
