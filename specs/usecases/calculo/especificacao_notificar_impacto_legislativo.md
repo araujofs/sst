@@ -14,7 +14,7 @@
     </tr>
     <tr>
       <td><strong>Requisitos</strong></td>
-      <td>RF-CAL-008</td>
+      <td>RF-CAL-007</td>
     </tr>
     <tr>
       <td><strong>Atores</strong></td>

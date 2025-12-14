@@ -146,9 +146,7 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 
 - **[RF-CAL-006]**: Como Contador ou Gerente, quero que o sistema valide automaticamente os dados inseridos antes do cálculo, identificando: valores negativos inválidos, inconsistências entre receitas e despesas, faturamento acima do limite do regime selecionado, e alertando sobre valores atípicos que possam indicar erro de digitação, para evitar erros nos cálculos e garantir a qualidade das simulações.
 
-- **[RF-CAL-007]**: Como Contador ou Gerente, quero exportar os resultados das simulações em diferentes formatos (PDF com formatação profissional e logo da empresa, Excel com todas as planilhas de cálculo detalhadas, CSV com dados brutos para análise), para compartilhar com clientes e stakeholders.
-
-- **[RF-CAL-008]**: O sistema deve alertar o usuário quando uma simulação salva for impactada por mudanças na legislação tributária.
+- **[RF-CAL-007]**: O sistema deve alertar o usuário quando uma simulação salva for impactada por mudanças na legislação tributária.
 
 ### Cálculos do Simples Nacional
 

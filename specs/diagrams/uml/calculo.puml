@@ -25,11 +25,8 @@ package "Cálculo e Simulação Tributária" {
   ' UC11 - RF-CAL-005
   (Comparar\nRegimes Tributários) as compReg
 
-  ' UC17 - RF-CAL-008
+  ' UC17 - RF-CAL-007
   (Notificar Impacto\nLegislativo) as notifImp
-
-  ' UC Exportar - RF-CAL-007
-  (Exportar\nResultados) as expRes
 
   ' relacionamentos
   co -- (criarSim)
@@ -56,9 +53,6 @@ package "Cálculo e Simulação Tributária" {
 
   note "Reutiliza dados de\nsimulaçoes existentes\ne solicita apenas\no que falta" as n2
   n2 .. (compReg)
-
-  co -- (expRes)
-  ger -- (expRes)
 
   note "Badge vermelho\nno card e notificação\nsimples no sino" as n3
   (notifImp) .. n3
