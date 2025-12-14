@@ -1,0 +1,32 @@
+@startuml validacao
+left to right direction
+
+!include users.puml
+
+package "Importação de Dados e Validações" {
+  ' UC15 - RF-IMP-001
+  (Consultar CNPJ\npara Autopreenchimento) as valCNPJ
+  
+  ' UC16 - RF-IMP-002
+  (Importar\nDados Financeiros) as impDados
+  
+  ' UC14 - RF-CAL-008
+  (Validar\nDados Financeiros) as valDados
+
+  ' relacionamentos
+  co -- (valCNPJ)
+  ger -- (valCNPJ)
+
+  co -- (impDados)
+  ger -- (impDados)
+
+  note "Validação automática\npelo sistema antes\nde processar simulação" as n1
+  n1 .. (valDados)
+
+  note "Consulta API\nReceita Federal\n(ReceitaWS/BrasilAPI)" as n2
+  (valCNPJ) .. n2
+
+  note "Importa de\nExcel (.xlsx)\nou CSV (.csv)" as n3
+  (impDados) .. n3
+}
+@enduml
