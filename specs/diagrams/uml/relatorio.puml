@@ -1,4 +1,4 @@
-@startuml
+@startuml  relatorio
 left to right direction
 
 actor Usuario
@@ -8,7 +8,7 @@ actor Gerente
 Usuario <|-- Contador
 Usuario <|-- Gerente
 
-package "Relatórios e Simulações Tributárias" {
+package "Relatórios e Dashboards" {
 
   ' UC01 – RF-REL-001
   (Consultar Histórico\nde Simulações) as hist
