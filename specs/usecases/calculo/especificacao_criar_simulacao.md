@@ -50,13 +50,16 @@
           <li>O ator clica em "Avançar".</li>
           <li>O sistema valida se um regime foi selecionado. <a href="#e1">[E1]</a></li>
         </ol>
-        <strong>Etapa 2 - Dados Financeiros:</strong>
-        <ol start="8">
-          <li>O sistema exibe a segunda etapa do formulário com campos específicos conforme o regime selecionado. <a href="#a1">[A1]</a></li>
-          <li>O ator preenche todos os dados financeiros solicitados.</li>
-          <li>O ator clica no botão "Simular".</li>
-          <li>O sistema valida os dados inseridos. <a href="#rn2">[RN2]</a> <a href="#e2">[E2]</a></li>
-          <li>O sistema processa o cálculo conforme o regime selecionado.</li>
+        <strong>Etapa 2 - Dados Financeiros e Cálculo:</strong>
+        <ol start="11">
+          <li>O sistema redireciona para o use case específico do regime selecionado:
+            <ul>
+              <li>Se <strong>Simples Nacional</strong>: executa <a href="especificacao_simular_simples_nacional.md">[UC6 - Simular Simples Nacional]</a></li>
+              <li>Se <strong>Lucro Presumido</strong>: executa <a href="especificacao_simular_lucro_presumido.md">[UC7 - Simular Lucro Presumido]</a></li>
+              <li>Se <strong>Lucro Real</strong>: executa <a href="especificacao_simular_lucro_real.md">[UC9 - Simular Lucro Real]</a></li>
+            </ul>
+          </li>
+          <li>O use case específico solicita dados financeiros necessários, realiza validações e calcula os tributos.</li>
           <li>O sistema exibe a tela de resultados com os valores calculados para o regime escolhido.</li>
           <li>O sistema oferece botão "Simular Outro Regime" para comparação. <a href="#a2">[A2]</a></li>
         </ol>
@@ -70,31 +73,7 @@
           <li>No passo 3, o ator informa um CNPJ válido.</li>
           <li>O sistema consulta a API da Receita Federal. <a href="../importacao/especificacao_validar_cnpj.md">[UC15]</a></li>
           <li>O sistema preenche automaticamente: Razão Social, CNAE, Município/UF.</li>
-          <li>O ator pode editar qualquer campo preenchido automaticamente.</li>
-          <li>Retorna ao passo 5.</li>
-        </ol>
-        <a id="a1">[A1] - Etapa 2: Campos específicos por regime</a>
-        <ol>
-          <li>Na Etapa 2, o sistema exibe os campos conforme o regime selecionado:</li>
-          <li>Se <strong>Simples Nacional</strong> foi selecionado, o sistema exibe:
-            <ul>
-              <li>Informação do Anexo identificado: "Anexo [X] - [Descrição]" <a href="#rn1">[RN1]</a></li>
-              <li>Campo: Receita Bruta do Período (mês)</li>
-              <li>Campo: Receita Bruta Acumulada 12 meses (RBT12)</li>
-              <li>Campo: Folha de Pagamento 12 meses (apenas se CNAE sujeito ao Fator R)</li>
-            </ul>
-          </li>
-          <li>Se <strong>Lucro Presumido</strong> foi selecionado, o sistema exibe:
-            <ul>
-              <li>Campo: Receita Bruta do Período (trimestre)</li>
-            </ul>
-          </li>
-          <li>Se <strong>Lucro Real</strong> foi selecionado, o sistema exibe:
-            <ul>
-              <li>Campo: Receita Bruta do Período</li>
-              <li>Campo: Custos e Despesas Operacionais</li>
-              <li>Outros campos específicos</li>
-            </ul>
+/ul>
           </li>
           <li>O sistema também exibe um botão "Voltar" para retornar à Etapa 1.</li>
         </ol>
@@ -124,25 +103,19 @@
         <ol>
           <li>No passo 7, o sistema identifica que nenhum regime foi selecionado.</li>
           <li>O sistema exibe mensagem: "Selecione um regime tributário para continuar".</li>
-          <li>O sistema destaca o campo "Regime Tributário" em vermelho.</li>
-          <li>Retorna ao passo 5 do fluxo principal.</li>
-        </ol>
-        <a id="e2">[E2] - Dados financeiros inválidos</a>
-        <ol>
-          <li>No passo 11, o sistema identifica valores negativos, campos obrigatórios vazios, faturamento acima do limite do regime ou valores atípicos.</li>
-          <li>O sistema exibe mensagens de erro específicas para cada problema identificado.</li>
-          <li>O ator corrige os dados e tenta novamente.</li>
-          <li>Retorna ao passo 10 do fluxo principal.</li>
-        </ol>
-        <a id="rn1">[RN1] - Identificação automática do anexo</a><br>
-        O sistema mantém uma tabela de mapeamento entre CNAE e Anexo do Simples Nacional. Na Etapa 2, quando Simples Nacional foi selecionado, o sistema consulta essa tabela e exibe automaticamente qual anexo será aplicado.<br><br>
-        <a id="rn2">[RN2] - Validação de dados financeiros</a><br>
-        O sistema deve validar na Etapa 2:
-        <ul>
-          <li>Valores negativos não são permitidos em campos financeiros</li>
-          <li>Faturamento não pode exceder R$ 4.8 milhões para Simples Nacional</li>
-          <li>Campos obrigatórios devem estar preenchidos</li>
-        </ul>
+          <li>O sistema 3, após visualizar os resultados, o ator clica em "Simular Outro Regime".</li>
+          <li>O sistema exibe modal: "Selecione o regime para nova simulação:" com os regimes disponíveis (exceto o já simulado).</li>
+          <li>O ator seleciona o regime desejado.</li>
+         strong>Nota:</strong> As validações de dados financeiros específicas de cada regime e exceções relacionadas são tratadas nos use cases detalhados: <a href="especificacao_simular_simples_nacional.md">[UC6]</a>, <a href="especificacao_simular_lucro_presumido.md">[UC7]</a> e <a href="especificacao_simular_lucro_real.md">[UC9]</a>.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Regras de negócio</strong></td>
+      <td>
+        <a id="rn1">[RN1] - Seleção obrigatória de regime</a><br>
+        O ator deve obrigatoriamente selecionar um regime tributário na Etapa 1 antes de avançar para a Etapa 2. O sistema não permite prosseguir sem essa seleção.<br><br>
+        <a id="rn2">[RN2] - Preservação de dados entre etapas</a><br>
+        Os dados gerais preenchidos na Etapa 1 (CNPJ, Razão Social, CNAE, Município/UF) são preservados e reutilizados quando o ator decide simular outro regime ou voltar para ajustes.
       </td>
     </tr>
   </tbody>
