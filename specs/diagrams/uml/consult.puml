@@ -3,24 +3,22 @@ left to right direction
 
 actor Usuario
 actor Contador
-actor Gestor
+actor Gerente
 
 Usuario <|-- Contador
-Usuario <|-- Gestor
+Usuario <|-- Gerente
 
-rectangle "Modulo de Relatório" {
-  Contador -- (Exportar Resultados)
-  Gestor   -- (Exportar Resultados)
+rectangle "Modulo de Relatorio - Consultas" {
+  Contador -- (Consultar Histórico de Simulações)
+  Gerente  -- (Consultar Histórico de Simulações)
 
-  (Exportar Resultados) ..> (Selecionar Formato) : <<include>>
-  (Exportar Resultados) ..> (Gerar Arquivo) : <<include>>
-  (Exportar Resultados) ..> (Download do Arquivo) : <<include>>
+  (Consultar Histórico de Simulações) ..> (Aplicar Filtros) : <<include>>
+  (Consultar Histórico de Simulações) ..> (Visualizar Simulação) : <<include>>
 
-  (Selecionar Formato) <|-- (Exportar Excel)
-  (Selecionar Formato) <|-- (Exportar CSV)
+  (Aplicar Filtros) <|-- (Filtrar por Cliente)
+  (Aplicar Filtros) <|-- (Filtrar por Período)
+  (Aplicar Filtros) <|-- (Filtrar por Regime)
 
-  (Exportar Resultados) ..> (Exportar Múltiplas Simulações) : <<extend>>
-  (Exportar Resultados) ..> (Agendar Exportação) : <<extend>>
-}
-
-@enduml
+  (Consultar Histórico de Simulações) ..> (Limpar Filtros) : <<extend>>
+  (Consultar Histórico de Simulações) ..> (Buscar por Nome do Cliente) : <<extend>>
+  (Consultar Histórico de Simulações) ..> (Ordenar Lista) : <<ex
