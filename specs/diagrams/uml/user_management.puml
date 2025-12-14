@@ -11,7 +11,7 @@ package "Gestão de usuários" {
   ' 005
   (Gerenciar perfil) as gerenPf
   ' 014
-  (Visualizar\n informações de\nAssociados\ntemporariamente) as visInfo
+  (Visualizar\n informações de\nassociado e gerente\ntemporariamente) as visInfo
 
   ' relacionamentos
   (mantUs) <|-- (mantAss)
