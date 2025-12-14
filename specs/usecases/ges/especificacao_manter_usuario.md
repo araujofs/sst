@@ -137,9 +137,9 @@
           <li>O ator define a nova senha e seleciona 'Salvar'. O sistema valida a senha <a href="#rn3">[RN3]</a>.</li>
           <li>O sistema envia um e-mail ao usuário informando sobre a alteração de senha.</li>
         </ol>
-        <a id="a9">A9 - Alterar permissões de usuário</a>
+        <a id="a8">A8 - Alterar permissões de usuário</a>
         <ol>
-          <li>O ator segue o fluxo de <a href="#a4">[A4]</a> e está editando um usuário.</li>
+          <li>O ator segue o fluxo de <a href="#a3">[A3]</a> e está editando um usuário.</li>
           <li>O ator observa uma seção 'Permissões especiais' com checkboxes de permissões adicionais.</li>
           <li>O ator marca ou desmarca as permissões desejadas.</li>
           <li>O ator seleciona 'Salvar' e o sistema atualiza as permissões do usuário.</li>

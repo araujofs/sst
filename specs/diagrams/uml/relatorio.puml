@@ -1,12 +1,7 @@
 @startuml  relatorio
 left to right direction
 
-actor Usuario
-actor Contador
-actor Gerente
-
-Usuario <|-- Contador
-Usuario <|-- Gerente
+!include users.puml
 
 package "Relatórios e Dashboards" {
 
@@ -20,17 +15,17 @@ package "Relatórios e Dashboards" {
   (Exportar Resultados) as exp
 
   ' associações
-  Contador -- hist
-  Gerente  -- hist
+  co -- hist
+  ger  -- hist
 
-  Contador -- comp
+  co -- comp
 
-  Contador -- exp
-  Gerente  -- exp
+  co -- exp
+  ger  -- exp
 
   ' relacionamentos entre casos
   hist ..> comp : <<include>>
-  hist ..> exp  : <<extend>>
+  hist <.. exp  : <<extend>>
 
   ' notas de requisitos
   note "RF-REL-001\nAcesso ao histórico completo,\nfiltros por cliente, data\ne regime tributário" as n1
