@@ -3,7 +3,7 @@
     <tr>
       <td><strong>Caso de uso</strong></td>
       <td>
-        <strong><span><a>UC9 - Visualizar tentativas falhas de entrada</a></span></strong>
+        <strong><span><a>UC04 - Visualizar tentativas falhas de entrada</a></span></strong>
       </td>
     </tr>
     <tr>

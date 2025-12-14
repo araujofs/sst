@@ -3,7 +3,7 @@
     <tr>
       <td><strong>Caso de uso</strong></td>
       <td>
-        <strong><span><a>UC6 - Simular Simples Nacional</a></span></strong>
+        <strong><span><a>UC11 - Simular Simples Nacional</a></span></strong>
       </td>
     </tr>
     <tr>
@@ -22,7 +22,7 @@
     </tr>
     <tr>
       <td><strong>Condições de entrada</strong></td>
-      <td>O ator está em <a href="especificacao_criar_simulacao.md">[UC5]</a> e selecionou o regime Simples Nacional.</td>
+      <td>O ator está em <a href="especificacao_criar_simulacao.md">[UC10]</a> e selecionou o regime Simples Nacional.</td>
     </tr>
     <tr>
       <td><strong>Fluxo principal</strong></td>

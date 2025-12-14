@@ -3,7 +3,7 @@
     <tr>
       <td><strong>Caso de uso</strong></td>
       <td>
-        <strong><span><a>UC8 - Visualizar Detalhamento de Tributos</a></span></strong>
+        <strong><span><a>UC13 - Visualizar Detalhamento de Tributos</a></span></strong>
       </td>
     </tr>
     <tr>

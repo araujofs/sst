@@ -4,29 +4,28 @@
       <td><strong>Caso de uso</strong></td>
       <td>
         <strong
-          ><span><a>UCxx - Reportar erro</a></span></strong
+          ><span><a>UC28 - Visualizar saúde do sistema</a></span></strong
         >
       </td>
     </tr>
     <tr>
       <td><strong>Objetivo</strong></td>
       <td>
-        Ajudar na resolução rápida e eficiente de erros que possam existir no sistema.
+        Facilitar a detecção de problemas relacionados a consumo de recursos, quedas de módulos, dentre outros.
       </td>
     </tr>
     <tr>
       <td><strong>Requisitos</strong></td>
-      <td>RF-ADM-011</td>
+      <td>RF-ADM-010</td>
     </tr>
     <tr>
       <td><strong>Atores</strong></td>
-      <td>Usuário</td>
+      <td>Administrador</td>
     </tr>
     <tr>
       <td><strong>Condições de entrada</strong></td>
       <td>
-        O ator encontrou um erro no sistema e deseja reportá-lo para a equipe de
-        desenvolvimento.
+        Ator se encontra no módulo de configuração do sistema.
       </td>
     </tr>
     <tr>
@@ -34,43 +33,23 @@
       <td>
         <ol>
           <li>
-            O ator se encontra em qualquer tela do sistema. Ele detecta um erro
-            durante o uso. Ele observa que existe um botão com o ícone de um
-            "bug" ou "inseto" no canto superior direito da tela. Ele seleciona
-            esse botão para iniciar o processo de reporte de erro.
+            O ator se encontra na área de configurações e acessa o menu "Saúde do sistema". Ele vê um painel com indicadores gerais (recursos utilizados, módulos funcionando, tempo médio de resposta, disponibilidade, usuários ativos) e a data/hora da última atualização.
           </li>
           <li>
-            O sistema exibe um formulário de reporte de erro. O ator preenche os
-            campos obrigatórios, que incluem:
+            O ator verifica que cada módulo mostra o status (OK/Degradado/Indisponível) com cor/ícone, além de métricas resumidas (por exemplo, uso de CPU/memória, latência média, taxa de erros).
+          </li>
+          <li>
+            O ator seleciona um módulo ou serviço específico para detalhar. Ele observa dados mais completos, como:
             <ul>
-              <li>
-                Descrição do erro: Uma breve descrição do problema encontrado.
-              </li>
-              <li>
-                Passos para reproduzir: Instruções detalhadas sobre como
-                reproduzir o erro.
-              </li>
-              <li>
-                Anexar arquivos (opcional): O ator pode anexar capturas de tela
-                ou arquivos relevantes que ajudem a ilustrar o problema.
-              </li>
-              <li>
-                Opções:
-                <ul>
-                  <li>
-                    Enviar
-                  </li>
-                  <li>
-                    Cancelar
-                  </li>
-                </ul>
-              </li>
+              <li>Uptime e histórico recente de disponibilidade</li>
+              <li>Consumo de CPU, memória e disco</li>
+              <li>Latência média e picos</li>
+              <li>Alertas recentes associados ao módulo</li>
             </ul>
+            E a opção "Fechar".
           </li>
           <li>
-            Após preencher o formulário, o ator clica no botão "Enviar Reporte".
-            O sistema valida as informações fornecidas e confirma o envio do
-            reporte de erro.
+            O ator seleciona a opção "Fechar" para retornar ao painel geral.
           </li>
         </ol>
       </td>
@@ -78,17 +57,7 @@
     <tr>
       <td><strong>Fluxos alternativos</strong></td>
       <td>
-        <a id="a1">A1 - Cancelar envio do reporte</a>
-        <ol>
-          <li>
-            O ator executa o fluxo principal até o passo 2, onde ele decide não enviar o reporte de
-            erro e clica no botão "Cancelar".
-          </li>
-          <li>
-            O sistema descarta as informações inseridas no formulário e retorna
-            o ator para a tela anterior sem salvar nenhum dado.
-          </li>
-        </ol>
+        Nenhum
       </td>
     </tr>
     <tr>

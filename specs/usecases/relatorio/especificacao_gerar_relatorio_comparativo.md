@@ -2,7 +2,7 @@
   <tbody>
     <tr>
       <td><strong>Caso de uso</strong></td>
-      <td><strong>UCxxx - Gerar Relatório Comparativo</strong></td>
+      <td><strong>UC24 - Gerar Relatório Comparativo</strong></td>
     </tr>
     <tr>
       <td><strong>Objetivo</strong></td>
@@ -43,26 +43,27 @@
           <li>O sistema destaca a economia percentual entre elas.</li>
         </ol>
 
-  <strong>A2 – Gerar relatório sem personalização</strong>
-        <ol>
-          <li>O ator ignora a etapa de personalização.</li>
-          <li>O sistema gera o relatório padrão.</li>
-        </ol>
+<strong>A2 – Gerar relatório sem personalização</strong>
+<ol>
+<li>O ator ignora a etapa de personalização.</li>
+<li>O sistema gera o relatório padrão.</li>
+</ol>
 
-  <strong>A3 – Enviar relatório por e-mail</strong>
-        <ol>
-          <li>O ator clica em "Enviar por E-mail".</li>
-          <li>Informa o destinatário.</li>
-          <li>O sistema envia o relatório em anexo.</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Fluxos de exceção</strong></td>
-      <td>
-        <strong>EX1 – Seleção acima do limite</strong><br>
-        O sistema alerta que é permitido comparar no máximo três simulações.
-      </td>
-    </tr>
+<strong>A3 – Enviar relatório por e-mail</strong>
+<ol>
+<li>O ator clica em "Enviar por E-mail".</li>
+<li>Informa o destinatário.</li>
+<li>O sistema envia o relatório em anexo.</li>
+</ol>
+</td>
+</tr>
+<tr>
+<td><strong>Fluxos de exceção</strong></td>
+<td>
+<strong>EX1 – Seleção acima do limite</strong><br>
+O sistema alerta que é permitido comparar no máximo três simulações.
+</td>
+</tr>
+
   </tbody>
 </table>

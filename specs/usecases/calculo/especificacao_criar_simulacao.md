@@ -3,7 +3,7 @@
     <tr>
       <td><strong>Caso de uso</strong></td>
       <td>
-        <strong><span><a>UC5 - Criar Nova Simulação Tributária</a></span></strong>
+        <strong><span><a>UC10 - Criar Nova Simulação Tributária</a></span></strong>
       </td>
     </tr>
     <tr>
@@ -54,9 +54,9 @@
         <ol start="11">
           <li>O sistema redireciona para o use case específico do regime selecionado:
             <ul>
-              <li>Se <strong>Simples Nacional</strong>: executa <a href="especificacao_simular_simples_nacional.md">[UC6 - Simular Simples Nacional]</a></li>
-              <li>Se <strong>Lucro Presumido</strong>: executa <a href="especificacao_simular_lucro_presumido.md">[UC7 - Simular Lucro Presumido]</a></li>
-              <li>Se <strong>Lucro Real</strong>: executa <a href="especificacao_simular_lucro_real.md">[UC9 - Simular Lucro Real]</a></li>
+              <li>Se <strong>Simples Nacional</strong>: executa <a href="especificacao_simular_simples_nacional.md">[UC11 - Simular Simples Nacional]</a></li>
+              <li>Se <strong>Lucro Presumido</strong>: executa <a href="especificacao_simular_lucro_presumido.md">[UC12 - Simular Lucro Presumido]</a></li>
+              <li>Se <strong>Lucro Real</strong>: executa <a href="especificacao_simular_lucro_real.md">[UC14 - Simular Lucro Real]</a></li>
             </ul>
           </li>
           <li>O use case específico solicita dados financeiros necessários, realiza validações e calcula os tributos.</li>
@@ -71,7 +71,7 @@
         <a id="a0">[A0] - Consultar CNPJ para autopreenchimento</a>
         <ol>
           <li>No passo 3, o ator informa um CNPJ válido.</li>
-          <li>O sistema consulta a API da Receita Federal. <a href="../importacao/especificacao_validar_cnpj.md">[UC15]</a></li>
+          <li>O sistema consulta a API da Receita Federal. <a href="../importacao/especificacao_validar_cnpj.md">[UC17]</a></li>
           <li>O sistema preenche automaticamente: Razão Social, CNAE, Município/UF.</li>
 /ul>
           </li>
@@ -85,7 +85,7 @@
           <li>O sistema retorna à Etapa 2 com os dados gerais preservados, mas formulário adaptado ao novo regime.</li>
           <li>O ator preenche os dados financeiros específicos do novo regime.</li>
           <li>Retorna ao passo 11 do fluxo principal.</li>
-          <li>Após calcular, o sistema oferece comparação entre as simulações realizadas. <a href="../calculo/especificacao_comparar_regimes.md">[UC11]</a></li>
+          <li>Após calcular, o sistema oferece comparação entre as simulações realizadas. <a href="../calculo/especificacao_comparar_regimes.md">[UC16]</a></li>
         </ol>
         <a id="a3">[A3] - Voltar para Etapa 1</a>
         <ol>
@@ -106,7 +106,7 @@
           <li>O sistema 3, após visualizar os resultados, o ator clica em "Simular Outro Regime".</li>
           <li>O sistema exibe modal: "Selecione o regime para nova simulação:" com os regimes disponíveis (exceto o já simulado).</li>
           <li>O ator seleciona o regime desejado.</li>
-         strong>Nota:</strong> As validações de dados financeiros específicas de cada regime e exceções relacionadas são tratadas nos use cases detalhados: <a href="especificacao_simular_simples_nacional.md">[UC6]</a>, <a href="especificacao_simular_lucro_presumido.md">[UC7]</a> e <a href="especificacao_simular_lucro_real.md">[UC9]</a>.
+         strong>Nota:</strong> As validações de dados financeiros específicas de cada regime e exceções relacionadas são tratadas nos use cases detalhados: <a href="especificacao_simular_simples_nacional.md">[UC11]</a>, <a href="especificacao_simular_lucro_presumido.md">[UC12]</a> e <a href="especificacao_simular_lucro_real.md">[UC14]</a>.
       </td>
     </tr>
     <tr>

@@ -4,7 +4,7 @@
       <td><strong>Caso de uso</strong></td>
       <td>
         <strong
-          ><span><a>UCxx - Visualizar logs</a></span></strong
+          ><span><a>UC25 - Visualizar logs</a></span></strong
         >
       </td>
     </tr>

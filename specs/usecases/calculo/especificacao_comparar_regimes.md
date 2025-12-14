@@ -3,7 +3,7 @@
     <tr>
       <td><strong>Caso de uso</strong></td>
       <td>
-        <strong><span><a>UC11 - Comparar Regimes Tributários</a></span></strong>
+        <strong><span><a>UC16 - Comparar Regimes Tributários</a></span></strong>
       </td>
     </tr>
     <tr>

@@ -3,7 +3,7 @@
     <tr>
       <td><strong>Caso de uso</strong></td>
       <td>
-        <strong><span><a>UC7 - Simular Lucro Presumido</a></span></strong>
+        <strong><span><a>UC12 - Simular Lucro Presumido</a></span></strong>
       </td>
     </tr>
     <tr>
@@ -22,7 +22,7 @@
     </tr>
     <tr>
       <td><strong>Condições de entrada</strong></td>
-      <td>O ator está em <a href="especificacao_criar_simulacao.md">[UC5]</a> e selecionou o regime Lucro Presumido.</td>
+      <td>O ator está em <a href="especificacao_criar_simulacao.md">[UC10]</a> e selecionou o regime Lucro Presumido.</td>
     </tr>
     <tr>
       <td><strong>Fluxo principal</strong></td>

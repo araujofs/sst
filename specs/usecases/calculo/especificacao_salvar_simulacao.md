@@ -3,7 +3,7 @@
     <tr>
       <td><strong>Caso de uso</strong></td>
       <td>
-        <strong><span><a>UC10 - Salvar Simulação</a></span></strong>
+        <strong><span><a>UC15 - Salvar Simulação</a></span></strong>
       </td>
     </tr>
     <tr>

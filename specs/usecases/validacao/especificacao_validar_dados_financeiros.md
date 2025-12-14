@@ -3,7 +3,7 @@
     <tr>
       <td><strong>Caso de uso</strong></td>
       <td>
-        <strong><span><a>UC14 - Validar Dados Financeiros</a></span></strong>
+        <strong><span><a>UC19 - Validar Dados Financeiros</a></span></strong>
       </td>
     </tr>
     <tr>
@@ -22,7 +22,7 @@
     </tr>
     <tr>
       <td><strong>Condições de entrada</strong></td>
-      <td>O usuário preencheu os dados financeiros em <a href="../calculo/especificacao_criar_simulacao.md">[UC5]</a> e clicou em "Simular".</td>
+      <td>O usuário preencheu os dados financeiros em <a href="../calculo/especificacao_criar_simulacao.md">[UC10]</a> e clicou em "Simular".</td>
     </tr>
     <tr>
       <td><strong>Fluxo principal</strong></td>

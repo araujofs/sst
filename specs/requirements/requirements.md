@@ -48,11 +48,6 @@
   - [Atualização de Legislação e Alíquotas](#atualização-de-legislação-e-alíquotas)
   - [Relatórios e Dashboards](#relatórios-e-dashboards)
     - [Relatórios de Simulações e Análises](#relatórios-de-simulações-e-análises)
-    - [Dashboards e Painéis de Controle](#dashboards-e-painéis-de-controle)
-    - [Relatórios Administrativos e de Uso](#relatórios-administrativos-e-de-uso)
-    - [Relatórios de Compliance e Oportunidades](#relatórios-de-compliance-e-oportunidades)
-    - [Customização e Configuração](#customização-e-configuração)
-  - [Notificações e Alertas Legislativos](#notificações-e-alertas-legislativos)
   - [Administração e Infraestrutura](#administração-e-infraestrutura)
   - [Importação de Dados e Validações](#importação-de-dados-e-validações)
 - [Requisitos não-funcionais](#requisitos-não-funcionais)
@@ -121,19 +116,17 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 
 ## Gestão de Usuários 
 - **[RF-GES-001]**: Como administrador, quero manter **Usuário** para garantir acesso apenas às pessoas autorizadas e modificar permissões caso seja necessário. Os usuários devem ser cadastrados com os seguintes dados:
-  - Gerente: nome, email, senha, CPNJ do seu escritório, duração máxima da sessão, foto de perfil
-  - Administrador: nome, email, senha, duração máxima da sessão, foto de perfil
-  - Contador: nome, email e senha, duração máxima da sessão, foto de perfil
-  - Cliente: razão social (caso seja empresa), nome (caso seja pessoa física), email, senha, CNPJ da sua empresa (caso seja empresa), CPF (caso seja pessoa física), CNPJ do escritório de contabilidade associado, duração máxima da sessão, foto de perfil
-  - Técnico de suporte: nome, email, senha, duração máxima da sessão, foto de perfil
+  - Gerente: nome, email, senha, CPNJ do seu escritório, foto de perfil
+  - Administrador: nome, email, senha, foto de perfil
+  - Contador: nome, email e senha, foto de perfil
+  - Cliente: razão social (caso seja empresa), nome (caso seja pessoa física), email, senha, CNPJ da sua empresa (caso seja empresa), CPF (caso seja pessoa física), CNPJ do escritório de contabilidade associado, foto de perfil
+  - Técnico de suporte: nome, email, senha, foto de perfil
 
 - **[RF-GES-002]**: Como gerente, quero manter **Associado** da minha empresa para garantir acesso apenas às pessoas autorizadas e a funcionalidades específicas. Os usuários devem ser cadastrados com os seguintes dados:
   - Contador: nome, email e senha
   - Cliente: razão social (caso seja empresa), nome (caso seja pessoa física), email, senha, CNPJ da sua empresa (caso seja empresa), CPF (caso seja pessoa física), CNPJ do escritório de contabilidade associado
 
 - **[RF-GES-005]**: Como usuário, quero gerenciar meu perfil (foto, nome, e-mail, senha) no sistema para manter as informações atualizadas e minhas credenciais seguras.
-
-- **[RF-GES-006]**: O sistema deve notificar por e-mail quando um novo usuário for cadastrado ou suas permissões forem alteradas.
 
 - **[RF-GES-014]**: Como técnico de suporte, quero visualizar temporariamente informações não confidencias de **Associado** e **Gerente** para diagnosticar eventuais problemas.
 
@@ -223,7 +216,6 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RF-ADM-005]**: Como administrador, quero configurar rotinas automáticas (ou manuais) de backup dos dados do sistema para garantir disponibilidade dos dados.
 - **[RF-ADM-010]**: Como gestor, quero visualizar a saúde do sistema no momento (recursos utilizados, módulos funcionando, tempo médio de resposta, disponibilidade, usuários ativos) para acompanhar a situação atual do sistema.
 - **[RF-ADM-011]**: Como usuário, quero reportar erros encontrados durante o uso do sistema para garantir que o problema possa ser resolvido.
-
 - **[RF-ADM-012]**: Como administrador, quero ser notificado quando ocorrer um erro crítico no sistema para resolver rapidamente o problema.
 
 

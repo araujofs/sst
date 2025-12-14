@@ -3,7 +3,7 @@
     <tr>
       <td><strong>Caso de uso</strong></td>
       <td>
-        <strong><span><a>UC12 - Atualizar Tabelas Tributárias</a></span></strong>
+        <strong><span><a>UC20 - Atualizar Tabelas Tributárias</a></span></strong>
       </td>
     </tr>
     <tr>
