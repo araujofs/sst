@@ -175,11 +175,6 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RF-CAL-LR-003]**: Como Contador ou Gerente, quero que o sistema controle os saldos de prejuízos fiscais e bases negativas de CSLL para compensação futura, respeitando a trava de 30% do lucro real do período.
 
 
-<!-- 
-### Obrigações Acessórias e Funcionalidades Complementares
-- **[RF-CAL-OA-001]**: Como Contador, quero que o sistema identifique e liste automaticamente as obrigações acessórias aplicáveis ao regime tributário e tipo de atividade selecionados (DCTF - Declaração de Débitos e Créditos Tributários Federais, EFD-Contribuições - Escrituração Fiscal Digital das Contribuições, SPED Fiscal - Sistema Público de Escrituração Digital), informando: nome da obrigação, periodicidade de entrega, prazo de vencimento, e descrição resumida do conteúdo, para garantir o compliance completo e evitar multas por não entrega. -->
-
-
 ## Atualização de Legislação e Alíquotas
 - **[RF-LEG-001]**: Como administrador, quero atualizar manualmente as alíquotas e regras tributárias através de interface administrativa que permita importar arquivos (CSV ou Excel) com as novas tabelas do Simples Nacional, validando o formato dos dados antes de aplicar, para garantir que as simulações estejam sempre alinhadas com a legislação vigente publicada pela Receita Federal.
 - **[RF-LEG-002]**: Como administrador, quero que o sistema mantenha um histórico completo de todas as atualizações legislativas aplicadas, registrando: data da atualização, usuário responsável, versão anterior das tabelas, versão nova, e descrição resumida das mudanças, para permitir auditoria e reversão quando necessário.
@@ -193,19 +188,6 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 - **[RF-REL-002]**: Como contador, quero visualizar comparações entre os regimes tributários através de gráficos, incluindo gráficos de barras para comparação pontual entre Simples Nacional, Lucro Presumido e Lucro Real, e gráficos de linha para analisar a evolução da carga tributária de um ou mais regimes ao longo do tempo selecionado (mensal, trimestral ou anual), a fim de identificar a opção mais vantajosa e entender tendências.
 - **[RF-REL-003]**: Como contador, quero gerar relatórios personalizados para clientes específicos, com a possibilidade de incluir logo da empresa, observações personalizadas e selecionar quais métricas e gráficos serão apresentados, para fornecer análises sob medida que atendam às necessidades particulares de cada cliente.
 - **[RF-REL-004]**: Como contador ou gerente, quero exportar os resultados das simulações em diferentes formatos (PDF com formatação profissional, Excel com todas as planilhas de cálculo detalhadas, CSV com dados brutos), para compartilhar com clientes, integrar a outros sistemas ou arquivar.
-
-<!-- ### Dashboards e Painéis de Controle
-- **[RF-REL-005]**: Como gerente, quero acessar um dashboard executivo consolidado com indicadores de toda minha equipe de contadores (número de simulações realizadas, economias identificadas, clientes atendidos), para monitorar a produtividade da equipe e identificar oportunidades de melhoria. -->
-
-<!-- ### Relatórios Administrativos e de Uso
-- **[RF-REL-006]**: Como administrador, quero visualizar relatórios de uso do sistema (usuários ativos, simulações realizadas, horários de pico, funcionalidades mais utilizadas), para entender os padrões de uso, planejar capacitações e identificar necessidades de ajustes na infraestrutura. -->
-
-<!-- ### Relatórios de Compliance e Oportunidades
-- **[RF-REL-007]**: Como contador ou gerente, quero gerar relatórios de compliance fiscal que listem as obrigações acessórias cumpridas, pendências, prazos de vencimento e status de regularidade, para garantir que todos os requisitos legais estejam sendo atendidos e evitar multas. -->
-
-
-<!-- ### Customização e Configuração
-- **[RF-REL-008]**: Como administrador, quero disponibilizar templates de relatórios e dashboards pré-configurados para diferentes perfis de usuário (contador iniciante, gerente experiente, cliente), que possam ser personalizados conforme as necessidades específicas de cada escritório ou profissional.  -->
 
 
 ## Administração e Infraestrutura
