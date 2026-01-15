@@ -54,9 +54,9 @@
         <ol start="11">
           <li>O sistema redireciona para o use case específico do regime selecionado:
             <ul>
-              <li>Se <strong>Simples Nacional</strong>: executa <a href="especificacao_simular_simples_nacional.md">[UC11 - Simular Simples Nacional]</a></li>
-              <li>Se <strong>Lucro Presumido</strong>: executa <a href="especificacao_simular_lucro_presumido.md">[UC12 - Simular Lucro Presumido]</a></li>
-              <li>Se <strong>Lucro Real</strong>: <strong>valida se o CNAE corresponde a prestação de serviços <a href="#e2">[E2]</a> e</strong> executa <a href="especificacao_simular_lucro_real.md">[UC14 - Simular Lucro Real]</a></li>
+              <li>Se <strong>Simples Nacional</strong>: <strong>valida se o CNAE foi informado</strong> e executa <a href="especificacao_simular_simples_nacional.md">[UC11 - Simular Simples Nacional]</a></li>
+              <li>Se <strong>Lucro Presumido</strong>: <strong>valida se o CNAE foi informado</strong> e executa <a href="especificacao_simular_lucro_presumido.md">[UC12 - Simular Lucro Presumido]</a></li>
+              <li>Se <strong>Lucro Real</strong>: <strong>valida se o CNAE foi informado e se corresponde a prestação de serviços <a href="#e2">[E2]</a> e</strong> executa <a href="especificacao_simular_lucro_real.md">[UC14 - Simular Lucro Real]</a></li>
             </ul>
           </li>
           <li>O use case específico solicita dados financeiros necessários, realiza validações e calcula os tributos.</li>

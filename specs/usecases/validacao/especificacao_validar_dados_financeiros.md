@@ -61,12 +61,13 @@
       <td>
         <a id="rn1">[RN1] - Campos obrigatórios por regime</a><br>
         <ul>
-          <li><strong>Todos os regimes:</strong> CNAE, Receita Bruta do Período</li>
-          <li><strong>Simples Nacional:</strong> RBT12 (Receita Bruta 12 meses)</li>
+          <li><strong>Todos os regimes:</strong> CNAE (obrigatório), Receita Bruta do Período</li>
+          <li><strong>Simples Nacional:</strong> RBT12 (Receita Bruta 12 meses), CNAE válido para identificação do anexo</li>
           <li><strong>Simples Nacional com Fator R:</strong> Folha de Pagamento 12 meses</li>
-          <li><strong>Lucro Real:</strong> Custos e Despesas Operacionais</li>
+          <li><strong>Lucro Presumido:</strong> CNAE válido para determinação das alíquotas de presunção</li>
+          <li><strong>Lucro Real:</strong> Custos e Despesas Operacionais, CNAE válido (somente prestação de serviços)</li>
         </ul>
-        Valores financeiros devem ser numéricos e não negativos.<br><br>
+        O campo CNAE é obrigatório para todos os regimes pois é fundamental para determinar alíquotas, anexos e elegibilidade. Valores financeiros devem ser numéricos e não negativos.<br><br>
         <a id="rn2">[RN2] - Limites de enquadramento</a><br>
         <ul>
           <li><strong>Simples Nacional:</strong> RBT12 ≤ R$ 4.800.000,00</li>
