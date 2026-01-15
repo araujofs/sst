@@ -29,9 +29,10 @@
       <td>
         <ol>
           <li>O sistema recebe os dados financeiros informados pelo usuário.</li>
-          <li>O sistema valida campos obrigatórios. <a href="#rn1">[RN1]</a></li>
-          <li>O sistema valida tipos de dados (valores numéricos positivos).</li>
-          <li>O sistema verifica limites de enquadramento por regime. <a href="#rn2">[RN2]</a></li>
+          <li>O sistema valida campos obrigatórios por regime. <a href="#rn1">[RN1]</a> <a href="#e2">[E2]</a></li>
+          <li>O sistema valida tipos de dados (valores numéricos positivos). <a href="#e3">[E3]</a></li>
+          <li>O sistema valida se o CNAE é válido e está mapeado no sistema. <a href="#e4">[E4]</a></li>
+          <li>O sistema verifica limites de enquadramento por regime. <a href="#rn2">[RN2]</a> <a href="#e5">[E5]</a></li>
           <li>Se todas as validações passarem, o sistema prossegue com o cálculo tributário.</li>
           <li>Se houver erros, o sistema bloqueia a simulação e exibe lista de erros. <a href="#e1">[E1]</a></li>
         </ol>
@@ -40,19 +41,77 @@
     <tr>
       <td><strong>Fluxos alternativos</strong></td>
       <td>
-        N/A
+        <a id="a1">[A1] - Validação em tempo real (progressiva)</a>
+        <ol>
+          <li>Antes do passo 1, o sistema pode validar campos à medida que o usuário preenche (opcional, melhoria de UX).</li>
+          <li>O sistema exibe ícones de status ao lado de cada campo:
+            <ul>
+              <li>✓ Verde: campo válido</li>
+              <li>⚠ Amarelo: campo com aviso (ex: valor muito alto)</li>
+              <li>✗ Vermelho: campo inválido</li>
+            </ul>
+          </li>
+          <li>O sistema exibe mensagens de erro inline, logo abaixo de cada campo inválido.</li>
+          <li>O botão "Simular" permanece desabilitado enquanto houver erros.</li>
+        </ol>
       </td>
     </tr>
     <tr>
       <td><strong>Fluxos de exceção</strong></td>
       <td>
-        <a id="e1">[E1] - Dados inválidos</a>
+        <a id="e1">[E1] - Dados inválidos (genérico)</a>
         <ol>
-          <li>No passo 6, o sistema identifica erros de validação.</li>
-          <li>O sistema exibe mensagem com lista de erros encontrados.</li>
+          <li>No passo 7, o sistema identifica um ou mais erros de validação.</li>
+          <li>O sistema exibe mensagem com lista de erros encontrados agrupados por tipo.</li>
           <li>O sistema bloqueia o botão "Simular" até que os erros sejam corrigidos.</li>
           <li>O usuário corrige os dados no formulário.</li>
           <li>Retorna ao passo 1.</li>
+        </ol>
+        <a id="e2">[E2] - Campo obrigatório não preenchido</a>
+        <ol>
+          <li>No passo 2, o sistema identifica que um campo obrigatório está vazio.</li>
+          <li>O sistema exibe mensagem: "Campo obrigatório: [nome do campo] deve ser preenchido."</li>
+          <li>O sistema destaca o campo em vermelho.</li>
+          <li>Exemplos por regime:
+            <ul>
+              <li><strong>Simples Nacional:</strong> "RBT12 é obrigatório para calcular o Simples Nacional"</li>
+              <li><strong>Simples Nacional com Fator R:</strong> "Folha de Pagamento é obrigatória para calcular o Fator R"</li>
+              <li><strong>Lucro Real:</strong> "Custos e Despesas são obrigatórios para calcular o Lucro Real"</li>
+            </ul>
+          </li>
+          <li>Retorna ao formulário para correção.</li>
+        </ol>
+        <a id="e3">[E3] - Valor inválido (não numérico ou negativo)</a>
+        <ol>
+          <li>No passo 3, o sistema identifica valor não numérico ou negativo em campo financeiro.</li>
+          <li>O sistema exibe mensagem: "[Campo]: valor deve ser numérico e não negativo."</li>
+          <li>O sistema destaca o campo em vermelho.</li>
+          <li>Retorna ao formulário para correção.</li>
+        </ol>
+        <a id="e4">[E4] - CNAE inválido ou não mapeado</a>
+        <ol>
+          <li>No passo 4, o sistema valida o CNAE informado.</li>
+          <li>O sistema identifica que o CNAE:
+            <ul>
+              <li>É inválido (não existe na tabela oficial), OU</li>
+              <li>Não está mapeado no sistema para o regime selecionado</li>
+            </ul>
+          </li>
+          <li>O sistema exibe mensagem de erro específica (igual ao <a href="../calculo/especificacao_criar_simulacao.md">[UC10 - E3]</a>).</li>
+          <li>O sistema bloqueia a simulação.</li>
+          <li>Retorna ao formulário para correção.</li>
+        </ol>
+        <a id="e5">[E5] - Limite de enquadramento excedido</a>
+        <ol>
+          <li>No passo 5, o sistema identifica que os valores informados excedem os limites do regime.</li>
+          <li>O sistema exibe alerta específico:
+            <ul>
+              <li><strong>Simples Nacional:</strong> "RBT12 de R$ [valor] excede o limite de R$ 4.800.000,00"</li>
+              <li><strong>Lucro Presumido:</strong> "Receita anual projetada de R$ [valor] excede o limite de R$ 78.000.000,00"</li>
+            </ul>
+          </li>
+          <li>O sistema sugere regime alternativo compatível.</li>
+          <li>O sistema bloqueia a simulação no regime atual.</li>
         </ol>
       </td>
     </tr>
@@ -73,7 +132,20 @@
           <li><strong>Simples Nacional:</strong> RBT12 ≤ R$ 4.800.000,00</li>
           <li><strong>Lucro Presumido:</strong> Receita anual ≤ R$ 78.000.000,00</li>
         </ul>
-        Violações dessas regras bloqueiam a simulação.
+        Violações dessas regras bloqueiam a simulação.<br><br>
+        <a id="rn3">[RN3] - Validação de CNAE</a><br>
+        O sistema deve validar o CNAE em dois níveis:
+        <ol>
+          <li><strong>Validade:</strong> Verifica se o código CNAE existe na tabela oficial (IBGE/Receita Federal)</li>
+          <li><strong>Mapeamento:</strong> Verifica se o CNAE está cadastrado no sistema com mapeamento para:
+            <ul>
+              <li><strong>Simples Nacional:</strong> Anexo (I, II, III, IV ou V)</li>
+              <li><strong>Lucro Presumido:</strong> Alíquota de presunção (8%, 16% ou 32%)</li>
+              <li><strong>Lucro Real:</strong> Tipo de atividade (apenas serviços)</li>
+            </ul>
+          </li>
+        </ol>
+        Se o CNAE for válido mas não mapeado, o sistema deve solicitar cadastro via suporte.
       </td>
     </tr>
   </tbody>
