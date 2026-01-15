@@ -44,8 +44,9 @@
           <li>O sistema verifica se há adicional de IRPJ. <a href="#a2">[A2]</a></li>
           <li>O sistema calcula a Base de Cálculo da CSLL: <code>Lucro Líquido + Adições - Exclusões</code></li>
           <li>O sistema calcula a CSLL: <code>Base de Cálculo × 9%</code></li>
-          <li>O sistema calcula o PIS não-cumulativo: <code>(Receita Bruta × 1,65%) - Créditos de PIS</code></li>
-          <li>O sistema calcula a COFINS não-cumulativa: <code>(Receita Bruta × 7,60%) - Créditos de COFINS</code></li>
+          <li>O sistema valida se a Receita Bruta foi informada. <a href="#e2">[E2]</a></li>
+          <li>O sistema calcula o PIS não-cumulativo: <code>(Receita Bruta × 1,65%) - Créditos de PIS</code> <a href="#rn2">[RN2]</a></li>
+          <li>O sistema calcula a COFINS não-cumulativa: <code>(Receita Bruta × 7,60%) - Créditos de COFINS</code> <a href="#rn2">[RN2]</a></li>
           <li>O sistema permite compensação de prejuízos fiscais. <a href="#a3">[A3]</a></li>
           <li>O sistema calcula o total: <code>IRPJ + CSLL + PIS + COFINS</code></li>
           <li>O sistema exibe o resultado com:
@@ -63,6 +64,7 @@
               </li>
               <li>Valor total a pagar</li>
               <li>Saldo de prejuízos fiscais remanescente (se aplicável)</li>
+              <li><strong>Nota:</strong> Se nenhum crédito foi informado, exibe: "Créditos de PIS/COFINS: R$ 0,00 (nenhum crédito informado)"</li>
             </ul>
           </li>
         </ol>
@@ -125,6 +127,19 @@
           <li>O sistema continua calculando PIS e COFINS normalmente.</li>
           <li>O sistema exibe o resultado com tributos = 0 para IRPJ e CSLL.</li>
         </ol>
+        <a id="e2">[E2] - Receita Bruta não informada ou zero</a>
+        <ol>
+          <li>No passo 9, o sistema identifica que a Receita Bruta não foi informada ou é zero.</li>
+          <li>O sistema exibe mensagem: "Receita Bruta é necessária para calcular PIS e COFINS. Informe a Receita Bruta Total do período."</li>
+          <li>O sistema destaca o campo "Receita Bruta Total" em vermelho.</li>
+          <li>O ator pode:
+            <ul>
+              <li>Informar a Receita Bruta e prosseguir</li>
+              <li>Confirmar que a receita é realmente zero (caso excepcional) - neste caso PIS e COFINS = R$ 0,00</li>
+            </ul>
+          </li>
+          <li>Retorna ao passo 1 para correção ou confirmação.</li>
+        </ol>
       </td>
     </tr>
     <tr>
@@ -141,7 +156,8 @@
           <li>Máquinas, equipamentos e outros bens incorporados ao ativo imobilizado</li>
           <li>Armazenagem e fretes</li>
         </ul>
-        Alíquotas de crédito: 1,65% (PIS) e 7,60% (COFINS)<br><br>
+        Alíquotas de crédito: 1,65% (PIS) e 7,60% (COFINS).<br>
+        <strong>Importante:</strong> A informação de créditos é opcional. Se o ator não informar, o sistema considera créditos = R$ 0,00 e calcula apenas o débito (Receita Bruta × Alíquota).<br><br>
         <a id="rn3">[RN3] - Adicional de IRPJ</a><br>
         Conforme art. 542 do Decreto nº 9.580/2018, é devido adicional de 10% sobre a parcela do lucro real que exceder R$ 20.000,00 mensais (R$ 60.000,00 trimestral ou R$ 240.000,00 anual).
       </td>

@@ -48,7 +48,14 @@
           <li>O ator preenche ou confirma Município/UF.</li>
           <li>O ator seleciona o regime tributário que deseja simular (obrigatório).</li>
           <li>O ator clica em "Avançar".</li>
-          <li>O sistema valida se um regime foi selecionado. <a href="#e1">[E1]</a></li>
+          <li>O sistema valida os campos obrigatórios: <a href="#e1">[E1]</a>
+            <ul>
+              <li>Razão Social (obrigatório)</li>
+              <li>CNAE Principal (obrigatório e válido) <a href="#e3">[E3]</a></li>
+              <li>Município/UF (obrigatório)</li>
+              <li>Regime Tributário (obrigatório)</li>
+            </ul>
+          </li>
         </ol>
         <strong>Etapa 2 - Dados Financeiros e Cálculo:</strong>
         <ol start="11">
@@ -109,12 +116,20 @@
     <tr>
       <td><strong>Fluxos de exceção</strong></td>
       <td>
-        <a id="e1">[E1] - Nenhum regime selecionado</a>
+        <a id="e1">[E1] - Campos obrigatórios não preenchidos</a>
         <ol>
-          <li>No passo 10, o sistema identifica que nenhum regime foi selecionado.</li>
-          <li>O sistema exibe mensagem: "Selecione um regime tributário para continuar".</li>
-          <li>O sistema destaca o campo "Regime Tributário" em vermelho.</li>
-          <li>Retorna ao passo 8.</li>
+          <li>No passo 10, o sistema identifica que um ou mais campos obrigatórios não foram preenchidos.</li>
+          <li>O sistema exibe mensagem: "Preencha todos os campos obrigatórios para continuar:" seguida da lista de campos faltantes.</li>
+          <li>O sistema destaca os campos vazios em vermelho.</li>
+          <li>Exemplos de mensagens:
+            <ul>
+              <li>"Razão Social é obrigatória"</li>
+              <li>"CNAE Principal é obrigatório"</li>
+              <li>"Município/UF é obrigatório"</li>
+              <li>"Selecione um regime tributário"</li>
+            </ul>
+          </li>
+          <li>Retorna ao passo correspondente (3, 5, 7 ou 8) para correção.</li>
         </ol>
         <a id="e2">[E2] - CNAE incompatível com Lucro Real</a>
         <ol>
@@ -135,6 +150,30 @@
             </ul>
           </li>
           <li>O cálculo do Lucro Real não é realizado.</li>
+        </ol>
+        <a id="e3">[E3] - CNAE inválido ou não encontrado</a>
+        <ol>
+          <li>No passo 10, o sistema valida o código CNAE informado.</li>
+          <li>O sistema identifica que:
+            <ul>
+              <li>O código CNAE não existe na tabela oficial de CNAEs (formato inválido ou código inexistente), OU</li>
+              <li>O código CNAE não está mapeado no sistema para nenhum regime tributário</li>
+            </ul>
+          </li>
+          <li>O sistema exibe mensagem de erro:
+            <ul>
+              <li><strong>Se inválido:</strong> "CNAE [código] não é válido. Verifique o código ou utilize o campo de busca para selecionar um CNAE da lista oficial."</li>
+              <li><strong>Se não mapeado:</strong> "CNAE [código] - [descrição] não está cadastrado no sistema. Entre em contato com o suporte para inclusão."</li>
+            </ul>
+          </li>
+          <li>O sistema destaca o campo "CNAE Principal" em vermelho.</li>
+          <li>O sistema oferece:
+            <ul>
+              <li>Botão "Buscar CNAE" - abre campo de busca com autocompletar de CNAEs válidos</li>
+              <li>Botão "Corrigir" - permite editar o código digitado</li>
+            </ul>
+          </li>
+          <li>Retorna ao passo 5.</li>
         </ol>
         <strong>Nota:</strong> As validações de dados financeiros específicas de cada regime e exceções relacionadas são tratadas nos use cases detalhados: <a href="especificacao_simular_simples_nacional.md">[UC11]</a>, <a href="especificacao_simular_lucro_presumido.md">[UC12]</a> e <a href="especificacao_simular_lucro_real.md">[UC14]</a>.
       </td>
