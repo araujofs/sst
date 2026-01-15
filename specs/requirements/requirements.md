@@ -170,9 +170,11 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 
 - **[RF-CAL-LR-001]**: Como Contador ou Gerente, quero que o sistema calcule o IRPJ e a CSLL com base no Lucro Real apurado (Lucro Líquido ajustado por adições, exclusões e compensações), conforme **Decreto nº 9.580/2018 (RIR/2018)**.
 
-- **[RF-CAL-LR-002]**: Como Contador ou Gerente, quero que o sistema calcule o PIS e a COFINS no regime não-cumulativo, apurando débitos sobre receitas e créditos sobre despesas dedutíveis, conforme **Leis nº 10.637/2002 e 10.833/2003**.
+- **[RF-CAL-LR-002]**: Como Contador ou Gerente, quero que o sistema calcule o PIS e a COFINS no regime não-cumulativo, apurando débitos sobre receitas (1,65% e 7,6% respectivamente) e créditos sobre despesas elegíveis para prestação de serviços (energia elétrica, aluguéis de prédios, depreciação de máquinas/equipamentos, armazenagem e fretes), conforme **Leis nº 10.637/2002 e 10.833/2003**, exibindo a apuração líquida (débitos - créditos).
 
 - **[RF-CAL-LR-003]**: Como Contador ou Gerente, quero que o sistema controle os saldos de prejuízos fiscais e bases negativas de CSLL para compensação futura, respeitando a trava de 30% do lucro real do período.
+
+- **[RF-CAL-LR-004]**: Como Contador ou Gerente, quero que o sistema calcule o ISS (Imposto Sobre Serviços) aplicando a alíquota municipal vigente (consultada conforme RF-LEG-003) sobre a receita de prestação de serviços, para que a carga tributária total no Lucro Real seja completa.
 
 
 ## Atualização de Legislação e Alíquotas
