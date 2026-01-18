@@ -4,7 +4,7 @@
       <td><strong>Caso de uso</strong></td>
       <td>
         <strong
-          ><span><a>UC28 - Visualizar saúde do sistema</a></span></strong
+          ><span><a>UC28 - Visualizar status do sistema</a></span></strong
         >
       </td>
     </tr>
@@ -20,7 +20,7 @@
     </tr>
     <tr>
       <td><strong>Atores</strong></td>
-      <td>Administrador</td>
+      <td>Gestor</td>
     </tr>
     <tr>
       <td><strong>Condições de entrada</strong></td>
@@ -33,7 +33,7 @@
       <td>
         <ol>
           <li>
-            O ator se encontra na área de configurações e acessa o menu "Saúde do sistema". Ele vê um painel com indicadores gerais (recursos utilizados, módulos funcionando, tempo médio de resposta, disponibilidade, usuários ativos) e a data/hora da última atualização.
+            O ator se encontra na área de configurações e acessa o menu "Status do sistema". Ele vê um painel com indicadores gerais (recursos utilizados, módulos funcionando, tempo médio de resposta, disponibilidade, usuários ativos) e a data/hora da última atualização.
           </li>
           <li>
             O ator verifica que cada módulo mostra o status (OK/Degradado/Indisponível) com cor/ícone, além de métricas resumidas (por exemplo, uso de CPU/memória, latência média, taxa de erros).

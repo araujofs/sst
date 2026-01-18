@@ -9,7 +9,7 @@ package "Administração e Infraestrutura" {
   ' 005
   (Configurar rotinas de backup) as confBack
   ' 010
-  (Visualizar saúde\ndo sistema) as visSau
+  (Visualizar status\ndo sistema) as visSt
   ' 011
   (Reportar erro) as repErr
 
@@ -19,7 +19,7 @@ package "Administração e Infraestrutura" {
 
   adm -- (confBack)
 
-  ges -- (visSau)
+  ges -- (visSt)
 
   us -- (repErr)
 }
