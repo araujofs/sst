@@ -12,8 +12,6 @@ package "Administração e Infraestrutura" {
   (Visualizar saúde\ndo sistema) as visSau
   ' 011
   (Reportar erro) as repErr
-  ' 012
-  (Notificar erro crítico) as notifErr
 
   ' relacionamentos
   adm -- (visLog)
@@ -24,7 +22,5 @@ package "Administração e Infraestrutura" {
   ges -- (visSau)
 
   us -- (repErr)
-  
-  adm -- (notifErr)
 }
 @enduml
