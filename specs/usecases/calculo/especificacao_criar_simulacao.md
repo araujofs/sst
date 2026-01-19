@@ -63,7 +63,7 @@
             <ul>
               <li>Se <strong>Simples Nacional</strong>: <strong>valida se o CNAE foi informado</strong> e executa <a href="especificacao_simular_simples_nacional.md">[UC11 - Simular Simples Nacional]</a></li>
               <li>Se <strong>Lucro Presumido</strong>: <strong>valida se o CNAE foi informado</strong> e executa <a href="especificacao_simular_lucro_presumido.md">[UC12 - Simular Lucro Presumido]</a></li>
-              <li>Se <strong>Lucro Real</strong>: <strong>valida se o CNAE foi informado e se corresponde a prestação de serviços <a href="#e2">[E2]</a> e</strong> executa <a href="especificacao_simular_lucro_real.md">[UC14 - Simular Lucro Real]</a></li>
+              <li>Se <strong>Lucro Real</strong>: <strong>valida se o CNAE foi informado e se corresponde a atividade de prestação de serviços</strong> <a href="#e2">[E2]</a><strong>, e</strong> executa <a href="especificacao_simular_lucro_real.md">[UC14 - Simular Lucro Real]</a></li>
             </ul>
           </li>
           <li>O use case específico solicita dados financeiros necessários, realiza validações e calcula os tributos.</li>
@@ -134,13 +134,14 @@
         <a id="e2">[E2] - CNAE incompatível com Lucro Real</a>
         <ol>
           <li>Ao selecionar Lucro Real (passo 11 ou fluxo A2), o sistema valida o CNAE informado.</li>
-          <li>O sistema identifica que o CNAE não corresponde a prestação de serviços (ex: comércio, indústria).</li>
+          <li>O sistema identifica que o CNAE não corresponde a atividade de prestação de serviços (ex: comércio, indústria, transporte de cargas, etc.).</li>
           <li>O sistema exibe alerta em modal:
             <ul>
               <li><strong>Título:</strong> "CNAE incompatível com Lucro Real"</li>
-              <li><strong>Mensagem:</strong> "O cálculo de Lucro Real neste sistema está limitado a <strong>prestadores de serviços</strong>."</li>
-              <li><strong>Detalhe:</strong> "O CNAE informado ([código] - [descrição]) corresponde a atividade de [comércio/indústria]."</li>
-              <li><strong>Sugestão:</strong> "Para este tipo de atividade, utilize os regimes <strong>Simples Nacional</strong> ou <strong>Lucro Presumido</strong>."</li>
+              <li><strong>Mensagem:</strong> "O cálculo de Lucro Real neste sistema está <strong>limitado exclusivamente a empresas prestadoras de serviços</strong>."</li>
+              <li><strong>Detalhe:</strong> "O CNAE informado ([código] - [descrição]) corresponde a atividade de [comércio/indústria/transporte de cargas/etc.], que não é contemplada nesta versão do sistema."</li>
+              <li><strong>Justificativa:</strong> "Esta limitação se deve à complexidade das regras de apuração de créditos de PIS/COFINS não-cumulativo e controle de estoque para atividades comerciais e industriais."</li>
+              <li><strong>Sugestão:</strong> "Para atividades que não sejam prestação de serviços, utilize os regimes <strong>Simples Nacional</strong> ou <strong>Lucro Presumido</strong>."</li>
             </ul>
           </li>
           <li>O sistema oferece opções no modal:
@@ -186,7 +187,7 @@
         <a id="rn2">[RN2] - Preservação de dados entre etapas</a><br>
         Os dados gerais preenchidos na Etapa 1 (CNPJ, Razão Social, CNAE, Município/UF) são preservados e reutilizados quando o ator decide simular outro regime ou voltar para ajustes.<br><br>
         <a id="rn3">[RN3] - Validação de CNAE para Lucro Real</a><br>
-        O regime Lucro Real está limitado neste sistema a empresas prestadoras de serviços. O sistema deve validar o CNAE informado e, caso corresponda a atividades de comércio ou indústria, bloquear a simulação e orientar o usuário a utilizar Simples Nacional ou Lucro Presumido. Esta limitação se deve à complexidade das regras de creditamento de PIS/COFINS não-cumulativo para atividades comerciais e industriais.
+        O regime Lucro Real está <strong>limitado neste sistema exclusivamente a empresas prestadoras de serviços</strong>. O sistema deve validar o CNAE informado e, caso corresponda a atividades de comércio, indústria, transporte de cargas ou qualquer outra atividade que não seja prestação de serviços, deve bloquear a simulação e orientar o usuário a utilizar Simples Nacional ou Lucro Presumido. Esta limitação se deve à complexidade das regras de apuração de créditos de PIS/COFINS não-cumulativo, controle de estoque, custo de mercadorias vendidas (CMV) e outras especificidades aplicáveis a atividades comerciais, industriais e de transporte.
       </td>
     </tr>
   </tbody>

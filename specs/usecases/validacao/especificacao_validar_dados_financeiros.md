@@ -124,9 +124,9 @@
           <li><strong>Simples Nacional:</strong> RBT12 (Receita Bruta 12 meses), CNAE válido para identificação do anexo</li>
           <li><strong>Simples Nacional com Fator R:</strong> Folha de Pagamento 12 meses</li>
           <li><strong>Lucro Presumido:</strong> CNAE válido para determinação das alíquotas de presunção</li>
-          <li><strong>Lucro Real:</strong> Custos e Despesas Operacionais, CNAE válido (somente prestação de serviços)</li>
+          <li><strong>Lucro Real:</strong> Custos e Despesas Operacionais, CNAE válido (somente atividades de prestação de serviços)</li>
         </ul>
-        O campo CNAE é obrigatório para todos os regimes pois é fundamental para determinar alíquotas, anexos e elegibilidade. Valores financeiros devem ser numéricos e não negativos.<br><br>
+        O campo CNAE é obrigatório para todos os regimes pois é fundamental para determinar alíquotas, anexos e elegibilidade. Para o regime Lucro Real, o CNAE deve corresponder <strong>exclusivamente a atividades de prestação de serviços</strong>, uma vez que o sistema não contempla a complexidade de cálculos para atividades comerciais, industriais ou de transporte. Valores financeiros devem ser numéricos e não negativos.<br><br>
         <a id="rn2">[RN2] - Limites de enquadramento</a><br>
         <ul>
           <li><strong>Simples Nacional:</strong> RBT12 ≤ R$ 4.800.000,00</li>
@@ -141,11 +141,11 @@
             <ul>
               <li><strong>Simples Nacional:</strong> Anexo (I, II, III, IV ou V)</li>
               <li><strong>Lucro Presumido:</strong> Alíquota de presunção (8%, 16% ou 32%)</li>
-              <li><strong>Lucro Real:</strong> Tipo de atividade (apenas serviços)</li>
+              <li><strong>Lucro Real:</strong> Tipo de atividade (exclusivamente prestação de serviços). CNAEs de comércio, indústria, transporte de cargas e outras atividades que não sejam serviços são incompatíveis com este regime no sistema.</li>
             </ul>
           </li>
         </ol>
-        Se o CNAE for válido mas não mapeado, o sistema deve solicitar cadastro via suporte.
+        Se o CNAE for válido mas não mapeado, o sistema deve solicitar cadastro via suporte. Para o Lucro Real, se o CNAE corresponder a atividade que não seja prestação de serviços, o sistema deve bloquear a simulação e orientar o uso de outros regimes.
       </td>
     </tr>
   </tbody>

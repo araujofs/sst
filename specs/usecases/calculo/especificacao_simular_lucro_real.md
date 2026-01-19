@@ -9,7 +9,7 @@
     <tr>
       <td><strong>Objetivo</strong></td>
       <td>
-        Calcular a carga tributária no regime Lucro Real, apurando o lucro líquido ajustado e calculando IRPJ, CSLL, PIS e COFINS no regime não-cumulativo.
+        Calcular a carga tributária no regime Lucro Real para <strong>empresas prestadoras de serviços</strong>, apurando o lucro líquido ajustado e calculando IRPJ, CSLL, PIS e COFINS no regime não-cumulativo.
       </td>
     </tr>
     <tr>
@@ -22,7 +22,7 @@
     </tr>
     <tr>
       <td><strong>Condições de entrada</strong></td>
-      <td>O ator está em <a href="especificacao_criar_simulacao.md">[UC10]</a> e selecionou o regime Lucro Real.</td>
+      <td>O ator está em <a href="especificacao_criar_simulacao.md">[UC10]</a> e selecionou o regime Lucro Real. O CNAE informado corresponde a atividade de <strong>prestação de serviços</strong> (validado pelo sistema).</td>
     </tr>
     <tr>
       <td><strong>Fluxo principal</strong></td>
