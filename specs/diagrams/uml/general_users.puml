@@ -1,4 +1,5 @@
 @startuml geral
+!include users.puml
 left to right direction
 
 rectangle SST {
@@ -10,16 +11,27 @@ rectangle SST {
   package "Importação de Dados e Validações" as idv
   package "Cálculo e Simulação Tributária" as cst
 
-  cst <.. rd
-  idv <.. cst
-  ala <.. cst
+  ' Users to modules
+  us -- ai
+  adm -- ai
+  ges -- ai
 
-  ca <.. gu
-  ca <.. ai
-  ca <.. cst
-  ca <.. ala
-  ca <.. rd
-  ca <.. idv
+  us -- ca
+  adm -- ca
+
+  co -- cst
+  ger -- cst
+
+  co -- rd
+  ger -- rd
+
+  us -- gu
+  adm -- gu
+  tec -- gu
+  ger -- gu
+
+  co -- idv
+  ger -- idv
 }
 
 @enduml
