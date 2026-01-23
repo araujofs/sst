@@ -1,12 +1,17 @@
 @startuml classes
 
   class Usuário {
-    -email : String
-    -senha : String
+    - email : String
+    - senha : String
+  }
+  class Gestor {
+    + cadastrar_usuario(email: String, senha: String) : bool 
+  }
+  class Administrador {
+    + liberar_acesso_usuario(usuario: Usuário) : bool 
   }
 
-  class Gestor {}
-
   Usuário <|-- Gestor
+  Gestor <|-- Administrador
 
 @enduml
