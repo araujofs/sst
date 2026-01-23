@@ -1,0 +1,12 @@
+@startuml classes
+
+  class Usuário {
+    -email : String
+    -senha : String
+  }
+
+  class Gestor {}
+
+  Usuário <|-- Gestor
+
+@enduml

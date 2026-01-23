@@ -46,7 +46,7 @@
           </li>
           <li>
             O sistema exibe uma mensagem de sucesso no credeciamento e
-            redireciona o usuário para a página inicial. <a href="#a1">[A1]</a>,
+            redireciona o ator para a página inicial. <a href="#a1">[A1]</a>,
             <a href="#a2">[A2]</a>
           </li>
         </ol>
@@ -66,7 +66,7 @@
             estão incorretas e solicita que o ator tente novamente.
           </li>
           <li>
-            O sistema deve notificar o ator em cuja conta houve a tentativa de acesso através de email <strong>[RF-AUT-004]</strong> e deve registrar a tentativa.
+            O sistema deve notificar o ator em cuja conta houve a tentativa de acesso através de e-mail <strong>[RF-AUT-004]</strong> e deve registrar a tentativa.
           </li>
         </ol>
         <a id="a2">[A2] - Inserir credenciais erradas pela segunda vez</a>
@@ -83,7 +83,7 @@
       <td><strong>Fluxos de exceção</strong></td>
       <td>
         <a id="rn1">[RN1] - Credenciamento de usuário</a><br>
-        O usuário deve ser cadastrado previamente no sistema por um gestor para ter acesso aos outros módulos.
+        O ator deve ser cadastrado previamente no sistema por um gestor para ter acesso aos outros módulos.
       </td>
     </tr>
   </tbody>
