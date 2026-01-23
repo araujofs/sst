@@ -108,7 +108,6 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 ## Controle de Acesso
 - **[RF-AUT-001]**: Como usuário, quero me autenticar com credenciais pré-definidas (email e senha) para ter acesso aos outros módulos do sistema.
 - **[RF-AUT-003]**: Como usuário, quero visualizar as tentativas e ter um feedback visual (como um sino com o número de notificações, por exemplo) caso haja uma tentativa falha de entrar na minha conta para conseguir tomar as providências cabíveis.
-- **[RF-AUT-004]**: Como usuário, quero ser notificado por email caso haja alguma tentativa falha de acessar minha conta para tomar as providências cabíveis.
 - **[RF-AUT-005]**: Como administrador, quero definir políticas de expiração e renovação de senhas para garantir maior segurança com os acessos.
 - **[RF-AUT-006]**: Como administrador, quero encerrar a sessão de **Usuário** para evitar acessos indesejados.
 - **[RF-AUT-008]**: Como usuário, quero encerrar minha sessão para garantir que não hajam acessos indevidos na minha ausência.
