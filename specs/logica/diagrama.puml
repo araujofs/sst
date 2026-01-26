@@ -1,12 +1,17 @@
 @startuml classes
 
   class Usuário {
+    - nome : String
     - email : String
     - senha : String
+    - foto : byte[]
+    + encerrar_sessao() : bool 
   }
+
   class Gestor {
     + cadastrar_usuario(email: String, senha: String) : bool 
   }
+
   class Administrador {
     + liberar_acesso_usuario(usuario: Usuário) : bool 
   }
