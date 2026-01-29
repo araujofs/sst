@@ -3,7 +3,7 @@
     <tr>
       <td><strong>Caso de uso</strong></td>
       <td>
-        <strong><span><a>UC1 - Fazer login</a></span></strong>
+        <strong><span><a>UC01 - Fazer login</a></span></strong>
       </td>
     </tr>
     <tr>
@@ -61,6 +61,7 @@
             O ator executa o fluxo principal, mas digitando credenciais
             incorretas pela primeira vez.
           </li>
+          <li>O sistema salva a tentativa para visualização posterior.</li>
           <li>
             O sistema exibe uma mensagem de erro informando que as credenciais
             estão incorretas e solicita que o ator tente novamente.
@@ -69,6 +70,7 @@
         <a id="a2">[A2] - Inserir credenciais erradas pela segunda vez</a>
         <ol>
           <li>O ator executa <a href="#a1">[A1]</a> pela segunda vez.</li>
+          <li>O sistema salva a tentativa para visualização posterior.</li>
           <li>
             O sistema informa que seu acesso foi bloqueado <a href="especificacao_bloquear_acesso.md">[UC2]</a> e
             solicita que o ator entre em contato com o suporte.

@@ -3,7 +3,7 @@
     <tr>
       <td><strong>Caso de uso</strong></td>
       <td>
-        <strong><span><a>UC2 - Bloquear acesso</a></span></strong>
+        <strong><span><a>UC02 - Bloquear acesso</a></span></strong>
       </td>
     </tr>
     <tr>

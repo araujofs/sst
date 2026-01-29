@@ -3,7 +3,7 @@
     <tr>
       <td><strong>Caso de uso</strong></td>
       <td>
-        <strong><span><a>UC3 - Encerrar sessão</a></span></strong>
+        <strong><span><a>UC03 - Encerrar sessão</a></span></strong>
       </td>
     </tr>
     <tr>

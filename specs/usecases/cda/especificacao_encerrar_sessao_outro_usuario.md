@@ -3,7 +3,7 @@
     <tr>
       <td><strong>Caso de uso</strong></td>
       <td>
-        <strong><span><a>UC4 - Encerrar sessão de outro usuário</a></span></strong>
+        <strong><span><a>UC04 - Encerrar sessão de outro usuário</a></span></strong>
       </td>
     </tr>
     <tr>
