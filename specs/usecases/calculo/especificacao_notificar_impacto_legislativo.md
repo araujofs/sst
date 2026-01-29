@@ -3,7 +3,7 @@
     <tr>
       <td><strong>Caso de uso</strong></td>
       <td>
-        <strong><span><a>UC - Notificar Usuário sobre Impacto de Mudança Legislativa</a></span></strong>
+        <strong><span><a>UC - 17 Notificar Usuário sobre Impacto de Mudança Legislativa</a></span></strong>
       </td>
     </tr>
     <tr>
@@ -58,8 +58,7 @@
     </tr>
     <tr>
       <td><strong>Fluxos de exceção</strong></td>
-      <tNão há fluxos alternativos.
-      </td>
+      <td>Não há fluxos alternativos.</td>
     </tr>
     <tr>
       <td><strong>Fluxos de exceção</strong></td>
