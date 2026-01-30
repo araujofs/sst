@@ -59,7 +59,7 @@
               <li>Confirmação de senha</li>
               <li>Campos específicos por tipo de associado <a href="#rn1">[RN1]</a>:</li>
               <ul>
-                <li>Cliente: Tipo (Pessoa física/Jurídica), Razão social (se empresa), CPF (se pessoa física), CNPJ da empresa (se empresa), CNPJ do escritório associado</li>
+                <li>Cliente: Tipo (Pessoa física/Jurídica), Razão social (se empresa), CPF (se pessoa física), CNPJ da empresa (se empresa)</li>
               </ul>
               <li>Opções:</li>
               <ul>
@@ -103,7 +103,7 @@
           <li>O ator segue o fluxo de <a href="#a1">[A1]</a> e encontra o associado que deseja editar.</li>
           <li>O ator seleciona a opção 'Editar' no associado escolhido.</li>
           <li>O ator vê os mesmos campos do fluxo principal de criação, mas já preenchidos (exceto senha), e observa também um histórico de edições.</li>
-          <li>O ator altera as informações desejadas e seleciona a opção 'Salvar'. O sistema valida as alterações <a href="#rn2">[RN2]</a> <a href="#rn3">[RN3]</a> <a href="#rn4">[RN4]</a>.</li>
+          <li>O ator altera as informações desejadas e seleciona a opção 'Salvar'. O sistema valida as alterações <a href="#rn2">[RN2]</a> <a href="#rn3">[RN3]</a> <a href="#rn4">[RN4]</a> <a href="#rn5">[RN5]</a>.</li>
           <li>O ator é redirecionado para a lista de associados onde vê o associado que acabou de alterar.</li>
         </ol>
         <a id="a4">A4 - Desativar associado</a>
@@ -144,20 +144,18 @@
         <a id="rn1">[RN1] - Campos específicos por tipo de associado</a><br>
         O sistema deve exibir dinamicamente os campos específicos conforme o tipo de associado selecionado:
         <ul>
-          <li><strong>Contador:</strong> nome, email, senha</li>
-          <li><strong>Cliente:</strong> tipo (PF/PJ), nome ou razão social, email, senha, CPF ou CNPJ da empresa, CNPJ do escritório associado</li>
+          <li><strong>Contador:</strong> nome, email, senha, foto de perfil</li>
+          <li><strong>Cliente:</strong> tipo (PF/PJ), nome ou razão social, email, senha, CPF ou CNPJ da empresa, foto de perfil</li>
         </ul>
         <br>
         <a id="rn2">[RN2] - E-mail único</a><br>
         O sistema deve garantir que o e-mail informado não esteja já cadastrado para outro associado ou usuário. Caso esteja, o sistema exibe mensagem de erro: "Este e-mail já está em uso."<br><br>
         <a id="rn3">[RN3] - Política de senha</a><br>
         A senha deve atender aos requisitos de segurança: mínimo de 8 caracteres, pelo menos uma letra maiúscula, uma minúscula, um número e um caractere especial. As senhas 'Senha' e 'Confirmação de senha' devem ser iguais. Caso não atendam, o sistema exibe mensagem de erro específica.<br><br>
-        <a id="rn4">[RN4] - Validação de documentos</a><br>
-        O sistema deve validar os formatos de CPF e CNPJ informados. Caso sejam inválidos, o sistema exibe mensagem de erro: "CPF/CNPJ inválido."<br><br>
-        <a id="rn5">[RN5] - Associação de Cliente a Escritório</a><br>
-        Todo cliente deve estar obrigatoriamente associado a um escritório de contabilidade válido através do CNPJ. Caso o CNPJ do escritório não seja encontrado, o sistema exibe mensagem de erro: "Escritório de contabilidade não encontrado."<br><br>
-        <a id="rn6">[RN6] - Escopo de gerenciamento</a><br>
-        O gerente só pode criar, visualizar, editar e gerenciar associados pertencentes ao escritório/empresa ao qual está vinculado. O sistema não deve exibir associados de outras empresas.
+        <a id="rn4">[RN4] - Validação de imagem</a><br>
+        A foto de perfil deve estar em formato JPG, PNG ou GIF e ter tamanho máximo de 2MB. Caso não atenda, o sistema exibe mensagem de erro: "Formato ou tamanho de imagem inválido. Use JPG, PNG ou GIF com até 2MB."<br><br>
+        <a id="rn5">[RN5] - Validação de documentos</a><br>
+        O sistema deve validar os formatos de CPF e CNPJ informados. Caso sejam inválidos, o sistema exibe mensagem de erro: "CPF/CNPJ inválido."
       </td>
     </tr>
   </tbody>

@@ -98,11 +98,10 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
   - **Gestor**
     - **Gerente** (*Pode fazer tudo que **Contador** faz e gere apenas sua empresa*) 
     - **Administrador** (*Gere de maneira mais geral, pois podem haver várias empresas utilizando o sistema isoladamente*)
-  - **Usuário comum**
-    - **Associado**
-      - **Cliente** 
-      - **Contador**
-    - **Técnico de suporte**
+  - **Associado**
+    - **Cliente** 
+    - **Contador**
+  - **Técnico de suporte**
 
 # Requisitos funcionais 
 ## Controle de Acesso

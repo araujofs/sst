@@ -59,8 +59,7 @@
               <li>Foto de perfil (com opção de upload)</li>
               <li>Campos específicos por tipo de usuário <a href="#rn1">[RN1]</a>:</li>
               <ul>
-                <li>Gerente: CNPJ do escritório</li>
-                <li>Cliente: Tipo (Pessoa física/Jurídica), Razão social (se empresa), CPF (se pessoa física), CNPJ da empresa (se empresa), CNPJ do escritório associado</li>
+                <li>Cliente: Tipo (Pessoa física/Jurídica), Razão social (se empresa), CPF (se pessoa física), CNPJ da empresa (se empresa)</li>
               </ul>
               <li>Opções:</li>
               <ul>
@@ -152,10 +151,10 @@
         <a id="rn1">[RN1] - Campos específicos por tipo de usuário</a><br>
         O sistema deve exibir dinamicamente os campos específicos conforme o tipo de usuário selecionado:
         <ul>
-          <li><strong>Gerente:</strong> nome, email, senha, CNPJ do escritório, foto de perfil</li>
+          <li><strong>Gerente:</strong> nome, email, senha, foto de perfil</li>
           <li><strong>Administrador:</strong> nome, email, senha, foto de perfil</li>
           <li><strong>Contador:</strong> nome, email, senha, foto de perfil</li>
-          <li><strong>Cliente:</strong> tipo (PF/PJ), nome ou razão social, email, senha, CPF ou CNPJ da empresa, CNPJ do escritório associado, foto de perfil</li>
+          <li><strong>Cliente:</strong> tipo (PF/PJ), nome ou razão social, email, senha, CPF ou CNPJ da empresa, foto de perfil</li>
           <li><strong>Técnico de suporte:</strong> nome, email, senha, foto de perfil</li>
         </ul>
         <br>
