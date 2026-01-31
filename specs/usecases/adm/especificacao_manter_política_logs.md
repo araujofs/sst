@@ -3,7 +3,7 @@
     <tr>
       <td><strong>Caso de uso</strong></td>
       <td>
-        <strong><span><a>UC26 - Manter políticas de logs</a></span></strong>
+        <strong><span><a>UC26 - Manter política de logs</a></span></strong>
       </td>
     </tr>
     <tr>

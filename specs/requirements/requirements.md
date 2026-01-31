@@ -192,12 +192,10 @@ Visando o melhor entendimento do documento faz-se necessário definir alguns ter
 
 ## Administração e Infraestrutura
 - **[RF-ADM-001]**: Como administrador, quero visualizar logs categorizados e com mensagens claras de ações do sistema (erro, warnings, etc) e de ações de **Usuário** (acessos, mudanças no perfil, etc) para monitorar comportamentos suspeitos e resolver possíveis problemas.
-- **[RF-ADM-003]**: Como administrador, quero configurar as política de armazenamento e detalhamento de logs (tempo máximo para armazenar, nível de especificade, categorias) para garantir uso correto dos dados e sua disponibilidade.
+- **[RF-ADM-003]**: Como administrador, quero configurar a política de armazenamento e detalhamento de logs (tempo máximo para armazenar, nível de especificade, categorias) para garantir uso correto dos dados e sua disponibilidade.
 - **[RF-ADM-005]**: Como administrador, quero configurar rotinas automáticas (ou manuais) de backup dos dados do sistema para garantir disponibilidade dos dados.
-- **[RF-ADM-010]**: Como gestor, quero visualizar a saúde do sistema no momento (recursos utilizados, módulos funcionando, tempo médio de resposta, disponibilidade, usuários ativos) para acompanhar a situação atual do sistema.
+- **[RF-ADM-010]**: Como gestor, quero visualizar o status do sistema no momento (recursos utilizados, módulos funcionando, tempo médio de resposta, disponibilidade, usuários ativos) para acompanhar a situação atual do sistema.
 - **[RF-ADM-011]**: Como usuário, quero reportar erros encontrados durante o uso do sistema para garantir que o problema possa ser resolvido.
-- **[RF-ADM-012]**: Como administrador, quero ser notificado quando ocorrer um erro crítico no sistema para resolver rapidamente o problema.
-
 
 
 ## Importação de Dados e Validações
