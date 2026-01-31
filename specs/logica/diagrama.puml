@@ -14,7 +14,8 @@
     }
 
   abstract Gestor extends Usuario {
-    + visualizar_status_sistema(): void
+    + visualizar_status_sistema(): StatusSistema
+    + visualizar_status_modulo(modulo: String): StatusModulo
   }
 
   abstract Associado extends Usuario {}
@@ -133,5 +134,19 @@
     - latencia_media: Double
     - alertas_recentes: List<String>
   }
+
+  Administrador ..> Usuario : "mantém"
+  Administrador ..> PoliticaLog : "configura"
+  Administrador ..> PoliticaSenha : "mantém"
+  Administrador ..> RotinaBackup : "mantém"
+  Administrador ..> Log : "visualiza"
+
+  Gerente ..> Associado : "mantém"
+
+  Gestor ..> StatusModulo : "visualiza"
+  Gestor ..> StatusSistema : "visualiza"
+
+  Usuario ..> TentativaAcesso : "visualiza"
+  Usuario ..> ErroReportado : "reporta"
 
 @enduml
