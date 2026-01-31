@@ -47,10 +47,6 @@
                 Descrição do erro: Uma breve descrição do problema encontrado.
               </li>
               <li>
-                Passos para reproduzir: Instruções detalhadas sobre como
-                reproduzir o erro.
-              </li>
-              <li>
                 Anexar arquivos (opcional): O ator pode anexar capturas de tela
                 ou arquivos relevantes que ajudem a ilustrar o problema.
               </li>
