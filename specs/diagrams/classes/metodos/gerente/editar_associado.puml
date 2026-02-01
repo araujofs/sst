@@ -1,0 +1,15 @@
+@startuml editar associado
+|Gerente|
+start
+:Inserir informações do associado;
+
+|Sistema|
+:Validar informações do associado;
+
+if (Informações válidas?) then (sim)
+  :Atualizar associado;
+else (não)
+endif
+
+stop
+@enduml

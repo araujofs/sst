@@ -5,7 +5,6 @@ start
 :Inserir novas informações;
 
 |Sistema|
-:Recebar novas informações;
 :Validar inforções;
 
 if (Informações válidas?) then (sim)

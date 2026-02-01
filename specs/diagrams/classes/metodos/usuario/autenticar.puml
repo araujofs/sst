@@ -4,7 +4,7 @@ start
 :Inserir credenciais;
 
 | Sistema |
-:Receber credenciais;
+:Validar credenciais;
 if (Credenciais válidas?) then (sim)
   :Criar sessão do usuário;
 else (não)

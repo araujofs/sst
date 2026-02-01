@@ -1,0 +1,15 @@
+@startuml criar associado
+|Gerente|
+start
+:Inserir informações do associado;
+
+|Sistema|
+:Validar informações do associado;
+
+if (Informações válidas?) then (sim)
+  :Criar associado;
+else (não)
+endif
+
+stop
+@enduml
