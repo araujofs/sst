@@ -1,0 +1,11 @@
+@startuml listar usuarios
+|Tecnico|
+start
+
+|Sistema|
+:Buscar usuários;
+
+:Apresentar usuários;
+
+stop
+@enduml
