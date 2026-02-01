@@ -1,0 +1,16 @@
+@startuml apagar usuario
+|Administrador|
+start
+:Inserir identificação do usuário;
+
+|Sistema|
+:Buscar usuário;
+
+if (Usuário existe?) then (sim)
+  :Apagar usuário;
+else (não)
+  stop
+endif
+
+stop
+@enduml

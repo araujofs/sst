@@ -1,0 +1,23 @@
+@startuml encerrar_sessao
+|Administrador|
+start
+:Inserir informações do usuário;
+
+|Sistema|
+:Buscar usuário;
+
+if (Usuário existe?) then (sim)
+  :Verificar sessão;
+
+  if (Sessão existe?) then (sim)
+    :Encerrar sessão;
+  else (não)
+    stop
+  endif
+else (não)
+  stop
+endif
+
+
+stop
+@enduml

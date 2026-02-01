@@ -1,0 +1,22 @@
+@startuml editar usuario
+|Administrador|
+start
+:Inserir informações do usuário;
+
+|Sistema|
+:Buscar usuário;
+
+if (Usuário existe?) then (sim)
+  :Validar informações do usuário;
+
+  if (Informações válidas?) then (sim)
+    :Atualizar usuário;
+  else (não)
+    stop
+  endif
+else (não)
+  stop
+endif
+
+stop
+@enduml

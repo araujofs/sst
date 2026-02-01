@@ -1,0 +1,22 @@
+@startuml criar política de senha
+|Administrador|
+start
+:Inserir informações da política de senha;
+
+|Sistema|
+:Buscar política;
+
+if (Política existe?) then (sim)
+  :Validar informações da política;
+
+  if (Informações válidas?) then (sim)
+    :Atualizar política;
+  else (não)
+    stop
+  endif
+else (não)
+  stop
+endif
+
+stop
+@enduml

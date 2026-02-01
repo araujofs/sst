@@ -1,0 +1,11 @@
+@startuml listar associados
+|Administrador|
+start
+
+|Sistema|
+:Buscar políticas de senha;
+
+:Apresentar políticas;
+
+stop
+@enduml

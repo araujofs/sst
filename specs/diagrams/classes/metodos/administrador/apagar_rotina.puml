@@ -1,0 +1,23 @@
+@startuml apagar rotina
+|Administrador|
+start
+:Inserir identificação da rotina de backup;
+
+|Sistema|
+:Buscar rotina;
+
+if (Rotina existe?) then (sim)
+  :Verificar se rotina está ativa;
+  note left : Rotina rodando
+
+  if (Rotina está ativa?) then (não)
+    :Apagar rotina;
+  else (sim)
+    stop
+  endif
+else (não)
+  stop
+endif
+
+stop
+@enduml

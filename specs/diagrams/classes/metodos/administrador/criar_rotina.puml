@@ -1,0 +1,15 @@
+@startuml criar rotina
+|Administrador|
+start
+:Inserir informações da rotina de backup;
+
+|Sistema|
+:Validar informações da rotina;
+
+if (Informações válidas?) then (sim)
+  :Criar rotina;
+else (não)
+endif
+
+stop
+@enduml

@@ -1,0 +1,20 @@
+@startuml ativar usuario
+|Administrador|
+start
+:Inserir informações do usuário;
+
+|Sistema|
+:Buscar usuário;
+
+if (Usuário existe?) then (sim)
+  if (Acesso do usuário está desativado?) then (sim)
+    :Ativar acesso do usuário;
+  else (não)
+    stop  
+  endif
+else (não)
+  stop
+endif
+
+stop
+@enduml

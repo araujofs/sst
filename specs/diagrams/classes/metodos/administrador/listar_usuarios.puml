@@ -1,0 +1,13 @@
+@startuml listar usuarios
+|Administrador|
+start
+:Inserir tipo de usuário desejado;
+
+|Sistema|
+:Filtrar por tipo de usuário;
+:Buscar usuários;
+
+:Apresentar usuários;
+
+stop
+@enduml
