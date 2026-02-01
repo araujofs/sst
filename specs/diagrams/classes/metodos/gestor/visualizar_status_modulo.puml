@@ -1,0 +1,10 @@
+@startuml visualizar status do modulo
+|Gestor|
+start
+:Inserir módulo desejado;
+
+|Sistema|
+:Apresentar status do módulo informado;
+
+stop
+@enduml
