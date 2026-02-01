@@ -1,5 +1,5 @@
-@startuml listar associados
-|Gerente|
+@startuml listar politicas
+|Administrador|
 start
 
 |Sistema|

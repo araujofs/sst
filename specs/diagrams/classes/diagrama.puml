@@ -48,7 +48,6 @@ class Contador extends Associado {}
 
 class Administrador extends Gestor {
   + encerrar_sessao(usuario: Usuario): Boolean
-  + liberar_acesso_usuario(usuario: Usuario): Boolean 
   + criar_politica_senha(politica: PoliticaSenha): Boolean
   + editar_politica_senha(politica: PoliticaSenha): Boolean
   + apagar_politica_senha(politica: PoliticaSenha): Boolean

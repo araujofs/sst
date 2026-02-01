@@ -1,0 +1,15 @@
+@startuml buscar politica de senha
+|Administrador|
+start
+:Inserir informações da política de senha desejada;
+
+|Sistema|
+:Buscar política;
+
+if (Política existe?) then (sim)
+  :Apresentar política;
+else (não)
+endif
+
+stop
+@enduml

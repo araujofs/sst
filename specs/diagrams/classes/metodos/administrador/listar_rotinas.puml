@@ -1,0 +1,11 @@
+@startuml listar rotinas
+|Administrador|
+start
+
+|Sistema|
+:Buscar rotinas;
+
+:Apresentar rotinas;
+
+stop
+@enduml

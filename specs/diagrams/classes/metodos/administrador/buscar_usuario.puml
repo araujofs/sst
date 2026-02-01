@@ -1,0 +1,15 @@
+@startuml buscar usuario
+|Administrador|
+start
+:Inserir nome do usuário desejado;
+
+|Sistema|
+:Buscar usuário;
+
+if (Usuário existe?) then (sim)
+  :Apresentar usuário;
+else (não)
+endif
+
+stop
+@enduml

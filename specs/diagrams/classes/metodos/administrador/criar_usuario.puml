@@ -1,0 +1,15 @@
+@startuml criar usuario
+|Administrador|
+start
+:Inserir informações do usuário;
+
+|Sistema|
+:Validar informações do usuário;
+
+if (Informações válidas?) then (sim)
+  :Criar usuário;
+else (não)
+endif
+
+stop
+@enduml

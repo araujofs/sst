@@ -1,0 +1,15 @@
+@startuml buscar rotina
+|Administrador|
+start
+:Inserir nome da rotina desejada;
+
+|Sistema|
+:Buscar rotina;
+
+if (Rotina existe?) then (sim)
+  :Apresentar rotina;
+else (não)
+endif
+
+stop
+@enduml

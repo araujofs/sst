@@ -1,0 +1,11 @@
+@startuml listar logs
+|Administrador|
+start
+
+|Sistema|
+:Buscar logs;
+
+:Apresentar logs;
+
+stop
+@enduml

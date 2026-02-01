@@ -1,0 +1,22 @@
+@startuml editar rotina
+|Administrador|
+start
+:Inserir informações da rotina de backup;
+
+|Sistema|
+:Buscar rotina;
+
+if (Rotina existe?) then (sim)
+  :Validar informações da rotina;
+
+  if (Informações válidas?) then (sim)
+    :Atualizar rotina;
+  else (não)
+    stop
+  endif
+else (não)
+  stop
+endif
+
+stop
+@enduml

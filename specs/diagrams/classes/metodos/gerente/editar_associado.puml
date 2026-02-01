@@ -4,11 +4,18 @@ start
 :Inserir informações do associado;
 
 |Sistema|
-:Validar informações do associado;
+:Buscar associado;
 
-if (Informações válidas?) then (sim)
-  :Atualizar associado;
+if (Associado existe?) then (sim)
+  :Validar informações do associado;
+
+  if (Informações válidas?) then (sim)
+    :Atualizar associado;
+  else (não)
+    stop
+  endif
 else (não)
+  stop
 endif
 
 stop

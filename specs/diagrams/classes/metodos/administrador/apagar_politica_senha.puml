@@ -1,0 +1,21 @@
+@startuml apagar associado
+|Administrador|
+start
+:Inserir informações da política de senha;
+
+|Sistema|
+:Buscar política;
+
+if (Política existe?) then (sim)
+  :Trocar política de senha dos usuários para a política padrão;
+  note left
+    Todo usuário precisa estar 
+    associado à uma política
+  end note
+
+  :Apagar política;
+else (não)
+endif
+
+stop
+@enduml
