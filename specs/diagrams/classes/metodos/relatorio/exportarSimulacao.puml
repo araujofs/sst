@@ -1,0 +1,16 @@
+@startuml
+title Algoritmo: Simulacao.exportar(id, formato)
+start
+:Recuperar dados da simulação por ID;
+if (Formato selecionado == "Excel") then (Verificar tamanho)
+    if (Volume de dados > Limite Excel?) then (Sim)
+        :Alertar que a simulação é grande demais;
+        :Recomendar formato CSV;
+        stop
+    endif
+endif
+:Gerar arquivo no formato solicitado;
+:Informar que o arquivo está pronto;
+:Iniciar download;
+stop
+@enduml

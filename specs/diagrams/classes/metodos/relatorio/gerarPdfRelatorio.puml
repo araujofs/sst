@@ -1,0 +1,15 @@
+@startuml
+title Algoritmo: Relatorio.gerar_pdf()
+start
+:Verificar opções de personalização (logo, observações);
+if (Logo personalizada ativa?) then (Sim)
+    :Inserir imagem da logo no cabeçalho;
+else (Não)
+    :Inserir logo padrão do sistema;
+endif
+:Adicionar textos de observações ao rodapé;
+:Converter dados comparativos para formato PDF;
+:Salvar arquivo temporário no servidor;
+:Retornar sucesso e link de download;
+stop
+@enduml

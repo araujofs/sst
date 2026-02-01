@@ -1,0 +1,19 @@
+@startuml
+title Algoritmo: Relatorio.comparar(ids_simulacoes)
+start
+:Contar quantidade de IDs recebidos;
+if (Quantidade > 3?) then (Sim)
+    :Exibir alerta de limite excedido;
+    stop
+else (Não)
+    :Buscar dados das 2 ou 3 simulações selecionadas;
+    :Calcular economia percentual entre os cenários;
+    if (Apenas 2 simulações?) then (Sim)
+        :Destacar economia percentual direta;
+    else (Não)
+        :Gerar matriz comparativa tripla;
+    endif
+    :Renderizar gráficos e tabelas detalhadas;
+endif
+stop
+@enduml

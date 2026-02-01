@@ -1,0 +1,14 @@
+@startuml
+title Algoritmo: Simulacao.listar(filtros)
+start
+:Receber critérios de busca (cliente, período, regime);
+:Consultar base de dados;
+if (Existem registros para os filtros?) then (Sim)
+    :Processar ordenação da lista;
+    :Retornar lista de simulações;
+else (Não)
+    :Gerar mensagem informativa de ausência de resultados;
+    :Retornar lista vazia;
+endif
+stop
+@enduml

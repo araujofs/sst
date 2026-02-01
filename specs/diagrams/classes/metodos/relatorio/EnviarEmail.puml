@@ -1,0 +1,14 @@
+@startuml
+title Algoritmo: Relatorio.enviar_email(destinatario)
+start
+:Validar formato do endereço de e-mail;
+if (E-mail válido?) then (Não)
+    :Exibir erro "Destinatário inválido";
+    stop
+else (Sim)
+    :Gerar anexo do relatório;
+    :Enviar mensagem com arquivo anexado;
+    :Confirmar envio ao ator;
+endif
+stop
+@enduml
