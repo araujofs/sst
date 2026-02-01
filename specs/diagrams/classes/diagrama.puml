@@ -1,152 +1,152 @@
 @startuml classes
 
-  abstract Usuario {
-    - nome: String
-    - email: String
-    - senha: String
-    - foto: byte[]
-    - status: Boolean
-    + encerrar_sessao(): Boolean
-    ' # autenticar(email: String, senha: String): Boolean
-    + buscar_tentativas_acesso_falhas(): List<TentativaAcesso>
-    + editar(usuario: Usuario): Boolean
-    + reportar_erro(erro: ErroReportado): Boolean
-    }
+abstract Usuario {
+  - nome: String
+  - email: String
+  - senha: String
+  - foto: byte[]
+  - status: Boolean
+  + encerrar_sessao(): Boolean
+  # autenticar(email: String, senha: String): Boolean
+  + buscar_tentativas_acesso_falhas(): List<TentativaAcesso>
+  + editar(usuario: Usuario): Boolean
+  + reportar_erro(erro: ErroReportado): Boolean
+}
 
-  abstract Gestor extends Usuario {
-    + visualizar_status_sistema(): StatusSistema
-    + visualizar_status_modulo(modulo: String): StatusModulo
-  }
+abstract Gestor extends Usuario {
+  + visualizar_status_sistema(): StatusSistema
+  + visualizar_status_modulo(modulo: String): StatusModulo
+}
 
-  abstract Associado extends Usuario {}
+abstract Associado extends Usuario {}
 
-  class Gerente extends Gestor {
-    + criar_associado(associado: Associado): Boolean
-    + editar_associado(associado: Associado): Boolean
-    + apagar_associado(associado: Associado): Boolean
-    + buscar_associado(nome: String): Associado
-    + listar_associados(tipo: String): List<Associado>
-    + desativar_associado(associado: Associado): Boolean
-    + ativar_associado(associado: Associado): Boolean
-  }
+class Gerente extends Gestor {
+  + criar_associado(associado: Associado): Boolean
+  + editar_associado(associado: Associado): Boolean
+  + apagar_associado(associado: Associado): Boolean
+  + buscar_associado(nome: String): Associado
+  + listar_associados(tipo: String): List<Associado>
+  + desativar_associado(associado: Associado): Boolean
+  + ativar_associado(associado: Associado): Boolean
+}
 
-  class Cliente extends Associado {
-    - tipo: String
-    - razao_social: String
-    - cpf: String
-    - cnpj: String
-    - cnpj_escritorio: String
-  }
+class Cliente extends Associado {
+  - tipo: String
+  - razao_social: String
+  - cpf: String
+  - cnpj: String
+  - cnpj_escritorio: String
+}
 
-  class Contador extends Associado {}
+class Contador extends Associado {}
 
-  class Administrador extends Gestor {
-    + encerrar_sessao(usuario: Usuario): Boolean
-    + liberar_acesso_usuario(usuario: Usuario): Boolean 
-    + criar_politica_senha(politica: PoliticaSenha): Boolean
-    + editar_politica_senha(politica: PoliticaSenha): Boolean
-    + apagar_politica_senha(politica: PoliticaSenha): Boolean
-    + buscar_politica_senha(nome: String): Boolean
-    + listar_politica_senha(): List<PoliticaSenha>
-    + criar_usuario(usuario: Usuario): Boolean
-    + editar_usuario(usuario: Usuario): Boolean
-    + apagar_usuario(usuario: Usuario): Boolean
-    + buscar_usuario(nome: String): Usuario
-    + listar_usuarios(tipo: String): List<Usuario>
-    + desativar_usuario(usuario: Usuario): Boolean
-    + ativar_usuario(usuario: Usuario): Boolean
-    + criar_rotina(rotina: RotinaBackup): Boolean
-    + editar_rotina(rotina: RotinaBackup): Boolean
-    + apagar_rotina(rotina: RotinaBackup): Boolean
-    + buscar_rotina(nome: String): RotinaBackup
-    + listar_rotinas(): List<RotinaBackup>
-    + listar_logs(): List<Log>
-    + editar_politica_log(politica: PoliticaLog): Boolean
-  }
+class Administrador extends Gestor {
+  + encerrar_sessao(usuario: Usuario): Boolean
+  + liberar_acesso_usuario(usuario: Usuario): Boolean 
+  + criar_politica_senha(politica: PoliticaSenha): Boolean
+  + editar_politica_senha(politica: PoliticaSenha): Boolean
+  + apagar_politica_senha(politica: PoliticaSenha): Boolean
+  + buscar_politica_senha(nome: String): Boolean
+  + listar_politica_senha(): List<PoliticaSenha>
+  + criar_usuario(usuario: Usuario): Boolean
+  + editar_usuario(usuario: Usuario): Boolean
+  + apagar_usuario(usuario: Usuario): Boolean
+  + buscar_usuario(nome: String): Usuario
+  + listar_usuarios(tipo: String): List<Usuario>
+  + desativar_usuario(usuario: Usuario): Boolean
+  + ativar_usuario(usuario: Usuario): Boolean
+  + criar_rotina(rotina: RotinaBackup): Boolean
+  + editar_rotina(rotina: RotinaBackup): Boolean
+  + apagar_rotina(rotina: RotinaBackup): Boolean
+  + buscar_rotina(nome: String): RotinaBackup
+  + listar_rotinas(): List<RotinaBackup>
+  + listar_logs(): List<Log>
+  + editar_politica_log(politica: PoliticaLog): Boolean
+}
 
-  class Tecnico extends Usuario {
-    + listar_usuarios(): List<Usuario>
-  }
+class Tecnico extends Usuario {
+  + listar_usuarios(): List<Usuario>
+}
 
-  class Cliente {}
+class Cliente {}
 
 
-  class PoliticaSenha {
-    - nome: String
-    - tempo_expiracao: Integer
-    - tempo_aviso_previo_expiracao: Integer
-    - usuarios_afetados: List<Usuario>
-    ' + notificar_expiracao(): void
-  }
+class PoliticaSenha {
+  - nome: String
+  - tempo_expiracao: Integer
+  - tempo_aviso_previo_expiracao: Integer
+  - usuarios_afetados: List<Usuario>
+  ' + notificar_expiracao(): void
+}
 
-  class TentativaAcesso {
-    - datahora: Timestamp
-    - dispositivo: String
-  }
+class TentativaAcesso {
+  - datahora: Timestamp
+  - dispositivo: String
+}
 
-  class RotinaBackup {
-    - nome: String
-    - intervalo: Integer
-    - destino: String
-    - criptografia: String
-    - compactacao: String
-    - dados: List<String>
-  }
+class RotinaBackup {
+  - nome: String
+  - intervalo: Integer
+  - destino: String
+  - criptografia: String
+  - compactacao: String
+  - dados: List<String>
+}
 
-  ' so existe uma
-  class PoliticaLog {
-    - tempo_armazenamento: Integer
-    - detalhamento: String
-    - categoria: String
-  }
+' so existe uma
+class PoliticaLog {
+  - tempo_armazenamento: Integer
+  - detalhamento: String
+  - categoria: String
+}
 
-  class Log {
-    - datahora: Timestamp
-    - origem: String
-    - nivel: String
-    - mensagem: String
-    - mensagem_detalhada: String
-    - stack_trace: String
-  }
+class Log {
+  - datahora: Timestamp
+  - origem: String
+  - nivel: String
+  - mensagem: String
+  - mensagem_detalhada: String
+  - stack_trace: String
+}
 
-  class ErroReportado {
-    - descricao: String
-    - arquivos: List<byte[]>
-  }
+class ErroReportado {
+  - descricao: String
+  - arquivos: List<byte[]>
+}
 
-  class StatusSistema {
-    - datahora_atualizacao: Timestamp
-    - tempo_medio_resposta: Integer
-    - usuarios_ativos: List<Usuario>
-    - cpu: Double
-    - ram: Double
-    - disco: Double
-    - rede: Double
-    - modulos_ativos: List<String>
-  }
+class StatusSistema {
+  - datahora_atualizacao: Timestamp
+  - tempo_medio_resposta: Integer
+  - usuarios_ativos: List<Usuario>
+  - cpu: Double
+  - ram: Double
+  - disco: Double
+  - rede: Double
+  - modulos_ativos: List<String>
+}
 
-  class StatusModulo {
-    - modulo: String
-    - cpu: Double
-    - ram: Double
-    - disco: Double
-    - uptime: Integer
-    - latencia_media: Double
-    - alertas_recentes: List<String>
-  }
+class StatusModulo {
+  - modulo: String
+  - cpu: Double
+  - ram: Double
+  - disco: Double
+  - uptime: Integer
+  - latencia_media: Double
+  - alertas_recentes: List<String>
+}
 
-  Administrador ..> Usuario : "mantém"
-  Administrador ..> PoliticaLog : "configura"
-  Administrador ..> PoliticaSenha : "mantém"
-  Administrador ..> RotinaBackup : "mantém"
-  Administrador ..> Log : "visualiza"
+Administrador ..> Usuario : "mantém"
+Administrador ..> PoliticaLog : "configura"
+Administrador ..> PoliticaSenha : "mantém"
+Administrador ..> RotinaBackup : "mantém"
+Administrador ..> Log : "visualiza"
 
-  Gerente ..> Associado : "mantém"
+Gerente ..> Associado : "mantém"
 
-  Gestor ..> StatusModulo : "visualiza"
-  Gestor ..> StatusSistema : "visualiza"
+Gestor ..> StatusModulo : "visualiza"
+Gestor ..> StatusSistema : "visualiza"
 
-  Usuario ..> TentativaAcesso : "visualiza"
-  Usuario ..> ErroReportado : "reporta"
+Usuario ..> TentativaAcesso : "visualiza"
+Usuario ..> ErroReportado : "reporta"
 
 @enduml

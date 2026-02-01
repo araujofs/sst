@@ -1,0 +1,14 @@
+@startuml autenticar
+| Usuário |
+start
+:Inserir credenciais;
+
+| Sistema |
+:Receber credenciais;
+if (Credenciais válidas?) then (sim)
+  :Criar sessão do usuário;
+else (não)
+endif
+
+stop
+@enduml

@@ -1,0 +1,12 @@
+@startuml buscar tentativas de acesso falhas
+|Usuário|
+start
+
+|Sistema|
+:Buscar tentativas de acesso falhas;
+:Apresentar tentativas de acesso falhas; 
+
+stop
+
+
+@enduml

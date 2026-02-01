@@ -1,0 +1,19 @@
+@startuml editar 
+|Usuário|
+start
+
+:Inserir novas informações;
+
+|Sistema|
+:Recebar novas informações;
+:Validar inforções;
+
+if (Informações válidas?) then (sim)
+  :Atualizar informações do usuário;
+else (não)
+endif
+
+stop
+
+
+@enduml 

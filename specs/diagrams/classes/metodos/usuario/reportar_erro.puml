@@ -1,0 +1,10 @@
+@startuml reportar erro
+|Usuário|
+start
+:Inserir informaçõe sobre o erro;
+
+|Sistema|
+:Salvar novo reporte de erro;
+
+stop
+@enduml

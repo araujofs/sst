@@ -1,0 +1,14 @@
+@startuml encerrar_sessao
+|Usuário|
+start
+
+|Sistema|
+:Verificar sessão;
+
+if (Sessão existe?) then (sim)
+  :Encerrar sessão;
+else (não)
+endif
+
+stop
+@enduml
