@@ -1,0 +1,47 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam monochrome true
+
+title Diagrama de Classes - Módulo de Relatórios
+
+class Cliente {
+    - id_cliente: int
+    - nome: str
+    - email: str
+    + buscar(nome: str) : List[Cliente]
+}
+
+class RegimeTributario {
+    - id_regime: int
+    - nome_regime: str
+    - aliquota_base: float
+}
+
+class Simulacao {
+    - id_simulacao: int
+    - data_simulacao: datetime
+    - carga_tributaria: float
+    - status: str
+    - cliente_nome: str
+    + listar(filtros: dict) : List[Simulacao]
+    + buscar_por_cliente(nome: str) : List[Simulacao]
+    + visualizar(id: int) : Simulacao
+    + exportar(id: int, formato: str) : bool
+}
+
+class Relatorio {
+    - id_relatorio: int
+    - logo_personalizada: bool
+    - observacoes: str
+    - formato_saida: str
+    + comparar(ids_simulacoes: List[int]) : Relatorio
+    + personalizar(opcoes: dict) : void
+    + gerar_pdf() : bool
+    + enviar_email(destinatario: str) : bool
+}
+
+' Relacionamentos simples como no padrão do professor
+Simulacao -- Cliente
+Simulacao -- RegimeTributario
+Relatorio ..> Simulacao : compara
+@enduml
