@@ -1,5 +1,11 @@
 @startuml classes
 
+!define LIGHTYELLOW #FFFACD
+!define LIGHTBLUE #E6F3FF
+!define LIGHTGREEN #E6FFE6
+!define LIGHTPINK #FFE6F0
+!define LIGHTGRAY #F0F0F0
+
 abstract Usuario {
   - nome: String
   - email: String
@@ -148,5 +154,209 @@ Gestor ..> StatusSistema : "visualiza"
 
 Usuario ..> TentativaAcesso : "visualiza"
 Usuario ..> ErroReportado : "reporta"
+
+
+package "Domínio Principal" {
+    
+    class Simulacao LIGHTYELLOW {
+        - nome: String
+        - descricao: String
+        - dataSimulacao: DateTime
+        - usuarioResponsavel: UUID
+        - receitaBruta: Decimal
+        - rbt12: Decimal
+        - folhaPagamento: Decimal
+        - custos: Decimal
+        - despesas: Decimal
+        --
+        + criar(): Simulacao
+        + salvar(): void
+        + carregar(id ??): Simulacao
+        + exportar(formato: String): File
+    }
+    
+    class Empresa LIGHTYELLOW {
+        - cnpj: String
+        - razaoSocial: String
+        - municipio: String
+        - uf: String
+        - dataAbertura: Date
+        --
+        + validarCNPJ(): Boolean
+    }
+    
+    class CNAE LIGHTYELLOW {
+        - codigo: String
+        - descricao: String
+        - setorEconomico: String
+        --
+        + identificarAnexo(): AnexoSimplesNacional
+        + mapearParaAnexo(): String
+        + derivarSetor(): String
+    }
+    
+    class ResultadoSimulacao LIGHTYELLOW {
+        - cargaTributaria: Decimal
+        - aliquotaEfetiva: Decimal
+        - tributos: List<Tributo>
+        - dataCalculo: DateTime
+        - elegivel: Boolean
+        --
+        + exportar(formato: String): File
+        + getTotalTributos(): Decimal
+    }
+}
+
+package "Regimes Tributários" {
+    
+    abstract class RegimeTributario <<Abstract>> LIGHTBLUE {
+        # nomeRegime: String
+        # elegivel: Boolean
+        --
+        + {abstract} calcular(): ResultadoSimulacao
+        + validarElegibilidade(): Boolean
+        + calcularPIS(receita: Decimal): Decimal
+        + calcularCOFINS(receita: Decimal): Decimal
+    }
+    
+    class SimplesNacional LIGHTGREEN {
+        - fatorR: Decimal
+        - anexo: AnexoSimplesNacional
+        - faixa: FaixaReceita
+        --
+        + calcular(): ResultadoSimulacao
+        + calcularFatorR(): Decimal
+        + determinarFaixa(): FaixaReceita
+        + calcularAliquotaEfetiva(): Decimal
+        + calcularDAS(): Decimal
+        + segregarTributos(): List<Tributo>
+    }
+    
+    class LucroPresumido LIGHTGREEN {
+        - aliquotaPresuncao: Decimal
+        --
+        + calcular(): ResultadoSimulacao
+        + calcularBasePresumida(): Decimal
+        + calcularIRPJ(): Decimal
+        + calcularCSLL(): Decimal
+    }
+    
+    class LucroReal LIGHTGREEN {
+        - lucroLiquido: Decimal
+        - adicoes: Decimal
+        - exclusoes: Decimal
+        - prejuizos: Decimal
+        --
+        + calcular(): ResultadoSimulacao
+        + apurarLucroLiquido(): Decimal
+        + ajustarLucro(): Decimal
+        + compensarPrejuizos(): Decimal
+        + calcularCreditos(): Decimal
+    }
+    
+    RegimeTributario <|-- SimplesNacional
+    RegimeTributario <|-- LucroPresumido
+    RegimeTributario <|-- LucroReal
+}
+
+package "Tabelas e Configurações" {
+    
+    class AnexoSimplesNacional LIGHTBLUE {
+        - tipo: String
+        - descricao: String
+        - faixas: List<FaixaReceita>
+        - percentualReparticao: Map<String, Decimal>
+        --
+        + obterFaixa(rbt12: Decimal): FaixaReceita
+    }
+    
+    class FaixaReceita LIGHTBLUE {
+        - numero: Integer
+        - limiteInferior: Decimal
+        - limiteSuperior: Decimal
+        - aliquotaNominal: Decimal
+        - parcelaADeduzir: Decimal
+        --
+        + contemReceita(rbt12: Decimal): Boolean
+        + obterAliquotas(): Map<String, Decimal>
+    }
+}
+
+package "Tributos" {
+    
+    class Tributo LIGHTPINK {
+        - nome: String
+        - baseCalculo: Decimal
+        - aliquota: Decimal
+        - valorFinal: Decimal
+        --
+        + detalhar(): DetalheTributo
+        + calcular(): Decimal
+    }
+}
+
+package "Comparação e Histórico" {
+    
+    class ComparacaoRegimes LIGHTBLUE {
+        - dataComparacao: DateTime
+        - simulacoes: List<Simulacao>
+        - regimeMaisVantajoso: String
+        --
+        + comparar(): ResultadoComparacao
+        + identificarMelhorRegime(): RegimeTributario
+        + calcularEconomia(): Map<String, Decimal>
+    }
+    
+    class HistoricoSimulacao LIGHTPINK {
+        - versao: Integer
+        - dataVersao: DateTime
+        - valoresOriginais: Map<String, Object>
+        - valoresNovos: Map<String, Object>
+        --
+        + criarVersao(): HistoricoSimulacao
+    }
+}
+
+package "Validação" {
+    
+    class ValidadorDados <<Service>> LIGHTGRAY {
+        --
+        + validar(dados, regime): ValidationResult
+        + validarObrigatorios(): List<ErroValidacao>
+        + validarTipos(): List<ErroValidacao>
+        + validarCNAE(): ValidationResult
+        + verificarLimites(): ValidationResult
+    }
+    
+    class ErroValidacao <<ValueObject>> LIGHTGRAY {
+        - campoInvalido: String
+        - mensagemErro: String
+        - tipoErro: String
+        --
+        + getDescricao(): String
+    }
+}
+
+' ===== RELACIONAMENTOS PRINCIPAIS =====
+
+Simulacao "1" *-- "1" Empresa : possui >
+Simulacao "1" *-- "1" RegimeTributario : simula >
+Simulacao "1" --> "1" ResultadoSimulacao : gera >
+
+Empresa "1" --> "1" CNAE : possui >
+
+SimplesNacional "1" --> "1" AnexoSimplesNacional : utiliza >
+SimplesNacional "1" --> "1" FaixaReceita : aplica >
+AnexoSimplesNacional "1" *-- "6" FaixaReceita : possui >
+
+RegimeTributario "1" --> "1..*" Tributo : calcula >
+ResultadoSimulacao "1" *-- "1..*" Tributo : contém >
+
+ComparacaoRegimes "1" *-- "2..3" Simulacao : compara >
+HistoricoSimulacao "1" --> "1" Simulacao : versiona >
+
+Simulacao ..> ValidadorDados : valida >
+ValidadorDados "1" --> "0..*" ErroValidacao : retorna >
+
 
 @enduml
