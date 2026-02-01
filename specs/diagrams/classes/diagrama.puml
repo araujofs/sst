@@ -1,4 +1,4 @@
-@startuml classes
+@startuml classes_completo
 
 !define LIGHTYELLOW #FFFACD
 !define LIGHTBLUE #E6F3FF
@@ -155,134 +155,69 @@ Gestor ..> StatusSistema : "visualiza"
 Usuario ..> TentativaAcesso : "visualiza"
 Usuario ..> ErroReportado : "reporta"
 
+' ===== MÓDULOS UNIFICADOS =====
 
-package "Domínio Principal" {
+package "Cálculo e Simulação" {
     
     class Simulacao LIGHTYELLOW {
         - nome: String
         - descricao: String
         - dataSimulacao: DateTime
-        - usuarioResponsavel: UUID
-        - receitaBruta: Decimal
-        - rbt12: Decimal
-        - folhaPagamento: Decimal
-        - custos: Decimal
-        - despesas: Decimal
+        - versaoTabelas: String
+        - desatualizada: Boolean
         --
-        + criar(): Simulacao
         + salvar(): void
-        + carregar(id ??): Simulacao
         + exportar(formato: String): File
+        + marcarDesatualizada(): void
     }
     
-    class Empresa LIGHTYELLOW {
+    class DadosFinanceiros LIGHTYELLOW {
         - cnpj: String
         - razaoSocial: String
+        - cnae: String
         - municipio: String
         - uf: String
-        - dataAbertura: Date
+        - receitaBrutaPeriodo: Decimal
+        - rbt12: Decimal
+        - folhaPagamento12m: Decimal
+        - custosDespesas: Decimal
         --
-        + validarCNPJ(): Boolean
+        + validar(): Boolean
     }
-    
-    class CNAE LIGHTYELLOW {
-        - codigo: String
-        - descricao: String
-        - setorEconomico: String
-        --
-        + identificarAnexo(): AnexoSimplesNacional
-        + mapearParaAnexo(): String
-        + derivarSetor(): String
-    }
-    
-    class ResultadoSimulacao LIGHTYELLOW {
-        - cargaTributaria: Decimal
-        - aliquotaEfetiva: Decimal
-        - tributos: List<Tributo>
-        - dataCalculo: DateTime
-        - elegivel: Boolean
-        --
-        + exportar(formato: String): File
-        + getTotalTributos(): Decimal
-    }
-}
-
-package "Regimes Tributários" {
     
     abstract class RegimeTributario <<Abstract>> LIGHTBLUE {
         # nomeRegime: String
-        # elegivel: Boolean
         --
-        + {abstract} calcular(): ResultadoSimulacao
-        + validarElegibilidade(): Boolean
-        + calcularPIS(receita: Decimal): Decimal
-        + calcularCOFINS(receita: Decimal): Decimal
+        + {abstract} calcular(dados: DadosFinanceiros): ResultadoCalculo
+        + validarElegibilidade(dados: DadosFinanceiros): Boolean
     }
     
-    class SimplesNacional LIGHTGREEN {
-        - fatorR: Decimal
-        - anexo: AnexoSimplesNacional
-        - faixa: FaixaReceita
+    class SimplesNacional extends RegimeTributario {
         --
-        + calcular(): ResultadoSimulacao
-        + calcularFatorR(): Decimal
-        + determinarFaixa(): FaixaReceita
-        + calcularAliquotaEfetiva(): Decimal
-        + calcularDAS(): Decimal
-        + segregarTributos(): List<Tributo>
+        + calcular(dados: DadosFinanceiros): ResultadoCalculo
+        + determinarAnexo(cnae: String): String
+        + calcularFatorR(folha, rbt12: Decimal): Decimal
     }
     
-    class LucroPresumido LIGHTGREEN {
-        - aliquotaPresuncao: Decimal
+    class LucroPresumido extends RegimeTributario {
         --
-        + calcular(): ResultadoSimulacao
-        + calcularBasePresumida(): Decimal
-        + calcularIRPJ(): Decimal
-        + calcularCSLL(): Decimal
+        + calcular(dados: DadosFinanceiros): ResultadoCalculo
     }
     
-    class LucroReal LIGHTGREEN {
-        - lucroLiquido: Decimal
-        - adicoes: Decimal
-        - exclusoes: Decimal
-        - prejuizos: Decimal
+    class LucroReal extends RegimeTributario {
         --
-        + calcular(): ResultadoSimulacao
-        + apurarLucroLiquido(): Decimal
-        + ajustarLucro(): Decimal
-        + compensarPrejuizos(): Decimal
-        + calcularCreditos(): Decimal
+        + calcular(dados: DadosFinanceiros): ResultadoCalculo
     }
     
-    RegimeTributario <|-- SimplesNacional
-    RegimeTributario <|-- LucroPresumido
-    RegimeTributario <|-- LucroReal
-}
-
-package "Tabelas e Configurações" {
-    
-    class AnexoSimplesNacional LIGHTBLUE {
-        - tipo: String
-        - descricao: String
-        - faixas: List<FaixaReceita>
-        - percentualReparticao: Map<String, Decimal>
+    class ResultadoCalculo LIGHTGREEN {
+        - regimeTributario: String
+        - cargaTributariaTotal: Decimal
+        - aliquotaEfetiva: Decimal
+        - detalhamento: String
+        - elegivel: Boolean
         --
-        + obterFaixa(rbt12: Decimal): FaixaReceita
+        + getTotalTributos(): Decimal
     }
-    
-    class FaixaReceita LIGHTBLUE {
-        - numero: Integer
-        - limiteInferior: Decimal
-        - limiteSuperior: Decimal
-        - aliquotaNominal: Decimal
-        - parcelaADeduzir: Decimal
-        --
-        + contemReceita(rbt12: Decimal): Boolean
-        + obterAliquotas(): Map<String, Decimal>
-    }
-}
-
-package "Tributos" {
     
     class Tributo LIGHTPINK {
         - nome: String
@@ -290,45 +225,129 @@ package "Tributos" {
         - aliquota: Decimal
         - valorFinal: Decimal
         --
-        + detalhar(): DetalheTributo
         + calcular(): Decimal
     }
-}
-
-package "Comparação e Histórico" {
     
-    class ComparacaoRegimes LIGHTBLUE {
-        - dataComparacao: DateTime
-        - simulacoes: List<Simulacao>
-        - regimeMaisVantajoso: String
+    class ComparadorRegimes LIGHTBLUE {
         --
-        + comparar(): ResultadoComparacao
-        + identificarMelhorRegime(): RegimeTributario
-        + calcularEconomia(): Map<String, Decimal>
+        + comparar(dados: DadosFinanceiros): List<ResultadoCalculo>
+        + identificarMelhorRegime(): String
     }
     
     class HistoricoSimulacao LIGHTPINK {
         - versao: Integer
         - dataVersao: DateTime
-        - valoresOriginais: Map<String, Object>
-        - valoresNovos: Map<String, Object>
+        - dadosAnteriores: JSON
+        - dadosNovos: JSON
         --
-        + criarVersao(): HistoricoSimulacao
+        + salvar(): void
+    }
+}
+
+package "Importação" {
+    
+    class ImportadorArquivo LIGHTBLUE {
+        --
+        + importar(arquivo: File): ResultadoImportacao
+        + validarFormato(arquivo: File): Boolean
+        + mapearColunas(arquivo: File): Map<String, String>
+    }
+    
+    class ConsultaCNPJ LIGHTBLUE {
+        --
+        + consultar(cnpj: String): DadosCadastrais
+        + validarCNPJ(cnpj: String): Boolean
+    }
+    
+    class DadosCadastrais LIGHTYELLOW {
+        - cnpj: String
+        - razaoSocial: String
+        - cnae: String
+        - municipio: String
+        - uf: String
+        - situacaoCadastral: String
+        --
+        + isAtivo(): Boolean
+    }
+    
+    class ResultadoImportacao LIGHTGREEN {
+        - sucesso: Boolean
+        - camposPreenchidos: Integer
+        - erros: List<String>
+        --
+        + temErros(): Boolean
+    }
+}
+
+package "Atualização de Legislação" {
+    
+    class GerenciadorTabelas LIGHTBLUE {
+        --
+        + atualizarTabela(tipo: String, dados: File): Boolean
+        + obterTabelaVigente(tipo: String): TabelaTributaria
+        + listarHistorico(tipo: String): List<HistoricoTabela>
+    }
+    
+    class TabelaTributaria LIGHTYELLOW {
+        - tipo: String
+        - versao: String
+        - dataVigencia: Date
+        - baseLegal: String
+        - dados: JSON
+        - ativa: Boolean
+        --
+        + validar(): Boolean
+        + obterAliquota(parametro: String): Decimal
+        + obterFaixa(valor: Decimal): Map<String, Object>
+    }
+    
+    class GerenciadorAliquotas LIGHTBLUE {
+        --
+        + cadastrarISS(municipio: String, aliquota: Decimal): Boolean
+        + cadastrarICMS(uf: String, aliquota: Decimal): Boolean
+        + consultarAliquota(local: String, tipo: String): Decimal
+    }
+    
+    class AliquotaLocal LIGHTYELLOW {
+        - tipo: String
+        - local: String
+        - aliquota: Decimal
+        - dataVigencia: Date
+        - baseLegal: String
+        - ativa: Boolean
+        --
+        + isVigente(): Boolean
+    }
+    
+    class NotificadorLegislacao LIGHTBLUE {
+        --
+        + notificar(mudanca: String): void
+        + identificarSimulacoesImpactadas(tabelaId: UUID): List<Simulacao>
+        + marcarSimulacoesDesatualizadas(tabelaId: UUID): void
+    }
+    
+    class HistoricoTabela LIGHTPINK {
+        - versaoAnterior: String
+        - versaoNova: String
+        - dataAtualizacao: DateTime
+        - baseLegal: String
+        --
+        + restaurar(): TabelaTributaria
     }
 }
 
 package "Validação" {
     
-    class ValidadorDados <<Service>> LIGHTGRAY {
+    class ValidadorDados LIGHTGRAY {
         --
-        + validar(dados, regime): ValidationResult
-        + validarObrigatorios(): List<ErroValidacao>
-        + validarTipos(): List<ErroValidacao>
-        + validarCNAE(): ValidationResult
-        + verificarLimites(): ValidationResult
+        + validar(dados: DadosFinanceiros, regime: String): List<ErroValidacao>
+        + validarObrigatorios(dados: DadosFinanceiros): List<ErroValidacao>
+        + validarTipos(dados: DadosFinanceiros): List<ErroValidacao>
+        + validarCNAE(cnae: String): ErroValidacao
+        + verificarLimites(dados: DadosFinanceiros, regime: String): ErroValidacao
     }
     
-    class ErroValidacao <<ValueObject>> LIGHTGRAY {
+    class ErroValidacao LIGHTGRAY {
         - campoInvalido: String
         - mensagemErro: String
         - tipoErro: String
@@ -337,26 +356,75 @@ package "Validação" {
     }
 }
 
-' ===== RELACIONAMENTOS PRINCIPAIS =====
+' ===== RELACIONAMENTOS - CÁLCULO =====
 
-Simulacao "1" *-- "1" Empresa : possui >
-Simulacao "1" *-- "1" RegimeTributario : simula >
-Simulacao "1" --> "1" ResultadoSimulacao : gera >
+Simulacao "1" *-- "1" DadosFinanceiros : contém
+Simulacao "1" --> "1..*" RegimeTributario : simula
+RegimeTributario ..> ResultadoCalculo : produz
+ResultadoCalculo "1" *-- "1..*" Tributo : contém
+Simulacao "1" --> "0..*" HistoricoSimulacao : possui
+ComparadorRegimes ..> RegimeTributario : usa
+ComparadorRegimes ..> ResultadoCalculo : gera
 
-Empresa "1" --> "1" CNAE : possui >
+' ===== RELACIONAMENTOS - IMPORTAÇÃO =====
 
-SimplesNacional "1" --> "1" AnexoSimplesNacional : utiliza >
-SimplesNacional "1" --> "1" FaixaReceita : aplica >
-AnexoSimplesNacional "1" *-- "6" FaixaReceita : possui >
+ImportadorArquivo ..> ResultadoImportacao : retorna
+ImportadorArquivo ..> DadosFinanceiros : preenche
+ConsultaCNPJ ..> DadosCadastrais : retorna
+DadosCadastrais ..> DadosFinanceiros : preenche
 
-RegimeTributario "1" --> "1..*" Tributo : calcula >
-ResultadoSimulacao "1" *-- "1..*" Tributo : contém >
+' ===== RELACIONAMENTOS - ATUALIZAÇÃO =====
 
-ComparacaoRegimes "1" *-- "2..3" Simulacao : compara >
-HistoricoSimulacao "1" --> "1" Simulacao : versiona >
+GerenciadorTabelas --> TabelaTributaria : gerencia
+GerenciadorTabelas --> HistoricoTabela : registra
+GerenciadorTabelas ..> NotificadorLegislacao : notifica
+GerenciadorAliquotas --> AliquotaLocal : gerencia
+TabelaTributaria "1" --> "0..*" HistoricoTabela : possui
+NotificadorLegislacao ..> Simulacao : marca desatualizada
 
-Simulacao ..> ValidadorDados : valida >
-ValidadorDados "1" --> "0..*" ErroValidacao : retorna >
+' ===== RELACIONAMENTOS - VALIDAÇÃO =====
 
+Simulacao ..> ValidadorDados : valida
+ValidadorDados ..> ErroValidacao : retorna
+
+' ===== RELACIONAMENTO inportante: REGIMES CONSULTAM TABELAS =====
+
+SimplesNacional ..> TabelaTributaria : "consulta tabelas\nSimples Nacional"
+LucroPresumido ..> TabelaTributaria : "consulta tabelas\nPresunção"
+LucroReal ..> TabelaTributaria : "consulta tabelas\nIRPJ/CSLL/PIS/COFINS"
+
+SimplesNacional ..> AliquotaLocal : "consulta ISS"
+LucroPresumido ..> AliquotaLocal : "consulta ISS/ICMS"
+LucroReal ..> AliquotaLocal : "consulta ISS"
+
+' ===== RELACIONAMENTOS - ADMINISTRADOR ATUALIZA =====
+
+Administrador ..> GerenciadorTabelas : usa
+Administrador ..> GerenciadorAliquotas : usa
+
+
+note right of SimplesNacional
+  Durante o cálculo, consulta DIRETAMENTE:
+  - TabelaTributaria (tipo: SIMPLES_NACIONAL)
+    para obter anexos, faixas e alíquotas
+  - AliquotaLocal (tipo: ISS) para
+    obter alíquota municipal
+end note
+
+note right of GerenciadorTabelas
+  Usado apenas pelo Administrador para:
+  - Criar/Atualizar/Deletar tabelas
+  - Quando atualizado, dispara
+    NotificadorLegislacao que marca
+    Simulações antigas como desatualizadas
+end note
+
+note bottom of TabelaTributaria
+  Armazena as regras tributárias:
+  - Simples Nacional (anexos e faixas)
+  - Presunção (alíquotas por CNAE)
+  - IRPJ/CSLL (alíquotas básicas)
+  - PIS/COFINS (alíquotas cumulativo/não-cumulativo)
+end note
 
 @enduml
