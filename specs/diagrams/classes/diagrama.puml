@@ -82,7 +82,7 @@ class PoliticaSenha {
   - tempo_expiracao: Integer
   - tempo_aviso_previo_expiracao: Integer
   - usuarios_afetados: List<Usuario>
-  ' + notificar_expiracao(): void
+  + notificar_expiracao(): void
 }
 
 class TentativaAcesso {

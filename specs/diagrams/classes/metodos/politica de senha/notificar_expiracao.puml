@@ -1,0 +1,14 @@
+@startuml notificar expiração
+|PolíticaSenha|
+
+|Sistema|
+start
+
+if (Data de expiração próxima) then (sim)
+  :Notificar usuários afetados pela política de senha;
+else (não)
+endif 
+
+stop
+
+@enduml

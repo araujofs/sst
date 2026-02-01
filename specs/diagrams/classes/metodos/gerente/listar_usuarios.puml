@@ -1,0 +1,11 @@
+@startuml listar associados
+|Gerente|
+start
+
+|Sistema|
+:Buscar associados;
+
+:Apresentar associados;
+
+stop
+@enduml

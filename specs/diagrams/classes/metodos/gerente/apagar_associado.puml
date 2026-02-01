@@ -1,0 +1,15 @@
+@startuml apagar associado
+|Gerente|
+start
+:Inserir informações do associado;
+
+|Sistema|
+:Buscar associado;
+
+if (Associado existe?) then (sim)
+  :Apagar associado;
+else (não)
+endif
+
+stop
+@enduml

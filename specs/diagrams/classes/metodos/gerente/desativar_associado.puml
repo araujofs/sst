@@ -1,0 +1,20 @@
+@startuml ativar associado
+|Gerente|
+start
+:Inserir informações do associado;
+
+|Sistema|
+:Buscar associado;
+
+if (Associado existe?) then (sim)
+  if (Acesso do associado está ativado?) then (sim)
+    :Desativar acesso do associado;
+  else (não)
+    stop  
+  endif
+else (não)
+  stop
+endif
+
+stop
+@enduml

@@ -1,0 +1,9 @@
+@startuml visualizar status do sistema
+|Gestor|
+start
+
+|Sistema|
+:Apresentar status do sistema;
+
+stop
+@enduml
