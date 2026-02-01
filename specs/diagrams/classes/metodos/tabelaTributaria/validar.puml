@@ -1,0 +1,24 @@
+@startuml validar
+|TabelaTributaria|
+start
+:Verificar campos obrigatórios;
+
+|Sistema|
+if (Todos os campos preenchidos?) then (sim)
+  :Validar formato dos dados JSON;
+  if (Formato válido?) then (sim)
+    :Verificar consistência das alíquotas;
+    if (Dados consistentes?) then (sim)
+      :Retornar verdadeiro;
+    else (não)
+      :Retornar falso;
+    endif
+  else (não)
+    :Retornar falso;
+  endif
+else (não)
+  :Retornar falso;
+endif
+
+stop
+@enduml

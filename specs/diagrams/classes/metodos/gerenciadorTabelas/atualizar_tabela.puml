@@ -1,0 +1,21 @@
+@startuml atualizar tabela
+|Administrador|
+start
+:Enviar arquivo com nova tabela;
+
+|Sistema|
+:Validar formato do arquivo;
+
+if (Formato válido?) then (sim)
+  :Buscar tabela vigente;
+  :Criar registro de histórico;
+  :Desativar tabela anterior;
+  :Criar nova tabela tributária;
+  :Notificar mudança legislativa;
+  :Retornar verdadeiro;
+else (não)
+  :Retornar falso;
+endif
+
+stop
+@enduml

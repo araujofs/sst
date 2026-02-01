@@ -1,0 +1,21 @@
+@startuml cadastrar iss
+|Administrador|
+start
+:Inserir município e alíquota ISS;
+
+|Sistema|
+:Validar dados;
+
+if (Dados válidos?) then (sim)
+  :Verificar se já existe alíquota ativa para o município;
+  if (Existe?) then (sim)
+    :Desativar alíquota anterior;
+  endif
+  :Criar nova AliquotaLocal tipo ISS;
+  :Retornar verdadeiro;
+else (não)
+  :Retornar falso;
+endif
+
+stop
+@enduml

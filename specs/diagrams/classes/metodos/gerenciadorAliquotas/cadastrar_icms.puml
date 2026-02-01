@@ -1,0 +1,21 @@
+@startuml cadastrar icms
+|Administrador|
+start
+:Inserir UF e alíquota ICMS;
+
+|Sistema|
+:Validar dados;
+
+if (Dados válidos?) then (sim)
+  :Verificar se já existe alíquota ativa para a UF;
+  if (Existe?) then (sim)
+    :Desativar alíquota anterior;
+  endif
+  :Criar nova AliquotaLocal tipo ICMS;
+  :Retornar verdadeiro;
+else (não)
+  :Retornar falso;
+endif
+
+stop
+@enduml

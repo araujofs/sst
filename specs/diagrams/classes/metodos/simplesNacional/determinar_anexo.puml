@@ -1,0 +1,16 @@
+@startuml determinar anexo
+|SimplesNacional|
+start
+:Receber CNAE;
+
+|Sistema|
+:Consultar tabela de mapeamento CNAE-Anexo;
+
+if (CNAE encontrado?) then (sim)
+  :Retornar anexo correspondente;
+else (não)
+  :Retornar anexo padrão (V);
+endif
+
+stop
+@enduml

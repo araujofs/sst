@@ -1,0 +1,20 @@
+@startuml verificar limites
+|ValidadorDados|
+start
+:Receber DadosFinanceiros e regime;
+
+|Sistema|
+if (Regime é Simples Nacional?) then (sim)
+  :Verificar se RBT12 <= 4,8 milhões;
+  if (Dentro do limite?) then (não)
+    :Criar ErroValidacao;
+    :Retornar erro;
+  else (sim)
+    :Retornar null (sem erro);
+  endif
+else (não)
+  :Retornar null (sem restrição);
+endif
+
+stop
+@enduml

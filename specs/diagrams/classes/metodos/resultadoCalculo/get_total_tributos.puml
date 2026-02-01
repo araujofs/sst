@@ -1,0 +1,18 @@
+@startuml get total tributos
+|ResultadoCalculo|
+start
+
+|Sistema|
+:Inicializar total = 0;
+
+:Percorrer lista de tributos;
+
+repeat
+  :Somar valor do tributo ao total;
+repeat while (Mais tributos?) is (sim)
+->não;
+
+:Retornar total;
+
+stop
+@enduml

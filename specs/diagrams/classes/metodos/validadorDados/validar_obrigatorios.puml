@@ -1,0 +1,32 @@
+@startuml validar obrigatorios
+|ValidadorDados|
+start
+:Receber DadosFinanceiros;
+
+|Sistema|
+:Criar lista de erros;
+
+:Verificar CNPJ;
+if (Vazio?) then (sim)
+  :Adicionar erro;
+endif
+
+:Verificar razão social;
+if (Vazio?) then (sim)
+  :Adicionar erro;
+endif
+
+:Verificar CNAE;
+if (Vazio?) then (sim)
+  :Adicionar erro;
+endif
+
+:Verificar receita bruta;
+if (Vazio?) then (sim)
+  :Adicionar erro;
+endif
+
+:Retornar lista de ErroValidacao;
+
+stop
+@enduml

@@ -1,0 +1,21 @@
+@startuml calcular
+|LucroPresumido|
+start
+:Receber DadosFinanceiros;
+
+|Sistema|
+:Obter percentual de presunção pelo CNAE;
+:Calcular base IRPJ (receita × percentual);
+:Calcular IRPJ (base × 15%);
+:Calcular adicional IRPJ se base > 20k/mês;
+:Calcular base CSLL;
+:Calcular CSLL (base × 9%);
+:Calcular PIS (receita × 0,65%);
+:Calcular COFINS (receita × 3%);
+:Consultar e calcular ISS;
+:Consultar e calcular ICMS se aplicável;
+:Criar ResultadoCalculo com todos tributos;
+:Retornar ResultadoCalculo;
+
+stop
+@enduml

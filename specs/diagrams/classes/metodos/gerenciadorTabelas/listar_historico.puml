@@ -1,0 +1,13 @@
+@startuml listar historico
+|Sistema|
+start
+:Receber tipo de tabela;
+
+:Buscar todos os registros de histórico do tipo;
+
+:Ordenar por data de atualização;
+
+:Retornar lista de HistoricoTabela;
+
+stop
+@enduml

@@ -1,0 +1,10 @@
+@startuml marcar desatualizada
+|Sistema|
+start
+
+:Alterar atributo desatualizada para true;
+
+:Salvar alteração;
+
+stop
+@enduml

@@ -1,0 +1,23 @@
+@startuml validar cnae
+|ValidadorDados|
+start
+:Receber CNAE;
+
+|Sistema|
+:Verificar formato (7 dígitos);
+
+if (Formato válido?) then (sim)
+  :Consultar tabela de CNAEs válidos;
+  if (CNAE existe?) then (sim)
+    :Retornar null (sem erro);
+  else (não)
+    :Criar ErroValidacao;
+    :Retornar erro;
+  endif
+else (não)
+  :Criar ErroValidacao;
+  :Retornar erro;
+endif
+
+stop
+@enduml

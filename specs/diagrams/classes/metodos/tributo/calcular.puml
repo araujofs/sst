@@ -1,0 +1,13 @@
+@startuml calcular
+|Tributo|
+start
+
+|Sistema|
+:Multiplicar base de cálculo pela alíquota;
+
+:Armazenar resultado em valorFinal;
+
+:Retornar valorFinal;
+
+stop
+@enduml

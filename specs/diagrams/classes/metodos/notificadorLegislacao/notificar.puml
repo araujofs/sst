@@ -1,0 +1,14 @@
+@startuml notificar
+|NotificadorLegislacao|
+start
+:Receber mudança legislativa;
+
+|Sistema|
+:Identificar usuários afetados;
+
+:Criar notificação;
+
+:Enviar notificação aos usuários;
+
+stop
+@enduml

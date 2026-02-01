@@ -1,0 +1,14 @@
+@startuml salvar
+|Sistema|
+start
+
+:Capturar versão atual da simulação;
+
+:Serializar dados para JSON;
+
+:Criar registro HistoricoSimulacao;
+
+:Salvar no banco;
+
+stop
+@enduml

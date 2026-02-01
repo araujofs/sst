@@ -1,0 +1,19 @@
+@startuml calcular
+|SimplesNacional|
+start
+:Receber DadosFinanceiros;
+
+|Sistema|
+:Determinar anexo pelo CNAE;
+:Calcular Fator R;
+:Obter tabela Simples Nacional vigente;
+:Obter faixa pelo RBT12;
+:Calcular alíquota efetiva;
+:Calcular tributos federais;
+:Consultar e calcular ISS;
+:Criar objeto ResultadoCalculo;
+:Adicionar tributos ao resultado;
+:Retornar ResultadoCalculo;
+
+stop
+@enduml

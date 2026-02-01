@@ -1,0 +1,26 @@
+@startuml validar tipos
+|ValidadorDados|
+start
+:Receber DadosFinanceiros;
+
+|Sistema|
+:Criar lista de erros;
+
+:Verificar se valores numéricos são positivos;
+
+repeat
+  if (Valor negativo?) then (sim)
+    :Adicionar erro à lista;
+  endif
+repeat while (Mais campos numéricos?) is (sim)
+->não;
+
+:Verificar formato CNPJ;
+if (Formato inválido?) then (sim)
+  :Adicionar erro à lista;
+endif
+
+:Retornar lista de ErroValidacao;
+
+stop
+@enduml

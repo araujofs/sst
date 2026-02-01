@@ -1,0 +1,17 @@
+@startuml salvar
+|Usuario|
+start
+:Definir nome e descrição da simulação;
+
+|Sistema|
+:Validar dados da simulação;
+
+if (Dados válidos?) then (sim)
+  :Salvar Simulacao no banco;
+  :Salvar DadosFinanceiros associados;
+  :Salvar ResultadoCalculo de cada regime;
+else (não)
+endif
+
+stop
+@enduml

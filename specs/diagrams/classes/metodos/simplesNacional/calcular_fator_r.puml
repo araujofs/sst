@@ -1,0 +1,16 @@
+@startuml calcular fator r
+|SimplesNacional|
+start
+:Receber folha e RBT12;
+
+|Sistema|
+:Calcular razão: folha / RBT12;
+
+if (Razão >= 0.28?) then (sim)
+  :Retornar razão (Anexo III);
+else (não)
+  :Retornar 0 (Anexo V);
+endif
+
+stop
+@enduml

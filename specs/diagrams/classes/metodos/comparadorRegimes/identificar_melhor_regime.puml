@@ -1,0 +1,18 @@
+@startuml identificar melhor regime
+|ComparadorRegimes|
+start
+
+|Sistema|
+:Obter lista de ResultadoCalculo;
+
+:Filtrar apenas regimes elegíveis;
+
+if (Existem regimes elegíveis?) then (sim)
+  :Ordenar por carga tributária total;
+  :Retornar nome do primeiro regime;
+else (não)
+  :Retornar "Nenhum regime elegível";
+endif
+
+stop
+@enduml

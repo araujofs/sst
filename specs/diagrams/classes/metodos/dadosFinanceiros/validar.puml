@@ -1,0 +1,25 @@
+@startuml validar
+|DadosFinanceiros|
+start
+
+|Sistema|
+:Verificar campos obrigatórios;
+
+if (Todos preenchidos?) then (sim)
+  :Validar formato CNPJ e CNAE;
+  if (Formatos válidos?) then (sim)
+    :Validar valores numéricos positivos;
+    if (Valores válidos?) then (sim)
+      :Retornar verdadeiro;
+    else (não)
+      :Retornar falso;
+    endif
+  else (não)
+    :Retornar falso;
+  endif
+else (não)
+  :Retornar falso;
+endif
+
+stop
+@enduml

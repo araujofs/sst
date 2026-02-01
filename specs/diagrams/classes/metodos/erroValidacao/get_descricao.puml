@@ -1,0 +1,11 @@
+@startuml get descricao
+|ErroValidacao|
+start
+
+|Sistema|
+:Concatenar campoInvalido e mensagemErro;
+
+:Retornar string formatada;
+
+stop
+@enduml

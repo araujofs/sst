@@ -1,0 +1,20 @@
+@startuml is vigente
+|AliquotaLocal|
+start
+
+|Sistema|
+:Verificar se ativa é verdadeiro;
+
+if (Ativa?) then (sim)
+  :Verificar se data de vigência <= data atual;
+  if (Em vigência?) then (sim)
+    :Retornar verdadeiro;
+  else (não)
+    :Retornar falso;
+  endif
+else (não)
+  :Retornar falso;
+endif
+
+stop
+@enduml

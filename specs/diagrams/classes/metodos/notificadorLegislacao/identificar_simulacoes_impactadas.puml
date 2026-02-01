@@ -1,0 +1,14 @@
+@startuml identificar simulacoes impactadas
+|NotificadorLegislacao|
+start
+:Receber ID da tabela atualizada;
+
+|Sistema|
+:Buscar tipo e versão anterior da tabela;
+
+:Buscar simulações que usaram essa versão;
+
+:Retornar lista de Simulação;
+
+stop
+@enduml

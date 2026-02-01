@@ -1,0 +1,18 @@
+@startuml comparar
+|Usuario|
+start
+:Solicitar comparação de regimes;
+
+|Sistema|
+:Receber DadosFinanceiros;
+:Criar instância SimplesNacional;
+:Calcular regime Simples Nacional;
+:Criar instância LucroPresumido;
+:Calcular regime Lucro Presumido;
+:Criar instância LucroReal;
+:Calcular regime Lucro Real;
+:Adicionar resultados à lista;
+:Retornar lista de ResultadoCalculo;
+
+stop
+@enduml

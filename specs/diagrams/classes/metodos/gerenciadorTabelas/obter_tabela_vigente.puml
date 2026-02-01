@@ -1,0 +1,15 @@
+@startuml obter tabela vigente
+|Sistema|
+start
+:Receber tipo de tabela;
+
+:Buscar tabela ativa do tipo;
+
+if (Tabela encontrada?) then (sim)
+  :Retornar TabelaTributaria;
+else (não)
+  :Retornar null;
+endif
+
+stop
+@enduml

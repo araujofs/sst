@@ -1,0 +1,35 @@
+@startuml validar
+|ValidadorDados|
+start
+:Receber DadosFinanceiros e regime;
+
+|Sistema|
+:Validar campos obrigatórios;
+:Criar lista de erros;
+
+if (Campos obrigatórios OK?) then (não)
+  :Adicionar erros à lista;
+endif
+
+:Validar tipos de dados;
+
+if (Tipos OK?) then (não)
+  :Adicionar erros à lista;
+endif
+
+:Validar CNAE;
+
+if (CNAE válido?) then (não)
+  :Adicionar erro à lista;
+endif
+
+:Verificar limites do regime;
+
+if (Dentro dos limites?) then (não)
+  :Adicionar erro à lista;
+endif
+
+:Retornar lista de ErroValidacao;
+
+stop
+@enduml

@@ -1,0 +1,15 @@
+@startuml consultar aliquota
+|Sistema|
+start
+:Receber local e tipo;
+
+:Buscar AliquotaLocal ativa;
+
+if (Alíquota encontrada?) then (sim)
+  :Retornar valor da alíquota;
+else (não)
+  :Retornar alíquota padrão;
+endif
+
+stop
+@enduml

@@ -1,0 +1,16 @@
+@startuml obter faixa
+|TabelaTributaria|
+start
+:Receber valor de RBT;
+
+|Sistema|
+:Percorrer faixas no JSON de dados;
+
+if (Encontrou faixa correspondente?) then (sim)
+  :Retornar mapa com faixa, alíquota e dedução;
+else (não)
+  :Retornar mapa vazio;
+endif
+
+stop
+@enduml

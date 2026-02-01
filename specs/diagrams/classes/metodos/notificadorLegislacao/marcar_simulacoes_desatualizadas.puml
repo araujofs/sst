@@ -1,0 +1,17 @@
+@startuml marcar simulacoes desatualizadas
+|NotificadorLegislacao|
+start
+:Receber ID da tabela atualizada;
+
+|Sistema|
+:Identificar simulações impactadas;
+
+:Percorrer lista de simulações;
+
+repeat
+  :Marcar simulação como desatualizada;
+repeat while (Mais simulações?) is (sim)
+->não;
+
+stop
+@enduml

@@ -1,0 +1,19 @@
+@startuml exportar
+|Usuario|
+start
+:Solicitar exportação com formato;
+
+|Sistema|
+:Validar formato solicitado;
+
+if (Formato suportado?) then (sim)
+  :Buscar dados da simulação;
+  :Formatar dados conforme formato;
+  :Gerar arquivo;
+  :Retornar arquivo;
+else (não)
+  :Retornar erro;
+endif
+
+stop
+@enduml

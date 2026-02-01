@@ -1,0 +1,18 @@
+@startuml calcular
+|LucroReal|
+start
+:Receber DadosFinanceiros;
+
+|Sistema|
+:Calcular lucro real (receita - custos);
+:Calcular IRPJ (lucro × 15%);
+:Calcular adicional IRPJ se lucro > 20k/mês;
+:Calcular CSLL (lucro × 9%);
+:Calcular PIS não-cumulativo (receita × 1,65%);
+:Calcular COFINS não-cumulativo (receita × 7,6%);
+:Consultar e calcular ISS;
+:Criar ResultadoCalculo com todos tributos;
+:Retornar ResultadoCalculo;
+
+stop
+@enduml

@@ -1,0 +1,16 @@
+@startuml obter aliquota
+|TabelaTributaria|
+start
+:Receber parâmetro de busca;
+
+|Sistema|
+:Buscar no JSON de dados;
+
+if (Parâmetro encontrado?) then (sim)
+  :Retornar alíquota;
+else (não)
+  :Retornar null;
+endif
+
+stop
+@enduml

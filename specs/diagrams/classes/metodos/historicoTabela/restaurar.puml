@@ -1,0 +1,18 @@
+@startuml restaurar
+|Administrador|
+start
+:Solicitar restauração de histórico;
+
+|Sistema|
+:Buscar dados da versão anterior;
+
+:Criar nova TabelaTributaria com dados anteriores;
+
+:Desativar tabela atual;
+
+:Ativar tabela restaurada;
+
+:Retornar TabelaTributaria restaurada;
+
+stop
+@enduml
