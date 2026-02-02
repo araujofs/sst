@@ -366,9 +366,9 @@ package "Relatórios" {
         - metricas: List<String>
         - graficos: List<String>
         --
-        + comparar(idsSimulacoes: List<UUID>): DadosComparacao
-        + gerarPdf(opcoes: Map<String, Object>): File
-        + enviarEmail(destinatario: String, opcoes: Map<String, Object>): Boolean
+        + comparar(simulacoes: List<Simulacao>): DadosComparacao
+        + gerarPdf(opcoes: List<String>: byte[]
+        + enviarEmail(destinatario: String): Boolean
     }
     
     class DadosComparacao LIGHTGREEN {
