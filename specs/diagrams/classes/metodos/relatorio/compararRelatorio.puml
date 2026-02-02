@@ -3,17 +3,31 @@ title Algoritmo: Relatorio.comparar(ids_simulacoes)
 start
 :Contar quantidade de IDs recebidos;
 if (Quantidade > 3?) then (Sim)
-    :Exibir alerta de limite excedido;
+    :Exibir alerta "Máximo 3 simulações";
     stop
 else (Não)
-    :Buscar dados das 2 ou 3 simulações selecionadas;
+    :Buscar dados das simulações selecionadas;
+    :Recuperar ResultadoCalculo de cada simulação;
     :Calcular economia percentual entre os cenários;
+    note right
+      Usa ComparadorRegimes.comparar()
+      para gerar ResultadoCalculo
+      de cada regime
+    end note
     if (Apenas 2 simulações?) then (Sim)
         :Destacar economia percentual direta;
+        :Calcular: (ValorMaior - ValorMenor) / ValorMaior * 100;
     else (Não)
         :Gerar matriz comparativa tripla;
+        :Calcular economias entre todos os pares;
     endif
-    :Renderizar gráficos e tabelas detalhadas;
+    :Gerar gráficos comparativos;
+    note right
+      - Gráfico de barras: carga tributária total
+      - Gráfico de detalhamento: tributos individuais
+      - Tabela: valores detalhados por tributo
+    end note
+    :Retornar dados para visualização;
 endif
 stop
 @enduml

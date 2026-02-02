@@ -355,6 +355,37 @@ package "Validação" {
     }
 }
 
+package "Relatórios" {
+    
+    class Relatorio LIGHTBLUE {
+        - logoPersonalizada: byte[]
+        - observacoes: String
+        - metricas: List<String>
+        - graficos: List<String>
+        --
+        + comparar(idsSimulacoes: List<UUID>): DadosComparacao
+        + gerarPdf(opcoes: Map<String, Object>): File
+        + enviarEmail(destinatario: String, opcoes: Map<String, Object>): Boolean
+    }
+    
+    class DadosComparacao LIGHTGREEN {
+        - simulacoes: List<Simulacao>
+        - economiaPercentual: Map<String, Decimal>
+        - melhorRegime: String
+        - graficosComparativos: List<Grafico>
+        --
+        + calcularEconomia(): Map<String, Decimal>
+    }
+    
+    class Grafico LIGHTPINK {
+        - tipo: String
+        - titulo: String
+        - dados: JSON
+        --
+        + renderizar(): byte[]
+    }
+}
+
 ' ===== RELACIONAMENTOS - CÁLCULO =====
 
 Simulacao "1" *-- "1" DadosFinanceiros : contém
@@ -385,6 +416,17 @@ NotificadorLegislacao ..> Simulacao : marca desatualizada
 
 Simulacao ..> ValidadorDados : valida
 ValidadorDados ..> ErroValidacao : retorna
+
+' ===== RELACIONAMENTOS - RELATÓRIOS =====
+
+Relatorio ..> Simulacao : consulta
+Relatorio ..> HistoricoSimulacao : acessa
+Relatorio ..> ComparadorRegimes : usa
+Relatorio ..> DadosComparacao : gera
+DadosComparacao "1" *-- "2..3" Simulacao : compara
+DadosComparacao "1" *-- "1..*" Grafico : contém
+Contador ..> Relatorio : gera
+Gerente ..> Relatorio : gera
 
 ' ===== RELACIONAMENTO inportante: REGIMES CONSULTAM TABELAS =====
 

@@ -1,15 +1,37 @@
 @startuml
-title Algoritmo: Relatorio.gerar_pdf()
+title Algoritmo: Relatorio.gerar_pdf(opcoes)
 start
-:Verificar opções de personalização (logo, observações);
-if (Logo personalizada ativa?) then (Sim)
-    :Inserir imagem da logo no cabeçalho;
+note right
+  RF-REL-003: Relatórios personalizados
+  Opções:
+  - Logo da empresa
+  - Observações personalizadas
+  - Métricas e gráficos selecionados
+  - Formato de saída
+end note
+:Receber opções de personalização;
+if (Logo personalizada fornecida?) then (Sim)
+    :Inserir logo do cliente no cabeçalho;
 else (Não)
     :Inserir logo padrão do sistema;
 endif
-:Adicionar textos de observações ao rodapé;
-:Converter dados comparativos para formato PDF;
-:Salvar arquivo temporário no servidor;
-:Retornar sucesso e link de download;
+:Adicionar dados do cliente;
+note right
+  - Razão social / Nome
+  - CNPJ / CPF
+  - Período de análise
+end note
+:Incluir resultados das simulações;
+if (Incluir gráficos?) then (Sim)
+    :Renderizar gráficos comparativos;
+    :Inserir no documento PDF;
+endif
+:Adicionar detalhamento de cálculos;
+if (Observações fornecidas?) then (Sim)
+    :Inserir observações personalizadas no rodapé;
+endif
+:Gerar arquivo PDF formatado;
+:Salvar temporariamente no servidor;
+:Retornar sucesso e arquivo para download;
 stop
 @enduml

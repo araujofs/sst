@@ -1,10 +1,25 @@
 @startuml
-title Algoritmo: Simulacao.listar(filtros)
+title Algoritmo: HistoricoSimulacao.listar(filtros)
 start
 :Receber critérios de busca (cliente, período, regime);
+note right
+  Filtros possíveis:
+  - Nome do cliente
+  - Período (data inicial e final)
+  - Regime tributário
+  - Status da simulação
+end note
 :Consultar base de dados;
 if (Existem registros para os filtros?) then (Sim)
     :Processar ordenação da lista;
+    note right
+      Colunas exibidas:
+      - Data da simulação
+      - Nome do cliente
+      - Regime tributário
+      - Carga tributária
+      - Status (atualizada/desatualizada)
+    end note
     :Retornar lista de simulações;
 else (Não)
     :Gerar mensagem informativa de ausência de resultados;

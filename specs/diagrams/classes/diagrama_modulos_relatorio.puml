@@ -4,44 +4,100 @@ skinparam monochrome true
 
 title Diagrama de Classes - Módulo de Relatórios
 
-class Cliente {
-    - id_cliente: int
-    - nome: str
-    - email: str
-    + buscar(nome: str) : List[Cliente]
-}
+note as N1
+  RF-REL-001: Consultar histórico de simulações
+  RF-REL-002: Visualizar comparações entre regimes
+  RF-REL-003: Gerar relatórios personalizados
+  RF-REL-004: Exportar resultados
+end note
 
-class RegimeTributario {
-    - id_regime: int
-    - nome_regime: str
-    - aliquota_base: float
+class Contador {
+    - nome: String
+    - email: String
 }
 
 class Simulacao {
-    - id_simulacao: int
-    - data_simulacao: datetime
-    - carga_tributaria: float
-    - status: str
-    - cliente_nome: str
-    + listar(filtros: dict) : List[Simulacao]
-    + buscar_por_cliente(nome: str) : List[Simulacao]
-    + visualizar(id: int) : Simulacao
-    + exportar(id: int, formato: str) : bool
+    - nome: String
+    - descricao: String
+    - dataSimulacao: DateTime
+    - versaoTabelas: String
+    - desatualizada: Boolean
+    - cargaTributariaTotal: Decimal
+    - regime: String
+    --
+    + salvar(): void
+    + exportar(formato: String): File
+    + marcarDesatualizada(): void
+}
+
+class HistoricoSimulacao {
+    - versao: Integer
+    - dataVersao: DateTime
+    - dadosAnteriores: JSON
+    - dadosNovos: JSON
+    --
+    + salvar(): void
+    + listar(filtros: Map<String, Object>): List<Simulacao>
 }
 
 class Relatorio {
-    - id_relatorio: int
-    - logo_personalizada: bool
-    - observacoes: str
-    - formato_saida: str
-    + comparar(ids_simulacoes: List[int]) : Relatorio
-    + personalizar(opcoes: dict) : void
-    + gerar_pdf() : bool
-    + enviar_email(destinatario: str) : bool
+    - logoPersonalizada: byte[]
+    - observacoes: String
+    - metricas: List<String>
+    - graficos: List<String>
+    --
+    + comparar(idsSimulacoes: List<UUID>): DadosComparacao
+    + gerarPdf(opcoes: Map<String, Object>): File
+    + enviarEmail(destinatario: String, opcoes: Map<String, Object>): Boolean
 }
 
-' Relacionamentos simples como no padrão do professor
-Simulacao -- Cliente
-Simulacao -- RegimeTributario
-Relatorio ..> Simulacao : compara
+class DadosComparacao {
+    - simulacoes: List<Simulacao>
+    - economiaPercentual: Map<String, Decimal>
+    - melhorRegime: String
+    - graficosComparativos: List<Grafico>
+    --
+    + calcularEconomia(): Map<String, Decimal>
+}
+
+class Grafico {
+    - tipo: String
+    - titulo: String
+    - dados: JSON
+    --
+    + renderizar(): byte[]
+}
+
+class ComparadorRegimes {
+    --
+    + comparar(dados: DadosFinanceiros): List<ResultadoCalculo>
+    + identificarMelhorRegime(): String
+}
+
+' Relacionamentos
+Contador ..> Relatorio : "gera relatórios"
+Relatorio ..> Simulacao : "consulta"
+Relatorio ..> HistoricoSimulacao : "acessa"
+Relatorio ..> ComparadorRegimes : "usa"
+Relatorio ..> DadosComparacao : "gera"
+DadosComparacao "1" *-- "2..3" Simulacao : "compara"
+DadosComparacao "1" *-- "1..*" Grafico : "contém"
+Simulacao "1" --> "0..*" HistoricoSimulacao : "possui"
+
+note right of Relatorio
+  Responsável por:
+  - Comparar múltiplas simulações
+  - Gerar PDF personalizado
+  - Enviar relatórios por email
+  - Criar visualizações gráficas
+end note
+
+note right of HistoricoSimulacao
+  Armazena versões das simulações
+  e permite consulta com filtros:
+  - Cliente
+  - Período
+  - Regime tributário
+end note
+
 @enduml

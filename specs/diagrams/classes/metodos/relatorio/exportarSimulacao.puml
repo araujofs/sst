@@ -1,16 +1,38 @@
 @startuml
-title Algoritmo: Simulacao.exportar(id, formato)
+title Algoritmo: Simulacao.exportar(formato)
 start
-:Recuperar dados da simulação por ID;
-if (Formato selecionado == "Excel") then (Verificar tamanho)
+:Verificar formato solicitado;
+if (Formato == "Excel"?) then (Sim)
     if (Volume de dados > Limite Excel?) then (Sim)
-        :Alertar que a simulação é grande demais;
+        :Exibir alerta "Simulação muito grande";
         :Recomendar formato CSV;
         stop
     endif
+    :Gerar arquivo Excel detalhado;
+    note right
+      Inclui:
+      - Dados financeiros de entrada
+      - Resultados por regime
+      - Detalhamento de tributos
+      - Gráficos (opcional)
+    end note
+elseif (Formato == "PDF"?) then (Sim)
+    :Gerar arquivo PDF formatado;
+    note right
+      Inclui:
+      - Cabeçalho profissional
+      - Resumo executivo
+      - Detalhamento de cálculos
+      - Gráficos comparativos
+    end note
+else (CSV)
+    :Gerar arquivo CSV com dados brutos;
+    note right
+      Dados tabulares simples
+      para integração
+    end note
 endif
-:Gerar arquivo no formato solicitado;
-:Informar que o arquivo está pronto;
+:Retornar arquivo gerado;
 :Iniciar download;
 stop
 @enduml

@@ -1,14 +1,25 @@
 @startuml
-title Algoritmo: Relatorio.enviar_email(destinatario)
+title Algoritmo: Relatorio.enviar_email(destinatario, opcoes)
 start
+:Receber destinatário e opções;
 :Validar formato do endereço de e-mail;
 if (E-mail válido?) then (Não)
     :Exibir erro "Destinatário inválido";
     stop
 else (Sim)
-    :Gerar anexo do relatório;
-    :Enviar mensagem com arquivo anexado;
-    :Confirmar envio ao ator;
+    :Gerar relatório PDF com as opções fornecidas;
+    note right
+      Usa Relatorio.gerar_pdf(opcoes)
+    end note
+    :Preparar mensagem de e-mail;
+    note right
+      Assunto: "Relatório de Simulação Tributária"
+      Corpo: Mensagem personalizada (opcional)
+      Anexo: Arquivo PDF do relatório
+    end note
+    :Enviar e-mail com arquivo anexado;
+    :Registrar envio no histórico;
+    :Exibir confirmação "E-mail enviado com sucesso";
 endif
 stop
 @enduml
