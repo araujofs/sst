@@ -1,0 +1,58 @@
+@startuml validar_elegibilidade
+|SimplesNacional|
+start
+:Receber DadosFinanceiros;
+
+|Sistema|
+:Validar campos obrigatórios;
+
+if (Campos preenchidos?) then (não)
+  :Retornar false;
+  stop
+endif
+
+:Obter RBT12 (receita bruta últimos 12 meses);
+
+if (RBT12 > R$ 4.800.000?) then (sim)
+  note right
+    Limite anual do Simples Nacional
+  end note
+  :Retornar false;
+  stop
+endif
+
+:Verificar CNAE da empresa;
+
+if (CNAE permitido no Simples?) then (não)
+  note right
+    Algumas atividades são vedadas:
+    - Bancos
+    - Factoring
+    - Importação de combustíveis
+    - etc.
+  end note
+  :Retornar false;
+  stop
+endif
+
+:Verificar natureza jurídica;
+
+if (É sociedade anônima?) then (sim)
+  :Retornar false;
+  stop
+endif
+
+if (Possui sócio PJ?) then (sim)
+  :Retornar false;
+  stop
+endif
+
+if (Possui débitos com INSS ou Fazenda?) then (sim)
+  :Retornar false;
+  stop
+endif
+
+:Retornar true;
+
+stop
+@enduml

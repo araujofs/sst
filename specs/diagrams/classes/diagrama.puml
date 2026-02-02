@@ -194,6 +194,7 @@ package "Cálculo e Simulação" {
     class SimplesNacional extends RegimeTributario {
         --
         + calcular(dados: DadosFinanceiros): ResultadoCalculo
+        + validarElegibilidade(dados: DadosFinanceiros): Boolean
         + determinarAnexo(cnae: String): String
         + calcularFatorR(folha, rbt12: Decimal): Decimal
     }
@@ -201,11 +202,13 @@ package "Cálculo e Simulação" {
     class LucroPresumido extends RegimeTributario {
         --
         + calcular(dados: DadosFinanceiros): ResultadoCalculo
+        + validarElegibilidade(dados: DadosFinanceiros): Boolean
     }
     
     class LucroReal extends RegimeTributario {
         --
         + calcular(dados: DadosFinanceiros): ResultadoCalculo
+        + validarElegibilidade(dados: DadosFinanceiros): Boolean
     }
     
     class ResultadoCalculo LIGHTGREEN {

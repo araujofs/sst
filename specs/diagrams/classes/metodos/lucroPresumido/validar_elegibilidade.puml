@@ -1,0 +1,58 @@
+@startuml validar_elegibilidade
+|LucroPresumido|
+start
+:Receber DadosFinanceiros;
+
+|Sistema|
+:Validar campos obrigatórios;
+
+if (Campos preenchidos?) then (não)
+  :Retornar false;
+  stop
+endif
+
+:Obter receita bruta anual;
+
+if (Receita anual > R$ 78.000.000?) then (sim)
+  note right
+    Acima de R$ 78mi é obrigado
+    ao Lucro Real
+  end note
+  :Retornar false;
+  stop
+endif
+
+:Verificar tipo de atividade;
+
+if (É instituição financeira?) then (sim)
+  note right
+    Bancos, financeiras, cooperativas
+    de crédito são obrigadas ao Lucro Real
+  end note
+  :Retornar false;
+  stop
+endif
+
+if (Tem lucros/rendimentos do exterior?) then (sim)
+  :Retornar false;
+  stop
+endif
+
+if (Tem benefícios fiscais de redução/isenção?) then (sim)
+  note right
+    Empresas com incentivos fiscais
+    devem optar por Lucro Real
+  end note
+  :Retornar false;
+  stop
+endif
+
+if (Factoring, securitização ou similares?) then (sim)
+  :Retornar false;
+  stop
+endif
+
+:Retornar true;
+
+stop
+@enduml

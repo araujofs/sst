@@ -1,0 +1,57 @@
+@startuml validar_elegibilidade
+|LucroReal|
+start
+:Receber DadosFinanceiros;
+
+|Sistema|
+:Validar campos obrigatórios;
+
+if (Campos preenchidos?) then (não)
+  :Retornar false;
+  stop
+endif
+
+note right
+  Lucro Real não tem limite de receita.
+  Pode ser escolhido por qualquer empresa
+  ou ser obrigatório por algumas condições.
+end note
+
+:Verificar se há obrigatoriedade;
+
+if (Receita anual > R$ 78.000.000?) then (sim)
+  note right: Obrigado ao Lucro Real
+  :Retornar true;
+  stop
+endif
+
+if (É instituição financeira?) then (sim)
+  :Retornar true;
+  stop
+endif
+
+if (Tem lucros/rendimentos do exterior?) then (sim)
+  :Retornar true;
+  stop
+endif
+
+if (Tem benefícios fiscais (SUDENE, SUDAM)?) then (sim)
+  :Retornar true;
+  stop
+endif
+
+if (Factoring, securitização?) then (sim)
+  :Retornar true;
+  stop
+endif
+
+note right
+  Mesmo sem obrigatoriedade,
+  empresa pode optar pelo Lucro Real
+  se for mais vantajoso
+end note
+
+:Retornar true;
+
+stop
+@enduml
