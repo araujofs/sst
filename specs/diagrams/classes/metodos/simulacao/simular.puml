@@ -1,0 +1,49 @@
+@startuml simular
+|Usuario|
+start
+:Solicitar simulação;
+
+|Simulacao|
+:Receber DadosFinanceiros;
+
+|Sistema|
+:Validar dados financeiros;
+
+if (Dados válidos?) then (não)
+  :Retornar lista de erros;
+  stop
+endif
+
+:Criar lista de regimes 
+[SimplesNacional, LucroPresumido, LucroReal];
+
+:Inicializar lista de resultados vazia;
+
+repeat
+  :Obter próximo regime da lista;
+  
+  note right
+    Para cada regime tributário:
+    - SimplesNacional
+    - LucroPresumido  
+    - LucroReal
+  end note
+  
+  :Chamar regime.validarElegibilidade(dados);
+  
+  if (Regime elegível?) then (sim)
+    :Chamar regime.calcular(dados);
+    :Adicionar ResultadoCalculo à lista;
+  else (não)
+    :Marcar regime como não elegível;
+  endif
+  
+repeat while (Mais regimes na lista?) is (sim)
+->não;
+
+:Consolidar resultados;
+:Criar objeto Simulacao com todos ResultadoCalculo;
+:Retornar Simulacao completa;
+
+stop
+@enduml

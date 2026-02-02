@@ -1,0 +1,30 @@
+@startuml validar_elegibilidade
+|RegimeTributario|
+start
+:Receber DadosFinanceiros;
+
+|Sistema|
+:Validar campos obrigatórios;
+
+if (Campos obrigatórios preenchidos?) then (não)
+  :Retornar false;
+  stop
+endif
+
+:Verificar limites do regime;
+
+note right
+  Cada regime concreto pode 
+  sobrescrever este método
+  com suas próprias regras
+  específicas de elegibilidade
+end note
+
+if (Dentro dos limites?) then (sim)
+  :Retornar true;
+else (não)
+  :Retornar false;
+endif
+
+stop
+@enduml
